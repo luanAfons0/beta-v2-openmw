@@ -1,0 +1,38 @@
+{{ range .Pages }}
+<article class="post-item">
+  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  {{ partial "post-meta.html" . }}
+  <div class="prose">
+    {{ if strings.Contains .RawContent "<!--more-->" }}
+      {{ .Summary }}
+      <p class="more"><a href="{{ .RelPermalink }}" aria-label="{{ T "continueReadingTitle" (dict "Title" .Title) }}">{{ T "continueReading" }}</a></p>
+    {{ else }}
+      {{ .Content }}
+    {{ end }}
+  </div>
+</article>
+{{ end }}
+{{ if gt .TotalPages 1 }}
+{{ $here := .PageNumber }}
+{{ $last := .TotalPages }}
+<nav class="pager" aria-label="{{ T "pages" }}">
+  {{ with .Prev }}<a class="step" rel="prev" href="{{ .URL }}">← {{ T "newerPosts" }}</a>{{ end }}
+  <ol>
+    {{- $gap := false }}
+    {{- range .Pagers }}
+      {{- $n := .PageNumber }}
+      {{- $near := and (ge $n (sub $here 2)) (le $n (add $here 2)) }}
+      {{- $fillsGap := or (and (eq $n 2) (eq $here 5)) (and (eq $n (sub $last 1)) (eq $here (sub $last 4))) }}
+      {{- if or (eq $n 1) (eq $n $last) $near $fillsGap }}
+        {{- if $gap }}<li class="gap" aria-hidden="true">…</li>{{ end }}
+        {{- $gap = false }}
+        <li><a href="{{ .URL }}"{{ if eq $n $here }} aria-current="page"{{ end }} aria-label="{{ T "pageN" (dict "Page" $n) }}">{{ $n }}</a></li>
+      {{- else }}
+        {{- $gap = true }}
+      {{- end }}
+    {{- end }}
+  </ol>
+  {{ with .Next }}<a class="step" rel="next" href="{{ .URL }}">{{ T "olderPosts" }} →</a>{{ end }}
+</nav>
+{{ end }}
+<p class="archive-link"><a href="{{ "archive/" | relURL }}">{{ T "allPostsByYear" }}</a></p>

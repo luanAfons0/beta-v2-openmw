@@ -1,0 +1,5 @@
+{{ define "main" }}
+<p class="kicker">{{ T .Data.Singular }}</p>
+<h1 class="page-title">{{ .Title }}</h1>
+{{ partial "post-list.html" (.Paginate .Pages) }}
+{{ end }}

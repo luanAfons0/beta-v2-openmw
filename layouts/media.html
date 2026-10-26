@@ -1,0 +1,69 @@
+{{ define "main" }}
+<h1 class="page-title">{{ .Title }}</h1>
+{{ with hugo.Data.media }}
+
+{{ with .screenshots }}
+{{ $total := len .items }}
+<section id="screenshots" aria-labelledby="screenshots-h">
+  <h2 id="screenshots-h">{{ .title }}</h2>
+  <ul class="gallery">
+    {{- range $i, $item := .items }}
+    {{ $img := resources.Get (printf "media/screenshots/%s" .file) }}
+    {{ if not $img }}{{ errorf "Missing screenshot: assets/media/screenshots/%s" .file }}{{ end }}
+    {{ $small := $img.Fill "640x360 webp q80" }}
+    {{ $srcset := printf "%s 640w" $small.RelPermalink }}
+    {{ if ge $img.Width 1280 }}
+      {{ $large := $img.Fill "1280x720 webp q80" }}
+      {{ $srcset = printf "%s, %s 1280w" $srcset $large.RelPermalink }}
+    {{ end }}
+    <li id="thumb-{{ add $i 1 }}">
+      <figure>
+        <a href="#shot-{{ add $i 1 }}">
+          <img src="{{ $small.RelPermalink }}" srcset="{{ $srcset }}" sizes="(min-width: 1040px) 320px, (min-width: 640px) 50vw, 100vw" width="{{ $small.Width }}" height="{{ $small.Height }}" alt="{{ or .alt .caption }}" loading="lazy" decoding="async">
+        </a>
+        {{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+      </figure>
+    </li>
+    {{- end }}
+  </ul>
+
+  {{- range $i, $item := .items }}
+  {{ $n := add $i 1 }}
+  {{ $img := resources.Get (printf "media/screenshots/%s" .file) }}
+  {{ $big := $img }}
+  {{ if or (gt $img.Width 1920) (gt $img.Height 1080) }}{{ $big = $img.Fit "1920x1080 webp q82" }}{{ end }}
+  <div class="lightbox" id="shot-{{ $n }}" role="group" aria-label="{{ T "screenshotOf" (dict "N" $n "Total" $total) }}">
+    <a class="lb-backdrop" href="#thumb-{{ $n }}" tabindex="-1" aria-hidden="true"></a>
+    <figure>
+      <img src="{{ $big.RelPermalink }}" width="{{ $big.Width }}" height="{{ $big.Height }}" alt="{{ or .alt .caption }}" loading="lazy" decoding="async">
+      <figcaption>
+        <span>{{ with .caption }}{{ . }} · {{ end }}{{ $n }} / {{ $total }}</span>
+        <a href="{{ $img.RelPermalink }}">{{ T "fullSize" }}</a>
+      </figcaption>
+    </figure>
+    <nav class="lb-nav" aria-label="{{ T "screenshotOf" (dict "N" $n "Total" $total) }}">
+      {{ if gt $n 1 }}<a href="#shot-{{ sub $n 1 }}">← {{ T "previous" }}</a>{{ else }}<span></span>{{ end }}
+      <a class="lb-close" href="#thumb-{{ $n }}">{{ T "close" }} ×</a>
+      {{ if lt $n $total }}<a href="#shot-{{ add $n 1 }}">{{ T "next" }} →</a>{{ else }}<span></span>{{ end }}
+    </nav>
+  </div>
+  {{- end }}
+</section>
+{{ end }}
+
+{{ with .videos }}
+<section id="videos" aria-labelledby="videos-h">
+  <h2 id="videos-h">{{ .title }}</h2>
+  <p class="lede">{{ $.RenderString .text }}</p>
+  <ul class="gallery videos">
+    {{- range .items }}
+    {{ $img := resources.Get (printf "media/videos/%s.jpg" .id) }}
+    {{ if not $img }}{{ errorf "Missing video thumbnail: assets/media/videos/%s.jpg" .id }}{{ end }}
+    <li>{{ partial "video-link.html" (dict "id" .id "title" .title "image" $img) }}</li>
+    {{- end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ end }}
+{{ end }}

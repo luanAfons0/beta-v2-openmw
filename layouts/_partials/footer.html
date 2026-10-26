@@ -1,0 +1,14 @@
+<footer>
+  <div class="wrap">
+    <h2>{{ T "followOpenMW" }}</h2>
+    <ul>
+      {{- range hugo.Data.follow }}
+      <li><a href="{{ .url | relURL }}">{{ .name }}</a></li>
+      {{- end }}
+    </ul>
+    <div class="credits">
+      <p>{{ T "copyright" (dict "Start" site.Params.startYear "Year" now.Year) }}</p>
+      <p>{{ T "hosting" }} <a href="https://www.futureweb.be">Futureweb</a>.</p>
+    </div>
+  </div>
+</footer>

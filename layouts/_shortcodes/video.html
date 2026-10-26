@@ -1,0 +1,6 @@
+{{ $src := .Get "src" }}
+{{ with .Page.Resources.Get $src }}
+<video class="video" controls preload="metadata" src="{{ .RelPermalink }}"></video>
+{{ else }}
+{{ errorf "%s: video %q not found next to the post" .Page.File.Path $src }}
+{{ end }}

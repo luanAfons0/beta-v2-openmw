@@ -1,0 +1,100 @@
+{{ define "main" }}
+{{ $url := "https://gitlab.com/OpenMW/openmw/-/raw/master/AUTHORS.md" }}
+{{ $file := "https://gitlab.com/OpenMW/openmw/-/blob/master/AUTHORS.md" }}
+{{ $text := "" }}
+{{ with try (resources.GetRemote $url) }}
+  {{ with .Err }}{{ errorf "Could not get %s: %s" $url . }}{{ end }}
+  {{ with .Value }}{{ $text = .Content }}{{ else }}{{ errorf "Could not get %s" $url }}{{ end }}
+{{ end }}
+
+{{ $marker := "@@ROLE@@" }}
+{{ $chunks := split (replaceRE `(?m)^(.+)\n-{3,}$` (printf "%s$1%s" $marker $marker) $text) $marker }}
+{{ $intro := index $chunks 0 | replaceRE `^.*\n=+\n` "" }}
+{{ $roles := slice }}
+{{ range $i, $title := after 1 $chunks }}
+  {{ if modBool $i 2 }}
+    {{ $body := index $chunks (add $i 2) }}
+    {{ $people := slice }}
+    {{ range findRESubmatch `(?m)^    (.+)$` $body }}
+      {{ $m := index (findRESubmatch `^(.+?)(?:[\s\p{Zs}]+\(([^)]+)\))?(?: - (.+?))?\s*$` (index . 1) 1) 0 }}
+      {{ $name := index $m 1 }}
+      {{ $letter := replace (substr $name 0 1 | upper) "Ł" "L" }}
+      {{ $people = $people | append (dict "name" $name "nick" (index $m 2) "job" (index $m 3) "letter" $letter) }}
+    {{ end }}
+    {{ $roles = $roles | append (dict "title" $title "id" (anchorize $title) "people" $people "body" $body) }}
+  {{ end }}
+{{ end }}
+
+<h1 class="page-title">{{ .Title }}</h1>
+<div class="team-intro">{{ $.RenderString (dict "display" "block") $intro }}</div>
+
+{{ $programmers := index (where $roles "title" "Programmers") 0 }}
+<section class="leaders" aria-labelledby="leaders-h">
+  <h2 id="leaders-h">{{ T "projectLeaders" }}</h2>
+  <ol>
+    {{- range where $programmers.people "job" "!=" "" }}
+    <li>
+      <span class="who">{{ .name }}</span>
+      {{ with .nick }}<span class="nick">{{ . }}</span>{{ end }}
+      <span class="term">{{ .job | replaceRE `^Project leader ` "" | replaceRE `(\d{4})-` "$1–" }}</span>
+    </li>
+    {{- end }}
+  </ol>
+</section>
+
+<nav class="jump roles" aria-label="{{ T "roles" }}">
+  <b>{{ T "roles" }}</b>
+  {{- range $roles }}
+  {{ $count := len (cond (eq .title "Programmers") (where .people "job" "") .people) }}
+  <a href="#{{ .id }}">{{ .title }}{{ with $count }} <span class="count">{{ . }}</span>{{ end }}</a>
+  {{- end }}
+</nav>
+
+{{ range $roles }}
+<section class="team-section" id="{{ .id }}" aria-labelledby="{{ .id }}-h">
+  {{ if eq .title "Programmers" }}
+    {{ $people := sort (where .people "job" "") "name" }}
+    <h2 id="{{ .id }}-h">{{ .title }} <span class="count">{{ len $people }}</span></h2>
+    <div class="roll">
+      {{- range $letter := uniq (apply $people "index" "." "letter") }}
+      <div class="letter-group">
+        <h3 class="letter">{{ $letter }}</h3>
+        <ul>
+          {{- range where $people "letter" $letter }}
+          <li>{{ partial "person.html" . }}</li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+    </div>
+  {{ else if .people }}
+    <h2 id="{{ .id }}-h">{{ .title }} <span class="count">{{ len .people }}</span></h2>
+    {{ if where .people "job" "!=" "" }}
+    <dl class="duty">
+      {{- range .people }}
+      <div><dt>{{ partial "person.html" . }}</dt><dd>{{ .job }}</dd></div>
+      {{- end }}
+    </dl>
+    {{ else }}
+    <div class="roll">
+      <ul>
+        {{- range sort .people "name" }}
+        <li>{{ partial "person.html" . }}</li>
+        {{- end }}
+      </ul>
+    </div>
+    {{ end }}
+  {{ else }}
+    <h2 id="{{ .id }}-h">{{ .title }}</h2>
+    {{ with findRESubmatch `(?m)^(\S.*[^,])$` .body 1 }}<p class="lede">{{ index (index . 0) 1 }}</p>{{ end }}
+    <dl class="thanks">
+      {{- range findRESubmatch `Thanks to (.+?),\n(.+)` .body }}
+      <div><dt>{{ index . 1 }}</dt><dd>{{ index . 2 | strings.FirstUpper }}</dd></div>
+      {{- end }}
+    </dl>
+  {{ end }}
+</section>
+{{ end }}
+
+<p class="source team-source">{{ T "teamSource" }} <a href="{{ $file }}">{{ T "teamSourceFile" }}</a>.</p>
+{{ end }}

@@ -1,0 +1,24 @@
+{{- $text := "" -}}
+{{- with .count -}}
+  {{- $path := . -}}
+  {{- $query := "" -}}
+  {{- with strings.Contains $path "?" -}}
+    {{- $parts := split $path "?" -}}
+    {{- $path = index $parts 0 -}}
+    {{- $query = printf "?%s" (index $parts 1) -}}
+  {{- end -}}
+  {{- $url := printf "https://img.shields.io/%s.json%s" $path $query -}}
+  {{- with try (resources.GetRemote $url) -}}
+    {{- with .Err -}}
+      {{- warnf "follow count: %s: %s" $url . -}}
+    {{- else with .Value -}}
+      {{- $badge := . | transform.Unmarshal -}}
+      {{- if findRE `\d` $badge.message -}}
+        {{- $text = $badge.message -}}
+      {{- else -}}
+        {{- warnf "follow count: %s: %q" $url $badge.message -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $text -}}

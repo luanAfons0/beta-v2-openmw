@@ -1,0 +1,9 @@
+<a class="video-link" href="https://www.youtube.com/watch?v={{ .id }}">
+  <figure>
+    {{ with .image }}
+    {{ $thumb := .Fill "640x360 webp q80" }}
+    <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="lazy" decoding="async">
+    {{ end }}
+    <figcaption>{{ or .title (T "videoOnYouTube") }} <span class="tag">{{ T "watchOnYouTube" }}</span></figcaption>
+  </figure>
+</a>

@@ -1,0 +1,31 @@
+{{- $src := .src -}}
+{{- $srcset := "" -}}
+{{- $sizes := "" -}}
+{{- $width := "" -}}
+{{- $height := "" -}}
+{{- $u := urls.Parse .src -}}
+{{- if not $u.IsAbs -}}
+  {{- with .page.Resources.Get $u.Path -}}
+    {{- $img := . -}}
+    {{- if in (slice "jpeg" "png" "webp") .MediaType.SubType -}}
+      {{- if gt .Width 1400 -}}
+        {{- $img = .Resize "1400x webp q80" -}}
+      {{- else -}}
+        {{- $img = .Process "webp q80" -}}
+      {{- end -}}
+      {{- if gt $img.Width 700 -}}
+        {{- $small := .Resize "700x webp q80" -}}
+        {{- $srcset = printf "%s 700w, %s %dw" $small.RelPermalink $img.RelPermalink $img.Width -}}
+        {{- $sizes = printf "(min-width: 1040px) %dpx, 100vw" (cond (gt $img.Width 1008) 1008 $img.Width) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if ne .MediaType.SubType "svg" -}}
+      {{- $width = $img.Width -}}
+      {{- $height = $img.Height -}}
+    {{- end -}}
+    {{- $src = $img.RelPermalink -}}
+  {{- else -}}
+    {{- errorf "%s: image %q not found next to the post" $.page.File.Path $u.Path -}}
+  {{- end -}}
+{{- end -}}
+<img src="{{ $src }}"{{ with $srcset }} srcset="{{ . }}" sizes="{{ $sizes }}"{{ end }} alt="{{ .alt }}"{{ with .title }} title="{{ . }}"{{ end }}{{ with $width }} width="{{ . }}" height="{{ $height }}"{{ end }} loading="lazy" decoding="async">

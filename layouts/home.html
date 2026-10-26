@@ -1,0 +1,4 @@
+{{ define "main" }}
+<h1 class="page-title">{{ T "news" }}</h1>
+{{ partial "post-list.html" (.Paginate (where site.RegularPages "Section" "news")) }}
+{{ end }}

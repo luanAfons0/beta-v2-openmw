@@ -1,0 +1,10 @@
+{{ $link := .Get "link" }}
+{{ with $link }}
+  {{ with $.Page.Resources.Get . }}{{ $link = .RelPermalink }}{{ end }}
+{{ end }}
+<figure>
+  {{ with $link }}<a href="{{ . }}">{{ end }}
+  {{ partial "image.html" (dict "page" .Page "src" (.Get "src") "alt" (.Get "alt")) }}
+  {{ if $link }}</a>{{ end }}
+  {{ with .Get "caption" }}<figcaption>{{ . | $.Page.RenderString }}</figcaption>{{ end }}
+</figure>

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="post">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ partial "post-meta.html" . }}
+  <div class="prose">
+    {{ .Content }}
+  </div>
+</article>
+<nav class="pager" aria-label="{{ T "morePosts" }}">
+  {{ with .NextInSection }}<a rel="prev" href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
+  {{ with .PrevInSection }}<a rel="next" href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}
+</nav>
+{{ end }}

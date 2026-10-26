@@ -1,0 +1,57 @@
+
+screenshots:
+  title: Pretty screenshots
+  items:
+    - file: screenshot029-min.png
+      caption: "Distant view rendering"
+      alt: "Screenshot showing large distance rendering"
+    - file: screenshot019-min.png
+      caption: "Shaders experimentations"
+      alt: "Screenshot of shaders experimentations"
+    - file: 2022-01-28-1643417815-min.png
+      caption: "Godrays"
+      alt: "Screenshot of godrays in action"
+    - file: screenshot028-min.png
+      caption: "Pretty water"
+      alt: "Screenshot showing water-related effects."
+    - file: pouet.jpg
+      caption: "Lighting on a cliff"
+      alt: "Lighting"
+    - file: nightlight.png
+      caption: "Night light"
+    - file: water.jpg
+      caption: "Vivec"
+    - file: 20210512220036_1.jpg
+      alt: "Curious Argonian"
+    - file: screenshot397-1.png
+      caption: "Walk in the marsh"
+    - file: screenshot865.png
+      caption: "Balmora"
+    - file: screenshot882.png
+      caption: "Tamriel Rebuilt"
+    - file: screenshot052.png
+      caption: "Post-processing"
+    - file: screenshot549.png
+      caption: "Fancy waterfall"
+    - file: screenshot577.png
+      caption: "Spooky guards"
+    - file: screenshot459.png
+      caption: "Crispy armor"
+    - file: unknown.png
+      caption: "Post-processing in interiors"
+    - file: screenshot135.png
+      caption: "Spooky mist"
+    - file: unknown-1.png
+      caption: "Praise the Sun"
+
+videos:
+  title: Release commentaries and videos
+  text: >-
+    Our official YouTube channel, named [MrOpenMW](https://www.youtube.com/user/MrOpenMW), is where the release commentaries are uploaded. We try to make two videos (one for OpenMW and one for OpenMW-CS) for every release, covering the most important changes to the engine. The commentaries are currently made by the brilliant Atahualpa, and have been for the last few years. Most videos up to version 0.35 were made by the legendary WeirdSexy. Filling in for Atahualpa for the 0.46.0 release, the terrific johnnyhostile has now joined the team to collaborate with Atahualpa in future OpenMW videos.
+  items:
+    - id: nk1YmN70jfc
+      title: "Lysol's Vivec Normal Mapped 1.0"
+    - id: NjfCxa2tpjY
+      title: "Morrowind: Vtastek Water shaders for OpenMW 2021 1440"
+    - id: Yj6jK6TuCCI
+      title: "Morrowind Remastered 2021: OpenMW 0.47.0 Graphics Overhaul, Distant Land, Shadows, Parallax, Shaders"

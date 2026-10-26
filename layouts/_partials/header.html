@@ -1,0 +1,15 @@
+<header class="masthead" id="top">
+  <div class="wrap wrap-flush">
+    <div class="art">
+      <a href="{{ site.Home.RelPermalink }}"><img class="logo" src="{{ "images/logo.png" | relURL }}" width="588" height="128" alt="{{ site.Title }}"></a>
+      <div class="credit">{{ T "imageCredit" }}</div>
+    </div>
+    <nav class="mainnav" aria-label="{{ T "mainNav" }}">
+      <ul>
+        {{- range site.Menus.main }}
+        <li><a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+  </div>
+</header>

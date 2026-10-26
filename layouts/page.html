@@ -1,0 +1,55 @@
+{{ define "main" }}
+<h1 class="page-title">{{ .Title }}</h1>
+{{ if .Params.toc }}
+  {{ $parts := split .Content "<h2" }}
+  {{ $intro := index $parts 0 }}
+  {{ $sections := slice }}
+  {{ range after 1 $parts }}
+    {{ $html := printf "<h2%s" . }}
+    {{ $h2 := index (findRESubmatch `^<h2 id="([^"]+)">(.*?)</h2>` $html 1) 0 }}
+    {{ $questions := slice }}
+    {{ range findRESubmatch `<h3 id="([^"]+)">(.*?)</h3>` $html }}
+      {{ $questions = $questions | append (dict "id" (index . 1) "title" (index . 2 | replaceRE `</?a[^>]*>` "")) }}
+    {{ end }}
+    {{ $sections = $sections | append (dict
+      "id" (index $h2 1)
+      "title" (index $h2 2)
+      "questions" $questions
+      "body" (replaceRE `^<h2[^>]*>.*?</h2>` "" $html)
+    ) }}
+  {{ end }}
+  <div class="page-body has-toc">
+    <nav class="toc" aria-label="{{ T "onThisPage" }}">
+      <b>{{ T "onThisPage" }}</b>
+      <ol>
+        {{- range $sections }}
+        <li><a href="#{{ .id }}"><span>{{ .title | plainify }}</span>{{ with len .questions }}<span class="count">{{ . }}</span>{{ end }}</a></li>
+        {{- end }}
+      </ol>
+      <a class="toc-top" href="#top">{{ T "backToTop" }}</a>
+    </nav>
+    <div class="prose">
+      {{ $intro | safeHTML }}
+      {{- range $sections }}
+      <section class="toc-section" id="{{ .id }}">
+        <h2>{{ .title | safeHTML }}</h2>
+        {{ with .questions }}
+        <ul class="qindex">
+          {{- range . }}
+          <li><a href="#{{ .id }}">{{ .title | safeHTML }}</a></li>
+          {{- end }}
+        </ul>
+        {{ end }}
+        {{ .body | safeHTML }}
+      </section>
+      {{- end }}
+    </div>
+  </div>
+{{ else }}
+  <div class="page-body">
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}
+{{ end }}

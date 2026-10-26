@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{ $posts := where site.RegularPages "Section" "news" }}
+{{ $years := $posts.GroupByDate "2006" }}
+<h1 class="page-title">{{ .Title }}</h1>
+<p class="lede">{{ T "postCount" (dict "Count" (len $posts)) }}</p>
+
+<nav class="archive-index" aria-label="{{ T "years" }}">
+  <ol>
+    {{- range $years }}
+    <li><a href="#y{{ .Key }}">{{ .Key }}</a></li>
+    {{- end }}
+  </ol>
+</nav>
+
+<nav class="archive-index" aria-label="{{ T "categories" }}">
+  <b>{{ T "categories" }}</b>
+  <ol>
+    {{- range site.Taxonomies.categories.ByCount }}
+    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> <span class="count">{{ .Count }}</span></li>
+    {{- end }}
+  </ol>
+</nav>
+
+{{ range $years }}
+<section class="archive-year" id="y{{ .Key }}" aria-labelledby="y{{ .Key }}-h">
+  <h2 id="y{{ .Key }}-h">{{ .Key }} <span class="count">{{ len .Pages }}</span></h2>
+  <ol>
+    {{- range .Pages }}
+    <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{- end }}
+  </ol>
+</section>
+{{ end }}
+{{ end }}

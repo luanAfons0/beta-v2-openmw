@@ -1,0 +1,81 @@
+baseURL = "https://example.org/"
+title = "OpenMW"
+locale = "en"
+defaultContentLanguage = "en"
+capitalizeListTitles = false
+
+disableKinds = ["taxonomy"]
+
+[permalinks.page]
+  news = "/:year/:slug/"
+[permalinks.term]
+  categories = "/category/:slug/"
+  authors = "/author/:slug/"
+
+[taxonomies]
+  category = "categories"
+  author = "authors"
+
+[pagination]
+  pagerSize = 5
+
+[outputs]
+  home = ["html", "rss", "atom"]
+[outputFormats.atom]
+  mediaType = "application/atom+xml"
+  baseName = "atom"
+  rel = "alternate"
+[mediaTypes."application/atom+xml"]
+  suffixes = ["xml"]
+[services.rss]
+  limit = 10
+
+[markup.goldmark.renderHooks.link]
+  useEmbedded = "fallback"
+
+[markup.goldmark.extensions.typographer]
+  disable = true
+[markup.goldmark.extensions.extras.superscript]
+  enable = true
+
+[caches.getresource]
+  maxAge = 0
+
+[params]
+  description = "Open source Elderscrolls 3: Morrowind engine reimplementation."
+  twitter = "@openmw_org"
+  startYear = 2008
+
+[menus]
+  [[menus.main]]
+    name = "FAQ"
+    pageRef = "/faq"
+    weight = 10
+  [[menus.main]]
+    name = "Downloads"
+    pageRef = "/downloads"
+    weight = 20
+  [[menus.main]]
+    name = "Source Code"
+    url = "https://gitlab.com/OpenMW/openmw"
+    weight = 30
+  [[menus.main]]
+    name = "Issue Tracker"
+    url = "https://gitlab.com/OpenMW/openmw/issues"
+    weight = 40
+  [[menus.main]]
+    name = "Media"
+    pageRef = "/media"
+    weight = 50
+  [[menus.main]]
+    name = "Wiki"
+    url = "https://wiki.openmw.org/"
+    weight = 60
+  [[menus.main]]
+    name = "Forum"
+    url = "https://forum.openmw.org/"
+    weight = 70
+  [[menus.main]]
+    name = "The Team"
+    pageRef = "/the-team"
+    weight = 80

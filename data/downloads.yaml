@@ -1,0 +1,116 @@
+
+release:
+  version: "0.51.0"
+  platforms: Latest release for Windows, macOS and Linux
+  note: Official releases are thoroughly tested.
+  primary:
+    label: Download from GitHub
+    note: Files are at the end of the changelog
+    url: https://github.com/OpenMW/openmw/releases/latest
+  secondary:
+    label: Download from GitLab
+    url: https://gitlab.com/OpenMW/openmw/-/releases
+  archive:
+    label: Site file repository (outdated)
+    url: https://downloads.openmw.org/?C=M&O=D
+
+jump:
+  - id: packages
+    label: Package managers
+  - id: flatpak
+    label: Flatpak
+  - id: dev
+    label: Development builds
+  - id: docs
+    label: Documentation
+
+packages:
+  title: Install with a package manager
+  lede: You can also install OpenMW with your system's package manager.
+  systems:
+    - name: Windows
+      links:
+        - label: Install via Chocolatey
+          url: https://chocolatey.org/packages/openmw
+    - name: Ubuntu
+      links:
+        - label: Official Ubuntu repo
+          url: https://packages.ubuntu.com/search?keywords=openmw
+        - label: Launchpad PPA
+          url: https://launchpad.net/~openmw/+archive/openmw
+    - name: Debian
+      links:
+        - label: Official Debian repo
+          url: http://packages.debian.org/sid/openmw
+    - name: Arch Linux
+      links:
+        - label: Install from the [community] repository
+          url: https://www.archlinux.org/packages/?sort=&q=openmw
+    - name: Fedora
+      links:
+        - label: Install from the Fedora repository
+          url: https://packages.fedoraproject.org/pkgs/openmw/
+    - name: Gentoo
+      links:
+        - label: Install from the Gentoo repository
+          url: http://packages.gentoo.org/package/games-engines/openmw
+    - name: openSUSE
+      links:
+        - label: Install from the openSUSE repository
+          url: http://software.opensuse.org/download.html?project=games&package=openmw
+  flatpak:
+    title: Flatpak, for any Linux
+    text: "OpenMW is available as a [Flatpak](http://flatpak.org/) package from [Flathub](https://flathub.org/). [Download the .flatpakref file](https://flathub.org/repo/appstream/org.openmw.OpenMW.flatpakref), or use the command line:"
+    command: flatpak install --from https://flathub.org/repo/appstream/org.openmw.OpenMW.flatpakref
+
+dev:
+  title: Development builds
+  lede: Builds of the newest code, with changes that are not in the latest release yet.
+  warning: "**Much less tested than releases.** You get the newest features first. If you find a problem, check the [issue tracker](https://gitlab.com/OpenMW/openmw/issues) and report it if nobody has yet."
+  systems:
+    - id: win
+      name: Windows
+      note: First install or update the [Visual C++ redistributable](https://aka.ms/vc14/vc_redist.x64.exe).
+      builds:
+        - label: Latest GitLab build
+          file: .zip
+          note: Direct link. It can lag a little behind the latest change.
+          url: https://gitlab.com/OpenMW/openmw/-/jobs/artifacts/master/raw/OpenMW_MSVC2022_64_RelWithDebInfo_master.zip?job=Windows_Merge_Artifacts_MSBuild_RelWithDebInfo
+        - label: GitHub Actions runs
+          note: Open the first run in the list and scroll down. Needs a GitHub account.
+          url: https://github.com/OpenMW/openmw/actions/workflows/push.yml
+    - id: mac
+      name: macOS
+      builds:
+        - label: Apple silicon
+          file: .dmg
+          url: https://gitlab.com/OpenMW/openmw/-/jobs/artifacts/master/raw/build/OpenMW-0.52.0-macOS-arm64_master.dmg?job=macOS26_Xcode26_arm64
+        - label: Intel
+          file: .dmg
+          url: https://gitlab.com/OpenMW/openmw/-/jobs/artifacts/master/raw/build/OpenMW-0.52.0-macOS-x86_64_master.dmg?job=macOS26_Xcode26_amd64
+    - id: linux
+      name: Linux
+      builds:
+        - label: Ubuntu daily PPA
+          note: On Launchpad.
+          url: https://launchpad.net/~openmw/+archive/ubuntu/openmw-daily
+        - label: Arch Linux AUR
+          url: https://aur.archlinux.org/packages/?O=0&K=openmw
+        - label: Generic build
+          file: .tar.gz
+          note: Should work on any AMD64 Linux. Run openmw-launcher from a terminal.
+          url: https://redfortune.de/openmw/nightly/?C=M;O=D
+        - label: New (potentially sexier) generic build
+          file: .tar.xz
+          note: Should work on any AMD64 desktop Linux with glibc 2.34 or newer. These are new, so please tell us on the issue tracker if they work for you or not.
+          url: https://gitlab.com/OpenMW/openmw/-/jobs/artifacts/master/raw/build/OpenMW-master-Linux-x86_64.tar.xz?job=Almalinux_Generic
+
+docs:
+  title: Documentation
+  links:
+    - title: OpenMW documentation
+      note: Latest version, on Read the Docs
+      url: https://openmw.readthedocs.io/en/stable/
+    - title: OpenMW-CS user manual
+      note: Latest version of the editor's manual
+      url: https://openmw.readthedocs.io/en/stable/manuals/openmw-cs/

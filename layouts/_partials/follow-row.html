@@ -1,0 +1,15 @@
+<nav class="follow-row" aria-label="{{ T "followOpenMW" }}">
+  <ul>
+    {{- range hugo.Data.follow }}
+    {{- $count := partial "follow-count.html" . }}
+    {{- $unit := .unit }}
+    <li>
+      <a href="{{ .url | relURL }}">
+        {{- with .icon }}{{ with resources.Get (printf "icons/%s.svg" .) }}{{ .Content | safeHTML }}{{ else }}{{ errorf "Missing icon: assets/icons/%s.svg" . }}{{ end }}{{ end -}}
+        <span>{{ .name }}</span>
+        {{- with $count }}<span class="n"> {{ . }}{{ with $unit }} {{ . }}{{ end }}</span>{{ end -}}
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</nav>

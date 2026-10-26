@@ -1,0 +1,3 @@
+{{ $id := cond .IsNamedParams (.Get "id") (.Get 0) }}
+{{ $title := cond .IsNamedParams (.Get "title") "" }}
+{{ partial "video-link.html" (dict "id" $id "title" $title "image" (.Page.Resources.Get (printf "youtube-%s.jpg" $id))) }}

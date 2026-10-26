@@ -1,0 +1,33 @@
+{{- $pages := cond .IsHome (where site.RegularPages "Section" "news") .Pages -}}
+{{- $pages = first site.Config.Services.RSS.Limit $pages -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ site.Params.description }}</description>
+    <language>{{ site.Language.Locale }}</language>
+    {{- with .OutputFormats.Get "rss" }}
+    <atom:link href="{{ .Permalink }}" rel="self" type="{{ .MediaType.Type }}"/>
+    {{- end }}
+    {{- with $pages }}
+    <lastBuildDate>{{ (index . 0).Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</lastBuildDate>
+    {{- end }}
+    {{- range $pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+      {{- range .GetTerms "authors" }}
+      <dc:creator>{{ .LinkTitle }}</dc:creator>
+      {{- end }}
+      {{- range .GetTerms "categories" }}
+      <category>{{ .LinkTitle }}</category>
+      {{- end }}
+      <guid isPermaLink="{{ not .Params.guid }}">{{ or .Params.guid .Permalink }}</guid>
+      <description>{{ .Summary | plainify | htmlUnescape | truncate 300 | string }}</description>
+      <content:encoded>{{ printf "<![CDATA[%s]]>" (replace .Content "]]>" "]]]]><![CDATA[>") | safeHTML }}</content:encoded>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

@@ -1,0 +1,99 @@
+{{ define "main" }}
+{{ with hugo.Data.downloads }}
+
+{{ with .release }}
+<div class="plate">
+  <div>
+    <h1 class="version">OpenMW {{ .version }} <span>{{ .platforms }}</span></h1>
+    <p>{{ .note }}</p>
+  </div>
+  <div class="actions">
+    {{ with .primary }}
+    <a class="btn btn-primary" href="{{ .url }}">
+      <strong>{{ .label }}</strong>
+      {{ with .note }}<small>{{ . }}</small>{{ end }}
+    </a>
+    {{ end }}
+    {{ with .secondary }}
+    <a class="btn btn-secondary" href="{{ .url }}">
+      <strong>{{ .label }}</strong>
+    </a>
+    {{ end }}
+    {{ with .archive }}<a class="older" href="{{ .url }}">{{ .label }}</a>{{ end }}
+  </div>
+</div>
+{{ end }}
+
+<nav class="jump" aria-label="{{ T "onThisPage" }}">
+  <b>{{ T "onThisPage" }}</b>
+  {{- range .jump }}
+  <a href="#{{ .id }}">{{ .label }}</a>
+  {{- end }}
+</nav>
+
+{{ with .packages }}
+<section id="packages" aria-labelledby="packages-h">
+  <h2 id="packages-h">{{ .title }}</h2>
+  <p class="lede">{{ .lede }}</p>
+  <dl class="ledger">
+    {{- range .systems }}
+    <div>
+      <dt>{{ .name }}</dt>
+      <dd>
+        {{- range $i, $link := .links }}
+        {{- if $i }} <span>{{ T "or" }}</span> {{ end -}}
+        <a href="{{ $link.url }}">{{ $link.label }}</a>
+        {{- end -}}
+      </dd>
+    </div>
+    {{- end }}
+  </dl>
+
+  {{ with .flatpak }}
+  <div class="flatpak" id="flatpak">
+    <h3>{{ .title }}</h3>
+    <p>{{ $.RenderString .text }}</p>
+    <code class="cmd">{{ .command }}</code>
+  </div>
+  {{ end }}
+</section>
+{{ end }}
+
+{{ with .dev }}
+<section id="dev" aria-labelledby="dev-h">
+  <h2 id="dev-h">{{ .title }}</h2>
+  <p class="lede">{{ .lede }}</p>
+  <p class="warning">{{ $.RenderString .warning }}</p>
+
+  <div class="oses">
+    {{- range .systems }}
+    <div class="os-{{ .id }}">
+      <h3>{{ .name }}</h3>
+      {{ with .note }}<p>{{ $.RenderString . }}</p>{{ end }}
+      <ul>
+        {{- range .builds }}
+        <li>
+          <a href="{{ .url }}">{{ .label }}</a>{{ with .file }}&nbsp;<span class="tag">{{ . }}</span>{{ end }}
+          {{ with .note }}<small>{{ . }}</small>{{ end }}
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+    {{- end }}
+  </div>
+</section>
+{{ end }}
+
+{{ with .docs }}
+<section id="docs" aria-labelledby="docs-h">
+  <h2 id="docs-h">{{ .title }}</h2>
+  <div class="docs">
+    {{- range .links }}
+    <a href="{{ .url }}"><strong>{{ .title }}</strong><span>{{ .note }}</span></a>
+    {{- end }}
+  </div>
+</section>
+{{ end }}
+
+{{ end }}
+{{ end }}
