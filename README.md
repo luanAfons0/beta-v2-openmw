@@ -88,6 +88,14 @@ hugo
 
 The output goes to `public/`.
 
+A preview of this repository is online at https://luanafons0.github.io/beta-v2-openmw/. It is built from `main` and published on the `gh-pages` branch:
+
+```sh
+HUGO_PARAMS_NOINDEX=true hugo --baseURL https://luanafons0.github.io/beta-v2-openmw/
+```
+
+`HUGO_PARAMS_NOINDEX=true` asks search engines not to list the preview, so it does not compete with openmw.org.
+
 ## Contributing
 
 - Keep merge requests small: one page or one fix at a time.
