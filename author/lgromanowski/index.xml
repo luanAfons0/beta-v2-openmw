@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Lukasz Gromanowski · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/author/lgromanowski/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/author/lgromanowski/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Sat, 06 Dec 2014 09:47:47 &#43;0100</lastBuildDate>
+    <item>
+      <title>Web server change</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/web-server-change/</link>
+      <pubDate>Sat, 06 Dec 2014 09:47:47 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4130</guid>
+      <description>Hi,
+tomorrow night (7.12.2014) I will be moving website to the new web server (same hosting provider, but different web server), so between 20.00-23.00 CET blog, wiki, bugtracker, and forum will be temporary in read-only mode (or closed if read-only mode won’t be possible).
+Sorry for inconveniences. …</description>
+      <content:encoded><![CDATA[<p>Hi,<br>
+tomorrow night (7.12.2014) I will be moving website to the new web server (same hosting provider, but different web server), so between 20.00-23.00 CET blog, wiki, bugtracker, and forum will be temporary in read-only mode (or closed if read-only mode won’t be possible).</p>
+<p>Sorry for inconveniences.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Project of the month</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/project-month/</link>
+      <pubDate>Thu, 03 Apr 2014 07:13:09 &#43;0200</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3543</guid>
+      <description>We have been nominated for “Project of the month” at Linux Game Awards – please vote! :D
+</description>
+      <content:encoded><![CDATA[<p>We have been nominated for <a href="http://www.linuxgameawards.org/game/openmw" title="Linux Game Awards - Project of the month">“Project of the month” at Linux Game Awards</a> – please vote! :D</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenCS above all!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/opencs-all/</link>
+      <pubDate>Fri, 28 Mar 2014 06:18:09 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3533</guid>
+      <description>I’ll start a bit differently this time – with OpenCS instead of the usual OpenMW.
+Thanks to SirHerrbatka and Zini’s efforts, OpenCS now features the functionality mentioned in last week’s post. For your viewing pleasure, the preview and editing views in all their glory:
+Beautiful! And all of this is …</description>
+      <content:encoded><![CDATA[<p>I’ll start a bit differently this time – with OpenCS instead of the usual OpenMW.</p>
+<p>Thanks to SirHerrbatka and Zini’s efforts, OpenCS now features the functionality mentioned in last week’s post. For your viewing pleasure, the preview and editing views in all their glory:</p>
+<p><a href="/beta-v2-openmw/2014/opencs-all/zrzut103.png"><img src="/beta-v2-openmw/2014/opencs-all/zrzut103-300x240_hu_ebbde3632fc9b9fd.webp" alt="zrzut103" width="300" height="240" loading="lazy" decoding="async"></a></p>
+<p>Beautiful! And all of this is in the main branch!</p>
+<p>Aside from that, we have fixes, fixes, fixes, and Scrawl. Like every other week, Scrawl dealt with some nasty bugs (this time having to do with NPCs not falling down). Slothlife, meanwhile, has included support for saving the current weather state in savegame files. I think that loading and saving the state of a character’s spells list should also appear soon.</p>
+<p>And that’s all folks, until next time!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Bug tracker is offline</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/bugtracker-offline/</link>
+      <pubDate>Mon, 24 Mar 2014 08:58:38 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3518</guid>
+      <description>Hi,
+bug tracker is currently not working – I’m working on this issue. Sorry for inconvenience.
+</description>
+      <content:encoded><![CDATA[<p>Hi,<br>
+bug tracker is currently not working – I’m working on this issue. Sorry for inconvenience.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Skeletons don’t play fair</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/skeletons-play-fair/</link>
+      <pubDate>Wed, 19 Mar 2014 23:19:29 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3515</guid>
+      <description>OpenMW v0.29.0 has been released – the best release since the previous one! :D Just look at the list of changes – not only is its sheer size impressive, it also includes the long awaited option to save the game. Of course, most of you already know this very well, so let’s move on to the events of …</description>
+      <content:encoded><![CDATA[<p>OpenMW v0.29.0 has been released – the best release since the previous one! :D Just look at the list of changes – not only is its sheer size impressive, it also includes the long awaited option to save the game. Of course, most of you already know this very well, so let’s move on to the events of the last week.</p>
+<p>An interesting new feature in the OpenCS editor is the initial implementation of the model preview pane. As the name suggests, it is a tool for previewing objects without having to place them in the cell rendering window.</p>
+<p>I’m not sure if this absolutely essential feature was available in the original Construction Set, but we have it!</p>
+<p>In addition, another portion of AI patches have appeared in OpenMW’s repository and characters under the influence of levitation and water walking magic are now able to use these spells to move over areas of water. Also, creatures can handle ranged combat – beware of skeleton-archers with enchanted, paralyzing arrows! Probably every veteran player has already experienced the charm of this weapon ;)</p>
+<p>Till next time!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Did he fire six arrows or only five?</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/fire-arrows-five/</link>
+      <pubDate>Tue, 11 Mar 2014 21:55:57 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3493</guid>
+      <description>Are there any among us who prefer ranged weapons over close quarters combat with the enemy? Are there any among us who prefer bows, crossbows, or maybe even throwing weapons? Yeah, certainly there are, and certainly they’ll be glad to hear that they can now shoot and throw at will! OpenMW now …</description>
+      <content:encoded><![CDATA[<p>Are there any among us who prefer ranged weapons over close quarters combat with the enemy? Are there any among us who prefer bows, crossbows, or maybe even throwing weapons? Yeah, certainly there are, and certainly they’ll be glad to hear that they can now shoot and throw at will! OpenMW now supports all nasty, harmful things relating to the “Marksman” skill category. Of course, the one behind all this is none other than Scrawl.</p>
+<p>However, that’s not all.</p>
+<p>Gus contributed another portion of fixes and improvements intended for the still slightly ailing artificial intelligence of NPCs. Zini improves 3D navigation in the rendering panel of OpenCS, while SirHerrbatka is working on the records editing view – which you can see on the following screenshot:</p>
+<p><a href="/beta-v2-openmw/2014/fire-arrows-five/zrzut961.png"><img src="/beta-v2-openmw/2014/fire-arrows-five/zrzut961-300x240_hu_18ec6d9537c2b677.webp" alt="zrzut96" width="300" height="240" loading="lazy" decoding="async"></a></p>
+<p>See you next week!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>v0.29.0 is almost here!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/v0-29-0-here/</link>
+      <pubDate>Thu, 06 Mar 2014 20:52:07 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3485</guid>
+      <description>First, let me quote Zini:
+The first iteration of the navigation system is now in master. Please test!
+A few points to consider:
+– This is only the first iteration. We will most definitely improve the system further.
+– Other navigation modes can be added later. We should even consider allowing editor …</description>
+      <content:encoded><![CDATA[<p>First, let me quote Zini:</p>
+<blockquote>
+<p>The first iteration of the navigation system is now in master. Please test!</p>
+<p>A few points to consider:<br>
+– This is only the first iteration. We will most definitely improve the system further.<br>
+– Other navigation modes can be added later. We should even consider allowing editor plugins to add navigation modes.<br>
+– Input focus handling is a bit wonky at the moment. When opening the scene sub view and after clicking outside the actual rendered scene you will have to click on the scene again, before it accepts keyboard input. Needs further work, but not my priority now.<br>
+– Navigation modes can be selected via the button on the left bar. This buttons pops up another bar with 3 buttons, one for each mode. The icons on these buttons are place-holders (I just used some random icons that are already in use elsewhere).<br>
+– There are currently several hard-coded values that influence how the navigation system works (e.g. mouse sensitivity). These will be made configurable, once we have a properly working user settings implementation (*cough*). Likewise all key-bindings (including mouse buttons) will be made configurable eventually.</p>
+<p>The navigation modes are (from left to right):</p>
+<p>1. First Person</p>
+<p>– Mouse-Look while holding the left mouse button<br>
+– WASD as usual<br>
+– Mouse wheel moves the camera forward/backward<br>
+– Holding the left mouse button and control, lets you strafe (also vertically)<br>
+– Camera is held upright (you can’t do a back-flip or a headstand)</p>
+<p>2. Free Camera</p>
+<p>– Mouse-Look while holding the left mouse button<br>
+– WASD lets you strafe (also vertically)<br>
+– Holding the left mouse button and control, lets you strafe (also vertically)<br>
+– Mouse wheel moves the camera forward/backward<br>
+– Q and E keys makes the camera roll</p>
+<p>3. Orbiting</p>
+<p>– You are always facing the center point.<br>
+– The center point is 0, 0, 0 by default (we will add other methods to set it eventually)<br>
+– Holding the left mouse button makes you rotate around the center point while keeping the distance.<br>
+– WASD also makes you rotate around the center point while keeping the distance.<br>
+– The mouse wheel moves you towards or away from the center. But you can not pass through the center.<br>
+– Q and E keys makes the camera roll<br>
+– Holding the left mouse button and control let’s you strafe and moves the center point in the same direction and by the same distance.</p>
+<p>In all three modes you can hold down the shift key to perform actions at an accelerated speed.</p>
+</blockquote>
+<p>In short, OpenCS editor has been enriched with the ability to change the orientation of the camera in the rendering panel. Of course, the rendering panel is still not able to display the contents of a game cell yet – this feature will come with time.</p>
+<p>Meanwhile, Scrawl submitted terrain rendering fixes to the GitHub repository. Could this mean that his latest work in this area revealed some imperfections? This seems suspicious enough that, just in case, I’ll not pry further into this matter.</p>
+<p>I similarly prefer to avoid mistreatment of poor Pvdk who, with determination rivaling that of mythical heroes, strives to handle all possible installation media of Morrowind. This group includes CDs from magazines and every known boxed edition – each of which may differ slightly in the packaging of their files.</p>
+<p>Cc9cii (contrary to appearances, this is not the Borg designation, only the nickname of one of our developers) submitted a number of patches which will help us reach v0.29.0.</p>
+<p>See you next week!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>An ode to (unit) tests.</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/ode-unit-tests/</link>
+      <pubDate>Sun, 02 Mar 2014 08:00:41 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3472</guid>
+      <description>Version 0.29.0 will be released soon — momentary impediments are the bugs that were detected during the RC testing phase. I don’t want to delve into the details, but, if anyone needs to support the thesis that (unit) testing is critical, OpenMW is a perfect example. Fortunately, things are moving in …</description>
+      <content:encoded><![CDATA[<p>Version 0.29.0 will be released soon — momentary impediments are the bugs that were detected during the RC testing phase. I don’t want to delve into the details, but, if anyone needs to support the thesis that (unit) testing is critical, OpenMW is a perfect example. Fortunately, things are moving in the right direction.</p>
+<p>Scrawl’s latest idea is to streamline the process of starting a new game — terrain data can be loaded in another thread, so we don’t have to watch another episode of “The Bold and the Beautiful” while waiting for the start of OpenMW.</p>
+<p>Additionally, Pvdk is trying to please grumblers who can’t tolerate Wine on their system. Wine is very helpful with the installation of Morrowind, but I must admit that installing it just for this purpose seems over the top. After all, you can just unpack game archives (there is even a useful library for doing this).</p>
+<p>As I’ve mentioned in previous weeks, Pvdk is creating a user-friendly installer for Morrowind. The installer will be enriched by new features as well as other minor improvements: it’ll verify what has already been installed and won’t install the Bloodmoon add-on before Tribunal. It will also properly save the morrowind.ini file.</p>
+<p>SirHerrbatka has introduced the ability to automatically create filters using the drag’n’drop feature in OpenCS. The way the expression is created ensures that it can be adapted to the columns which hold corresponding records. For example, when dragging a faction record, let’s say, “the Fighter’s Guild”, into the Referencables’ filter field, it’ll automatically appear in the filter, so that the table will display only NPCs belonging to the Fighter’s Guild.</p>
+<p>The new method is much more efficient — the filter creation process speeds up noticeably (even if you type very quickly). The possibilities of this function are a bit more expansive than the example above and eventually it’ll be described in much more detail in the OpenCS manual.</p>
+<p>And last but not least <a href="https://forum.openmw.org/viewtopic.php?f=4&amp;t=2053" title="SCaLE 12x Talk Debrief">here you can read Raevol’s SCaLE 12x Talk Debrief</a> and <a href="http://downloads.openmw.org/presentations/SCaLE12x/OpenMW_SCaLE12x.odp" title="Slides from OpenMW SCaLE 12x Talk">here</a> you can download slides from SCaLE 12x Talk.</p>
+<p>Till next time!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Little riddle.</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/riddle/</link>
+      <pubDate>Wed, 19 Feb 2014 14:52:19 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3463</guid>
+      <description>First of all, a little riddle: what percentage of Morrowind scripts are compiled by OpenMW?
+Zini, once he finished wrangling with Bethesda scripting monsters, solved an extremely annoying bug in OpenCS ─ and now the Referenceables table is working properly when more than one file is loaded (and this …</description>
+      <content:encoded><![CDATA[<p>First of all, a little riddle: what percentage of Morrowind scripts are compiled by OpenMW?</p>
+<p>Zini, once he finished wrangling with Bethesda scripting monsters, solved an extremely annoying bug in OpenCS ─ and now the Referenceables table is working properly when more than one file is loaded (and this is always the case when we create a new modification based on a master file, such as Morrowind.esm).</p>
+<p>Another interesting new feature in OpenCS is the drag’n’drop implemented by SirHerrbatka: you can use it to change many aspects of the game, e.g. race of non player characters, in a fast and easy way. Simply drag a race record to the appropriate field ─ and you’re done!</p>
+<p>As a result of the combined efforts of Gus, Potatoemaster, and MrCheko, we were able to fix a large number of bugs.</p>
+<p>Let’s get back to our little riddle – did you answer 80%? *Bzeeert!* Wrong! 90%? Wrong again! The correct answer is… 97.2682% (Hooray)! In other words, almost all of them. This is the best illustration of Zini’s recent efforts (a short time ago results were around 80%).</p>
+<p>See you next week!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Nature films, and more.</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/nature-films-more/</link>
+      <pubDate>Thu, 13 Feb 2014 12:09:43 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3448</guid>
+      <description>In the past week, Scrawl was able to solve a lot of bugs. He also made significant contributions to the GUI of the game saving and loading feature. As if that were not enough, he also began implementing ranged weapons mechanics.
+Meanwhile, Zini made improvements in the area of scripting. There is a …</description>
+      <content:encoded><![CDATA[<p>In the past week, Scrawl was able to solve a lot of bugs. He also made significant contributions to the GUI of the game saving and loading feature. As if that were not enough, he also began implementing ranged weapons mechanics.</p>
+<p>Meanwhile, Zini made improvements in the area of scripting. There is a new feature in the scripts compiler: “warning mode”, which should print a warning if the compiler finds any mistake in the script ─ an undoubtedly useful function.</p>
+<p>OpenMW also supports scripts faithful to the original engine ─ which, unfortunately, means that we’re moving into the area of the absurd. To keep your minds clear and uncontaminated with Bethesda insanity from more than a decade ago, I’ll skip the gory details.</p>
+<p>The latest changes to character animation look really interesting. At the moment of the writing of this post, they aren’t included in the main branch, but it’s evident that MrCheko improved many aspects of the gameplay related with animations.</p>
+<p>For a long time there weren’t any funny videos featuring bugs on the blog ─ and yet it’s precisely what we all love. Anyway, here’s another day in the life of nature and the inhabitants of the province of Morrowind…</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=F8ZN2NMdKmk">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2014/nature-films-more/youtube-F8ZN2NMdKmk_hu_eb1701ae0e791061.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>spinning neches <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>Here, we can see an extremely difficult to observe phenomenon, the netch’s mating dance. The excited male demonstrates its efficiency to the female partner. As this happens, the natives are rendered motionless to avoid the aggressive behavior of the animals.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=KBREgWpPHLU">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2014/nature-films-more/youtube-KBREgWpPHLU_hu_c0a5e1583c9a01d1.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW knockdown bug <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>Dark Elves are known for their peculiar, heretical religion. This worship consists of many complex rituals, and an integral and inalienable part of many among them are repeated prostrations.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=kDEOII4M2sE">
+  <figure>
+    
+    <figcaption>A video on YouTube <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>Here, we see yet another, mysterious ritual whose meaning remains unknown to us.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

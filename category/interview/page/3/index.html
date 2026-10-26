@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Open source Elderscrolls 3: Morrowind engine reimplementation.">
+<meta name="twitter:site" content="@openmw_org">
+<meta name="robots" content="noindex">
+<title>Interview · OpenMW</title>
+<link rel="icon" type="image/png" href="/beta-v2-openmw/favicon.png">
+
+<link rel="stylesheet" href="/beta-v2-openmw/css/main.min.dd57dc4e01d34600100d3c131c85b77ddd312fd0b9532e73284212cc93269a72.css" integrity="sha256-3VfcTgHTRgAQDTwTHIW3fd0xL9C5Uy5zKEISzJMmmnI=">
+
+<link rel="alternate" type="application/rss&#43;xml" href="https://luanafons0.github.io/beta-v2-openmw/category/interview/index.xml" title="OpenMW">
+</head>
+<body>
+<header class="masthead" id="top">
+  <div class="wrap wrap-flush">
+    <div class="art">
+      <a href="/beta-v2-openmw/"><img class="logo" src="/beta-v2-openmw/images/logo.png" width="588" height="128" alt="OpenMW"></a>
+      <div class="credit">Image © Maxim Nikolaev</div>
+    </div>
+    <nav class="mainnav" aria-label="Main">
+      <ul>
+        <li><a href="/beta-v2-openmw/faq/">FAQ</a></li>
+        <li><a href="/beta-v2-openmw/downloads/">Downloads</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw">Source Code</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw/issues">Issue Tracker</a></li>
+        <li><a href="/beta-v2-openmw/media/">Media</a></li>
+        <li><a href="https://wiki.openmw.org/">Wiki</a></li>
+        <li><a href="https://forum.openmw.org/">Forum</a></li>
+        <li><a href="/beta-v2-openmw/the-team/">The Team</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<nav class="follow-row" aria-label="Follow OpenMW">
+  <ul>
+    <li>
+      <a href="https://gitlab.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"/></svg>
+<span>GitLab</span><span class="n"> 952 stars</span></a>
+    </li>
+    <li>
+      <a href="https://github.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+<span>GitHub</span><span class="n"> 6.7k stars</span></a>
+    </li>
+    <li>
+      <a href="https://discord.gg/YegsVV3aRb"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+<span>Discord</span><span class="n"> 5.2k online</span></a>
+    </li>
+    <li>
+      <a href="https://matrix.to/#/#openmw-space:matrix.org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M.632.55v22.9H2.28V24H0V0h2.28v.55zm7.043 7.26v1.157h.033c.309-.443.683-.784 1.117-1.024.433-.245.936-.365 1.5-.365.54 0 1.033.107 1.481.314.448.208.785.582 1.02 1.108.254-.374.6-.706 1.034-.992.434-.287.95-.43 1.546-.43.453 0 .872.056 1.26.167.388.11.716.286.993.53.276.245.489.559.646.951.152.392.23.863.23 1.417v5.728h-2.349V11.52c0-.286-.01-.559-.032-.812a1.755 1.755 0 0 0-.18-.66 1.106 1.106 0 0 0-.438-.448c-.194-.11-.457-.166-.785-.166-.332 0-.6.064-.803.189a1.38 1.38 0 0 0-.48.499 1.946 1.946 0 0 0-.231.696 5.56 5.56 0 0 0-.06.785v4.768h-2.35v-4.8c0-.254-.004-.503-.018-.752a2.074 2.074 0 0 0-.143-.688 1.052 1.052 0 0 0-.415-.503c-.194-.125-.476-.19-.854-.19-.111 0-.259.024-.439.074-.18.051-.36.143-.53.282-.171.138-.319.337-.439.595-.12.259-.18.6-.18 1.02v4.966H5.46V7.81zm15.693 15.64V.55H21.72V0H24v24h-2.28v-.55z"/></svg>
+<span>Matrix</span><span class="n"> 1197 users</span></a>
+    </li>
+    <li>
+      <a href="https://web.libera.chat/#openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m14.26446 2.76095-1.22973 9.43224-1.6484 1.88226L9.67694 2.7735h-.003a9.86072 9.86072 0 0 0-.19917.04247l-.067.01256a12.0901 12.0901 0 0 0-.13158.0305l-.0646.01555a12.0503 12.0503 0 0 0-1.7393.55086l-.03709.01855 3.39788 11.26306-.1579.18062-1.59816-.70397-.10465.13457L3.4452 6.09902a10.69674 10.69674 0 0 0-.92767 1.0473 12.5862 12.5862 0 0 0-.55146.7596v.00598l6.48115 7.08106-1.02158 1.31285-7.20486-4.1497a11.70731 11.70731 0 0 0-.2207 2.30931l6.85377 2.57547L5.2778 19.0661l-4.31.02034a12.18198 12.18198 0 0 0 1.21297 2.15261h.003l1.69625-.37322h.45038l4.86266-6.22276 1.5832.70098 3.33807-3.81237c1.84965 3.14502 3.84345 6.17068 5.65635 9.33714h.45337l-.0083-.01376 1.61251.36246.01556-.01794a11.03054 11.03054 0 0 0 .77455-1.25604 11.3919 11.3919 0 0 0 .35228-.72551l-3.78784-.064-1.3332-2.19567 6.1468-2.24172v-.0311a6.93926 6.93926 0 0 0 .0036-.20217v-.31223l-.0036-.06398v-.0676l-.003-.06757-.003-.067-.003-.06757-.003-.067-.0059-.0646-.003-.06757-.0066-.067-.003-.06757-.006-.064-.006-.06757-.006-.06758-.0066-.067-.006-.06458a9.69536 9.69536 0 0 0-.11304-.7961v-.01555l-6.50625 3.71908-1.0467-1.72436 5.7365-6.49311a10.80699 10.80699 0 0 0-.8876-1.16997 11.89718 11.89718 0 0 0-.69202-.7285l-4.72569 7.45488-1.37147-2.25848 2.1526-7.75393-.05502-.02093a11.6277 11.6277 0 0 0-2.00607-.59453 12.20035 12.20035 0 0 0-.13158-.0275zm-.1591 9.33116-3.24596 3.72086-1.5832-.65853-4.48346 5.7078h.49584l4.10365-5.25144 1.57423.65195 3.08387-3.53664 4.8507 8.15167.47729-.009zm-.07357 1.30149-2.91221 3.34405-1.60474-.65254-3.74538 4.77413 12.63513.0066z"/></svg>
+<span>IRC on Libera.Chat</span></a>
+    </li>
+    <li>
+      <a href="https://reddit.com/r/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>
+<span>Reddit</span><span class="n"> 20k members</span></a>
+    </li>
+    <li>
+      <a href="https://mastodon.gamedev.place/@openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>
+<span>Mastodon</span><span class="n"> 538 followers</span></a>
+    </li>
+    <li>
+      <a href="https://twitter.com/intent/user?screen_name=Openmw_org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+<span>Twitter</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/index.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>RSS</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/atom.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>Atom</span></a>
+    </li>
+  </ul>
+</nav>
+
+
+<p class="kicker">Category</p>
+<h1 class="page-title">Interview</h1>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2024/interview-with-wazabear/">Interview with wazabear</a></h2>
+  <p class="post-meta">
+  <time datetime="2024-01-26">January 26, 2024</time> · <a href="/beta-v2-openmw/author/ap0/">jvoisin</a> · <a href="/beta-v2-openmw/category/interview/">Interview</a>
+</p>
+
+  <div class="prose">
+    
+      <h2 id="who-are-you-and-why-arent-you-a-bear-anymore-what-happened">Who are you and why aren’t you a bear anymore? What happened?</h2>
+<p>I’m 26 years old and I live in California where I work as a Software Developer. I love the icy cold, and my dream vacation is <a href="https://en.uesp.net/wiki/Lore:Solstheim">Solstheim</a>. If I could meet anyone from the Elder Scrolls universe it would be <a href="https://en.wikipedia.org/wiki/Todd_Howard">Todd Howard</a>. Everyone always asks about the name, and I love telling the story and disappointing them. I needed a handle for some account that I can’t remember many years back. That was the phrase that came to mind, and so goes my origin story.</p>
+<h2 id="when-did-you-join-the-project-and-why">When did you join the project and why?</h2>
+<p>It started sometime around 2019 when a friend introduced me to the OpenMW engine. Prior to that, Morrowind was a distant thought in my mind. I was amazed that not one person, but a team, had designed an engine to run the game of my childhood. I started a playthrough and discovered the world of modding. Rather quickly I realized I enjoyed the modding bit more than the playing bit.</p>
+<p>It wasn’t until around 2021 when the thought of contributing to the codebase came to my mind. In my playthroughs I had noticed some terrible light popping in <a href="https://en.uesp.net/wiki/Morrowind:Balmora">Balmora</a>, so I decided to investigate. One thing led to another, and before you know it I had opened up a merge request on the <a href="https://gitlab.com/OpenMW/openmw">project’s GitLab page</a>.</p>
+<h2 id="youve-been-creating-mods-and-shaders-for-bothmorrowind-and-openmw-are-there-anythat-you-are-particularlyfondof">You’ve been creating mods and shaders for both Morrowind and OpenMW. Are there any that you are particularly fond of?</h2>
+<p>Not really, due to limitations in MWScript and the engine I was never able to create any of the mods I really wanted to. The ones I published were pretty random and I don’t maintain them much at all. Now that the Lua API is maturing and new rendering features added, these limitations are slowly being lifted. My most ambitious project is writing a Lua driven UI/HUD (named Crystal UI). In 2090 I expect to finally release it, unless someone beats me to the chase. These projects are not my priority nowadays. When I do work on OpenMW, I try and improve the engine itself in some way.</p>
+<h2 id="when-it-comes-to-openmw-itself-what-was-the-most-exciting-thing-for-you-to-work-on-post-processing-lighting-all-of-the-above-none-of-the-above">When it comes to OpenMW itself, what was the most exciting thing for you to work on? Post-processing? Lighting? All of the above? None of the above?</h2>
+<p>Hard to say. I can tell you the most exciting result was seeing the effect of the <a href="https://nlguillemot.wordpress.com/2016/12/07/reversed-z-in-opengl/">reverse-z depth buffer</a>. It transformed the world of Vvardenfell as I explored it. Before this change, there was incredible precision loss as you look at things farther away. Lava fields would clip through to the mountains, ground level was filled with this awful zig-zag looking artifacts. What’s worse is that the artifacts are view dependent, so they flicker as you move your camera. Now, viewing the sea, mountains, and lava fields in the distance is a pleasurable experience.</p>
+<p><a href="/beta-v2-openmw/2024/interview-with-wazabear/lanterdddn-min-1.png"><img src="/beta-v2-openmw/2024/interview-with-wazabear/lanterdddn-min-1-1024x839_hu_1ca4d13d868980ce.webp" srcset="/beta-v2-openmw/2024/interview-with-wazabear/lanterdddn-min-1-1024x839_hu_c40f80fcb1845875.webp 700w, /beta-v2-openmw/2024/interview-with-wazabear/lanterdddn-min-1-1024x839_hu_1ca4d13d868980ce.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="839" loading="lazy" decoding="async"></a></p>
+<p>My work with the post-processing framework was the most rewarding as I saw graphics artists come and create spectacular shaders shortly after the feature landed.</p>
+<h2 id="you-recently-implemented-clustered-rendering-in-openmw-can-you-talk-a-bit-about-it-what-it-is-and-why-its-the-best-thing-since-sliced-bread">You recently implemented clustered rendering in OpenMW, can you talk a bit about it? What it is, and why it’s the best thing since sliced bread?</h2>
+<p><a href="/beta-v2-openmw/2024/interview-with-wazabear/lol.png"><img src="/beta-v2-openmw/2024/interview-with-wazabear/lol-1024x839_hu_ca42b2677914e25b.webp" srcset="/beta-v2-openmw/2024/interview-with-wazabear/lol-1024x839_hu_67a063244d7a6000.webp 700w, /beta-v2-openmw/2024/interview-with-wazabear/lol-1024x839_hu_ca42b2677914e25b.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="839" loading="lazy" decoding="async"></a></p>
+<p>It’s a relatively modern technique for all things lighting. With the current engine, every object in the game gets assigned a list of lights. Due to hardware limitations and performance bottlenecks, this list is kept quite low. Even later titles like Skyrim enforced such limits, leading to the infamous light pop-in. In fact, most engines using forward renderers have this limit in some form. In most basic terms, clustered lighting takes a new approach by assigning lights to fixed sections of the camera view, instead of assigning them to individual objects in the world. Furthermore, it allows us to easily offload large amounts of work to the GPU. In the end, you’re left with the ability to view a virtually unlimited number of lights in the scene. Being able to look at thousands of fully dynamic point lights without the aid of <a href="https://gamedev.stackexchange.com/questions/9993/what-does-it-mean-to-bake-lights">baked lighting</a> is truly a breakthrough. AAA titles such as <a href="https://en.wikipedia.org/wiki/Doom_%282016_video_game%29">Doom 2016</a> used this rendering technique.</p>
+<p><a href="/beta-v2-openmw/2024/interview-with-wazabear/light-min.png"><img src="/beta-v2-openmw/2024/interview-with-wazabear/light-min-1024x559_hu_c52abc9f6559da09.webp" srcset="/beta-v2-openmw/2024/interview-with-wazabear/light-min-1024x559_hu_9e7a8dd79d5b1b79.webp 700w, /beta-v2-openmw/2024/interview-with-wazabear/light-min-1024x559_hu_c52abc9f6559da09.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="559" loading="lazy" decoding="async"></a></p>
+<p>While I share progress with the community, it is in the experimental phase only. Hopefully one day I’ll get the time and motivation to make it merge ready. This technique paves way for efficient volumetric lighting, point light shadows, and light culling. It’s far from the end of the road!</p>
+<h2 id="and-what-have-you-been-working-on-recently">And what have you been working on recently?</h2>
+<p>Aside from the above, I’ve been slowly working on exposing a <a href="https://en.wikipedia.org/wiki/Scene_graph">scene graph</a> API in Lua. This would allow you to toggle switch nodes on NIFs and render custom built scenes into textures, which can be used in the UI for things such as item previews and character dolls. It’s a powerful feature so I hope to wrap that up by the end of the year, I’m a slow worker.</p>
+<h2 id="i-think-youre-part-of-the-openmw-lua-cabalcan-you-tell-us-about-its-secret-plans">I think you’re part of the OpenMW-Lua Cabal. Can you tell us about its secret plans?</h2>
+<p>I promise we do only good. The super secret plans can be found on <a href="https://gitlab.com/OpenMW/openmw/-/issues/?label_name%5B%5D=Lua">the projects GitLab issue tracker</a> and forums. Instead of enumerating all the plans for the future, it’s better to answer this in a different way: OpenMW Lua is a new feature, and it’s missing a lot! Slowly but surely the team is hard at work filling in the gaps and making it into a mature framework which modders can depend on. A couple recent additions were the ability to create UI elements and play sounds. The work continues, we need to be able to do more! Everything from weather, sounds, input handling, combat, AI, etc…, need to be added as a new interface to the Lua framework. As always, we’re looking for new contributors on this front.</p>
+<h2 id="since-youve-been-working-on-improving-openmws-rendering-and-post-processing-capabilities-when-can-we-expect-path-tracing-tessellationlumen-like-global-illumination">Since you’ve been working on improving OpenMW’s rendering and post-processing capabilities, when can we expect path tracing, tessellation, Lumen-like global illumination?</h2>
+<p>I’d love to see advanced techniques such as path tracing and global illumination, but a better time for this would be when OpenMW is able to switch rendering backends to something like Vulkan. That isn’t to say there is not a ton of room for improvement in other areas. I’ll talk about these in the other questions. Don’t let that deter you though, if someone is motivated enough we might get these features in our current renderer, I’d be happy to help this land.</p>
+<h2 id="any-cool-things-you-plan-to-implement-that-you-havent-already-started-working-on">Any cool things you plan to implement that you haven’t already started working on?</h2>
+<p>I have about 30 local branches where I have a half-baked approach to everything I’ve ever wanted to see implemented. The hardest part is sticking to one and finishing it. If I had to choose, <a href="https://www.cse.chalmers.se/~uffe/ClusteredWithShadows.pdf">point light shadows</a> are at the top of my list. That will wait until we finally have the clustered renderer we mentioned earlier. Currently, a point light solution would be anti-climactic as it would likely be limited to hand-held light sources like torches due to performance concerns and needing to drastically limit the number of shadow casting lights. I also want to see a parameterized sky which we have accessible through a Lua weather controller, to drive diverse weather and custom particle VFX.</p>
+<h2 id="speaking-of-cool-things-with-openmw-10-getting-closer-how-do-you-envision-openmw-20">Speaking of cool things, with OpenMW 1.0 getting closer, how do you envision OpenMW 2.0?</h2>
+<p>Ask anyone and you’ll get a different answer for this. Version numbers hold little meaning to me and serve as marketing gimmicks mostly, everyone uses different metrics to measure the success and maturity of projects. The general consensus, however, is that 1.0 is about feature parity with `Morrowind.exe`, within reason. Past that I would say 2.0 would need a Vulkan renderer that is supported on all major platforms, and multiplayer support.</p>
+<h2 id="and-any-cool-things-youre-working-on-thatarentopenmw-related">And any cool things you’re working on that <em>aren’t</em> OpenMW-related?</h2>
+<p>I see through your trickery. OpenMW is the only project I work on!</p>
+<h2 id="anything-else-youd-like-to-add">Anything else you’d like to add?</h2>
+<p>OpenMW is looking for contributors, especially graphics programmers! It’s a small army of dedicated individuals over here and we love to see new faces. For me, I’d love to see someone come in and implement height fog and <a href="https://en.wikipedia.org/wiki/Rayleigh_scattering">atmospheric scattering</a>. OpenMW still uses the most basic form of depth based fogging which emulates the ancient fixed function fog formula. The development team, including me, are always around to help out newcomers, so if you’re interested feel free to start a discussion on <a href="https://gitlab.com/openmw/openmw">GitLab</a> or <a href="https://discord.gg/openmw-260439894298460160">Discord</a>. We’re all happy to answer the million and one questions you will most certainly have. Thanks to everyone in the community who helps drive this amazing project!</p>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2024/interview-with-zackhasacat/">Interview with zackhasacat</a></h2>
+  <p class="post-meta">
+  <time datetime="2024-01-12">January 12, 2024</time> · <a href="/beta-v2-openmw/author/ap0/">jvoisin</a> · <a href="/beta-v2-openmw/category/interview/">Interview</a>
+</p>
+
+  <div class="prose">
+    
+      <h2 id="who-is-zack-and-does-he-really-have-a-cat">Who is Zack and does he really have a cat?</h2>
+<p>I have two cats, a mother and a daughter tuxedo pair. My name isn’t actually Zack, but I live in South Dakota in the USA. I’m 29 years old, and work as a technician at a Managed Service Provider, basically an IT company. When I’m not working on OpenMW or my real job, I spend time attending and staffing Anime Conventions. I grew up playing Morrowind, and the following games in the series, but none lived up to the original TES3!</p>
+<h2 id="youve-been-contributing-since-mid-2023-but-when-and-how-did-you-discover-the-project-and-why-did-you-decide-to-join-the-party">You’ve been contributing since mid-2023, but when and how did you discover the project, and why did you decide to join the party?</h2>
+<p>I discovered the project a long long time ago, I was a member of the Google Groups email list, around August 2009. I’ve used it for playing Morrowind for a long time, I can’t remember when I switched. No later than 2015, since I started making mods for OpenMW primarily around that time. I actually first submitted a merge request in late 2021, but didn’t see it through to the end. I had become busy with other things in life, and came back when the API was far more progressed. It was merged, but <a href="https://gitlab.com/ptmikheev">ptmikheev</a> was responsible for the finishing touches.</p>
+<p>I submitted code again after I read up on C++ a bit more. I had never written C++ seriously before contributing to OpenMW. I wanted to create mods for OpenMW Lua, that required features that weren’t added yet, so I decided to stop waiting around and just add them.</p>
+<h2 id="has-openmw-lived-up-to-what-you-expected-when-you-first-discovered-the-project">Has OpenMW lived up to what you expected when you first discovered the project?</h2>
+<p>Yes, absolutely! As far as I’m concerned, it plays Morrowind flawlessly. I’m excited to see feature parity with <a href="https://mwse.github.io/MWSE/">MWSE</a>, add in <a href="https://tes3mp.com/">TES3MP</a> into the master branch, and add more support for playing (or rendering) later games from the series.</p>
+<h2 id="since-itwas-mentioned-whats-your-opinion-on-mwse">Since it was mentioned, what’s your opinion on MWSE?</h2>
+<p>MWSE is pretty cool, and very powerful. I’ve developed several of my mods to use it. My most recent larger project, <a href="https://github.com/zackhasacat/Clone">Clone</a>, included a library that allowed you to use Lua code for both engines. I’m not sure that is feasible long term. It’s difficult to write mods for both engines, since both have their strengths and weaknesses.</p>
+<p>My biggest issue using MWSE is my platform of choice, OpenMW works on Mac and Linux, whereas MWSE of course, doesn’t without major workarounds. I do have a virtual machine set up for it, but just am much more comfy with OpenMW Lua anyways.</p>
+<h2 id="ohoh-are-you-planning-to-add-some-bits-or-maybe-even-all-of-mwse-unto-openmw">Ohoh, are you planning to add some bits (or maybe, even all) of MWSE unto OpenMW?</h2>
+<p>There is a good amount I’d like to bring over. The ability to create records is pretty important, especially NPC records. Mostly stuff that I need anyways, but MWSE mods show what can be done once the OpenMW Lua API is even more mature.</p>
+<p>However, certainly much of MWSE is beyond my ability at the moment to add to OpenMW. The advanced C++ programmers like <a href="https://gitlab.com/uramer">urm</a> and <a href="https://gitlab.com/glassmancody.info">wazabear</a> will most likely be doing the <a href="https://en.wikipedia.org/wiki/Rendering_%28computer_graphics%29">rendering</a>/<a href="https://en.wikipedia.org/wiki/Scene_graph">scene graph</a> API.</p>
+<h2 id="youre-effectively-co-leading-the-openmwlua-cabal-how-do-you-feel-about-that">You’re effectively co-leading the OpenMW Lua cabal, how do you feel about that?</h2>
+<p>I’m not sure if I’m leading anything, but I love helping the OpenMW Lua community grow. I try to help anyone in the OpenMW discord who is learning Lua, and all my mods are free for the picking to steal code from. You can get them from my <a href="https://gitlab.com/zackhasacat">GitLab</a>, or my <a href="https://www.nexusmods.com/users/790766?tab=user&#43;files&amp;BH=0">Nexus Mods</a></p>
+<h2 id="what-have-you-been-working-on-recently">What have you been working on recently?</h2>
+<p>I recently got into Mac and iOS app development, using Apple’s <a href="https://en.wikipedia.org/wiki/Swift_%28programming_language%29">Swift programming language</a>. I’m creating a standalone launcher for OpenMW on Mac, that will be able to work as more of a mod manager like <a href="https://www.modorganizer.org/">Mod Organizer 2</a>, as opposed to OpenMW’s launcher.</p>
+<p>I’ve got a few concepts for my existing mods, and a few new mod ideas. Notably, I’m hoping to get started on an update to my <a href="https://www.nexusmods.com/morrowind/mods/43805/">MUNDIS</a> mod that would allow you to travel between save games, and even between OpenMW and MWSE, bringing your character, with their stats and items to the new “timeline”, similar to the real TARDIS.</p>
+<h2 id="what-are-some-mod-ideas-you-look-forward-to-becomingdoablein-openmw">What are some mod ideas you look forward to becoming doable in OpenMW?</h2>
+<p>I really want to build an RTS mode, using Morrowind actors as units, and being able to build structures as in the <a href="https://en.wikipedia.org/wiki/Command_%26_Conquer">Command and Conquer</a> games. I’ve already implemented a lot of this in my <a href="https://www.nexusmods.com/morrowind/mods/52879">Ashlander Architect mod</a>, we just need to make some improvements in the AI, and implement the user interface.</p>
+<h2 id="what-kind-ofothernice-stuff-do-you-expect-openmw-will-give-us-in-the-future">What kind of other nice stuff do you expect OpenMW will give us in the future?</h2>
+<p>I really hope for the ability to create new world spaces, similar to the later games. This will be great for adding new lands in mods. We’ll need to add support for mapping in these spaces.</p>
+<h2 id="how-do-you-feel-about-openmw-potentially-adding-support-for-more-games-in-the-future">How do you feel about OpenMW potentially adding support for more games in the future?</h2>
+<p>It’s very promising. It may not be fully ready to use until 2090™, but given the relatively short amount of time it took to support Morrowind, I think we can make good progress. I’ve only done one small contribution to help this, but hope to help more soon. Lua might come in handy to implement the mechanics.</p>
+<h2 id="any-cool-things-you-plan-to-implement-in-the-future-that-you-havent-already-started-working-on">Any cool things you plan to implement in the future that you haven’t already started working on?</h2>
+<p>Adding access to more record stores is very important. This will be needed for things like dehardcoding user interfaces. Dialogue records are one of the most important features not yet added to the Lua API. I’ve got a few contributions I need to finish before I want to start on this, however.</p>
+<p>I want to be able to create new cells, with whatever parameters needed. This would be very handy for Ashlander Architect.</p>
+<p>Game weather is not accessible to Lua yet. There has been discussion on this, and I think it is something I will tackle in a few months, if not already done by then.</p>
+<h2 id="anything-else-youd-like-to-add">Anything else you’d like to add?</h2>
+<p>I’m very happy that OpenMW has added Lua scripting. I used to be very frustrated with MWScript, Morrowind’s original scripting language, and created huge scripts that covered every use case I could think of. I wanted to add <a href="https://www.nexusmods.com/morrowind/mods/45902/?tab=posts">black soul gems</a> to Morrowind, but doing it with MWScript caused so many problems, as documented in <a href="https://forum.openmw.org/viewtopic.php?t=6252">this forum thread</a> After support was added to OpenMW Lua for souls in items (by me, but with help from the rest of the team), it was possible to do this cleanly in OpenMW Lua instead of scripting, or by editing the source of the engine.</p>
+<h2 id="you-mentioned-cats-can-we-see-them">You mentioned cats… can we see them?</h2>
+<p><a href="/beta-v2-openmw/2024/interview-with-zackhasacat/ca0OxQC.png"><img src="/beta-v2-openmw/2024/interview-with-zackhasacat/ca0OxQC_hu_9a96e50128be14e.webp" alt="" width="480" height="640" loading="lazy" decoding="async"></a></p>
+<p><a href="/beta-v2-openmw/2024/interview-with-zackhasacat/bdOpLdH.png"><img src="/beta-v2-openmw/2024/interview-with-zackhasacat/bdOpLdH_hu_8e1646504a26eb66.webp" alt="" width="480" height="640" loading="lazy" decoding="async"></a></p>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2024/interview-with-s3ctor/">Interview with S3ctor</a></h2>
+  <p class="post-meta">
+  <time datetime="2024-01-05">January 5, 2024</time> · <a href="/beta-v2-openmw/author/ap0/">jvoisin</a> · <a href="/beta-v2-openmw/category/interview/">Interview</a>
+</p>
+
+  <div class="prose">
+    
+      <h2 id="who-are-you">Who are you?</h2>
+<p>I am a student programmer from Oklahoma. I actually got into programming seriously because of my interest in OpenMW many years ago. I have two kids and in my free time like to play pool and hack Xboxes. But mostly, I like to spend my free time when I’m not with my kids writing code, specifically for OpenMW or some other Morrowind-related project. You will often find me on Discord helping people with, or researching my own, weird Morrowind problems.</p>
+<h2 id="when-and-how-did-you-discover-the-project">When and how did you discover the project?</h2>
+<p>I’m not actually sure offhand when I got into OpenMW. Probably around 2013-14, seemingly after the project moved to C++ and I got my first PC, I started my first playthrough. I vaguely remember stumbling into the project when I was trying to figure out issues with my save games in the original engine. I remember at the time, there was no <a href="https://mwse.github.io/MWSE/">MWSE</a>, and many original bugs in the engine still existed. My saves kept getting corrupted when I saved outdoors, unless I looked at my feet, and I got so frustrated with it I never looked back once my game became stable.</p>
+<h2 id="you-learned-c-because-of-openmw">You learned C++ because of OpenMW‽</h2>
+<p>I did not learn C++ specifically because of OpenMW. Actually, I had never touched C++ prior to having forked the <a href="https://tes3mp.com/">TES3MP</a> project and getting together a small group of people to work on it. However, my longtime interest in doing so drove me to attend college for low-level programming so that I could focus eventually on helping to develop the multiplayer components of OpenMW.</p>
+<h2 id="has-openmw-lived-up-to-what-you-expected-when-you-became-involved-with-the-project">Has OpenMW lived up to what you expected when you became involved with the project?</h2>
+<p>I think so. I remember back when I first started playing OpenMW, at a time when most basic mods still didn’t work, the plan was always to make the engine useful not only for other Bethesda games, but for other game developers. OpenMW itself is just now in the phase where this is starting to become more and more of a reality by the day, and I personally know many developers who are engaged in original projects specifically geared toward OpenMW.</p>
+<h2 id="youve-mostly-been-working-with-openmw-cs-while-most-developers-always-found-it-more-interesting-to-work-with-the-engine-instead-why">You’ve mostly been working with OpenMW-CS while most developers always found it more interesting to work with the engine instead. Why?</h2>
+<p>I think on some level it is probably because no other developers is currently working on the construction set. I have seen people even ask, “Why does OpenCS exist to begin with?” My personal experience has been that I started modding long enough ago that the Bethesda form of the construction set scared me off, and I see a lot of potential in the design of OpenMW-CS. I always intended to do something with it, but eventually it broke one of my mods, I started hacking at it, and I developed a vision for what it could look like in the future when building my own games with it.</p>
+<p>In some ways, the construction set is uncharted territory both because users aren’t really fans of it, and because the developers who were seriously involved with it are no longer active on the project. For those reasons, I see it as a mostly blank canvas to build something great on top of something that is actually fairly solid at its core, if painful to use at times. This gives so much opportunities for improvement, both because there are few if any people and mods to upset when things change, and also because almost anything could be better than what is available now in *some* respects. However, its foundation, I think, will easily allow OpenMW to support later games through its construction set once some issues with its renderer have been worked out.</p>
+<h2 id="whathave-you-been-working-on-recently">What have you been working on recently?</h2>
+<p>Most recently, I have been working to add proper selection outlines to the construction set. Presently when you select an object, its <a href="https://en.wikipedia.org/wiki/Wire-frame_model">wireframe</a> is drawn to show that you’ve selected it. It makes the resulting scene <em>extremel</em>y busy when you’ve gotten even a handful objects, like a table and everything on it. The OpenMW team has helped me to resolve this and to implement what I think should be the basis of a simple shader framework within the construction set.</p>
+<p><a href="/beta-v2-openmw/2024/interview-with-s3ctor/bla.png"><img src="/beta-v2-openmw/2024/interview-with-s3ctor/bla-1024x803_hu_b0508eb381a07d88.webp" srcset="/beta-v2-openmw/2024/interview-with-s3ctor/bla-1024x803_hu_bf5f77898b82fcd3.webp 700w, /beta-v2-openmw/2024/interview-with-s3ctor/bla-1024x803_hu_b0508eb381a07d88.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="803" loading="lazy" decoding="async"></a></p>
+<p>Once this is done, we can move on to replacing the dynamically generated selection arrows with real selection widgets graciously provided by the MWSE team, and implement many more interactivity shortcuts within OpenMW-CS.</p>
+<p><a href="/beta-v2-openmw/2024/interview-with-s3ctor/image.png"><img src="/beta-v2-openmw/2024/interview-with-s3ctor/image-1024x582_hu_7a11ad05cd0e66f.webp" srcset="/beta-v2-openmw/2024/interview-with-s3ctor/image-1024x582_hu_6474899ce133fec5.webp 700w, /beta-v2-openmw/2024/interview-with-s3ctor/image-1024x582_hu_7a11ad05cd0e66f.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="582" loading="lazy" decoding="async"></a></p>
+<h2 id="how-do-we-bribe-you-to-keep-working-on-the-cs-forever-it-wants-so-much-attention">How do we bribe you to keep working on the CS forever? It wants so much attention.</h2>
+<p>Nag me in the right direction and I will bash at this thing until it does its job. I really like it and it should be much better than it is. My own projects completely depend on it, so my mods cannot work without it being functional, especially since they’re mostly geared toward multiplayer :)</p>
+<p><a href="/beta-v2-openmw/2024/interview-with-s3ctor/meh.webp"><img src="/beta-v2-openmw/2024/interview-with-s3ctor/meh-1024x597_hu_a90f9c50b191153c.webp" srcset="/beta-v2-openmw/2024/interview-with-s3ctor/meh-1024x597_hu_21107dfd3e56d270.webp 700w, /beta-v2-openmw/2024/interview-with-s3ctor/meh-1024x597_hu_a90f9c50b191153c.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="597" loading="lazy" decoding="async"></a></p>
+<p>There are many related ideas I’ve come up with both from trying to use it myself and just hearing <a href="https://mwse.github.io/MWSE/references/general/csse/">CSSE</a> authors/experienced modders complain about it, so there’s definitely plenty to do.</p>
+<h2 id="so-what-kind-of-nice-stuffdo-you-expect-openmw-will-give-us-in-the-future">So what kind of nice stuff do you expect OpenMW will give us in the future?</h2>
+<p>I think there are many things in OpenMW whose full potential are yet to be unlocked. Features like groundcover and Lua records are only half-implemented, and one of my goals is to fully integrate these features within the OpenMW-CS so that the power they *already have* can be fully leveraged by the construction set. I hope that some of my recent developments which have been greatly assisted by the OpenMW team will open the door for a  post-processing framework within the CS as well. All of that is to say nothing of support for the ESM format from later games, which actually is made very possible by the OpenMW-CS’ architecture, if tedious.</p>
+<h2 id="any-cool-thingsyou-plan-to-implement-in-the-future-that-you-havent-already-started-working-on">Any cool things you plan to implement in the future that you haven’t already started working on?</h2>
+<p>The next, and probably biggest, thing I would like to implement for 0.49 is full support for <em>LUAL</em> records in OpenMW-CS. I spent a lot of time decoding what they look like under the hood and learned how integrate omwscripts files into the omwaddon format. Not only will this provide modders with the ability to simply <em>not</em> have two plugins with some Lua mods, it will also expand the capabilities of the Lua API for most users, so that it can do what it’s <em>already capable of</em> with less effort on the part of the scripter.</p>
+<h2 id="whats-a-lual-record-also-since-youre-mentioning-lua-whats-your-opinion-on-mwse-in-openmw">What’s a <em>LUAL</em> record? Also, since you’re mentioning Lua, what’s your opinion on MWSE in OpenMW?</h2>
+<p>Today, when a scripter makes an OpenMW-Lua mod, they must create a .omwscripts file along with it. The entire purpose of this little text file is to say “This script hooks up to this type of thing”, e.g, you may want a script to run specifically on the player, on NPCS, on Doors, and so on. What happens is that this text you type in, is transformed into information that is identical to what is in an .omwaddon, or even, an .esp. The engine interprets them identically – a properly formatted omwaddon or esp file, is no different than a .omwscripts file.</p>
+<p>However, there are features buried behind doing this in an .omwaddon, which are not offered by omwscripts. Namely, with <em>LUAL</em>, one can attach a script to a specific object, or instance of an object, as opposed to an entire category of objects. For example, instead of attaching your script to <em>ALL</em> NPCs, you could hook your script up to, say, just one specific guard in Balmora, or the door that leads into Caius Cosades’ house, instead of every single door in the entire game.</p>
+<p>I think that the subject of MWSE in OpenMW was examined a very long time ago and fell apart. It was questionably feasible even at that time. However, I do have faith that the community can find common ground across the implementations of some techniques eventually. Even if there *are* two separate engines, there’s only so many ways you can put together an <a href="https://mwse.github.io/MWSE/apis/mwse.mcm/">MCM</a>, after all.</p>
+<p>I would like to say that my own developments and many of those of the OpenMW community would categorically not be possible without the awesome contributions of the MWSE team. They have helped me personally along with most of the OpenMW contributors, and carried this community for a very long time. They’re great folks.</p>
+<h2 id="if-you-could-change-one-thing-about-openmw-what-would-it-be">If you could change one thing about OpenMW, what would it be?</h2>
+<p>If there were only one thing in the world I could change about OpenMW, it would have native multiplayer support. I originally got into working on the engine because of my interest in multiplayer, and I must say there’s no experience quite like it. I strongly encourage any Morrowind fan to give TES3MP a shot, whether with a friend or on a public server. I’ve had a TES3MP server in some form or fashion for about five and a half years now, and there is absolutely nothing like it in the gaming world.</p>
+<h2 id="why-is-multiplayer-really-cool">Why is Multiplayer Really Cool™?</h2>
+<p>I enjoy multiplayer Morrowind because it allows you to build environments that are the scale of an industrial MMO with relatively little effort, while still being high quality if your scripts worked in the first place. No other framework gives authors the capability of building multiplayer worlds with the same level of ease (and cost) as TES3MP. If nothing else it deserves honorable mention for multiplayer devs in the FOSS space.</p>
+<h2 id="since-openmw-still-plansto-add-multiplayer-do-youthinkyoull-be-able-tohelp-withitsimplementation">Since OpenMW still plans to add multiplayer, do you think you’ll be able to help with its implementation?</h2>
+<p>This is my main goal and reason for becoming active in the community. The TES3MP team and I have made some strides in this regard, and many steps back, but ultimately I do hope to help make this possible. I would love at some point to be able to offer something useful to OpenMW in this regard, and have spent probably half of 2023 researching how this could be made real, including some work with the author of TES3MP.</p>
+<p>However, OpenMW itself “thinks” very differently than TES3MP does, so it’s my opinion that the ultimate version of OpenMW’s multiplayer implementation will be very different to what is available now. Whatever OpenMW’s multiplayer implementation eventually looks like, my friends and I will have a lot to say about it along the way and do everything we can to make sure it’s the best it can be. Most of that work is very likely to be done in tandem with the original author of TES3MP, <a href="https://github.com/davidcernat">David Cernat</a>, whom I’ve very much enjoyed working with in the limited time I’ve interacted with him.</p>
+<h2 id="anything-else-youd-like-to-add">Anything else you’d like to add?</h2>
+<p>Not really. But I am a big fan of the project and have been for a long time. I hope to see tooling and support for the engine grow over time as more independent developers get hold of it and its toolkit is made more usable.</p>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2019/interview-with-capostrophic/">Interview with Capostrophic</a></h2>
+  <p class="post-meta">
+  <time datetime="2019-09-26">September 26, 2019</time> · <a href="/beta-v2-openmw/author/lysol/">lysol</a> · <a href="/beta-v2-openmw/category/interview/">Interview</a>
+</p>
+
+  <div class="prose">
+    
+      <p>Hi everyone.</p>
+<p>It is time for another interview. This time, I (again, Lysol) had a chat with Capostrophic, a guy many of you might already know of, him being one of the most active developers we have these days. Let’s get to the interview!</p>
+<p><strong>Who are you?</strong></p>
+<p>I’m Alexei, a high school student from Central Russia, planning to study and work in the software engineering field. I’m best known as “Capo”.</p>
+<p><strong>When and how did you discover the project?</strong></p>
+<p>My chat logs say this happened in mid-2015, shortly after I first had the joy of <em>really</em> discovering The Elder Scrolls series. Discovering OpenMW was a sudden thing, but I quickly became intrigued with it. I never had any contact with Ogre versions until much later and immediately started using 0.37.0 nightly builds. I was rather impressed by OpenMW’s functionality by then – albeit I was disappointed by the lack of the water shader which became a thing again some months later, and it was beautiful. Following GitHub development of OpenMW was a rather enjoyable experience, and although I couldn’t participate in it, I wished I could, to get some coding experience for the future’s sake and to help bring about 1.0.</p>
+<p><strong>Sounds like you’re saying you didn’t really do much coding before OpenMW. How much experience did you have back when you discovered the project?</strong></p>
+<p>In 2015 zero, hello world coding proficiency doesn’t count.</p>
+<p>In 2017-2018, when I attempted to contribute in some way apart from disappointing Atahualpa with intense procrastination regarding Russian translation for release trailers, still zero, but at least I could read C++.</p>
+<p><strong>I must say it is really impressive to go from subtitle translator with zero experience to one of the most active developers we have around. So tell us, what are you working on right now?</strong></p>
+<p>In general I try to do bug fixes and implement minor features in parts of the code base I have a certain knowledge of. You may notice that my changesets are rarely large, but rather short and probably sweet. This may stop being the case in time.</p>
+<p>Right now my long term project is extending the NIF loader to support meshes from later Bethesda games. No, I’m not cc9cii, this is a separate effort, not based on a revision of OpenMW from 2015. It will take a lot of time, but it’s fun.</p>
+<p>No particular short term project apart from trying to get 0.46.0 to release sooner but not be too unfinished.</p>
+<p><strong>Has OpenMW lived up to what you expected when you became involved with the project?</strong></p>
+<p>Yes. Psych. No, or I wouldn’t have tried to contribute.</p>
+<p>I mean, yes, it’s not difficult to tell it has gone long ways to be what it is now (or what it was back then), but it still has long ways to go – or infinite ways, given that it has limitless potential – and you can’t judge something as a complete project if it isn’t finished.</p>
+<p><strong>Indeed. So what kind of cool stuff do you expect OpenMW will give us in the future?</strong></p>
+<p>We’ll finally get a multiplayer implementation for Fallout 76.</p>
+<p>But really, it’s having a cool free as in speech cross platform framework for Bethesda-like sandbox-with-RPG-elements games for which even non-programmers can make their own game without any coding knowledge.<br>
+<del>That somehow allows you to run Skyrim on Raspberry Pi.</del></p>
+<p><strong>Any cool stuff you plan to implement in the future that you haven’t already started working on?</strong></p>
+<p>A game for OpenMW. VulkanSceneGraph port. Extended ESM reader. Not in a particular order and it’s not the matter of coming years.</p>
+<p>More realistically, some NIF features that we’re currently missing.</p>
+<p>Also Morrowind-like bumpmapping, actually, with either MCP and vanilla behavior available. Lots of legacy assets require it even if we have normalmapping, I found it weird that <em>someone</em> would say everyone will just continue to make assets for Morrowind’s <em>[modded fake]</em> bumpmapping and nobody will care about <em>[real native]</em> normalmapping. That’s far-fetched and not true and also it didn’t happen.</p>
+<p>I don’t want to deal with the editor just yet.</p>
+<p>[<strong>Note to readers: That <em>someone</em> being yours truly, Lysol the speculator. I was wrong, I know. With legacy assets, Capo means the old bump mapped texture packs we’ve come to refer to “fake bump maps”, that currently appear shiny in OpenMW. When normal mapping was a new thing for OpenMW, Me and a few others were convinced that if we support the old, bad way of doing it, people will just continue to do bad normal maps and no one will bother to convert old mods to the newer native way of doing it. Capo did not believe this theory. Time eventually proved him right.</strong>]</p>
+<p><strong>Thanks for allowing me to take some of your time!</strong></p>
+<p>So as we stated last time, there has been a lot going on at Git, so we will try to provide you with a news post later. Hopefully sooner than later.</p>
+<p>Take care!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=6381" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2019/interview-with-unelsson/">Interview with unelsson</a></h2>
+  <p class="post-meta">
+  <time datetime="2019-09-05">September 5, 2019</time> · <a href="/beta-v2-openmw/author/lysol/">lysol</a> · <a href="/beta-v2-openmw/category/interview/">Interview</a>
+</p>
+
+  <div class="prose">
+    
+      <p>Hello again!</p>
+<p>Today we have a different kind of a news post for you – namely an interview with one of our developers, unelsson. I, Lysol that is, had a nice short chat with him the other day. He has been working on our content file editor OpenMW-CS, both on features that have been added already and also on more experimental features that are yet to be introduced</p>
+<p><strong>Who are you?</strong></p>
+<p>My name is Uoti Huotari, I’m a circus instructor and performer from Finland, as well as a rpg designer, physical therapist and robotics hobbyist. Oh yeah, I do code stuff to OpenMW-CS too</p>
+<p><strong>Not to get too off-topic, but a circus instructor that is into robotics? This sounds really interesting. Anything to show us?</strong></p>
+<p>Well, I’m really proud of my <em>snapuswipe</em>, posted that at my <a href="https://www.instagram.com/p/BrAnag9HUdS/">Instagram</a>.</p>
+<p><strong>So to move on, when and how did you discover the project?</strong></p>
+<p>I think I saw a release video in Youtube some years ago, and as a fan of Morrowind decided to give OpenMW a try. I got hooked by the stability and performance of the engine, no crashes, and the usability too</p>
+<p><strong>You’ve mostly been working with OpenMW-CS while most developers always found it more interesting to work with the engine instead. Why?</strong></p>
+<p>It doesn’t really matter what I work on, as long as I am doing something interesting and useful. My goals have been not only to develop OpenMW, but also to develop my coding skills, and get some good feedback and guidance from people who know better than me.</p>
+<p>My secret plan always was to fit in by listening to project lead and other developers, and do whatever is required to push the project forwards. By doing that, I hope to gain better feedback, which will in turn help me to gain personal coding skills. It’s also nice to just contribute with something useful, coding is nonetheless a hobby for me, and it’s just inherently rewarding to participate by being useful in the ways I can</p>
+<p><strong>Yes, speaking of developing your coding skills, how much experience did you have when you began coding for the CS then? Do you feel you have evolved as a developer since then?</strong></p>
+<p>My dad taught me to code BASICA when I was five years old, and I coded kazillion small games and personal projects with various languages, like QBASIC, Turbo Pascal and C/C++ until I was a teenager. Later I got interested in robotics, which got me learning some Python, rpg design drew me into writing web apps with Javascript, and html seems to be everywhere.</p>
+<p>OpenMW is written mostly with C++, and frankly, I couldn’t remember how to write a Hello World -program when I started. Participating has developed my understanding of C++ enormously… Just insanely much</p>
+<p><strong>Has OpenMW lived up to what you expected when you became involved with the project?</strong></p>
+<p>It’s always been more than I ever expected, a stable and easy way to play Morrowind on modern Linux computer, not to mention that you can easily use mods, there are shadows (omg!), and me too, with zero coding education, I’ve actually been able to learn and contribute. It’s really more than I could ever ask for.</p>
+<p>But I did expect faster development, especially on the OpenMW-CS side. There have however been some unexpected delays and things in-between that require solving before more features can be added. I don’t feel like OpenMW is failing though, it’s nonetheless a remarkable project, and it kind of keeps going forward even when it seems like nothing is happening</p>
+<p><strong>What kind of cool stuff do you expect (or hope) OpenMW will give us in the future?</strong></p>
+<p>I think the various missing edit modes should be added to OpenMW-CS, but improved versions from vanilla. I hope to contribute so that OpenMW-CS can be better than the vanilla CS. On the engine side, I really hope that some sort of batching is developed, as that will improve performance, and might allow things like procedurally generated grass, but I really have no idea how that can be done, or when it will happen</p>
+<p><strong>Do you plan to do any of the OpenMW-CS things in the near future?</strong></p>
+<p>Uhh.. Yes? No? I really want to complete the rest of the edit modes, but it’s probably not the best idea to rush things. I’m quite busy with other stuff in my life right now, but it’s not like I have no time at all, coding is after all a place to rest in between all the flipping around, hanging from the trapeze and throwing stuff in the air</p>
+<p><strong>Thanks!</strong></p>
+<p>I have also interviewed Capostrophic, and that interview is more or less ready to be published. But we’ll save that for another time. Also, there is a lot going on on GitLab/GitHub right now, so hopefully we can tell you more about that soon. Until then, thank you for reading.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=6340" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pager" aria-label="Pages">
+  <a class="step" rel="prev" href="/beta-v2-openmw/category/interview/page/2/">← Newer posts</a>
+  <ol>
+        <li><a href="/beta-v2-openmw/category/interview/" aria-label="Page 1">1</a></li>
+        <li><a href="/beta-v2-openmw/category/interview/page/2/" aria-label="Page 2">2</a></li>
+        <li><a href="/beta-v2-openmw/category/interview/page/3/" aria-current="page" aria-label="Page 3">3</a></li>
+        <li><a href="/beta-v2-openmw/category/interview/page/4/" aria-label="Page 4">4</a></li>
+  </ol>
+  <a class="step" rel="next" href="/beta-v2-openmw/category/interview/page/4/">Older posts →</a>
+</nav>
+
+<p class="archive-link"><a href="/beta-v2-openmw/archive/">All posts by year</a></p>
+
+
+</main>
+<footer>
+  <div class="wrap">
+    <h2>Follow OpenMW</h2>
+    <ul>
+      <li><a href="https://gitlab.com/OpenMW/openmw">GitLab</a></li>
+      <li><a href="https://github.com/OpenMW/openmw">GitHub</a></li>
+      <li><a href="https://discord.gg/YegsVV3aRb">Discord</a></li>
+      <li><a href="https://matrix.to/#/#openmw-space:matrix.org">Matrix</a></li>
+      <li><a href="https://web.libera.chat/#openmw">IRC on Libera.Chat</a></li>
+      <li><a href="https://reddit.com/r/openmw">Reddit</a></li>
+      <li><a href="https://mastodon.gamedev.place/@openmw">Mastodon</a></li>
+      <li><a href="https://twitter.com/intent/user?screen_name=Openmw_org">Twitter</a></li>
+      <li><a href="/beta-v2-openmw/index.xml">RSS</a></li>
+      <li><a href="/beta-v2-openmw/atom.xml">Atom</a></li>
+    </ul>
+    <div class="credits">
+      <p>Copyright © 2008-2026 OpenMW. Website logo by Necrod.</p>
+      <p>Hosting kindly provided by <a href="https://www.futureweb.be">Futureweb</a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

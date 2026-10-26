@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Open source Elderscrolls 3: Morrowind engine reimplementation.">
+<meta name="twitter:site" content="@openmw_org">
+<meta name="robots" content="noindex">
+<title>OpenMW 0.48.0 Released! · OpenMW</title>
+<link rel="icon" type="image/png" href="/beta-v2-openmw/favicon.png">
+
+<link rel="stylesheet" href="/beta-v2-openmw/css/main.min.dd57dc4e01d34600100d3c131c85b77ddd312fd0b9532e73284212cc93269a72.css" integrity="sha256-3VfcTgHTRgAQDTwTHIW3fd0xL9C5Uy5zKEISzJMmmnI=">
+
+</head>
+<body>
+<header class="masthead" id="top">
+  <div class="wrap wrap-flush">
+    <div class="art">
+      <a href="/beta-v2-openmw/"><img class="logo" src="/beta-v2-openmw/images/logo.png" width="588" height="128" alt="OpenMW"></a>
+      <div class="credit">Image © Maxim Nikolaev</div>
+    </div>
+    <nav class="mainnav" aria-label="Main">
+      <ul>
+        <li><a href="/beta-v2-openmw/faq/">FAQ</a></li>
+        <li><a href="/beta-v2-openmw/downloads/">Downloads</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw">Source Code</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw/issues">Issue Tracker</a></li>
+        <li><a href="/beta-v2-openmw/media/">Media</a></li>
+        <li><a href="https://wiki.openmw.org/">Wiki</a></li>
+        <li><a href="https://forum.openmw.org/">Forum</a></li>
+        <li><a href="/beta-v2-openmw/the-team/">The Team</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<nav class="follow-row" aria-label="Follow OpenMW">
+  <ul>
+    <li>
+      <a href="https://gitlab.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"/></svg>
+<span>GitLab</span><span class="n"> 952 stars</span></a>
+    </li>
+    <li>
+      <a href="https://github.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+<span>GitHub</span><span class="n"> 6.7k stars</span></a>
+    </li>
+    <li>
+      <a href="https://discord.gg/YegsVV3aRb"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+<span>Discord</span><span class="n"> 5.2k online</span></a>
+    </li>
+    <li>
+      <a href="https://matrix.to/#/#openmw-space:matrix.org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M.632.55v22.9H2.28V24H0V0h2.28v.55zm7.043 7.26v1.157h.033c.309-.443.683-.784 1.117-1.024.433-.245.936-.365 1.5-.365.54 0 1.033.107 1.481.314.448.208.785.582 1.02 1.108.254-.374.6-.706 1.034-.992.434-.287.95-.43 1.546-.43.453 0 .872.056 1.26.167.388.11.716.286.993.53.276.245.489.559.646.951.152.392.23.863.23 1.417v5.728h-2.349V11.52c0-.286-.01-.559-.032-.812a1.755 1.755 0 0 0-.18-.66 1.106 1.106 0 0 0-.438-.448c-.194-.11-.457-.166-.785-.166-.332 0-.6.064-.803.189a1.38 1.38 0 0 0-.48.499 1.946 1.946 0 0 0-.231.696 5.56 5.56 0 0 0-.06.785v4.768h-2.35v-4.8c0-.254-.004-.503-.018-.752a2.074 2.074 0 0 0-.143-.688 1.052 1.052 0 0 0-.415-.503c-.194-.125-.476-.19-.854-.19-.111 0-.259.024-.439.074-.18.051-.36.143-.53.282-.171.138-.319.337-.439.595-.12.259-.18.6-.18 1.02v4.966H5.46V7.81zm15.693 15.64V.55H21.72V0H24v24h-2.28v-.55z"/></svg>
+<span>Matrix</span><span class="n"> 1197 users</span></a>
+    </li>
+    <li>
+      <a href="https://web.libera.chat/#openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m14.26446 2.76095-1.22973 9.43224-1.6484 1.88226L9.67694 2.7735h-.003a9.86072 9.86072 0 0 0-.19917.04247l-.067.01256a12.0901 12.0901 0 0 0-.13158.0305l-.0646.01555a12.0503 12.0503 0 0 0-1.7393.55086l-.03709.01855 3.39788 11.26306-.1579.18062-1.59816-.70397-.10465.13457L3.4452 6.09902a10.69674 10.69674 0 0 0-.92767 1.0473 12.5862 12.5862 0 0 0-.55146.7596v.00598l6.48115 7.08106-1.02158 1.31285-7.20486-4.1497a11.70731 11.70731 0 0 0-.2207 2.30931l6.85377 2.57547L5.2778 19.0661l-4.31.02034a12.18198 12.18198 0 0 0 1.21297 2.15261h.003l1.69625-.37322h.45038l4.86266-6.22276 1.5832.70098 3.33807-3.81237c1.84965 3.14502 3.84345 6.17068 5.65635 9.33714h.45337l-.0083-.01376 1.61251.36246.01556-.01794a11.03054 11.03054 0 0 0 .77455-1.25604 11.3919 11.3919 0 0 0 .35228-.72551l-3.78784-.064-1.3332-2.19567 6.1468-2.24172v-.0311a6.93926 6.93926 0 0 0 .0036-.20217v-.31223l-.0036-.06398v-.0676l-.003-.06757-.003-.067-.003-.06757-.003-.067-.0059-.0646-.003-.06757-.0066-.067-.003-.06757-.006-.064-.006-.06757-.006-.06758-.0066-.067-.006-.06458a9.69536 9.69536 0 0 0-.11304-.7961v-.01555l-6.50625 3.71908-1.0467-1.72436 5.7365-6.49311a10.80699 10.80699 0 0 0-.8876-1.16997 11.89718 11.89718 0 0 0-.69202-.7285l-4.72569 7.45488-1.37147-2.25848 2.1526-7.75393-.05502-.02093a11.6277 11.6277 0 0 0-2.00607-.59453 12.20035 12.20035 0 0 0-.13158-.0275zm-.1591 9.33116-3.24596 3.72086-1.5832-.65853-4.48346 5.7078h.49584l4.10365-5.25144 1.57423.65195 3.08387-3.53664 4.8507 8.15167.47729-.009zm-.07357 1.30149-2.91221 3.34405-1.60474-.65254-3.74538 4.77413 12.63513.0066z"/></svg>
+<span>IRC on Libera.Chat</span></a>
+    </li>
+    <li>
+      <a href="https://reddit.com/r/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>
+<span>Reddit</span><span class="n"> 20k members</span></a>
+    </li>
+    <li>
+      <a href="https://mastodon.gamedev.place/@openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>
+<span>Mastodon</span><span class="n"> 538 followers</span></a>
+    </li>
+    <li>
+      <a href="https://twitter.com/intent/user?screen_name=Openmw_org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+<span>Twitter</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/index.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>RSS</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/atom.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>Atom</span></a>
+    </li>
+  </ul>
+</nav>
+
+
+<article class="post">
+  <h1 class="page-title">OpenMW 0.48.0 Released!</h1>
+  <p class="post-meta">
+  <time datetime="2023-07-23">July 23, 2023</time> · <a href="/beta-v2-openmw/author/lysol/">lysol</a> · <a href="/beta-v2-openmw/category/release/">Release</a>
+</p>
+
+  <div class="prose">
+    <p>The OpenMW team is proud to announce the release of version 0.48.0 of our open-source game engine! Grab it from our <a href="/beta-v2-openmw/downloads/">Downloads Page</a> for all supported operating systems and Dwemer devices.</p>
+<p>So what does another fruitful year of diligent work bring us this time? The two biggest improvements in this new version of OpenMW are the long-awaited post-processing shader framework and an early version of a brand-new Lua scripting API! Both of these features greatly expand what the engine can deliver in terms of visual fidelity and game logic.</p>
+<p>As usual, we’ve also solved numerous problems major and minor, particularly pertaining to the newly overhauled magic system and character animations.</p>
+<p>Unfortunately, this time you will not be able to watch a release video by his majesty Atahualpa and his excellency johnnyhostile since they are both heavily occupied by real-life matters. – But fear not! This release announcement post will cover the gist of what this new release brings in text form, so prepare for the read of your lifetime!</p>
+<h2 id="of-post-processing">Of Post-Processing</h2>
+<p>As covered in our <a href="/beta-v2-openmw/2022/shiny-new-things-are-coming/">feature highlight</a> blog post from last May, 0.48.0 introduces support for post-processing shaders. With wazabear’s sweat, blood, and titanic effort, the new release takes a leap forward in eye candy and can now support advanced visual effects like bloom, godrays, ambient occlusion, and many more. Shader maestros from our community have been playing with the framework for a while, so while OpenMW’s built-in assortment of shaders might seem somewhat conservative, with a little digging around the community repositories you’ll be able to transform the way your game looks.</p>
+<p>Pressing F2 will open the in-game post-processing HUD where you can toggle any installed pretty effects on or off, or tweak their settings. To learn more about this new shader system, please take a deep dive into the <a href="https://openmw.readthedocs.io/en/latest/reference/postprocessing/index.html">extensive documentation</a> wazabear has written.</p>
+<h2 id="distant-objects-and-distant-objects">Distant Objects and Distant Objects</h2>
+<p>As we speak of graphic improvements coming in the new release, you might think post-processing would overshadow everything else – but that’s not true at all! The Lord of Lights and others also managed to get rid of two major long-standing issues with distant object rendering.</p>
+<p>Every 3D game uses a so-called depth buffer during rendering. As objects are drawn, the depth of every sample of every object is written into that depth buffer. This way objects closer to the camera can properly cover objects farther away from the camera. That’s all fine and dandy, however, the traditional implementation of a depth buffer distributes the possible depth values very poorly. With floating point numbers from 0 to 1 being used, the scale is very imbalanced towards the buffer’s near end, or the value of 0, while numbers closer to 1, that is, the viewing distance limit, are much more sparse. The visual consequences are violent flickering, and Z-fighting of distant objects, terrain, and water when the depth buffer just couldn’t keep up with the detail. This problem was even more apparent with low values of near clipping distance OpenMW requires for compatibility with Morrowind rendering.</p>
+<p>And, well, 0.48.0 remedies this. The reverse-Z depth buffer wazabear added heavily improves depth buffer precision at large distances without sacrificing the precision of the rendering of closer objects. This effectively eliminates the pesky flickering with no perceivable performance impact. Nice!</p>
+<p><img src="https://i.imgur.com/grTjjsQ.jpg" alt="" loading="lazy" decoding="async"></p>
+<p>Now, there are still caveats when you take this seemingly magical pill. While it doesn’t require bleeding edge hardware, some platform and video driver combinations might have trouble supporting this feature. If you encounter any problems, please report them to our <a href="https://gitlab.com/OpenMW/openmw/-/issues">issue tracker</a>, IRC, or Discord.</p>
+<p>As for the second woe, if you ever tried a province mod from <a href="https://www.project-tamriel.com/">Project Tamriel</a>, you might have noticed the unpleasant vibration of objects and characters. While this is an inevitable consequence of how computers work when floating point numbers are rounded, OpenMW now uses double precision floating point numbers for physics interpolation and object transformation matrices. This should reduce the severity of flickering by around 4 billion times at a somewhat minor performance cost and greatly extend the vibration-free playable area for any province mods released up to the year 2090.</p>
+<h2 id="better-fog-better-fog">Better Fog? Better Fog!</h2>
+<p>There’s actually another unscheduled extra batch of Halloween eye candy distant objects receive: 0.48.0 brings a couple of optional visual tweaks to help improve fog rendering. You can now let fogged objects blend nicely with the sky on the horizon and toggle an alternative exponential formula for the distribution of the fog. See for yourself!</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=-ftgfyPGv3w">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2023/openmw-0-48-0-released/youtube--ftgfyPGv3w_hu_cb31b7fe0ccc8d2d.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.48.0 Fog Before <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=vr2lbK75x5Q">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2023/openmw-0-48-0-released/youtube-vr2lbK75x5Q_hu_153778478c1d26f9.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.48.0 Fog After <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<h2 id="of-rain-ripples-and-pliable-particles">Of Rain Ripples and Pliable Particles</h2>
+<p>Anything else when it comes to visuals? Indeed there is. Rain ripples have been added a few releases ago, but their artificial appearance might have seemed underwhelming. Thanks to wareya, this release contains a much needed visual overhaul for these ripples – though not yet the generic water ripples, sorry! In the in-game settings, you may choose between multiple levels of detail for rain ripples depending on how well your system handles them.</p>
+<p><img src="https://i.imgur.com/WO0TRRS.jpg" alt="" loading="lazy" decoding="async"></p>
+<p>wazabear just couldn’t stop on what has already been mentioned: he implemented a new rendering technique, so-called soft rendering, which smoothens the rendering of object intersections. This is particularly interesting for particles, which often clip through other objects. Enabling soft rendering for all particle systems is an option you can enable, and model artists can also enable soft rendering for other geometry using NiStringExtraData (<a href="https://openmw.readthedocs.io/en/latest/reference/modding/custom-shader-effects.html">see our documentation</a>).</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=TxsI3NpVdVQ">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2023/openmw-0-48-0-released/youtube-TxsI3NpVdVQ_hu_e37b2279c122b3bd.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.48.0 Soft Particles <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=LGaoVWV4uiA">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2023/openmw-0-48-0-released/youtube-LGaoVWV4uiA_hu_9faf05858a37554a.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.48.0 Rain Ripples <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>Finally, 0.48.0 contains some fixes for particle and shader lighting, making some magic effect VFX less dull and preventing snow blindness on Solstheim.</p>
+<h2 id="reanimating-animations">Reanimating Animations</h2>
+<p>Not yet straying too far from visuals, are we? Animations are also a major part of any game’s visual experience, and 0.48.0 brings a few corrections to the painfully produced implementation of Morrowind’s state machine. Most of them are the work of Capo and lay the groundwork for further improvements coming in 0.49.0.</p>
+<p>Some of the most notable changes are those to blocking and spellcasting behaviour. Blocking no longer prevents movement and while there are still differences that a subsequent release will take care of, this makes the use of shields significantly more comfortable.</p>
+<p>Spellcasting animation is now played even when the character has no Magicka to cast the spell. Curiously, Morrowind doesn’t play it when you fail to cast an already used power. You might remember that there was an option to play it when an enchanted item is used – well, in another curious case, Morrowind actually has an “animation” playing when you use an enchanted item in first person view! It is just a split-second change of the hands’ position to the direction you look at… Well, OpenMW now does that “animation” too.</p>
+<p>Something that might or might not seem like a controversial decision, we discovered that Morrowind assets define some unused animations for equipping and unequipping spells for non-bipedal creatures. Sometimes they seem clearly unfinished, but sometimes they’re actually really interesting. We decided that benefits outweigh the negatives and enabled their use. When you play Morrowind, various spellcasting creatures like the Atronachs, Dwarven Spectres and Dagoth Ur himself will use these animations. Come to them through fire and war, see them for yourself and decide what you think!</p>
+<h2 id="obligatory-mention-of-nif">Obligatory Mention of NIF</h2>
+<p>While we’re going through the visuals, we can’t forget about NetImmerse and Gamebryo’s NIF format, which is still the main format for use with OpenMW. We’ve added the support for a few records and features Morrowind modders discovered relatively recently and found useful, to keep up with the active modding scene.</p>
+<p>Two new record types Morrowind NIF format contains have been implemented in this release: NiSortAdjustNode and NiFltAnimationNode. NiSortAdjustNode is a kind of node that lets its children, either all of them or the transparent ones, be drawn in an artist-defined order, which is useful to work around transparency sorting issues. NiFltAnimationNode is a special kind of a switch node that switches between its children automatically based on a timer, which can be useful to create complex animations.</p>
+<p>While OpenMW had NiStencilProperty implemented for a while for its primary purpose of enabling double-sided rendering, clever stencil buffer manipulations it allows in NetImmerse never worked quite right in OpenMW. Stencil buffer is another data buffer like the depth buffer, and manipulating the stencil test and stencil buffer write allows artists to make the engine draw different geometry depending on the way the player looks at the object, make objects that look like indents in walls which will be rendered “over” the walls and so on. Thanks to wazabear, this functionality is now supported.</p>
+<p>Another record that up to now wasn’t fully implemented is NiPlanarCollider, a particle collider. OpenMW will now respect the dimensions of the collision plane it defines.</p>
+<p>The final NIF addition of note is the support of geometry-based particle emitters. When a geometry node is used as an emitter and a special flag is set in NiBSPArrayController, it will emit particles as if the geometry’s surface was the particles’ origin. This also allows producing very interesting VFX.</p>
+<h2 id="this-is-where-the-magic-happens">This is Where the Magic Happens</h2>
+<p>That should be it regarding the visuals. We were giving spellcasting animations a look, so now we’ll look into the magic system itself. Basically, Evil Eye fixed everything. No, seriously. All of it just works.</p>
+<p>…</p>
+<p>Well, actually not all of it, but it’s really close now! Evil Eye overhauled the entire spell and magic effect processing system to be much more flexible and easy to work with, fixing plenty of old flaws in the process.</p>
+<p>We’ll start with birthsigns, of course. One of the most popular birthsigns for a Morrowind player to pick is the Lady, which gives the Nerevarine a hefty bonus to Personality and Endurance. Personality affects how much the people you meet like you, while Endurance is supposed to influence the health bonus you get every time you level up. Except it didn’t in OpenMW. You see, previously abilities would act as magical fortifications for your stats instead of affecting the base stats like they would in Morrowind. And since health gain per level is based on the base Endurance, the Lady-induced Endurance fortification could only grant the character a bit of extra Fatigue. This has been corrected. Of course, this also means that you can’t get your Personality to 125 thanks to the Lady anymore… unless if you were to convert Lady’s Favor into a Curse. Curses are a different type of a permanent spell and will magically fortify your stats like before.</p>
+<p>When it comes to magic effects, we’ve finally made Morrowind playable in OpenMW by making the expiry of the secret EXTRA SPELL magic effect, which is intended to undress its target, make the target re-equip their equipment instead of staying naked forever. As for spell effects of lesser importance, there’s a few to cover.</p>
+<p>First, the visual effects for Calm, Frenzy, and Rally Creature/Humanoid won’t play on actors of the wrong type. The same is true for Turn Undead. Additionally, the effects intended for creatures now apply to all creatures, even undead and daedric ones.</p>
+<p>Thanks to the research received from Hrnchamd, the author of the Morrowind Code Patch, the position and scaling of magic VFX playing on actors has been made much more accurate to Morrowind, and in fact, better in a way: we did not replicate Morrowind’s bug where, to calculate the scale, it deems some creatures two times smaller than they should be.</p>
+<p>Reflect now mirrors Spell Absorption in that it is multiplicative. This means that each Reflect effect source produces a distinct success roll. Reflect can now also reflect non-harmful effects, doesn’t reflect scripted spells, and properly stacks with Spell Absorption effects depending on casting order.</p>
+<p>Some not that invisible Invisibility quirks had to be taken care of too. You will stop being invisible when you actually release an attack, not when you initiate one, and NPCs will no longer seem to be able to observe you while you’re invisible – that is, they won’t greet you or look at you.</p>
+<p>Paralysis is obviously supposed to prevent you from picking up things. And it did – but not when you picked up things with your mouse. This has been fixed. This also concerns the state of knockout and death, if you could somehow manage to open the inventory while, well, dead.</p>
+<p>Restore effects will now properly restore stats Drain effects damaged and when you hit a target with an enchanted projectile, the projectile’s on-self enchantments will affect the target instead of the caster.</p>
+<p>You might know about the quirk Morrowind has where the character’s Weight affects the horizontal velocity of that character. Well, Weight is also apparently supposed to affect the velocity of any magic projectiles the character casts for some reason. Starting with 0.48.0, this behaviour is replicated if the “normalise race speed” setting is disabled.</p>
+<p>Aside from fixing magic, there were some other fixes to game mechanics of note, particularly AI. The player’s allies won’t react to the player’s crimes anymore, weapon-wielding creatures can now open doors again (<a href="https://www.youtube.com/watch?v=abbQKIiqHDU&amp;t=353s">does this remind you of anything?</a>) and all creatures can equip portable light sources during the night. Equipped light sources also won’t be extinguished underwater if they’re not actively being held.</p>
+<h2 id="the-sounds-of-loudness">The Sounds of Loudness</h2>
+<p>Alright, audio. Sounds are prone to get cut off in Morrowind. OpenMW 0.48.0 improves upon this so when you get too far from a sound that is still audible, the sound will quickly fade out instead of immediately going silent. This added transition makes the audible experience of flying away from the very loud Ghostfence noticeably less jarring.</p>
+<p>In addition, to improve consistency with Morrowind, we had to allow sounds to continue playing even when their sources are gone from the worldspace they started playing in. This is done by using the sources’ new position in any worldspace they’re currently in as the sound source in the current worldspace. An interior cell is considered a distinct worldspace, sounds still won’t play if they’re too far from you, and these still playing sounds will also stop playing when you leave the current cell.</p>
+<h2 id="finger-snap">Finger Snap</h2>
+<p>Then there’s physics, of course. For all its primitiveness in the original 2002 engine, there are many gotchas to consider. For example, in Morrowind – for whatever reason – scripted object spawning doesn’t automatically make the object physically there until its state is updated through other means or tricks, so you can walk right through it. Of course some mods and the Bloodmoon expansion of all things rely on this behaviour, so we had to replicate it.</p>
+<p>But there’s also something we overlooked ourselves: the momentum you carry was not reset upon teleporting and entering a new location. Wearing the Boots of Blinding Speed and jumping into a canton’s doors doesn’t allow you to smash into the other side of the canton at Mach 1 anymore.</p>
+<p>There’s this commonly known issue in Morrowind where actors standing on tall platforms don’t tend to stay put and may end up on the ground way below. It’s an animation issue, but apparently OpenMW had a completely unrelated issue with very similar symptoms: when cells were loaded, it would snap actors down before loading all the objects in the cell, sometimes causing them to be snapped down right to the terrain level, which it was especially prone to in the rare case the object the NPC is standing on is actually from a different cell. This should no longer be a problem.</p>
+<p>There was also a case where OpenMW wouldn’t have snapped down actors when it should have done so. When actors, including the player, are teleported, they are typically snapped down to the ground level, as spawn points tend to be notoriously inaccurate. However, flying and swimming actors were exempt from this. It was discovered that this is incorrect, so we fixed this – teleporting to inactive cells will snap down these actors as well. One problematic situation was the player’s teleportation from Magas Volar back to Tel Fyr while levitating.</p>
+<h2 id="interfacing-legendary-success">INTERFACING [Legendary: Success]</h2>
+<p>The UI has also received some improvements. It’s the little things. The effect list of spells and enchanted items is now aligned left, like in Morrowind, and, if you enable the option, you can zoom the world map using the mouse’s scroll wheel.</p>
+<p><img src="https://i.imgur.com/kXlA7Hm.jpg" alt="" loading="lazy" decoding="async"></p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=A_sBrVJBYXg">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2023/openmw-0-48-0-released/youtube-A_sBrVJBYXg_hu_dc3fa43869a50289.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.48.0 Map Zoom <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>But there are also big things. The layout and skin files our MyGUI-based interface uses are now a part of the virtual file system, which means that files from other data directories can override them. This also concerns fonts: while Morrowind’s bitmap fonts were always a part of the game’s assets, TrueType fonts OpenMW supports could not be. In fact, standard distributions of OpenMW now include TrueType fonts to be used by default. These TrueType fonts are based on the open source fonts <a href="https://github.com/georgd/OpenMW-Fonts">Ayembedt</a> and <a href="https://isaskar.github.io/Pelagiad/">Pelagiad</a>. While your game can of course rely on the bitmap font setup imported from Morrowind.ini instead, there is a good reason to offer these fonts as an alternative, which is as follows…</p>
+<p>OpenMW-specific UI additions that aren’t already covered by your content files’ game setting records can now be localised! With the newly introduced YAML-based localisation support, the in-game UI was painstakingly translated to the languages our contributors speak, including Russian, German, French and Swedish. To use the translated lines, you need to change the locale using the in-game settings. Localisation files are also a part of the VFS, to be used in… ahem, let’s not jump too far ahead. Now, where were we… Ah. The TrueType fonts are offered because the original bitmap fonts may not include the glyphs necessary to display the text: for example, the fonts from the original American English release of Morrowind do not include Russian Cyrillic characters. If you’re interested in learning how the localisation works in-depth, give <a href="https://openmw.readthedocs.io/en/latest/reference/modding/localisation.html">the documentation</a> a look.</p>
+<h2 id="setting-everything-up">Setting Everything Up</h2>
+<p>If you’re a modding enthusiast, one addition you should love is the introduction of data directory and BSA archive configuration directly in the launcher. You will not need to manually edit openmw.cfg anymore to register archives or work with the data directory order.</p>
+<p><img src="https://i.imgur.com/PkPcfs6.jpg" alt="" loading="lazy" decoding="async"></p>
+<p>That aside, the paths to configuration files OpenMW uses can now be redefined, meaning your OpenMW installation can become somewhat portable, though you can’t quite use multiple distinct OpenMW installations on the same device yet.</p>
+<h2 id="font-settings-yo">Font Settings, Yo!</h2>
+<p>Font size and TTF resolution can now be set from the launcher for quickly setting up the crispiest font imaginable for your desired screen resolution.</p>
+<h2 id="red-paint">Red Paint</h2>
+<p>We know people like things to be fast. Navigation meshes were added in 0.46.0, and for all the AI improvement they bring, generating them takes quite some time on some setups. In 0.48.0, generated navigation meshes are cached to the disk, improving loading times in locations that have already been visited in a previous session. You can also generate navmeshes for your load order using the launcher, so that going through every single location in the game to do the same isn’t necessary.</p>
+<p><img src="https://i.imgur.com/ikar8QQ.jpg" alt="" loading="lazy" decoding="async"></p>
+<h2 id="making-things-just-work">Making Things Just Work</h2>
+<p>Of course, this release contains a great multitude of stability fixes that are too technical to explain in this overview. Them aside, there are also many, many mod compatibility improvements, and while we’re not going to cover all of them in this overview, you might still want to know that the following Morrowind mods, to our knowledge, should work in OpenMW slightly or much better than before.</p>
+<ul>
+<li><a href="https://sureai.net/games/arktwend/?lang=en">Arktwend</a></li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/44494">Avis Dorsey Mage Companion</a></li>
+<li><a href="https://forum.openmw.org/viewtopic.php?p=73992">The Black Mill</a></li>
+<li><a href="https://www.moddb.com/games/morrowind/addons/galsiahs-character-development">Galsiah’s Character Development</a></li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/1427">Laura Craft Romance and Adventure</a>, <a href="https://www.nexusmods.com/morrowind/mods/1457">Thief Companion Constance</a> and other companion mods by <a href="https://lovkullen.net/Emma/morrowindbyemma.htm">Emma</a> and <a href="https://lovkullen.net/Emma/grumpy.htm">Grumpy</a></li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/45770/">Vurt Mournhold Dead trees</a></li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/44336">The Mysterious Hunter</a></li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/49042">OAAB_Data</a></li>
+<li><a href="https://www.project-tamriel.com/welcome">Project Tamriel</a> subprojects and <a href="https://www.tamriel-rebuilt.org/">Tamriel Rebuilt</a></li>
+<li><a href="https://web.archive.org/web/20161103120112/http://mw.modhistory.com/download-44-10678">Ravenloft</a></li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/52185">Reign of Fire</a></li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/46733">Remiros’ Groundcover</a>, <a href="https://www.nexusmods.com/morrowind/mods/31051">Vurt’s Groundcover</a> and other MGE XE-compatible groundcover mods</li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/43138">Robert’s Bodies</a></li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/22788">Smokable Pipes</a></li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/43111">Special Slave Companions</a></li>
+<li><a href="https://forum.openmw.org/viewtopic.php?p=73992">Traveling Merchants</a></li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/42933">Wyrmhaven</a></li>
+</ul>
+<p>…and potentially many others.</p>
+<p><a href="https://www.nexusmods.com/morrowind/mods/48200">Great House Dagoth</a>, <a href="https://web.archive.org/web/20220805191814/https://mw.modhistory.com/download-35-11514">The Underground</a> and <a href="https://www.nexusmods.com/morrowind/mods/22002">Welcome to the Arena</a> mods have also received significant improvements, and <a href="https://archive.org/details/morrowland">Morrowland</a> some improvements, but they still can’t quite be called supported yet.</p>
+<h2 id="but-what-of-openmw-cs">But What of OpenMW-CS?</h2>
+<p>There’s work on that front as well. cc9cii, a person with the nickname that might ring a Sixth House bell, did some magic, so OpenMW-CS, our editor, should load content files much, much faster now. unelsson has also made some changes here and there, greatly improving terrain editing performance and addressing a few problems.</p>
+<p>It can also properly handle Persistent and Blocked record flags now. A newcomer, VidiAquam, has added an instance editing grid and the ability to snap instances to that grid in the various edit modes. This should make creating content much easier in OpenMW-CS.</p>
+<p>Alright, alright, now that we’re done with all the interesting stuff, we can move on to the known issues and extended changelog and- what? There’s something else? Oh, right, there is…</p>
+<h2 id="lua-scripting">Lua Scripting</h2>
+<p>Yes, OpenMW has its very own Lua scripting API now, dubbed OpenMW-Lua! The Great De-hardcoding is starting ahead of schedule, and Petr Mikheev and Anton Uramer are its pioneers.</p>
+<p>Before covering what it currently offers, we’ll have to start with an honest disclaimer: you will not be able to run MWSE-Lua mods in this release. MWSE-Lua often acts as a light wrapper over the very guts of Morrowind’s executable. Unfortunately, while OpenMW might appear very similar to Morrowind on the surface, it does not resemble Morrowind internally, and trying to replicate every single little detail of Morrowind’s data structures, architecture and the way everything is tied together for the purpose would be counterproductive and frankly, take forever.</p>
+<p>However, OpenMW-Lua <em>is</em> built with the prospect of supporting multiplayer and reaching parity with MWSE in mind, so we can only hope modders will be open to the idea of porting their mods to an OpenMW-compatible API at some point in the future.</p>
+<p>But anyway, what does 0.48.0 Lua offer? Well, it’s not much, but it’s honest work! This early revision of the API gives scripts control over the camera as well as the means to create new GUI widgets, work with post-processing shaders, and some limited access to the game world. Of course, future releases will expand on this greatly as more parts of the engine are dehardcoded.</p>
+<p>Mods that rely on OpenMW-Lua will need to include .omwscripts extension files, which are effectively text files that list the scripts and state what they’re going to run on. Aside from these files, mods must of course contain the scripts themselves. They can also include localization files – the same ones that are used for the UI strings and can be accessed through the API. Of course, there’s a settings API mods can work with to permanently store settings to be used across multiple game sessions.</p>
+<p>For more information about the features of OpenMW-Lua and how to work with it, please consult the <a href="https://openmw.readthedocs.io/en/stable/reference/lua-scripting/">extensive documentation</a>.</p>
+<p>We should give some practical examples of the functionality the API can already offer. All the camera settings introduced in 0.47.0 are now configurable through the in-game settings menu. Some new mods that make use of 0.48.0 superpowers have also already been released:</p>
+<ul>
+<li>Remember <a href="/beta-v2-openmw/2022/openmw-roadmap-update/">OpenNeverMind</a>? While ultimately we decided against removing Morrowind support, the classic isometric gameplay has since <a href="https://modding-openmw.gitlab.io/opennevermind/">become available</a> as an OpenMW-Lua mod.</li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/46992">Protective Guards</a>, not to be confused with the eponymous MWSE mod, makes guards protect the populace from all hostile actors – not just creatures and the player character.</li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/50271">Pursuit</a> allows hostiles to follow you through teleporting doors.</li>
+<li><a href="https://www.nexusmods.com/morrowind/mods/51232">Attend Me</a> adds a follower HUD and automatic follower teleportation.</li>
+</ul>
+<p>So that’s it for Lua in this release, with many more API improvements still to come in future releases. This is also the conclusion of 0.48.0 feature overview. Thank you for having interest in OpenMW and reading all of this, and consider also reading the full list of changes below!</p>
+<p><strong>Known Issues:</strong></p>
+<ul>
+<li>On macOS, launching OpenMW from OpenMW-CS requires ‘OpenMW.app’ and ‘OpenMW-CS.app’ to be siblings</li>
+<li>Performance of enchanted ranged weapons (e.g., darts) isn’t as good as other projectiles’ performance</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/7354">#7354</a>] If reverse Z depth buffer and soft particles are off or unsupported, disabling all post-processing in-game will trigger a crash</li>
+<li>Rarely, quitting the game may crash it on some setups for an unclear reason. If you encounter such an issue, please send us feedback regarding its circumstances</li>
+</ul>
+<p><strong>New Engine Features:</strong></p>
+<ul>
+<li><em>by ptmikheev, uramer and others</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5996">#5996</a>] Lua scripting API</li>
+</ul>
+</li>
+<li><em>by akortunov</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4974">#4974</a>] Fonts and GUI layout files are now overridable through the VFS</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4975">#4975</a>] TrueType font replacements are now included by default to avoid missing glyphs with OpenMW-specific GUI localisation</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6867">#6867</a>] GUI localisation support. Most of the previously hardcoded strings have been localised in French, German, Russian and Swedish</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6925">#6925</a>] In the character creation widget, the character’s head can be rotated in the preview area using the mouse wheel, as if you scrolled the slider below it</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6941">#6941</a>] Allow users to easily change font size and ttf resolution</li>
+</ul>
+</li>
+<li><em>by Assumeru/Evil Eye</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/1465">#1465</a>, <a href="https://gitlab.com/OpenMW/openmw/-/issues/6177">#6177</a>] ‘Repeat’ flag is supported for AI package script commands.</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/2780">#2780</a>] ‘Help’ console command, which prints OpenMW’s version string and every available command</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4297">#4297</a>] The remnants of ‘APPLIED_ONCE’ spell effect flag have been properly implemented</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4414">#4414</a>] EXTRA SPELL spell effect expiry now triggers re-equipment</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5198">#5198</a>] Spell effect expiry is now tracked</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5454">#5454</a>] Active spell effects are cleared from actors that are removed from the scene for any reason</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5489">#5489</a>] Telekinesis also extends the activation range of activators, like in Morrowind Code Patch</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6380">#6380</a>] Commas are treated as whitespace in scripts, heavily loosening the restrictions on their use</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6699">#6699</a>] ‘Ignored’ ESM record flag is now respected</li>
+</ul>
+</li>
+<li><em>by Capo</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6541">#6541</a>] Gloss-mapping support</li>
+</ul>
+</li>
+<li><em>by Cédric Mocquillon</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3616">#3616</a>] Optional: You can now zoom the in-game map in and out</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6248">#6248</a>] A default error marker model is now embedded into the engine</li>
+</ul>
+</li>
+<li><em>by Dominique Martinet</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6631">#6631</a>] FFmpeg 5 support</li>
+</ul>
+</li>
+<li><em>by elsid</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6189">#6189</a>] Generated navigation meshes are now cached on your storage device</li>
+</ul>
+</li>
+<li><em>by Eris Caffee</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/2766">#2766</a>] Wizard will warn the user if the used version of Morrowind is unrecognised and potentially too old using the known size of English Morrowind BSA</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6706">#6706</a>] The dimensions of the in-game settings window are saved and loaded</li>
+</ul>
+</li>
+<li><em>by fr3dz10</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/2858">#2858</a>] Data directories can be set up and BSA archives can be registered through the launcher</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6496">#6496</a>] ‘No Camera Collision’ flag is properly implemented for NIF nodes</li>
+</ul>
+</li>
+<li><em>by myrix</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6419">#6419</a>] Topics will not be considered exhausted if they can produce a hyperlink to a new topic</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6888">#6888</a>] Optional: Creature damage damages armour</li>
+</ul>
+</li>
+<li><em>by ptmikheev</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/2491">#2491</a>] The directory configuration files are read from can be specified manually, allowing you to produce portable OpenMW distributions</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4595">#4595</a>] Every object instance in the game can now be uniquely identified</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6161">#6161</a>] In-game log viewer (assigned to F10)</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/7434">#7434</a>] Exponential fog</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/7435">#7435</a>] Sky blending</li>
+</ul>
+</li>
+<li><em>by unelsson</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5701">#5701</a>] Optimised Collada model skinning</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6249">#6249</a>] Alpha testing support for Collada models</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6823">#6823</a>] Animation layering support for Collada models</li>
+</ul>
+</li>
+<li><em>by uramer</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6557">#6557</a>] Controller gyroscope support</li>
+</ul>
+</li>
+<li><em>by Vulpen</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6019">#6019</a>] Alpha-to-coverage can be toggled on through the launcher</li>
+</ul>
+</li>
+<li><em>by wareya</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6360">#6360</a>] Raindrop ripples have been visually revamped</li>
+</ul>
+</li>
+<li><em>by wazabear</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4067">#4067</a>] Post-processing shader support</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5928">#5928</a>] Time of day-dependent node switching can be disabled</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6032">#6032</a>] Support of reverse-Z depth buffer, which reduces the flickering of distant objects tremendously</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6078">#6078</a>] The depth buffer is no longer cleared before rendering first-person models</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6128">#6128</a>] Support for soft particles</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6199">#6199</a>] FBO rendering support</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6443">#6443</a>] NIF stencil buffer manipulations are supported, completing NiStencilProperty support</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6534">#6534</a>] Decal texture blending using vertex/material colours is now simulated in shader pipeline</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6592">#6592</a>] Geometry-based particle emission support</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6600">#6600</a>] NiSortAdjustNode record type support</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6700">#6700</a>] Windowed fullscreen support. In this mode, the game is played in a borderless window that matches the display resolution</li>
+</ul>
+</li>
+<li><em>by Wolfgang Lieff</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6684">#6684</a>] Support of NiFltAnimationNode NIF record type, which represents an animated sequence of nodes.</li>
+</ul>
+</li>
+<li><em>by AnyOldName3 and Capo</em>
+<ul>
+<li>With the bump of the minimum required version of OpenSceneGraph to 3.6.5, the following older improvements of OSG are brought over to every possible build of OpenMW:
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3180">#3180</a>] Support of uncompressed colour-mapped TGA files</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3668">#3668</a>] Support of palettised DDS files</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>New Editor Features:</strong></p>
+<ul>
+<li><em>by cc9cii</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/2554">#2554</a>] Modifying an instance in the scene widget will scroll the instances table to that instance</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5737">#5737</a>] Moved instances are properly deleted from their original cell</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6017">#6017</a>] Persistent and temporary instances are properly distinguished upon saving a file to improve compatibility with the original ESM format</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6288">#6288</a>] ‘Blocked’ record flag support</li>
+</ul>
+</li>
+<li><em>by pi03k</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/890">#890</a>] Table columns can now be hidden using a new menu or with a middle-click</li>
+</ul>
+</li>
+<li><em>by SaintMercury</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6721">#6721</a>] Record subviews can be opened in an exclusive window as an option</li>
+</ul>
+</li>
+<li><em>by unelsson</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6251">#6251</a>] Instance movement now follows the mouse cursor</li>
+</ul>
+</li>
+<li><em>by VidiAquam</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3245">#3245</a>] Instance editing grid and snapping</li>
+</ul>
+</li>
+</ul>
+<p><strong>Engine Bug Fixes:</strong></p>
+<ul>
+<li><em>by akortunov</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5913">#5913</a>] Self-targeted line-of-sight checks no longer cause issues</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6276">#6276</a>] ‘Deleted’ flag is properly supported for groundcover instance records</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6347">#6347</a>] Scripts can now spawn levelled creatures</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6519">#6519</a>] Duration is no longer displayed for ingredient magic effects</li>
+</ul>
+</li>
+<li><em>by Andreas Stöckel</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6129">#6129</a>, <a href="https://gitlab.com/OpenMW/openmw/-/issues/6131">#6131</a>] Character doll coordinates are properly calculated for large window sizes and non-1.0 UI scaling factor</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6354">#6354</a>] Sounds that are being culled due to being too far away will fade out instead of getting cut off</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6386">#6386</a>] Fixed screen-space coordinate computations for water reflections, preventing them from becoming a pixelated mess as you get close to the water surface on some video cards</li>
+</ul>
+</li>
+<li><em>by andrew-app</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5434">#5434</a>] Pinned windows no longer cover the remaining breath bar</li>
+</ul>
+</li>
+<li><em>by anikm21</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6303">#6303</a>] Going to jail makes the player cancel their current attack and sheathe their weapon</li>
+</ul>
+</li>
+<li><em>by AnyOldName3</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6718">#6718</a>] Throwable weapons’ enchantments will no longer break the rendering of their target in unpredictable ways</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/7251">#7251</a>] Shader rendering is properly enabled for nodes that don’t have any rendering state set</li>
+</ul>
+</li>
+<li><em>by Assumeru/Evil Eye</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/1751">#1751</a>] Birthsign abilities increase base stat values</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/1930">#1930</a>] When an actor stops fighting a target, the actor’s allies stop fighting that target as well</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/2036">#2036</a>] ‘SetStat’ and ‘ModStat’ group instructions behave much more like Morrowind, which allows Galsiah’s Character Development to increase stats beyond the cap of 100</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3488">#3488</a>] AI will not attempt to attack before finishing aiming</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3737">#3737</a>] If a script’s execution fails on one target, it will still run on other targets, as it could have failed due to target-specific factors</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3737">#3737</a>] ‘Equip’’s behaviour of implicitly adding an item if it’s missing will no longer make the actor equip anything else</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3792">#3792</a>] Magicka is recalculated immediately after Intelligence is changed instead of doing so a frame later</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3846">#3846</a>] Scripts now support unquoted string literals that start with a hyphen</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3855">#3855</a>] AI will avoid casting identical Bound item effects</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3855">#3855</a>] AI will also avoid casting Bound Shield if it can’t make use of the shield</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3867">#3867</a>, <a href="https://gitlab.com/OpenMW/openmw/-/issues/5318">#5318</a>] An actor’s allies that are already in combat will not join combat with the actor’s potential new targets</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3905">#3905</a>] ‘GetDistance’ that has no target will still “work”, preventing a problem in Great House Dagoth</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4203">#4203</a>] Overriding an object’s inventory will close that object’s looting window, preventing issues or crashes if an actor is resurrected during looting</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4376">#4376</a>] Levelled creatures that moved out of their original cell will properly respawn in their original cell, instead of being duplicated</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5054">#5054</a>] Spellcast equip/unequip animations are supported for non-bipedal creatures</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5100">#5100</a>] Temporary disposition changes can no longer bring an actor’s disposition below zero</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5120">#5120</a>] Scripted object spawning no longer automatically inserts the object’s physics model – it will be inserted when the scene is reloaded, when the object is enabled or when any object in the scene is disabled</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5207">#5207</a>] Summoned creatures are properly cleared if their caster is removed from the scene</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5377">#5377</a>] Keyboard focus is only restored to widgets with visible parents, preventing MenuTest from messing with the console input field focus</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5596">#5596</a>] Using multiple identical Summon effects in permanent spells can summon multiple creatures of the same type like temporary spells can</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5621">#5621</a>] Restore effects can restore drained stats</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5801">#5801</a>] The order of teleportation effects in a single spell matters; the last effect will take priority</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5842">#5842</a>] Temporary disposition change from the currently active dialogue will not affect GetDisposition result for any other actor</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5842">#5842</a>] ‘ForceGreeting’ updates disposition change target</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5842">#5842</a>] ‘SetDisposition’/‘ModDisposition’ applies the current temporary disposition change permanently</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5863">#5863</a>] ‘GetEffect’ returns 1 for teleportation spell effects only after the teleportation is complete</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5937">#5937</a>] All portable light sources are rotated by 90 degrees when they’re attached to the character, while body parts that have a BoneOffset node are not</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6051">#6051</a>] Invalid water levels are handled more gracefully</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6066">#6066</a>] Quoted keywords can be used as string literals</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6087">#6087</a>] Manually added bound items no longer conflict with bound item effects and won’t disappear when they end</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6107">#6107</a>] Fatigue recalculation after attributes are updated can properly bring its current value above the maximum, like Magicka recalculation, if necessary</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6123">#6123</a>] Script that cannot be compiled no longer break the game when NPCs try to say hello as the script’s local variables are cached, fixing problems in Traveling Merchants</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6172">#6172</a>] All weapon-wielding creatures can open doors</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6184">#6184</a>, <a href="https://gitlab.com/OpenMW/openmw/-/issues/6255">#6255</a>] Illusion school and Reflect effects work more like vanilla (see explanation in the overview)</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6197">#6197</a>] Scripted spellcasting commands will no longer stack, and instead either override the previous packages (if casting hasn’t started yet) or do nothing (if casting is in progress)</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6253">#6253</a>] Reflect effects are now multiplicative</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6273">#6273</a>] The rotation of actors that have been respawned is reset to the original rotation</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6282">#6282</a>] Fixed parsing of unquoted string literals that start with a digit</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6283">#6283</a>] ‘GetCurrentAIPackage’ returns -1 for non-actors and dead actors</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6291">#6291</a>] Local variables that are named the same as a script command will be used instead of that command</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6302">#6302</a>] Only enabled objects are added to the scene after teleportation</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6321">#6321</a>] On-self projectile enchantments are applied to the projectile’s target instead of the caster</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6323">#6323</a>] ‘StayOutside’ script variable now only blocks a follower’s teleportation from an exterior to an interior</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6324">#6324</a>] ‘Rotate’ script instruction always rotates the player on the Z axis regardless of the axis argument</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6326">#6326</a>] Detect Enchantment/Key effects can detect items in containers the contents of which weren’t resolved yet</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6333">#6333</a>] Werewolf stat bonuses are now considered magical in nature instead of affecting the base stats</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6363">#6363</a>] Integer arguments can be passed as string arguments and treated as names in unambiguous contexts</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6376">#6376</a>] All creatures can equip portable light sources at night</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6396">#6396</a>] Various instances of non-ASCII character handling have been made more reliable</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6493">#6493</a>] Magically unlocking owned containers and doors that have never been locked is no longer illegal</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6493">#6493</a>] However, magically unlocking owned doors that have already been unlocked is now illegal as was the case for containers</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6523">#6523</a>] Disintegrate Weapon effect is resisted by Sanctuary instead of Resist Magicka</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6606">#6606</a>] All quests with the same name are restarted when one of them is restarted</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6670">#6670</a>] Dialogue ordering matches Morrowind behaviour more closely</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6682">#6682</a>] ‘HitOnMe’ script function will only reset the hit object if there was a match</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6717">#6717</a>] Broken scripts should no longer cause interpreter stack corruption</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6655">#6655</a>] Creating constant effect Absorb Attribute/Skill enchantments no longer breaks the game</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6730">#6730</a>] Scripted animations will no longer prevent wandering actors from playing idle animations after the animations finish</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6753">#6753</a>] Dialogue response records without a DATA subrecord are loaded properly</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6799">#6799</a>] Class-less NPCs fall back to the default class instead of causing crashes</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6913">#6913</a>] Equipping constant effect enchanted items cancels invisibility</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6923">#6923</a>] Loading a save where a corpse was disposed no longer prevents the actor’s respawning</li>
+</ul>
+</li>
+<li><em>by Bo Svensson</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4602">#4602</a>] Attaching a non-skinned body part that is potentially shared between multiple instances of a model always copies it, preventing crashes with Robert’s Bodies</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6142">#6142</a>] Groundcover mods no longer override cell flags</li>
+</ul>
+</li>
+<li><em>by Capo</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4227">#4227</a>] Spellcasting animation will still play even if the casting fails due to insufficient Magicka</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4310">#4310</a>] Spell and enchanted item effect list is aligned left instead of centre</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4374">#4374</a>] Mouse movement events happening during a loading screen are discarded</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4389">#4389</a>] Lip animation timer source will override any other timer source in the head model, fixing the animation of head models that have Autoplay animation flag set on the root node</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4744">#4744</a>] Invisible particles are always processed to prevent visual glitches with some creature animations</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5192">#5192</a>] Base actor turning speed is about 57% faster, increased from 10 radians (~573 degrees) per second to the original value of 900 degrees per second</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5453">#5453</a>] Fixed magic effect VFX position and scale calculations to be in-line with Morrowind</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5592">#5592</a>] Fixed many instances of idle animation seemingly restarting at the wrong time</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5976">#5976</a>] An attack will cancel invisibility when it’s released, not when it’s started</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5978">#5978</a>] Actors will not talk with or look at a magically invisible player character</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6049">#6049</a>] Pre-menu video audio will play at the same time as the title music, like in Morrowind, making Arktwend intro – which has a silent audio stream which would previously prevent the title music from playing – behave as expected</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6054">#6054</a>] All quick keys actions will be delayed while an important animation is playing, not just weapon equipment</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6109">#6109</a>] Multiple videos playing at the same time will no longer crash the game</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6115">#6115</a>] ‘ShowMap’ script instruction will enable map markers for all locations whose names start from its argument, not just those that match the argument</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6118">#6118</a>] Creature landing sound is considered an Effect type sound, not a Footstep type sound</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6154">#6154</a>] Levitating/swimming actors will be snapped down upon teleportation into an inactive cell</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6174">#6174</a>] Clicking on the free area in spell effect creation sliders increments the values instead of shifting the sliders to an unpredictable position</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6307">#6307</a>] Actors with a Travel package will stop if they have been close enough to the destination for a bit of time like in Morrowind, preventing them from getting stuck on their destination if they can’t quite reach the final position and fixing Infidelities quest in Tribunal expansion</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6327">#6327</a>] Blocking no longer prevents movement</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6343">#6343</a>] Magic projectile velocity is affected by NPC casters’ Weight</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6416">#6416</a>] In morph geometry, morph target zero is considered to be the target geometry instead of being ignored</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6417">#6417</a>]: Movement accumulation node choice now takes into account whether the animation source references either of the possible nodes</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6429">#6429</a>] Any AI script commands are no-op on non-actors instead of stopping script execution</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6473">#6473</a>] NIF strings are only parsed up to their first null terminator</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6517">#6517</a>] Empty Euler/XYZ rotation key groups are properly read</li>
+<li>Alternative Euler rotation orders are now supported</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6545">#6545</a>] Actor momentums are discarded upon worldspace changes</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6559">#6559</a>] Weapon condition is consistently damaged before damage bonuses are applied</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6579">#6579</a>] OSG builds with double precision bounding sphere type are supported</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6653">#6653</a>] Console and maximised window dimensions are closer to Morrowind’s</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6869">#6869</a>] Stagger animation is cancelled when an attack animation is completed</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6890">#6890</a>] SDL input event errors are properly handled</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6895">#6895</a>] ‘RemoveItem’ with a negative count argument will overflow like ‘AddItem’ instead of stopping script execution</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6896">#6896</a>] Sounds are no longer stopped when their emitter leaves the worldspace, until the player leaves the cell</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6898">#6898</a>] Quick keys menu can be opened when a different GUI window is active</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6909">#6909</a>] Enchanted items casting aligns the first person character model to the direction of the casting for a single frame</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6910">#6910</a>] Portable light sources are no longer extinguished under water when they are not held</li>
+</ul>
+</li>
+<li><em>by cc9cii</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3246">#3246</a>]: Various actor stats potentially not included in converted ESS files will be loaded from the ESM file, preventing actors from being dead for no apparent reason</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6067">#6067</a>] Moved instances can now be loaded from any point in the instances list of a cell record</li>
+</ul>
+</li>
+<li><em>by elsid</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5508">#5508</a>] Binaries that don’t depend on Qt won’t be linked to Qt</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5858">#5858</a>] Giant objects no longer cause the navigation meshes to be generated based on everything within such objects’ bounds</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6143">#6143</a>] Screenshot capturing no longer freezes the game while it’s in progress</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6143">#6143</a>] Optional: Screenshot saved message can be shown again</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6256">#6256</a>] Enabling shadows should no longer cause a crash on exit with a statically linked OSG</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6711">#6711</a>] Log time always matches the real time</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6849">#6849</a>] The textures of textured buttons are properly scaled if their height is not a multiple of the original height</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6860">#6860</a>] Actors may no longer try to evade an obstacle when there isn’t an obstacle due to their destination position changing</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6937">#6937</a>] Wander package destination can no longer be outside of the Wander radius, fixing ‘Divided by Nix Hounds’ quest</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/7008">#7008</a>] Reserved node name list handling is now thread-safe</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/7121">#7121</a>] Making the game time settings invalid will no longer cause instability</li>
+</ul>
+</li>
+<li><em>by Eris Caffee</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5279">#5279</a>] Console text selection no longer breaks auto-scrolling</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6667">#6667</a>] Pressing Escape during waiting properly cleans up the wait dialogue</li>
+</ul>
+</li>
+<li><em>by Kindi</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6191">#6191</a>] Encumbrance messagebox works more like in Morrowind, with only one message appearing at a time and with the semi-broken delay removed</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6258">#6258</a>] Changing the offered price in the barter window may no longer cause the UI to confuse the seller and the buyer</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6322">#6322</a>] Barter offer price is properly reset when no items are getting exchanged</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6358">#6358</a>] ‘ChangeWeather’ script instruction will report a warning if the used region doesn’t exist</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6433">#6433</a>] Items assigned to quick keys are updated when their quick key is activated in case they become unavailable to prevent them from becoming unavailable until the quick keys menu is reopened</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6451">#6451</a>] Weapons summoned by Cast When Used enchantments will have their name set in the HUD properly</li>
+</ul>
+</li>
+<li><em>by Léo Peltier</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5483">#5483</a>] Spells that have ‘Autocalc’ flag set have their cost calculated automatically</li>
+</ul>
+</li>
+<li><em>by myrix</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6901">#6901</a>] Equip instruction prefers equipping filled soul gems</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6901">#6901</a>] Trying to use an empty soul gem shows a message</li>
+</ul>
+</li>
+<li><em>by NeveHanter</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6133">#6133</a>] The player’s allies no longer react to the crimes the player commits</li>
+</ul>
+</li>
+<li><em>by Nuri</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6165">#6165</a>] Paralysis, knockout and death prevent the player from picking up items from the ground through the inventory window</li>
+</ul>
+</li>
+<li><em>by psi29a</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4175">#4175</a>] OSGoS: Double precision transformation matrix type is used by default again, preventing objects far from the world origin from vibrating</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4526">#4526</a>] Bumping the minimum required OSG version to 3.6.5 prevents crashes when out-of-bounds UV sets are used for multitexturing</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5379">#5379</a>] Loaded actors are no longer snapped down until all objects in the scene are loaded</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5766">#5766</a>] Fixed an object paging culling issue, preventing some objects in the active grid from disappearing</li>
+</ul>
+</li>
+<li><em>by Simon Meulenbeek</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6037">#6037</a>] The choice of the content language in the launcher properly replaces the previous choice</li>
+</ul>
+</li>
+<li><em>by Skeevert</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6101">#6101</a>] Disarming trapped unlocked owned objects is considered illegal</li>
+</ul>
+</li>
+<li><em>by Tetramir</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6289">#6289</a>] Keyword highlighting no longer assumes all the text is ASCII</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6395">#6395</a>] Long in-game setting tab titles will cause the window’s minimum size to be recalculated</li>
+</ul>
+</li>
+<li><em>by unelsson</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6680">#6680</a>] Objects with malformed root nodes should no longer cause memory corruption</li>
+</ul>
+</li>
+<li><em>by uramer</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6395">#6395</a>] Left and right arrow skins were added to tab control widget, allowing you to scroll in-game settings tabs if their titles get too long</li>
+</ul>
+</li>
+<li><em>by wazabear</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4949">#4949</a>] Spell VFX now have a white light attached like in Morrowind, fixing the dullness of some VFX when shaders are used</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5088">#5088</a>] During weather transitions, sky rotation is separate for each weather</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5394">#5394</a>] Windows Aero snap works properly with a borderless window</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5989">#5989</a>] Simple water respects texture filtering settings</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6168">#6168</a>] Weather particles will no longer briefly disappear at the beginning of their animation</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6389">#6389</a>] Maximum light distance setting now affects water reflections</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6544">#6544</a>] Physics interpolation no longer causes objects to vibrate while the camera is still</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6697">#6697</a>] Per-vertex lighting clamping works properly again</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6794">#6794</a>] When ‘AttachLight’ node is missing, light sources are attached to the mesh origin instead of the centre of the object’s bounds</li>
+</ul>
+</li>
+</ul>
+<p><strong>Editor Bug Fixes:</strong></p>
+<ul>
+<li><em>by Capo</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6705">#6705</a>] Improved nested table column naming for levelled list subviews</li>
+</ul>
+</li>
+<li><em>by cc9cii</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/3514">#3514</a>] Moved instances should no longer disappear for no reason</li>
+</ul>
+</li>
+<li><em>by unelsson</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/4700">#4700</a>] Undo command implementation should be more reliable</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5788">#5788</a>] Fixed various problems with the parsing of land texture indices</li>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6285">#6285</a>] Optimised terrain editing and selection</li>
+</ul>
+</li>
+</ul>
+<p><strong>Miscellaneous:</strong></p>
+<ul>
+<li><em>by psi29a</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/5534">#5534</a>] As mentioned, the minimum required version of OpenSceneGraph has been bumped from to 3.6.5 and the support for OpenSceneGraph 3.4 has been dropped</li>
+</ul>
+</li>
+<li><em>by SaintMercury</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6435">#6435</a>] Visual Studio 2022 support has been added</li>
+</ul>
+</li>
+<li><em>by wazabear</em>
+<ul>
+<li>[<a href="https://gitlab.com/OpenMW/openmw/-/issues/6161">#6161</a>, <a href="https://gitlab.com/OpenMW/openmw/-/issues/6162">#6162</a>] Sky and GUI can now be rendered using shaders</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://forum.openmw.org/viewtopic.php?p=73992">Want to leave a comment?</a></p>
+  </div>
+</article>
+<nav class="pager" aria-label="More posts">
+  <a rel="prev" href="/beta-v2-openmw/2024/interview-with-s3ctor/">← Interview with S3ctor</a>
+  <a rel="next" href="/beta-v2-openmw/2022/openmw-0-48-0-is-now-in-rc-phase/">OpenMW 0.48.0 is now in RC-phase! →</a>
+</nav>
+
+</main>
+<footer>
+  <div class="wrap">
+    <h2>Follow OpenMW</h2>
+    <ul>
+      <li><a href="https://gitlab.com/OpenMW/openmw">GitLab</a></li>
+      <li><a href="https://github.com/OpenMW/openmw">GitHub</a></li>
+      <li><a href="https://discord.gg/YegsVV3aRb">Discord</a></li>
+      <li><a href="https://matrix.to/#/#openmw-space:matrix.org">Matrix</a></li>
+      <li><a href="https://web.libera.chat/#openmw">IRC on Libera.Chat</a></li>
+      <li><a href="https://reddit.com/r/openmw">Reddit</a></li>
+      <li><a href="https://mastodon.gamedev.place/@openmw">Mastodon</a></li>
+      <li><a href="https://twitter.com/intent/user?screen_name=Openmw_org">Twitter</a></li>
+      <li><a href="/beta-v2-openmw/index.xml">RSS</a></li>
+      <li><a href="/beta-v2-openmw/atom.xml">Atom</a></li>
+    </ul>
+    <div class="credits">
+      <p>Copyright © 2008-2026 OpenMW. Website logo by Necrod.</p>
+      <p>Hosting kindly provided by <a href="https://www.futureweb.be">Futureweb</a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

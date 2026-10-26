@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Open source Elderscrolls 3: Morrowind engine reimplementation.">
+<meta name="twitter:site" content="@openmw_org">
+<meta name="robots" content="noindex">
+<title>Release · OpenMW</title>
+<link rel="icon" type="image/png" href="/beta-v2-openmw/favicon.png">
+
+<link rel="stylesheet" href="/beta-v2-openmw/css/main.min.dd57dc4e01d34600100d3c131c85b77ddd312fd0b9532e73284212cc93269a72.css" integrity="sha256-3VfcTgHTRgAQDTwTHIW3fd0xL9C5Uy5zKEISzJMmmnI=">
+
+<link rel="alternate" type="application/rss&#43;xml" href="https://luanafons0.github.io/beta-v2-openmw/category/release/index.xml" title="OpenMW">
+</head>
+<body>
+<header class="masthead" id="top">
+  <div class="wrap wrap-flush">
+    <div class="art">
+      <a href="/beta-v2-openmw/"><img class="logo" src="/beta-v2-openmw/images/logo.png" width="588" height="128" alt="OpenMW"></a>
+      <div class="credit">Image © Maxim Nikolaev</div>
+    </div>
+    <nav class="mainnav" aria-label="Main">
+      <ul>
+        <li><a href="/beta-v2-openmw/faq/">FAQ</a></li>
+        <li><a href="/beta-v2-openmw/downloads/">Downloads</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw">Source Code</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw/issues">Issue Tracker</a></li>
+        <li><a href="/beta-v2-openmw/media/">Media</a></li>
+        <li><a href="https://wiki.openmw.org/">Wiki</a></li>
+        <li><a href="https://forum.openmw.org/">Forum</a></li>
+        <li><a href="/beta-v2-openmw/the-team/">The Team</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<nav class="follow-row" aria-label="Follow OpenMW">
+  <ul>
+    <li>
+      <a href="https://gitlab.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"/></svg>
+<span>GitLab</span><span class="n"> 952 stars</span></a>
+    </li>
+    <li>
+      <a href="https://github.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+<span>GitHub</span><span class="n"> 6.7k stars</span></a>
+    </li>
+    <li>
+      <a href="https://discord.gg/YegsVV3aRb"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+<span>Discord</span><span class="n"> 5.2k online</span></a>
+    </li>
+    <li>
+      <a href="https://matrix.to/#/#openmw-space:matrix.org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M.632.55v22.9H2.28V24H0V0h2.28v.55zm7.043 7.26v1.157h.033c.309-.443.683-.784 1.117-1.024.433-.245.936-.365 1.5-.365.54 0 1.033.107 1.481.314.448.208.785.582 1.02 1.108.254-.374.6-.706 1.034-.992.434-.287.95-.43 1.546-.43.453 0 .872.056 1.26.167.388.11.716.286.993.53.276.245.489.559.646.951.152.392.23.863.23 1.417v5.728h-2.349V11.52c0-.286-.01-.559-.032-.812a1.755 1.755 0 0 0-.18-.66 1.106 1.106 0 0 0-.438-.448c-.194-.11-.457-.166-.785-.166-.332 0-.6.064-.803.189a1.38 1.38 0 0 0-.48.499 1.946 1.946 0 0 0-.231.696 5.56 5.56 0 0 0-.06.785v4.768h-2.35v-4.8c0-.254-.004-.503-.018-.752a2.074 2.074 0 0 0-.143-.688 1.052 1.052 0 0 0-.415-.503c-.194-.125-.476-.19-.854-.19-.111 0-.259.024-.439.074-.18.051-.36.143-.53.282-.171.138-.319.337-.439.595-.12.259-.18.6-.18 1.02v4.966H5.46V7.81zm15.693 15.64V.55H21.72V0H24v24h-2.28v-.55z"/></svg>
+<span>Matrix</span><span class="n"> 1197 users</span></a>
+    </li>
+    <li>
+      <a href="https://web.libera.chat/#openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m14.26446 2.76095-1.22973 9.43224-1.6484 1.88226L9.67694 2.7735h-.003a9.86072 9.86072 0 0 0-.19917.04247l-.067.01256a12.0901 12.0901 0 0 0-.13158.0305l-.0646.01555a12.0503 12.0503 0 0 0-1.7393.55086l-.03709.01855 3.39788 11.26306-.1579.18062-1.59816-.70397-.10465.13457L3.4452 6.09902a10.69674 10.69674 0 0 0-.92767 1.0473 12.5862 12.5862 0 0 0-.55146.7596v.00598l6.48115 7.08106-1.02158 1.31285-7.20486-4.1497a11.70731 11.70731 0 0 0-.2207 2.30931l6.85377 2.57547L5.2778 19.0661l-4.31.02034a12.18198 12.18198 0 0 0 1.21297 2.15261h.003l1.69625-.37322h.45038l4.86266-6.22276 1.5832.70098 3.33807-3.81237c1.84965 3.14502 3.84345 6.17068 5.65635 9.33714h.45337l-.0083-.01376 1.61251.36246.01556-.01794a11.03054 11.03054 0 0 0 .77455-1.25604 11.3919 11.3919 0 0 0 .35228-.72551l-3.78784-.064-1.3332-2.19567 6.1468-2.24172v-.0311a6.93926 6.93926 0 0 0 .0036-.20217v-.31223l-.0036-.06398v-.0676l-.003-.06757-.003-.067-.003-.06757-.003-.067-.0059-.0646-.003-.06757-.0066-.067-.003-.06757-.006-.064-.006-.06757-.006-.06758-.0066-.067-.006-.06458a9.69536 9.69536 0 0 0-.11304-.7961v-.01555l-6.50625 3.71908-1.0467-1.72436 5.7365-6.49311a10.80699 10.80699 0 0 0-.8876-1.16997 11.89718 11.89718 0 0 0-.69202-.7285l-4.72569 7.45488-1.37147-2.25848 2.1526-7.75393-.05502-.02093a11.6277 11.6277 0 0 0-2.00607-.59453 12.20035 12.20035 0 0 0-.13158-.0275zm-.1591 9.33116-3.24596 3.72086-1.5832-.65853-4.48346 5.7078h.49584l4.10365-5.25144 1.57423.65195 3.08387-3.53664 4.8507 8.15167.47729-.009zm-.07357 1.30149-2.91221 3.34405-1.60474-.65254-3.74538 4.77413 12.63513.0066z"/></svg>
+<span>IRC on Libera.Chat</span></a>
+    </li>
+    <li>
+      <a href="https://reddit.com/r/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>
+<span>Reddit</span><span class="n"> 20k members</span></a>
+    </li>
+    <li>
+      <a href="https://mastodon.gamedev.place/@openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>
+<span>Mastodon</span><span class="n"> 538 followers</span></a>
+    </li>
+    <li>
+      <a href="https://twitter.com/intent/user?screen_name=Openmw_org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+<span>Twitter</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/index.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>RSS</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/atom.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>Atom</span></a>
+    </li>
+  </ul>
+</nav>
+
+
+<p class="kicker">Category</p>
+<h1 class="page-title">Release</h1>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2014/openmw-0-32-0-released/">OpenMW 0.32.0 Released!</a></h2>
+  <p class="post-meta">
+  <time datetime="2014-09-17">September 17, 2014</time> · <a href="/beta-v2-openmw/author/raevol/">raevol</a> · <a href="/beta-v2-openmw/category/release/">Release</a>
+</p>
+
+  <div class="prose">
+    
+      <p>The OpenMW team is proud to announce the release of version 0.32.0! Grab it from our <a href="/beta-v2-openmw/downloads/">Downloads Page</a> for all operating systems. This is one of the more magical OpenMW releases, bringing completed implementation of all magic effects as well as NPC AI for casting spells, using potions, etc. in combat. The implementation of mouth movement, eye blinking, and several other NPC AI features breathe more life into NPCs in this release as well. Over 100 issues have been fixed in this release, as we steamroll towards 1.0!</p>
+<p>The tiresome affairs of real life have prevented our beloved WeirdSexy from creating a video for this release. We wish him the best in everything, and have our fingers crossed that he will work his magic for a 1.0 release video when the time comes!</p>
+<p><strong>Known Issues:</strong></p>
+<ul>
+<li>Switching from fullscreen to windowed mode on Windows 7 or 8.1 while using the D3D9 renderer causes a crash</li>
+</ul>
+<p><strong>Changelog:</strong></p>
+<ul>
+<li>Finished implementing all magic effects, including Command, Elemental Shield, and Light</li>
+<li>Implemented NPC AI for combat magic</li>
+<li>Implemented NPC AI for friendly hits</li>
+<li>Implemented NPC AI for fighting for the player if they are following</li>
+<li>Implemented NPC mouth movement</li>
+<li>Implemented NPC eye blinking</li>
+<li>Implemented collision script instructions</li>
+<li>Implemented magic effect get/mod/set functions</li>
+<li>Implemented difficulty slider</li>
+<li>Implemented custom map markers</li>
+<li>Implemented script blacklisting</li>
+<li>Implemented including the git revision number from the “–version” command line switch</li>
+<li>Implemented mouse wheel scrolling for the journal</li>
+<li>Implemented NiBSPArrayController to emit particles on random child nodes</li>
+<li>Implemented sharing keyframe data</li>
+<li>Implemented ignoring extra arguments being given to very few certain script functions where the use of stray arguments is most prevalent</li>
+<li>Implemented double click on inventory window headers to close the window</li>
+<li>Implemented targeted scripts</li>
+<li>Fixed being unable to jump when facing a wall</li>
+<li>Fixed summoned creatures not immediately disappearing when killed</li>
+<li>Fixes for several script compilation issues</li>
+<li>Fixed NPCs equipping weapons prior to fighting</li>
+<li>Fixed Start Scripts which have been stopped not restarting on loading a game</li>
+<li>Fixed paralyzed NPC corpses exhibiting strange behavior</li>
+<li>Fixed abilities being depleted when interrupted during casting</li>
+<li>Fixed NPC behaviors when facing the player</li>
+<li>Fixed a missing French character</li>
+<li>Fixed a memory leak with MyGUI</li>
+<li>Fixed journal being inaccessible while in inventory</li>
+<li>Fixed PC randomly joining factions</li>
+<li>Fixed NPCs not switching weapons when exhausting ammunition</li>
+<li>Fixed guards detecting creatures from too far away</li>
+<li>Fixed several issues with The Siege of the Skaal Village quest in Bloodmoon</li>
+<li>Fixed quotation mark character in books</li>
+<li>Fixed doors colliding with dead bodies</li>
+<li>Fixed display issue with very high bounties</li>
+<li>Fixed NPC spell calculation formula</li>
+<li>Fixed boats standing vertically in Vivec</li>
+<li>Fixed issue with arrest dialogue when selecting “Go to jail”</li>
+<li>Fixed strange NPC follow behavior in Hlaalu Ancestral Vaults</li>
+<li>Fixed Persuasion dialog persisting after loading a game</li>
+<li>Fixed “Goodbye” dialog option not being escapable</li>
+<li>Fixed PC stats not updating immediately when changing equipment</li>
+<li>Fixed non-aggressive creatures</li>
+<li>Fixed crash when quick-loading with a container window open</li>
+<li>Fixed order of validity checks when placing items into a container</li>
+<li>Fixed item stacking for repaired weapons and armor</li>
+<li>Fixed saving attacked state of NPCs</li>
+<li>Fixed “Background” dialog topic ignoring rank condition</li>
+<li>Fixed game starting on day 2</li>
+<li>Fixed successful critical strikes on enemies who have spotted the player</li>
+<li>Fixed fatigue not decreasing by the correct amount when running</li>
+<li>Fixed a graphics issue with the minimap and local map</li>
+<li>Fixed wrong button title on travel menu</li>
+<li>Fixed criminal punishment for sleeping on a rented bed</li>
+<li>Fixed NPCs turning towards the player even if invisible/sneaking</li>
+<li>Fixed mouse still interacting with map when pinned and inventory closed</li>
+<li>Fixed spell absorption not absorbing shrine blessings</li>
+<li>Fixed journal topics sometimes displaying as quests</li>
+<li>Fixed scroll behavior in scrolls</li>
+<li>Fixed player enchanting requiring money and always being 100% successful</li>
+<li>Fixed custom made potions not applying all effects</li>
+<li>Fixed rain sound pausing in menus</li>
+<li>Fixed Remesa Othril being hostile to Hlaalu members</li>
+<li>Fixed a crash on load after death</li>
+<li>Fixed blind effect not covering the entire screen</li>
+<li>Fixed crash after load after creating an enchanted item</li>
+<li>Fixed Retrieve the Scrap Metal quest dialog script issue</li>
+<li>Fixed targets almost always resisting soultrap scrolls</li>
+<li>Fixed no message being displayed when casting soultrap on an invalid target</li>
+<li>Fixed chop attack not working when walking diagonally</li>
+<li>Fixed world map explored terrain issue when alt-tabbing on D3D9</li>
+<li>Fixed levitate causing the player to appear out of bounds when going through doors</li>
+<li>Fixed setting a variable on an NPC from another NPC’s dialog not working correctly</li>
+<li>Fixed wait dialog not blacking out the screen properly</li>
+<li>Fixed crash on sDifficulty GMST when using vanilla files without patches or expansions</li>
+<li>Fixed sky rendering issue in Skies version IV</li>
+<li>Fixed marksman weapons not degrading with use</li>
+<li>Fixed battle music playing constantly</li>
+<li>Fixed alt-tabbing while in inventory causing the paper doll to disappear temporarily</li>
+<li>Fixed cost of training not being added to merchant’s inventory</li>
+<li>Fixed disposition changes not persisting if the conversation meny is closed by purchasing training</li>
+<li>Fixed blight still being contractible after being cured of Corpus</li>
+<li>Fixed crash when trying to access fog of war buffer before it is loaded</li>
+<li>Fixed PC Magicka not recalculating when intelligence is boosted or drained</li>
+<li>Fixed equipped torches disappearing when game is reloaded</li>
+<li>Fixed soultrap fail message displaying when targetting NPCs</li>
+<li>Fixed an issue with magicka cost for custom spells</li>
+<li>Fixed Azura’s Star disappearing when used to recharge an item</li>
+<li>Fixed GetPCRank not handling ignored explicit references</li>
+<li>Fixed string table overflow when loading TheGloryRoad.esm</li>
+<li>Fixed Dagoth Uthol running in slow motion</li>
+<li>Fixed incorrect values in the spellmaking window</li>
+<li>Fixed icon for Master Propylon Index not being visible</li>
+<li>Fixed Tavynu Tedran’s corpse going invisible after being looted</li>
+<li>Fixed health calculation when levelling up</li>
+<li>Fixed some monsters blocking doors from behind</li>
+<li>Fixed Ma’Rakha location in Less Generic NPC Foreign Quater mod</li>
+<li>Fixed number of potion effects shown per Alchemy rank</li>
+<li>Fixed encumbrance not updating while bartering</li>
+<li>Fixed base Magicka multiplier</li>
+<li>Fixed a torch in Addamasartus burning when it shouldn’t</li>
+<li>Fixed aquatic creature movement speed</li>
+<li>Fixed “Rest until healed” showing with full Health and Magicka</li>
+<li>Fixed Recalling while falling in an exterior cell changing Mark location</li>
+<li>Fixed stutter caused by ActorId in AiFollow::getTarget not being cached</li>
+<li>Fixed Dremora next to Gothren not sticking up for each other</li>
+<li>Fixed button placement on the QuickChar mod</li>
+<li>Fixed value and weight showing for keys</li>
+<li>Fixed persuasion results not showing when using an unpatched Morrowind.esm</li>
+<li>Fixed issue with Falura Llervu follow quest when loading a save</li>
+<li>Fixed only guards reacting to theft</li>
+<li>Fixed on-target spells being rendered behind the water surface</li>
+<li>Fixed Galsa Gindu’s house appearing as if it is on fire</li>
+<li>Fixed an Ogre fatal exception on invalid parameters</li>
+<li>Fixed Guards trying to talk to players corpse after killing the player</li>
+<li>Fixed an infinite recursion in ActionTeleport</li>
+<li>Fixed followers teleporting with the player into new cells after they are done following the player</li>
+<li>Fixed typing “j” into the “Name” field opening the journal</li>
+<li>Fixed text pasting into the console twice</li>
+<li>Fixed “setfatigue 0” not rendering NPCs unconscious</li>
+<li>Fixed being able to talk to unconscious actors</li>
+<li>Fixed crash when player killed by own summoned creature</li>
+<li>Fixed memory leak when OpenMW window is minimized</li>
+<li>Fixed RefNum of objects not being reset when they are copied</li>
+<li>Removed defunct option for building without FFmpeg</li>
+<li>OpenCS: Implemented body part record verifier</li>
+<li>OpenCS: Implemented improved keyboard navigation for scene toolbar</li>
+<li>OpenCS: Implemented tooltips on all graphical buttons</li>
+<li>OpenCS: Implemented handling resources like regular records</li>
+<li>OpenCS: Implemented scene toolbar buttons for selecting element types to be rendered – most of the scene elements supported by these buttons are not implemented yet</li>
+<li>OpenCS: Fixed not saving projects when the defaultfilters file has the wrong permissions</li>
+</ul>
+<h5 id="want-to-leave-a-comment"><a href="http://forum.openmw.org/viewtopic.php?f=38&amp;t=2421">Want to leave a comment?</a></h5>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2014/openmw-0-31-0/">OpenMW 0.31.0 Released!</a></h2>
+  <p class="post-meta">
+  <time datetime="2014-07-17">July 17, 2014</time> · <a href="/beta-v2-openmw/author/raevol/">raevol</a> · <a href="/beta-v2-openmw/category/release/">Release</a>
+</p>
+
+  <div class="prose">
+    
+      <p>The OpenMW team is proud to announce the release of version 0.31.0! Grab it from our <a href="/beta-v2-openmw/downloads/">Downloads Page</a> for all operating systems. This release includes implementation of many smaller features that have been sorely missing, as well fixes for a ridiculous amount of bugs. Many thanks to our developers for their relentless attention to detail. Some optimization has made it into this release, let us know if you see any increased performance.</p>
+<p>The venerable WeirdSexy has been swamped lately, and is even more swamped by the behemoth changelog that this release brings. The video for this release has been delayed, but get a drink, kick back, and page through the list of changes below.</p>
+<p><strong>Known Issues:</strong></p>
+<ul>
+<li>Switching from fullscreen to windowed mode on Windows 7 or 8.1 while using the D3D9 renderer causes a crash</li>
+</ul>
+<p><strong>Changelog:</strong></p>
+<ul>
+<li>Implemented periodic cleanup/refill</li>
+<li>Implemented precipitation and weather particles</li>
+<li>Implemented dialogue merging</li>
+<li>Implemented saving missing creature state</li>
+<li>Implemented saving fog of war state</li>
+<li>Implemented NPCs and creatures fighting each other</li>
+<li>Implemented murder crime</li>
+<li>Implemented Sneak skill enhancements</li>
+<li>Implemented item restock handling</li>
+<li>Implemented save game levelled creature handling</li>
+<li>Implemented modFactionReaction script instruction</li>
+<li>Implemented animated main menu support</li>
+<li>Implemented saving walk/run toggle state</li>
+<li>Implemented save game naming changes</li>
+<li>Implemented a delete button on the load game menu</li>
+<li>Implemented using journal while in dialog</li>
+<li>Implemented battle music while in combat</li>
+<li>Implemented follower fast travel</li>
+<li>Implemented disposition and distance based aggression</li>
+<li>Fixed clouds and weather to better match vanilla Morrowind</li>
+<li>Fixed local map not showing objects that span multiple cells</li>
+<li>Fixed CenterOnCell behavior to better match vanilla Morrowind</li>
+<li>Fixed local and world map display issues</li>
+<li>Fixed water being luminescent at night</li>
+<li>Fixed launcher not supporting non-latin paths on Windows</li>
+<li>Fixed background tracks repeating</li>
+<li>Fixed door animation behavior when leaving a cell</li>
+<li>Fixed disabled stronghold statics showing on the world map</li>
+<li>Fixed excessive vram usage after extended play</li>
+<li>Fixed dead body collision behavior</li>
+<li>Fixed several character creation issues</li>
+<li>Fixed various issues with jumping</li>
+<li>Fixed delay on reflection effects</li>
+<li>Fixed being able to interact with the world during Wait/Rest dialog</li>
+<li>Fixed being able to drop items inside walls and ceilings</li>
+<li>Fixed corpses changing orientation when re-entering a cell</li>
+<li>Fixed several footstep sound issues</li>
+<li>Fixed several dialog link issues</li>
+<li>Fixed broken dialog topics in Russian version</li>
+<li>Fixed summoned creature duration issue</li>
+<li>Fixed crimes against hostile NPCs issue</li>
+<li>Fixed creature run speed formula</li>
+<li>Fixed weakness to fire not working with fire damage in the same spell</li>
+<li>Fixed NPCs killing each other while attacking the player</li>
+<li>Fixed Bittercup script not working on ‘Take’ option</li>
+<li>Fixed case sensitivity for .bsa files</li>
+<li>Fixed crash when loading a save after being killed</li>
+<li>Fixed jumping not being disabled when showing message boxes</li>
+<li>Fixed binding keys to uncommon characters</li>
+<li>Fixed container selection changing based on mouse pointer position</li>
+<li>Fixed a load/save issue with dynamic records</li>
+<li>Fixed double paste into console</li>
+<li>Fixed crash with D3D9 shaders</li>
+<li>Fixed incorrect slope climb allowing the player to skip chargen</li>
+<li>Fixed slaughterfish detecting player when player is out of the water</li>
+<li>Fixed error when loading Animated Morrowind</li>
+<li>Fixed NPC footsteps persisting after killing a moving NPC</li>
+<li>Fixed previously equipped items not shown as unequipped after attemping to sell them</li>
+<li>Fixed actors ignoring vertical axis when deciding to attack</li>
+<li>Fixed blank toggle option for shadows in options menu</li>
+<li>Fixed Ashlands being visible during new game loading process</li>
+<li>Fixed guards prompting with punishment options after player resists arrest with another guard</li>
+<li>Fixed a gate activation in TR</li>
+<li>Fixed dependent files not getting disabled in launcher when parent is disabled</li>
+<li>Fixed several code fragments</li>
+<li>Fixed incorrect voice type playing on sleep interrupt</li>
+<li>Fixed save games not showing in menu in certain cases</li>
+<li>Fixed lights without a model not working</li>
+<li>Fixed Animation Compilation mod not working properly</li>
+<li>Fixed third party SL_Pick01.nif not working</li>
+<li>Fixed being unable to exit dialog after stealing in front of Sellus Gravius</li>
+<li>Fixed installs to /usr/local not working</li>
+<li>Fixed failure to load save if one of the content files is disabled</li>
+<li>Fixed crash on loading Siege at Firemoth</li>
+<li>Fixed Arkngthand door not opening</li>
+<li>Fixed Segfault when modifying view distance in options</li>
+<li>Fixed apostrophe and dash characters not displaying in French version</li>
+<li>Fixed display issue with icon background for magic items</li>
+<li>Fixed display issue with coin icon on level up dialog</li>
+<li>Fixed Alt+F4 not working in Windows</li>
+<li>Fixed changing ring behavior</li>
+<li>Fixed robes hiding pauldrons</li>
+<li>Fixed button orientation on some shrine dialogs</li>
+<li>Fixed items floating in the air when dropped onto corpses</li>
+<li>Fixed forearms not rendering on Argonian females</li>
+<li>Fixed alchemy allowing making potions from two of the same item</li>
+<li>Fixed Max Sale button behavior</li>
+<li>Fixed rest until healed for characters with stunted magicka</li>
+<li>Fixed empty travel window displaying during new game sequence</li>
+<li>Fixed save game permission issue</li>
+<li>Fixed crash when loading The Underground 2 mod</li>
+<li>Fixed ignoring additional splash screens</li>
+<li>Fixed perpetual save load issue</li>
+<li>Fixed error with Skyrim: Home of the Nords</li>
+<li>Fixed many script instruction behaviors</li>
+<li>Fixed read skill books not being saved in save game</li>
+<li>Fixed unusable items being able to get bound to hotkeys</li>
+<li>Fixed text variables in journal topic list</li>
+<li>Fixed repeating swings on friendly NPC counting as additional crimes</li>
+<li>Fixed lack of punishment for stealing priceless items</li>
+<li>Fixed door marker at Jobasha’s Rare Books spawning PC in the air</li>
+<li>Fixed topic selection menu to be wider</li>
+<li>Fixed items dropped on rug being inaccessible</li>
+<li>Fixed crime for dropping and taking looted items</li>
+<li>Fixed location of dropped arrows and bolts</li>
+<li>Fixed security trainers offering acrobatics instead</li>
+<li>Fixed punishment dialog displaying instead of load when killed by a guard</li>
+<li>Fixed script error in SkipTutorial</li>
+<li>Fixed bad lighting when using morrowind.ini generated by MGE</li>
+<li>Fixed mobile Heart of Lorkan</li>
+<li>Fixed keybindings not saving</li>
+<li>Fixed apathetic Dura Gra-Bol</li>
+<li>Fixed Morrowind Patch preventing interior cell load</li>
+<li>Fixed item value on tooltip</li>
+<li>Fixed death count not storing in savegame</li>
+<li>Fixed submerged portion of weapon not rendering when partially submerged</li>
+<li>Fixed enemies attacking while dying</li>
+<li>Fixed ESM error with INFO</li>
+<li>Fixed projectiles shot at player ending up in inventory</li>
+<li>Fixed monsters respawning on top of each other</li>
+<li>Fixed dialog box opening on follower NPC when NPC is dead or game is paused</li>
+<li>Fixed floating paralyzed cliffracers</li>
+<li>Fixed message boxes not clearing when loading a different save game</li>
+<li>Fixed underwater sound sometimes playing when transitioning from an interior</li>
+<li>Fixed spell projectiles not colliding with water surface</li>
+<li>Fixed console error message when information is refused by an NPC</li>
+<li>Fixed being unable to remove arrow during Bloodmoon: The Ritual of Beasts quest</li>
+<li>Fixed being unable to talk to Carnius Magius in Bloodmoon</li>
+<li>Fixed crash when attempting to play a non-music file</li>
+<li>Fixed world map not being centered on player in certain cases</li>
+<li>Fixed arrow behavior in wait/rest dialog</li>
+<li>Fixed kills not filling werewolf hunger</li>
+<li>Fixed detect life behavior while a werewolf</li>
+<li>Fixed crash during The Shrine of the Dead mission in Tribunal</li>
+<li>Fixed selected text background color in the console</li>
+<li>Fixed handling extra arguments given to script instructions</li>
+<li>Fixed NPCs taunting after they are dead in An Assassionation Attempt quest</li>
+<li>Fixed game halt when attacked by Centurion Archers</li>
+<li>Fixed quest journal when completing The Missing Hand quest</li>
+<li>Fixed several issues with the Dome of Serlyn</li>
+<li>Fixed bounty being calculated from actual item value instead of highest value</li>
+<li>Fixed terrain turning invisible on top of Red Mountain</li>
+<li>Fixed steam appearance in Cave of the Hidden Music quest</li>
+<li>Fixed display issues when picking up a stack of items, holding enter, and moving the mouse</li>
+<li>Fixed Draugr and Riekling attacks</li>
+<li>Fixed Bonewolf animation</li>
+<li>Fixed particle effects being paralyzed when the player is paralyzed</li>
+<li>Fixed Crimson Plague quest not updating when Gedna Relvel is killed</li>
+<li>Fixed failed save game when saving in Old Mournhold: Forgotten Sewer</li>
+<li>Fixed segfault when making Drain/Fortify Skill spells</li>
+<li>Fixed case where game wouldn’t switch to fullscreen</li>
+<li>Fixed Morrowind Rebirth duplicate objects/vanilla objects not being removed</li>
+<li>Fixed case where paralysis and switching view modes would prevent death notification</li>
+<li>Fixed an alt+tab segfault</li>
+<li>Various code maintenace and cleanup</li>
+<li>OpenCS: Implemented object rendering in cells</li>
+<li>OpenCS: Implemented configuration setup</li>
+<li>OpenCS: Implemented threaded loading</li>
+<li>OpenCS: Implemented cell record saving</li>
+<li>OpenCS: Implemented body part table</li>
+<li>OpenCS: Implemented enchantment effect table</li>
+<li>OpenCS: Implemented deleting referenceables</li>
+<li>OpenCS: Fixed Combat/Magic/Stealth values for creatures are not displayed</li>
+<li>OpenCS: Fixed segfault after ‘new’ or ‘load’</li>
+<li>OpenCS: Fixed deleting Record Filter line not reseting the filter</li>
+<li>OpenCS: Fixed crash when drag and dropping text</li>
+<li>OpenCS: Fixed bogus filter being created when dragging multiple records to the filter bar of a non-applicable table</li>
+</ul>
+<p>Feel free to discuss it on <a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=2273" title="OpenMW 0.31.0 Released! topic">our forums</a>.</p>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2014/openmw-0-30-0-released/">OpenMW 0.30.0 Released</a></h2>
+  <p class="post-meta">
+  <time datetime="2014-05-28">May 28, 2014</time> · <a href="/beta-v2-openmw/author/raevol/">raevol</a> · <a href="/beta-v2-openmw/category/release/">Release</a>
+</p>
+
+  <div class="prose">
+    
+      <p>The OpenMW team is proud to announce the release of version 0.30.0! Grab it from our <a href="/beta-v2-openmw/downloads/">Downloads Page</a> for all operating systems. This release includes ranged combat, and crime &amp; punishment. OpenMW just got a whole lot shadier… Other new features include terrain threading, many fixes and improvements to save/load, and a laundry list of bug fixes.</p>
+<p>Check out the release video by the pertinacious WeirdSexy:</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=QhdSOGlHjqc">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2014/openmw-0-30-0-released/youtube-QhdSOGlHjqc_hu_3afa5a6d82bdd58d.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.30 Release Commentary <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p><strong>Known Issues:</strong></p>
+<ul>
+<li>Character generation can be skipped</li>
+<li>Some items can be stolen without raising an alarm</li>
+<li>Sound may be disabled on videos in Windows</li>
+</ul>
+<p><strong>Changelog:</strong></p>
+<ul>
+<li>Implemented Ranged Combat</li>
+<li>Implemented Sneaking Skill icon</li>
+<li>Implemented Crime and Punishment</li>
+<li>Implemented correct trader gold handling</li>
+<li>Implemented AIFollow package on summoned creatures</li>
+<li>Implemented run stance in the AIFollow package</li>
+<li>Implemented all NPCs in the area attacking the player when the player attacks one</li>
+<li>Implemented terrain threading</li>
+<li>Implemented correct GUI save/load progress bars</li>
+<li>Implemented saving the weather state in save games</li>
+<li>Implemented class creation form remembering previous changes</li>
+<li>Implemented quicksave, quickload, and autosave</li>
+<li>Implemented deleting saves</li>
+<li>Implemented bribe gold being placed into the NPCs inventory</li>
+<li>Implemented saving quick key bindings</li>
+<li>Implemented NPCs returning to their default position after pursuing the player for a crime</li>
+<li>Implemented vertical axis navigation for flying and swimming creatures</li>
+<li>Implemented functionality for NPCs to evade each other when walking around</li>
+<li>Fixed extreme shaking that could occur during cell transitions while moving</li>
+<li>Fixed crash when a non-existent content file is added to openmw.cfg</li>
+<li>Fixed OpenMW allowing resting/using a bed while in combat</li>
+<li>Fixed crime punishment in the Census and Excise Office at the start of a new game</li>
+<li>Fixed evidence chests not re-locking after new evidence is put in them</li>
+<li>Fixed NPCs still attacking after punishment is served</li>
+<li>Fixed taking items from a corpse being considered a crime</li>
+<li>Fixed some creatures not being able to get close enough to attack</li>
+<li>Fixed dead creatures dying again each time the player enters the cell</li>
+<li>Fixed input manager state not being handled correctly when loading a save</li>
+<li>Fixed crash when trying to get LOS of disabled NPC</li>
+<li>Fixed incorrect inventory behavior before inventory is activated in a new game</li>
+<li>Fixed NPCs not equipping torches in dark interiors</li>
+<li>Fixed mouse wheel scrolling too fast in race selection</li>
+<li>Fixed doors being blocked by NPCs</li>
+<li>Fixed repair/charge indicators not updating</li>
+<li>Fixed scribs not defending themselves</li>
+<li>Fixed creatures life bar not always being empty when they are dead</li>
+<li>Fixed creature and hand to hand attacks not increasing armor skill</li>
+<li>Fixed undead and mechanical creatures bleeding red blood</li>
+<li>Fixed Tarhiel never falling</li>
+<li>Fixed script variables not being saved</li>
+<li>Fixed custom class names not being handled properly in save games</li>
+<li>Fixed NPCs stuttering when walking indoors</li>
+<li>Fixed menu appearing when trying to skip intro movie</li>
+<li>Fixed NPCs getting stuck when they run into each other</li>
+<li>Fixed health bar showing permanently when running BTB-Settings</li>
+<li>Fixed guard killing PC when Khajiit race is selected when running BTB-Character</li>
+<li>Fixed HUD weapon icon showing a fist after loading a save, when a weapon is equipped</li>
+<li>Fixed guild rank not showing in dialogue</li>
+<li>Fixed flash of blue when sneaking and opening a container or the inventory</li>
+<li>Fixed incorrect level-up class image when using a custom class</li>
+<li>Fixed mis-aligned buttons on quit menu</li>
+<li>Fixed an NPC stuck hovering in a jumping animation</li>
+<li>Fixed crash when loading the Big City esm file.</li>
+<li>Fixed mis-aligned dialogue topic list when scrolling</li>
+<li>Fixed certain faction memberships not storing in saved games</li>
+<li>Fixed pasting text always inserting at the end of a text box, instead of at the cursor</li>
+<li>Fixed conversation loop when asking about “specific place” in Vivec</li>
+<li>Fixed Caius not leaving at the start of the “Mehra Milo and the Lost Prophecies” quest</li>
+<li>Fixed map markers not being saved in save games</li>
+<li>Fixed “ring_keley” causing exception</li>
+<li>Fixed open dialogues not being closed when loading a game</li>
+<li>Fixed some collision geometry cleanup</li>
+<li>Fixed a special case script instruction for the Athyn Sarethi mission</li>
+<li>Fixed an improper handling of a special NIF format case that caused problems with the Pluginless Khajiit Head Pack</li>
+<li>OpenCS: Implemented region map context menu</li>
+<li>OpenCS: Implemented region map drag &amp; drop</li>
+<li>OpenCS: Implemented scene subview drop</li>
+<li>OpenCS: Implemented preview subview</li>
+<li>OpenCS: Implemented OGRE integration</li>
+<li>OpenCS: Implemented Dialogue Sub-Views</li>
+<li>OpenCS: Implemented lighting modes</li>
+<li>OpenCS: Implemented different camera navigation modes</li>
+<li>OpenCS: Refactored user settings</li>
+<li>OpenCS: Fixed failure when dropping a region into the filter of a cell subview</li>
+<li>OpenCS: Fixed exception when loading files</li>
+</ul>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2014/openmw-0-29-0-released/">OpenMW 0.29.0 Released</a></h2>
+  <p class="post-meta">
+  <time datetime="2014-03-13">March 13, 2014</time> · <a href="/beta-v2-openmw/author/raevol/">raevol</a> · <a href="/beta-v2-openmw/category/release/">Release</a>
+</p>
+
+  <div class="prose">
+    
+      <p>The OpenMW team is proud to announce the release of version 0.29.0! Grab it from our <a href="/beta-v2-openmw/downloads/">Downloads Page</a> for all operating systems. This release includes the first implementation of the Save/Load feature, which catapults OpenMW closer to being completely playable. Please bear in mind that <strong>the save file format is not yet finalized</strong> and we cannot guarantee forward compatibility of save files until OpenMW 1.0. Some aspects of the game state, such as player controls being enabled/disabled, weather, some creature state including all magic (also used by NPCs), movement of objects between cells (except for the player), and fog of war are not currently saved. Other new features include more combat AI, blocking, area magic, and disease. OpenMW is becoming a hazardous place to be!</p>
+<p>Check out the release video by the irrepressible WeirdSexy:</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=VoeIaYkc0Do">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2014/openmw-0-29-0-released/youtube-VoeIaYkc0Do_hu_ab6cb077db82c300.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.29 Release Commentary <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p><strong>Known Issues:</strong></p>
+<ul>
+<li>Issue #416 Extreme shaking may occur during cell transitions for some users (enable anti-aliasing as a possible workaround)</li>
+<li>Slaughterfish fly. You read that right.</li>
+</ul>
+<p><strong>Changelog:</strong></p>
+<ul>
+<li>Implemented most of the Load/Save GUI</li>
+<li>Implemented Knockdown</li>
+<li>Implemented fatigue decrease when doing physical activities</li>
+<li>Implemented melee blocking</li>
+<li>Implemented area magic</li>
+<li>Implemented combat and combat AI for creatures</li>
+<li>Implemented Damage/Restore Skill/Attribute magic effects</li>
+<li>Implemented Resistance/Weakness to normal weapons magic effect</li>
+<li>Implemented Slow Fall magic effect</li>
+<li>Implemented auto-calculating NPC spell list</li>
+<li>Implemented Disease contraction</li>
+<li>Implemented blood particles</li>
+<li>Implemented the rest of the player death feature</li>
+<li>Implemented sleep/rest being interrupted</li>
+<li>Implemented inventory equip scripts</li>
+<li>Implemented display of the version/build number in the launcher window</li>
+<li>Implemented a large portion of the Save/Load feature</li>
+<li>Implemented AI Packages:Activate, Follow, FollowCell</li>
+<li>Implemented levelled creatures</li>
+<li>Implemented missing journal backend features</li>
+<li>Improved handling of creature Weapons/Shields</li>
+<li>Linked movie volume to Master instead of Music volume control</li>
+<li>Fix for excess vram usage</li>
+<li>Fix for footsteps in first person</li>
+<li>Fix for Ascended Sleeper animation issues, related to determining the root animation node</li>
+<li>Fix for AI related FPS drop</li>
+<li>Fix for music issues on OS X &gt;= 10.9</li>
+<li>Fix for inventory paperdoll obscuring armour rating and rating text display when window is shrunk</li>
+<li>Fix for 0/0 charge stat bar display</li>
+<li>Fix for werewolf change handling</li>
+<li>Fix for NIF filters not working properly with some mods</li>
+<li>Fix for invalid orientation crash</li>
+<li>Fix for invisible weapons when re-entering an area with NPCs engaged in combat</li>
+<li>Fix for magicka depleting when casting an uncastable spell</li>
+<li>Fix for creatures not being able to run</li>
+<li>Fix for activators working as collision objects</li>
+<li>Fix to not reset water level when loading a plugin with no water level record</li>
+<li>Fix for AI packages growing exponentially when adding an AI package</li>
+<li>Fix for Vivec Informants quest</li>
+<li>Fix for bug allowing the player to get unlimited gold</li>
+<li>Fix for bug of only receiving 1 gold when picking up stacks of gold</li>
+<li>Fix for Dwemer crossbows not being held correctly</li>
+<li>Fix for quick keys being able to be configured during character generation</li>
+<li>Fix for a crash when equipping the lockpick in the Census &amp; Excise Office</li>
+<li>Fixes for errors in .desktop files</li>
+<li>Various fixes for script instructions</li>
+<li>Various message box fixes</li>
+<li>OpenCS: Implemented a referenceable record verifier</li>
+<li>OpenCS: Implemented script verifier</li>
+<li>OpenCS: Implemented Drag &amp; Drop</li>
+<li>OpenCS: Implemented record cloning</li>
+<li>OpenCS: Fixed broken code for loading objects</li>
+<li>OpenCS: Fixed tables to sort case-insensitively</li>
+</ul>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2014/openmw-0-28-0-released/">OpenMW 0.28.0 Released!</a></h2>
+  <p class="post-meta">
+  <time datetime="2014-01-13">January 13, 2014</time> · <a href="/beta-v2-openmw/author/raevol/">raevol</a> · <a href="/beta-v2-openmw/category/release/">Release</a>
+</p>
+
+  <div class="prose">
+    
+      <p>The OpenMW team is proud to announce the release of version 0.28.0! Grab it from our <a href="/beta-v2-openmw/downloads/">Downloads Page</a> for all operating systems. This behemoth of a release includes many large features, such as Combat AI, Magic, Vampirism, terrain bump/specular/parallax mapping, and many other things. There’s also a heap of bug fixes, many thanks to our relentless developers!</p>
+<p>Check out the release video by the prodigious WeirdSexy:</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=x9lTWjXAi9s">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2014/openmw-0-28-0-released/youtube-x9lTWjXAi9s_hu_2b7f86664957cc2c.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.28 Release Commentary <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p><strong>Known Issues:</strong></p>
+<ul>
+<li>Issue #416 Extreme shaking may occur during cell transitions for some users (enable anti-aliasing as a possible workaround)</li>
+<li>Issue #1041 Music playback doesn’t work on OS X 10.9</li>
+</ul>
+<p><strong>Changelog:</strong></p>
+<ul>
+<li>Implemented Combat AI</li>
+<li>Implemented spell casting, ranged, self, and touch magic</li>
+<li>Implemented visual magic effects</li>
+<li>Implemented Vampirism</li>
+<li>Implemented terrain bump, specular, &amp; parallax mapping</li>
+<li>Implemented NIF record NiFlipController</li>
+<li>Implemented soul gem recharging</li>
+<li>Implemented enchanted item glow</li>
+<li>Implemented Invisibility/Chameleon magic effects</li>
+<li>Implemented Resist Magicka magic effect</li>
+<li>Implemented GetLOS, so NPCs can calculate Line Of Sight</li>
+<li>Implemented material controllers</li>
+<li>Implemented mouse unlocking when in any menu</li>
+<li>Implemented Vertex morph animation (NiGeomMorpherController)</li>
+<li>Implemented NiBillboardNode handling</li>
+<li>Implemented NIF texture slot DarkTexture</li>
+<li>Various fixes for equipped torches and candles</li>
+<li>Fixes for torches and shields being visible when casting spells</li>
+<li>Fix for equipped items not updating right away, on characters and in the inventory</li>
+<li>Fix for weather not changing correctly when changing areas</li>
+<li>Fix for global map position marker not updating when changing interior cells, eg: Mages Guild teleport</li>
+<li>Fix for some textures rendering black in Tamriel Rebuilt</li>
+<li>Fix for activation distance to be from the player head instead of the camera</li>
+<li>Fix for NPCs holding torches during the day</li>
+<li>Fix for some hairs from Vvardenfell Visages Volume I not rendering</li>
+<li>Fix for heads of Maormer race in mod by Mac Kom</li>
+<li>Fix for walk key release not being handled during cell load</li>
+<li>Fix for equipped inventory items not being updated on the HUD when they are changed in dialog</li>
+<li>Fix for Launcher writing merged openmw.cfg files</li>
+<li>Fix to enable discrete magnitudes for spells with multiple random magnitude effects</li>
+<li>Fix to allow negative fatigue level</li>
+<li>Fix for particle systems to handle the world space flag</li>
+<li>Fix for crash caused by trying to update a model that is not rendered</li>
+<li>Fix to not override dynamic stats set via console commands</li>
+<li>Fix for equipped inventory icon not appearing immediately when equipped with a keyboard shortcut</li>
+<li>Fix for crash when equipping light source with new character</li>
+<li>Fix for segmentation fault when starting at Bal Isra</li>
+<li>Fix for down arrow console history behavior</li>
+<li>Fix for tooltip disappearing when clicking in the inventory</li>
+<li>Fix for barter window item category not resetting to All correctly</li>
+<li>Fix for replacement model in Graphic Herbalism mod having the wrong orientation</li>
+<li>Fix for addon unchecking not being saved in the Launcher</li>
+<li>Fix for controllers not affecting all objects in the hierarchy</li>
+<li>Fix for being able to talk to NPCs who are in combat</li>
+<li>Fix for crash when trying to load a mod with a capital .ESP filename extension</li>
+<li>Fix for skills/attributes being capped when set via console</li>
+<li>Fix for setting max health through the console to also set the current health</li>
+<li>Fix for gameplay keyboard input echoing to the console input box</li>
+<li>Fix for fall damage sometimes not applying immediately or correctly</li>
+<li>Fix for persuasion window not showing in correct location after maximizing the game in windowed mode</li>
+<li>Fix for player skill list forgetting scroll location when increasing experience</li>
+<li>Fix for notification window not being large enough for skill level ups with long names</li>
+<li>Fix for windows not scaling properly on resolution change</li>
+<li>Fix for notification windows staying on screen permanently if too many are activated</li>
+<li>Fix for used torches stacking with unused ones</li>
+<li>Fix for crash on pickup of jug in Unexplored Shipwreck, Upper level</li>
+<li>Fix for quick key menu not picking suitable replacement tool when it is used up</li>
+<li>Fix for loading TES3 header data: convert characters to UTF8</li>
+<li>Fix for damaged weapon value</li>
+<li>Fix for being able to talk to characters with “locked” dialogue</li>
+<li>Fix for water effects obscuring spell effects</li>
+<li>Fix for animation playing when casting exhausted once-per-day abilities</li>
+<li>Fix for Cure Disease potion removing all effects from the player, not just disease</li>
+<li>Fix for OpenMW binaries linking to unnecessary libraries</li>
+<li>Fix for water not negating fall damage</li>
+<li>Fix for drawing a weapon increasing torch brightness</li>
+<li>Fix for merchants selling stacks of gold</li>
+<li>Fix for incorrect handling of color codes in character names</li>
+<li>Fix for NPCs spawning with 0 skill values instead of calculated values</li>
+<li>Fix for particles rendering too large</li>
+<li>Fix for crash caused by AIWander</li>
+<li>Fix for crash when revisiting dock where the starting ship was</li>
+<li>Fix for scripts on items in inventory stopping when the containing object crossed a cell border</li>
+<li>Fix for merchants equipping items with negative enchantments</li>
+<li>Disallowed view mode switching while performing an action due to animation constraints</li>
+<li>Code maintenance to unify OGRE initialization</li>
+<li>OpenCS: Implemented Info-Record tables</li>
+<li>OpenCS: Fix for not being able to open Journal table from the main menu</li>
+</ul>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pager" aria-label="Pages">
+  <a class="step" rel="prev" href="/beta-v2-openmw/category/release/page/7/">← Newer posts</a>
+  <ol>
+        <li><a href="/beta-v2-openmw/category/release/" aria-label="Page 1">1</a></li><li class="gap" aria-hidden="true">…</li>
+        <li><a href="/beta-v2-openmw/category/release/page/6/" aria-label="Page 6">6</a></li>
+        <li><a href="/beta-v2-openmw/category/release/page/7/" aria-label="Page 7">7</a></li>
+        <li><a href="/beta-v2-openmw/category/release/page/8/" aria-current="page" aria-label="Page 8">8</a></li>
+        <li><a href="/beta-v2-openmw/category/release/page/9/" aria-label="Page 9">9</a></li>
+        <li><a href="/beta-v2-openmw/category/release/page/10/" aria-label="Page 10">10</a></li>
+        <li><a href="/beta-v2-openmw/category/release/page/11/" aria-label="Page 11">11</a></li>
+  </ol>
+  <a class="step" rel="next" href="/beta-v2-openmw/category/release/page/9/">Older posts →</a>
+</nav>
+
+<p class="archive-link"><a href="/beta-v2-openmw/archive/">All posts by year</a></p>
+
+
+</main>
+<footer>
+  <div class="wrap">
+    <h2>Follow OpenMW</h2>
+    <ul>
+      <li><a href="https://gitlab.com/OpenMW/openmw">GitLab</a></li>
+      <li><a href="https://github.com/OpenMW/openmw">GitHub</a></li>
+      <li><a href="https://discord.gg/YegsVV3aRb">Discord</a></li>
+      <li><a href="https://matrix.to/#/#openmw-space:matrix.org">Matrix</a></li>
+      <li><a href="https://web.libera.chat/#openmw">IRC on Libera.Chat</a></li>
+      <li><a href="https://reddit.com/r/openmw">Reddit</a></li>
+      <li><a href="https://mastodon.gamedev.place/@openmw">Mastodon</a></li>
+      <li><a href="https://twitter.com/intent/user?screen_name=Openmw_org">Twitter</a></li>
+      <li><a href="/beta-v2-openmw/index.xml">RSS</a></li>
+      <li><a href="/beta-v2-openmw/atom.xml">Atom</a></li>
+    </ul>
+    <div class="credits">
+      <p>Copyright © 2008-2026 OpenMW. Website logo by Necrod.</p>
+      <p>Hosting kindly provided by <a href="https://www.futureweb.be">Futureweb</a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

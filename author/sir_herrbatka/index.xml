@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>sir_herrbatka · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/author/sir_herrbatka/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/author/sir_herrbatka/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Tue, 01 Apr 2014 19:41:51 &#43;0200</lastBuildDate>
+    <item>
+      <title>You! I want to run that on my IPad! IPad! IPad!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/you-run-ipad-ipad-ipad/</link>
+      <pubDate>Tue, 01 Apr 2014 19:41:51 &#43;0200</pubDate>
+      <dc:creator>sir_herrbatka</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3538</guid>
+      <description>
+Odpowiadając na liczne prośby i wychodząc na spotkanie oczekiwaniom użytkowników: o to openmw uruchomione na iPadzie. Wydajność jest znakomita, i pozwala na płynne wyświetlanie pięciu klatek na sekundę.
+Niestety projekt OpenWW nie będzie już kontynuowany. Zdecydowaliśmy, że tworzenie nowego silnika …</description>
+      <content:encoded><![CDATA[<p><a href="/beta-v2-openmw/2014/you-run-ipad-ipad-ipad/gaypad.jpg"><img src="/beta-v2-openmw/2014/you-run-ipad-ipad-ipad/gaypad-300x168_hu_955b118b2e2f7cf6.webp" alt="gaypad" width="300" height="168" loading="lazy" decoding="async"></a></p>
+<p>Odpowiadając na liczne prośby i wychodząc na spotkanie oczekiwaniom użytkowników: o to openmw uruchomione na iPadzie. Wydajność jest znakomita, i pozwala na płynne wyświetlanie pięciu klatek na sekundę.</p>
+<p>Niestety projekt OpenWW nie będzie już kontynuowany. Zdecydowaliśmy, że tworzenie nowego silnika gry dla pozycji tak już starej, mija się z celem. Zamiast tego skupimy się na OpenSS.</p>
+<p>OpenSS to skrót od Open SummerSet: miejsca w którym najpewniej będzie rozgrywać się akcja następnej części serii. Lub przynajmniej jednej z następnych. Decyzja ta może wydawać się dziwna, ale należy podkreślić, że dzięki temu uda nam się stworzyć silnik dla najnowszej gry Bethesdy zanim właściwie powstanie.</p>
+<p>Oprócz tego zdecydowaliśmy się wprowadzić daleko idące zmiany w wyborze narzędzi użytych do tworzenia OpenSS. C++ jest krytykowane jako język mocno przestarzały, ale jednocześnie nadal lepiej nadający się do tworzenia gier niż inne. By rozwiązać ten problem, stworzymy nowy język oprogramowania – specjalnie na potrzeby tej gry.</p>
+<p>Mam nadzieję, że te, oraz inne, planowane zmiany, ostatecznie zadowolą wszystkich fanów gier z serii TES!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Week in review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/week-review-84/</link>
+      <pubDate>Tue, 21 Jan 2014 16:00:46 &#43;0100</pubDate>
+      <dc:creator>sir_herrbatka</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3390</guid>
+      <description>Welcome back,
+0.28.0 was an incredible hit on the internet. At the very moment view count of views on the commentary video approaches 15 000 ─ excellent for a such small period of time. This comes with no surprise ─ 0.28.0 is huge and brings us very close to the playability. However, OpenMW …</description>
+      <content:encoded><![CDATA[<p>Welcome back,</p>
+<p>0.28.0 was an incredible hit on the internet. At the very moment view count of views on the commentary video approaches 15 000 ─ excellent for a such small period of time. This comes with no surprise ─ 0.28.0 is huge and brings us very close to the playability. However, OpenMW progresses even now with excellent rate.</p>
+<p>As usual scrawl proved to be main work horse of OpenMW. He just implemented the SlowFall magic effect, blood splatter after hitting with weapon, knockdown,  and more!</p>
+<p>Meanwhile, zini finished the first version of saving. Many elements are still missing and are yet to come, however we are approaching 1.0.0 rather quickly and there are other areas that require attention at the moment ─ for instance scripts.</p>
+<p>Thanks to our very own sir_herrbatka, The OpenCS is now capable of verifying correctness of the referenceable records (those items, statics, activators you are usually dropping into the render window). You will never forget to add any icon to your item again!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Week in Review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/week-review-83/</link>
+      <pubDate>Tue, 14 Jan 2014 14:23:28 &#43;0100</pubDate>
+      <dc:creator>sir_herrbatka</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3360</guid>
+      <description>Scrawl, as usual, did an outstanding amount of work. I have no idea how he can be so productive.
+Needless to say we have the first implementation of crime in the OpenMW. We have GoToJail instruction, and yes: you can go to jail now. People do not like being robbed and they may fight you, unless they …</description>
+      <content:encoded><![CDATA[<p>Scrawl, as usual, did an outstanding amount of work. I have no idea how he can be so productive.</p>
+<p>Needless to say we have the first implementation of crime in the OpenMW. We have GoToJail instruction, and yes: you can go to jail now. People do not like being robbed and they may fight you, unless they are dead of course.</p>
+<p>This is incredible result for just one week of coding. Yet, this is not everything that happened  last week.</p>
+<p>Gus introduced new bugfixes for the pathfinding AI. We also have some camera improvements and a lot of other bugfixes.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Week in review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/week-review-82/</link>
+      <pubDate>Mon, 06 Jan 2014 12:12:55 &#43;0100</pubDate>
+      <dc:creator>sir_herrbatka</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3361</guid>
+      <description>We have new magic effects. Those are related to the AI: calm, frenzy, rally, turn undead, demoralize as well as those related to attributes (damage, drain, restore) as well as paralyze, water walking, desintegrate, mark, recall, interventions. WOW. Because It was a while since the last internet mem …</description>
+      <content:encoded><![CDATA[<p>We have new magic effects. Those are related to the AI: calm, frenzy, rally, turn undead, demoralize as well as those related to attributes (damage, drain, restore) as well as paralyze, water walking, desintegrate, mark, recall, interventions. WOW. Because It was a while since the last internet mem on the OpenMW, here is the one:</p>
+<p><img src="https://openmw.org/wp-content/uploads/2014/01/wow-scrawl2.png" alt="Wow scrawl." loading="lazy" decoding="async"><br>
+All thanks to scrawl. In addition to this, He also just started to implement diseases.</p>
+<p>And preparations for the 0.28.0 are on! It will be realesed this month and it will be the biggest OpenMW version ever. It will include spellcasting, combat AI and other long awaited features. <strong>You will be impressed.</strong></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Year in review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/year-review/</link>
+      <pubDate>Tue, 31 Dec 2013 09:10:16 &#43;0100</pubDate>
+      <dc:creator>sir_herrbatka</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3339</guid>
+      <description>OpenMW is now almost playable thanks to our efforts in the last 12 months. We are almost there… Still missing few skills but we have managed to implement artificial inteligence. We have also introduced support for multiple data files – many users waited impatiently for this… We have also changed few …</description>
+      <content:encoded><![CDATA[<p>OpenMW is now almost playable thanks to our efforts in the last 12 months. We are almost there… Still missing few skills but we have managed to implement artificial inteligence. We have also introduced support for multiple data files – many users waited impatiently for this… We have also changed few things. We moved away from pmove to our own custom written controller. Thanks to this walking animation works and controlls the movement. Modern effects were added. Normal mapping is a major improvement and brand new distant terrain look great ─ even without any objects. New (drastically improved) implementation of input was introduced. We have implemented new game button. We have completely re-evaluated the usage of OpenCS editor. The old version was scrapped and new one was introduced. We have solved hundreds upon hundreds of bugs and small annoyances…</p>
+<p>Damn… That was a lot of work… but thanks to our fantastic team it was progressing fast and smooth. At some stage the work was going so well we honestly believed that we will be able to release version 1.0 before the end of this year! That wont happen unfortunatelly but we are close… Very close… Year 2014 brings new challanges for the OpenMW team ─ ie. improving performance, optimizing code, adding new functions to the OpenCS editor, implementing missing OpenMW features and squashing as many bugs as possible… I am sure we can handle those tasks and then… it will be OpenMW 1.0 release time… I am waiting impatiently! Are You?</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Week in review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/3325/</link>
+      <pubDate>Tue, 31 Dec 2013 09:06:25 &#43;0100</pubDate>
+      <dc:creator>sir_herrbatka</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3325</guid>
+      <description>Such a active week!
+First of, any interesting news. As you may know, number of content files in vanilla Morrowind engine is limited to the 255. 255 seems to be a large number in this context, at least for me, yet still ─ some users reported that they where able to cross this limit. This is not a …</description>
+      <content:encoded><![CDATA[<p>Such a active week!</p>
+<p>First of, any interesting news. As you may know, number of content files in vanilla Morrowind engine is limited to the 255. 255 seems to be a large number in this context, at least for me, yet still ─ some users reported that they where able to cross this limit. This is not a problem anymore with OpenMW ─ we don’t have content file limit anymore, though we have a dependency count limit. No content file can depend on more than 255 files. I really don’t think that this is not enough but if somehow in fact it is not enough… zini can remove this limit as well.</p>
+<p>Other than that: although bugs are still legion, our team with smart mind and brave spirit dived into dark abandoned source files to slay many of them. Really, it’s nice to see that we are somehow able large number accumulated bugs. Especially when there are only three non-implemented skills.</p>
+<p>Scrawl also focuses on bugfixes. He probably could implement marksman (one of not implemented skills) at this point, however we miss formulas! We do not know how to calculate chance to hit, or how to calculate damage from projectiles. If someone could help us here, it would be very helpful.</p>
+<p>Sadly, progress on physics is slow, but it comes with no surprise: bullet is difficult to use, physics in video game is a difficult topic with quite a lot of crazy linear algebra involved and in general, everything here is just annoying.</p>
+<p>And to spoil your eyes, another portion of specular, paralax, and normal mapped <a href="https://plus.google.com/u/0/b/105268208967912754238/photos/105268208967912754238/albums/5960234896492093137" title="click me">terrain!</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Week in review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/week-review-80/</link>
+      <pubDate>Tue, 31 Dec 2013 09:05:47 &#43;0100</pubDate>
+      <dc:creator>sir_herrbatka</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3305</guid>
+      <description>Greetings fellow OpenMW’ers!
+We had another good week, with decent progress.
+For instance, don’t you think that we could use some facial animations? Well, actually this is possible now, thanks to scrawl. This video shows the current state ;-)
+Also, npcs became a lot more… lethal since Lgro’s patch …</description>
+      <content:encoded><![CDATA[<p>Greetings fellow OpenMW’ers!</p>
+<p>We had another good week, with decent progress.</p>
+<p>For instance, don’t you think that we could use some facial animations? Well, actually this is possible now, thanks to scrawl. <a href="http://youtu.be/XEk7CUEDJY0" title="click me">This video</a> shows the current state ;-)</p>
+<p>Also, npcs became a lot more… lethal since Lgro’s patch enabled the autocalculated stats. Guys on IRC are already crying like little girls because opponents just started owning them like bosses.</p>
+<p>Chris returned to work on physics, and I’m so excited to see much more news and progress! Zini still works on saved games, and It seems that he is a little annoyed with the amount of fixing, correcting and gluing together he has to do in order to finish this feature. Lots of stuff was problematic.</p>
+<p>Mr. Corristo pushed few bugfixes specific to the OSX. It seems that we had plenty of bugs there, but this comes to no surprise ─ bug testing on OSX is still suboptimal.</p>
+<p>Scrawl, as usual, also pushed quite an impressive number of bugfixes for OpenMW, related to different parts of the engine. I’m too lazy to list it all, you have to trust me ─ also as usual.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Week in review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/week-review-79/</link>
+      <pubDate>Tue, 31 Dec 2013 09:04:34 &#43;0100</pubDate>
+      <dc:creator>sir_herrbatka</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3294</guid>
+      <description>Welcome, let’s start with some videos that will show specular mapping, normal mapping in OpenMW. Adding those state-of-art (actually, those are not “state-of-art” anymore, but It sounds just cooler this way) techniques makes it look like they are actually… Oh just take a look on those!
+A video on …</description>
+      <content:encoded><![CDATA[<p>Welcome, let’s start with some videos that will show specular mapping, normal mapping in OpenMW. Adding those state-of-art (actually, those are not “state-of-art” anymore, but It sounds just cooler this way) techniques makes it look like they are actually… Oh just take a look on those!</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=t-NgplmbqpU">
+  <figure>
+    
+    <figcaption>A video on YouTube <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=66B0TpCCUsg">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2013/week-review-79/youtube-66B0TpCCUsg_hu_94277afe46e0b18.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>Normal Maps &amp; Speculars (OpenMW) <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>As you can see there is a lot that engine can for content quality. Of course, there is a lot that has to be done to apply those effects for every object in game, but after seeing how amazing things were made by community I’m sure we can make Morrowind looking really great!</p>
+<p>As you can also see, magic works just fine. I don’t have video to show this, but also propylon chambers effects are rendered correctly. Nifflip controller is also implemented, so we can support additional set of content. Everything thanks to scrawl.</p>
+<p>Meanwhile, zini works on the saving/load feature. After cleaning up, it seems that He progresses quite well.</p>
+<p>Pvdk, finally started working on the installation wizard that will aid you to install Morrowind to use with OpenMW.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Week in review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/3280/</link>
+      <pubDate>Tue, 31 Dec 2013 09:03:52 &#43;0100</pubDate>
+      <dc:creator>sir_herrbatka</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3280</guid>
+      <description>Greetings,
+We now have Issue 1000:
+Morrowind is a great game to play and a beautiful world to experience. And through the years, modders have expanded it to every imaginable direction. The last piece of the game that remained static, since it’s pretty hard to alter, is the game engine. It is a piece …</description>
+      <content:encoded><![CDATA[<p>Greetings,</p>
+<p>We now have <a href="https://bugs.openmw.org/issues/1000" title="click me">Issue 1000</a>:</p>
+<blockquote>
+<p>Morrowind is a great game to play and a beautiful world to experience. And through the years, modders have expanded it to every imaginable direction. The last piece of the game that remained static, since it’s pretty hard to alter, is the game engine. It is a piece of software built on decade old technology, that runs on only one OS, has a long list of known bugs and has held back the capabilities of modders since the game’s release.</p>
+<p>It’s our vision, that Morrowind could be so much more with a new, living engine that would reinvigorate and immortalize the game and give creators all the tools they need to materialize their visions.</p>
+<p>For this reason, we set the goal of building an alternative engine that is so good that most Morrowind players in the future will prefer it as the default vessel to experience the Morrowind world.</p>
+</blockquote>
+<p>As you can see, this is largely non trivial bug ─ but it will be resolved, eventually.</p>
+<p>Other than that:</p>
+<p>Zini just finished preparation on save load feature. Although it took more time than anybody could possibly imagine, it’s now working. What else can I say? This is something that we were waiting for a very long time.</p>
+<p>This week was outstanding, when it comes to the bugfixing. Our development team was able to fix a lot of those, especially scrawl… And we still have so many to fix.</p>
+<p>Ah, about that bullet bug; it is resolved now, but it seems that our problem is related to something else. At the moment we haven’t progressed with it, yet. But hopefully KittyCat will return to save us.</p>
+<p>To all who helped us by starring the said bullet bug: thank you! It was amazing to see it reaching over two hundreds stars in no time!</p>
+<p>Lgro recently helped a little with our manual. Although it is still very incomplete, has some amazingly bad grammar, it can already be useful in some aspects. It seems that getting something helpful for all new users along with 1.0 is possible.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Week in review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/week-review-77/</link>
+      <pubDate>Tue, 26 Nov 2013 18:59:58 &#43;0100</pubDate>
+      <dc:creator>sir_herrbatka</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3217</guid>
+      <description>TL;DR Another good week, with progress on long awaited features.
+The 0.28.0 will be either very good or truly amazing. This week gus work on combat AI was merged and even now, in this very moment work on new features goes on!
+Let’s start with saving, that little nifty feature that allows you to …</description>
+      <content:encoded><![CDATA[<p>TL;DR Another good week, with progress on long awaited features.</p>
+<p>The 0.28.0 will be either very good or truly amazing. This week gus work on combat AI was merged and even now, in this very moment work on new features goes on!</p>
+<p>Let’s start with saving, that little nifty feature that allows you to actually quit Morrowind without worrying about loosing your hero. Zini is working on it currently, and I bet this will be ready for the 0.28.0. Please note, that saving and loading was meant to be one of the last things to implement before 1.0.0. So yes, we are getting to this long awaited moment.</p>
+<p>Scrawl still works on magic. He implemented bound and summon effects, vampirism, sun damage, absorb, reflect. In fact majority of magic effects is implemented now! He also corrected various aspects of container implementation, implemented recharging of the magical items. Great job scrawl!</p>
+<p>Work on our manual also rolls on. Although it is still very “quick and dirty” it slowly grows to cover missing issues. At some point, probably soon after the release of 1.0.0 it will actually become valuable help to all users: both die-hard veterans of construction set and all of those who just want to begin creating content for openmw engine.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

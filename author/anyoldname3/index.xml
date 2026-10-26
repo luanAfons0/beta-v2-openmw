@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>AnyOldName3 · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/author/anyoldname3/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/author/anyoldname3/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Mon, 06 Jan 2025 00:07:48 &#43;0100</lastBuildDate>
+    <item>
+      <title>OpenMW 0.49.0 is now in RC-phase!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2025/openmw-0-49-0-is-now-in-rc-phase/</link>
+      <pubDate>Mon, 06 Jan 2025 00:07:48 &#43;0100</pubDate>
+      <dc:creator>AnyOldName3</dc:creator>
+      <category>Release</category>
+      <guid isPermaLink="false">https://openmw.org/?p=6680</guid>
+      <description>Your patience has paid off, and we’re ready to start the process for the next OpenMW release, so are preparing our first round of Release Candidates (RCs for short). RCs are very similar to our release builds and are meant for testing – once we’ve ironed out all the creases, cleaned off all the …</description>
+      <content:encoded><![CDATA[<p>Your patience has paid off, and we’re ready to start the process for the next OpenMW release, so are preparing our first round of Release Candidates (<em>RCs</em> for short). RCs are very similar to our release builds and are meant for testing – once we’ve ironed out all the creases, cleaned off all the grime, and bleached all the stains, one of them will become the next release. To do that, we need our users to find the problems, so we’d be <strong>very</strong> grateful if you took one of our RCs for your preferred platform out for a test drive and report any findings you make to our GitLab <a href="https://gitlab.com/groups/OpenMW/-/issues">issue tracker</a>. <strong>Please make sure to check first that whatever you find is not on the tracker already and that you’re running the latest RC.</strong></p>
+<p><strong>If you just want to use OpenMW without hassle rather than test things, we’d normally say you’re probably better off waiting for the actual release or <a href="/beta-v2-openmw/downloads/">grabbing 0.48 from our downloads page</a>.</strong> However, we’re aware that this release has taken a while, and plenty of Lua mods require something newer, so trying the RC will probably be more reliable (and helpful for us) than using a dev build.</p>
+<ul>
+<li><a href="https://github.com/OpenMW/openmw/releases/">For now, we’re keeping track of RC build links on GitHub</a></li>
+</ul>
+<p>Thank you and we’ll see you again on the day of the release!<br>
+To join in on the forum discussion, head over to our <a href="https://forum.openmw.org/viewtopic.php?t=7853">OpenMW 0.49 Topic</a></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

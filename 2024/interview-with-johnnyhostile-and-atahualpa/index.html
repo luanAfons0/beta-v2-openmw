@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Open source Elderscrolls 3: Morrowind engine reimplementation.">
+<meta name="twitter:site" content="@openmw_org">
+<meta name="robots" content="noindex">
+<title>Interview with johnnyhostile and Atahualpa · OpenMW</title>
+<link rel="icon" type="image/png" href="/beta-v2-openmw/favicon.png">
+
+<link rel="stylesheet" href="/beta-v2-openmw/css/main.min.dd57dc4e01d34600100d3c131c85b77ddd312fd0b9532e73284212cc93269a72.css" integrity="sha256-3VfcTgHTRgAQDTwTHIW3fd0xL9C5Uy5zKEISzJMmmnI=">
+
+</head>
+<body>
+<header class="masthead" id="top">
+  <div class="wrap wrap-flush">
+    <div class="art">
+      <a href="/beta-v2-openmw/"><img class="logo" src="/beta-v2-openmw/images/logo.png" width="588" height="128" alt="OpenMW"></a>
+      <div class="credit">Image © Maxim Nikolaev</div>
+    </div>
+    <nav class="mainnav" aria-label="Main">
+      <ul>
+        <li><a href="/beta-v2-openmw/faq/">FAQ</a></li>
+        <li><a href="/beta-v2-openmw/downloads/">Downloads</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw">Source Code</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw/issues">Issue Tracker</a></li>
+        <li><a href="/beta-v2-openmw/media/">Media</a></li>
+        <li><a href="https://wiki.openmw.org/">Wiki</a></li>
+        <li><a href="https://forum.openmw.org/">Forum</a></li>
+        <li><a href="/beta-v2-openmw/the-team/">The Team</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<nav class="follow-row" aria-label="Follow OpenMW">
+  <ul>
+    <li>
+      <a href="https://gitlab.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"/></svg>
+<span>GitLab</span><span class="n"> 952 stars</span></a>
+    </li>
+    <li>
+      <a href="https://github.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+<span>GitHub</span><span class="n"> 6.7k stars</span></a>
+    </li>
+    <li>
+      <a href="https://discord.gg/YegsVV3aRb"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+<span>Discord</span><span class="n"> 5.2k online</span></a>
+    </li>
+    <li>
+      <a href="https://matrix.to/#/#openmw-space:matrix.org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M.632.55v22.9H2.28V24H0V0h2.28v.55zm7.043 7.26v1.157h.033c.309-.443.683-.784 1.117-1.024.433-.245.936-.365 1.5-.365.54 0 1.033.107 1.481.314.448.208.785.582 1.02 1.108.254-.374.6-.706 1.034-.992.434-.287.95-.43 1.546-.43.453 0 .872.056 1.26.167.388.11.716.286.993.53.276.245.489.559.646.951.152.392.23.863.23 1.417v5.728h-2.349V11.52c0-.286-.01-.559-.032-.812a1.755 1.755 0 0 0-.18-.66 1.106 1.106 0 0 0-.438-.448c-.194-.11-.457-.166-.785-.166-.332 0-.6.064-.803.189a1.38 1.38 0 0 0-.48.499 1.946 1.946 0 0 0-.231.696 5.56 5.56 0 0 0-.06.785v4.768h-2.35v-4.8c0-.254-.004-.503-.018-.752a2.074 2.074 0 0 0-.143-.688 1.052 1.052 0 0 0-.415-.503c-.194-.125-.476-.19-.854-.19-.111 0-.259.024-.439.074-.18.051-.36.143-.53.282-.171.138-.319.337-.439.595-.12.259-.18.6-.18 1.02v4.966H5.46V7.81zm15.693 15.64V.55H21.72V0H24v24h-2.28v-.55z"/></svg>
+<span>Matrix</span><span class="n"> 1197 users</span></a>
+    </li>
+    <li>
+      <a href="https://web.libera.chat/#openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m14.26446 2.76095-1.22973 9.43224-1.6484 1.88226L9.67694 2.7735h-.003a9.86072 9.86072 0 0 0-.19917.04247l-.067.01256a12.0901 12.0901 0 0 0-.13158.0305l-.0646.01555a12.0503 12.0503 0 0 0-1.7393.55086l-.03709.01855 3.39788 11.26306-.1579.18062-1.59816-.70397-.10465.13457L3.4452 6.09902a10.69674 10.69674 0 0 0-.92767 1.0473 12.5862 12.5862 0 0 0-.55146.7596v.00598l6.48115 7.08106-1.02158 1.31285-7.20486-4.1497a11.70731 11.70731 0 0 0-.2207 2.30931l6.85377 2.57547L5.2778 19.0661l-4.31.02034a12.18198 12.18198 0 0 0 1.21297 2.15261h.003l1.69625-.37322h.45038l4.86266-6.22276 1.5832.70098 3.33807-3.81237c1.84965 3.14502 3.84345 6.17068 5.65635 9.33714h.45337l-.0083-.01376 1.61251.36246.01556-.01794a11.03054 11.03054 0 0 0 .77455-1.25604 11.3919 11.3919 0 0 0 .35228-.72551l-3.78784-.064-1.3332-2.19567 6.1468-2.24172v-.0311a6.93926 6.93926 0 0 0 .0036-.20217v-.31223l-.0036-.06398v-.0676l-.003-.06757-.003-.067-.003-.06757-.003-.067-.0059-.0646-.003-.06757-.0066-.067-.003-.06757-.006-.064-.006-.06757-.006-.06758-.0066-.067-.006-.06458a9.69536 9.69536 0 0 0-.11304-.7961v-.01555l-6.50625 3.71908-1.0467-1.72436 5.7365-6.49311a10.80699 10.80699 0 0 0-.8876-1.16997 11.89718 11.89718 0 0 0-.69202-.7285l-4.72569 7.45488-1.37147-2.25848 2.1526-7.75393-.05502-.02093a11.6277 11.6277 0 0 0-2.00607-.59453 12.20035 12.20035 0 0 0-.13158-.0275zm-.1591 9.33116-3.24596 3.72086-1.5832-.65853-4.48346 5.7078h.49584l4.10365-5.25144 1.57423.65195 3.08387-3.53664 4.8507 8.15167.47729-.009zm-.07357 1.30149-2.91221 3.34405-1.60474-.65254-3.74538 4.77413 12.63513.0066z"/></svg>
+<span>IRC on Libera.Chat</span></a>
+    </li>
+    <li>
+      <a href="https://reddit.com/r/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>
+<span>Reddit</span><span class="n"> 20k members</span></a>
+    </li>
+    <li>
+      <a href="https://mastodon.gamedev.place/@openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>
+<span>Mastodon</span><span class="n"> 538 followers</span></a>
+    </li>
+    <li>
+      <a href="https://twitter.com/intent/user?screen_name=Openmw_org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+<span>Twitter</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/index.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>RSS</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/atom.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>Atom</span></a>
+    </li>
+  </ul>
+</nav>
+
+
+<article class="post">
+  <h1 class="page-title">Interview with johnnyhostile and Atahualpa</h1>
+  <p class="post-meta">
+  <time datetime="2024-05-26">May 26, 2024</time> · <a href="/beta-v2-openmw/author/ap0/">jvoisin</a> · <a href="/beta-v2-openmw/category/interview/">Interview</a>
+</p>
+
+  <div class="prose">
+    <h2 id="good-morning-and-welcome-to-this-joint-interview-can-you-tell-us-a-bit-about-yourselves">Good morning and welcome to this joint interview. Can you tell us a bit about yourselves?</h2>
+<p>A.: Hey, anonymous interviewer! I’m neither a cat nor a month, but a rather fortunate bird — if you believe some historians’ hypothesis about my nickname’s origin. In my day-to-day life, I prefer to take the form of a German electrical engineer doing his PhD in the field of battery technology. Thanks for reminding me that I still was an undergraduate when I joined the project in early 2016, technically transforming from long-time lurker to, well, bird.</p>
+<p>J.: Hello there! I enjoy the company of cats but like my fine friend Atahualpa I also am not a month. I also may not always be that hostile. When I’m not poking around in OpenMW-related things I do enjoy cycling, nature hiking, and playing music. I started hanging out in the OpenMW IRC channel back in 2013 or so and have just been hanging out ever since.</p>
+<h2 id="word-on-the-street-is-that-youre-the-dynamic-duo-of-openmws-massive-video-production-industry-is-that-true">Word on the street is that you’re the dynamic duo of OpenMW’s massive video production industry. Is that true?</h2>
+<p>J.: I remember learning about OpenMW, and of course part of that first exposure was a classic release video. I forget which was the first video I saw, but what did stay with me was the style — and I hope we’re staying true to it with our work.</p>
+<p>A.: While we might be the somewhat dynamic video duo today, we are standing on the shoulders of giants: Star-Demon, who started the whole concept of presenting OpenMW’s progress in video format over twelve years ago for version 0.6.0, and the brilliant WeirdSexy, whose great voice and even greater love for spears have been ingrained in our <a href="https://www.youtube.com/watch?v=WSr3k9ubR7w&amp;t=136s">collective memory</a>.</p>
+<h2 id="producing-video-sounds-like-work-what-does-it-look-like-whats-the-secret-sauce">Producing video sounds like work. What does it look like, what’s the secret sauce?</h2>
+<p>A.: At this point, a short disclaimer: We aren’t professionals by any means, so take everything we say with a spoonful of salt.</p>
+<p>J.: Oh please, everybody knows that Atahualpa is a Blender video-editing Arch Magister. I learned everything I know from him!</p>
+<p>A.: Alright then, let’s look at some of the things we need to cover in order to produce a somewhat entertaining release video. Please note that this is a simplified breakdown and that many of these steps may overlap, change order, or require several iterations and feedback loops. Video production is reaaaaally time-consuming (maybe we should start doing reaction videos).</p>
+<ol>
+<li>Content considerations<br>
+We usually take the complete list of changes (nowadays 100+ closed issues per release), add changes without tickets on our issue tracker, put them into suitable categories, and rate their video eligibility:
+<ul>
+<li>Importance?</li>
+<li>Interesting to the viewer?</li>
+<li>“Easy” to demonstrate?</li>
+</ul>
+</li>
+<li>Content outline<br>
+After choosing the issues we want to cover, we define their order of appearance. The structure might look like this:
+<ul>
+<li>Intro</li>
+<li>Credits</li>
+<li>Main video
+<ul>
+<li>Section 1
+<ul>
+<li>Cool new feature</li>
+<li>…</li>
+</ul>
+</li>
+<li>Section 2</li>
+<li>…</li>
+</ul>
+</li>
+<li>Outro</li>
+<li>Fake “end card”</li>
+<li>“Post-credit” scene</li>
+</ul>
+</li>
+<li>Script draft<br>
+Having a rough outline, we start writing the script. Especially this step might go through several feedback loops by discussing it among us or passing it to the team for review.</li>
+<li>Audio recording<br>
+We usually divide our speaking parts evenly. Then, we record our paragraphs, optimise audio quality, put in labels, and export them into single files for greater flexibility.</li>
+<li>Video recording<br>
+With the script and audio in place, we can start recording video footage. This is, of course, heavily guided by the script — not only in content but also in length. Moreover, many of the scenes might require a certain setup, even including mods or custom editor content to fit in those little inside jokes no one will catch anyway.</li>
+<li>Pre-postproduction<br>
+Each video requires title screens, text overlays, and pre-rendered audio visualisers (see intro of 0.47.0 video). Those are done in Blender.</li>
+<li>Postprodcution<br>
+In this step, everything is put together using Blender’s video sequence editor: video and audio files, background music, overlays, video and audio transitions, and additional effects, e.g., speed modifiers or zoom effects. The final Blender file might look like in the image below.</li>
+<li>Rendering<br>
+The video is rendered in 4K to ensure highest quality on YouTube — yep, even 1080p viewers benefit from a 4K source file due to YouTube’s infamous compression shenanigans! Early video tests are usually rendered with a lower resolution to speed up the process.</li>
+<li>Post-postproduction<br>
+Before the video is published, we create closed captions in English (as well as subtitles in German if there is no separate German video) and a custom thumbnail.</li>
+<li>Pre-release tests<br>
+The last step before a release is extensive test viewing by other team members to catch any remaining errors. — Et voilà, a new release video is ready to go!</li>
+</ol>
+<p><a href="/beta-v2-openmw/2024/interview-with-johnnyhostile-and-atahualpa/OpenMW_Interview_Blender-File-Example.png"><img src="/beta-v2-openmw/2024/interview-with-johnnyhostile-and-atahualpa/OpenMW_Interview_Blender-File-Example-1024x576_hu_55edd8f0b24f9d88.webp" srcset="/beta-v2-openmw/2024/interview-with-johnnyhostile-and-atahualpa/OpenMW_Interview_Blender-File-Example-1024x576_hu_734104c2c0c87ebd.webp 700w, /beta-v2-openmw/2024/interview-with-johnnyhostile-and-atahualpa/OpenMW_Interview_Blender-File-Example-1024x576_hu_55edd8f0b24f9d88.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="576" loading="lazy" decoding="async"></a></p>
+<h2 id="is-it-true-that-youre-mysteriously-showing-up-in-time-of-need-like-right-before-an-openmw-release">Is it true that you’re mysteriously showing up in time of need, like, right before an OpenMW release?</h2>
+<p>A.: Nice try to get that famous quote from this wizard in Star Wars. Ehm, Spock it was, right?</p>
+<p>J.: Think of me as the reverse homer-in-the-bushes gif. Oh, and yeah Atahualpa: that was Captain Spock for sure.</p>
+<p>A.: In fact, OpenMW releases tend to spawn right after one of our videos. Except for 0.48.0, which, to this very day, is a great mystery in and of itself.</p>
+<h2 id="wait-does-that-mean-youre-cooking-a-release-video-right-now-can-you-share-some-details-can-you-leak-the-date-of-the-release">Wait, does that mean you’re cooking a release video right now‽ Can you share some details? Can you <em>leak</em> the date of the release?</h2>
+<p>A.: My estimate is that we will release the video at least one day too late from everyone’s perspective, which is going to be mitigated by delaying the actual release which, in turn, is going to annoy everyone even more. It wouldn’t be the same otherwise.</p>
+<p>J.: Maybe a few days plus or minus from that. I can’t be too sure. It’s likely we won’t know when it will be out until it is.</p>
+<p>A.: Seriously though: 2024 would be awesome — looking at you, extended release phase for 0.48.0.</p>
+<h2 id="previous-videos-have-been-awesome-and-thus-rightfully-well-received-how-do-you-handle-so-much-fame">Previous videos have been awesome and thus rightfully well-received. How do you handle so much fame?</h2>
+<p>J.: Give the people what they want! And by that I, of course, mean Fargoth jokes and Imperial guard mosh pits.</p>
+<p>A.: Not to rain on your parade, but I measure fame in the amount of bot comments below our videos — and going by that metric, we are as famous as the menu pinning feature in Morrowind.</p>
+<h2 id="speaking-of-videos-since-youre-obviously-domain-experts-any-recommendations-with-regard-to-movies-and-tv-shows">Speaking of videos, since you’re obviously domain experts, any recommendations with regard to movies and TV shows?</h2>
+<p>A.: Boomer advice: Don’t let your consumption of movies and TV series become arbitrary. Oh, and consider reading the source material (if it exists), especially if you happen to love fantasy and sci-fi works like I do — it usually allows you to imagine and explore other worlds in much more depth than a TV adaption can provide. As to actual recommendations, my last movie was “Dune: Part Two” (you might have heard about it). One of the best audio-visual experiences I’ve ever had in cinema. (Again, read the books! Well, at least the first three, I guess. The series gets increasingly more complicated and esoteric.)</p>
+<p>J.: Oh yeah, Dune is on my “to-watch” list, and I guess now on my “to-read” list as well! Ahem, as TV shows go, I must take this opportunity to give a shout out to “Star Trek: Deep Space Nine”. When I think about movies, I think about “Fear and Loathing in Las Vegas” and I think of mine and Atahualpa’s adventures in making OpenMW-related videos. Yeah… it’s kinda like that!</p>
+<p>A.: Uhm, okay. But who is which character in that analogy?</p>
+<p>J.: I do think of you as my attorney and you <em>are</em> doing the PhD thing, so that makes you Dr. Gonzo. I’ll be Hunter S. Thompson; I can wear cool hats and take all the ~screenshots~ photographs.</p>
+<h2 id="have-you-ever-thought-about-learning-c-to-contribute-by-writing-code-like-some-other-contributors-did">Have you ever thought about learning C++ to contribute by writing code, like some other contributors did?</h2>
+<p>J.: Years back, my first experience with (very roughly) hacking on C++ at all was with OpenMW — I wanted to hack in the ability to wear more rings and kind of grepped my way to it. More recently, I actually did decide to dive back in to get a small feature added into the Lua API. Major thanks to everyone who helped, especially S3ctor and Evil Eye! It’s a big, complicated codebase but it can be reasoned about. The C++ itself is just another thing you must cope with, but things can come together surprisingly quickly.</p>
+<p>A.: Truth be told, I learned C++ at technical college back in 2008. The problem is that an engineer’s ability to produce completely functional spaghetti code doesn’t qualify them to work as a game engine developer. Nonetheless, I’ve already contributed some smaller changes and bugfixes, with an emphasis on our editor, OpenMW-CS. — Even more truth be told, I have several thousand lines of unpublished code for various parts of the CS buried in my local OpenMW folder. Programmers can be harsh at times, and OpenMW developers are especially good at humbling you, allowing you to sustain your personal coding insecurities and letting you keep your work for yourself.</p>
+<h2 id="whats-the-next-big-openmw-thing-youre-super-excited-about">What’s the next big OpenMW thing you’re super excited about?</h2>
+<p>A. and J.: Lua!</p>
+<p>J.: Of course it’s playing Half-Life 3 in OpenMW: Unity Edition. Seriously though: I’m looking forward to the awesome work that’s being done with spell casting and combat for the Lua API. These are some of the most sought-after features for modding and I think we’re going to see a lot of cool content that will utilize this. There’s also been some hacking on sky shaders that looked amazing, hopefully that can be on our pre-2090 list.</p>
+<p>A.: I also like to see new stuff which I’ll probably never use myself, but which sets OpenMW apart from the original TES games. Upcoming features like (eventual) native support for multiplayer and VR are not only great for the people that use them — but they’ll also make OpenMW more accessible to other audiences which, in turn, might draw new contributors to the project. Moreover, let’s not forget that all these features will be most likely integrated into one platform, i.e., multiplayer users should be able to join using the Android version of OpenMW, VR users get to enjoy full support for OpenMW-Lua mods, etc.</p>
+<h2 id="following-openmw-intends-to-be-a-platform-for-independent-games-do-you-have-a-dream-openmw-game-and-if-so-whats-that-look-like">Following, OpenMW intends to be a platform for independent games. Do you have a “dream” OpenMW game, and if so, what’s that look like?</h2>
+<p>A.: With “Tamriel Rebuilt”, “Skyrim: Home of the Nords”, “Province: Cyrodiil”, and the other “Project Tamriel” projects, Morrowind-era Tamriel is already covered if you ask me. What I would like to see — and, yes, I’m a sucker for Daggerfall, especially Daggerfall Unity — are large-scale approaches to a fantasy game. Maybe not as massive as Daggerfall or the (hopefully) to-be-released “Wayward Realms”, but with a greater sense of scale than the tiny theme parks current TES games are. Eventually, OpenMW-CS should allow for some kind of random/procedural generation, and I would like to see somebody take advantage of that possibility.</p>
+<p>J.: I’m looking forward to community-driven projects that are using OpenMW for their engine such as Open-Z; My dream game made with OpenMW might be something surprising, maybe something with Katamari-like gameplay or some kind of recreation of a classic game. I love to see unexpected, not-Morrowind things as much as I love the Morrowind things.</p>
+<p>A.: *cough* RoboWind Construct (RWC). Google it.</p>
+<h2 id="if-you-could-change-one-thing-about-openmw-what-would-it-be">If you could change one thing about OpenMW, what would it be?</h2>
+<p>J.: I would remove the team’s harsh ban on hardcoding every actor in any game using OpenMW as Fargoth. It’s a crime, really!</p>
+<p>A.: Speaking of hardcoding: the father of OpenMW, Nicolay Korslund, found it funny to hide most of our engine’s features behind a hardcoded 2090 timestamp which can only be removed for each feature individually by wasting huge amounts of energy to mine a developer token. That must have been the single biggest mistake in computer history! I want my vanilla-style water now!</p>
+<h2 id="someone-told-me-that-johnnyhostile-was-going-to-jam-with-lysol-in-a-sludge-metal-cover-of-the-morrowind-theme-is-this-true">Someone told me that johnnyhostile was going to jam with lysol in a sludge metal cover of the Morrowind theme. Is this true?</h2>
+<p>J.: It is true! This is actually the epitome of vaporware, 2090 edition projects. Coming soon<sup>TM</sup>.</p>
+<p>A.: Not to spoil anything, but having heard an early demo of johnnyhostile’s guitar part, I’m more than hyped for the full album release!</p>
+<h2 id="anything-youd-like-to-add">Anything you’d like to add?</h2>
+<p>A.: To avoid a shameless self-plug by my wonderful partner in crime: If you want to mod OpenMW, go visit <a href="http://www.modding-openmw.com">modding-openmw.com</a>! I consider it to be OpenMW’s sister project, a hub for mod creators and modders alike that allows the community to decentralise mod hosting, while it ensures easy access to mods and modding instructions for everyone. It’s johnnyhostile’s baby, and he’s managed to build a team of dedicated contributors who help maintaining and improving the site for all of us to benefit from! Oh, and if you are a modder who wants to dive into OpenMW-Lua, have a look at johnnyhostile’s <a href="https://gitlab.com/modding-openmw/momw-mod-template">Lua mod template</a>. It even allows you to host a little static website for your mod. — End of ad break.</p>
+<p>J.: That’s it for today’s interview. See you next time — and as always: thanks for watch-, uhm, reading!</p>
+  </div>
+</article>
+<nav class="pager" aria-label="More posts">
+  <a rel="prev" href="/beta-v2-openmw/2024/from-bsp-to-esp-how-s3ctor-abused-quake-editors-to-redefine-the-morrowind-modding-experience/">← From BSP To ESP – How S3ctor Abused Quake Editors to Redefine the Morrowind Modding Experience</a>
+  <a rel="next" href="/beta-v2-openmw/2024/interview-with-cmaugust/">Interview with CMAugust →</a>
+</nav>
+
+</main>
+<footer>
+  <div class="wrap">
+    <h2>Follow OpenMW</h2>
+    <ul>
+      <li><a href="https://gitlab.com/OpenMW/openmw">GitLab</a></li>
+      <li><a href="https://github.com/OpenMW/openmw">GitHub</a></li>
+      <li><a href="https://discord.gg/YegsVV3aRb">Discord</a></li>
+      <li><a href="https://matrix.to/#/#openmw-space:matrix.org">Matrix</a></li>
+      <li><a href="https://web.libera.chat/#openmw">IRC on Libera.Chat</a></li>
+      <li><a href="https://reddit.com/r/openmw">Reddit</a></li>
+      <li><a href="https://mastodon.gamedev.place/@openmw">Mastodon</a></li>
+      <li><a href="https://twitter.com/intent/user?screen_name=Openmw_org">Twitter</a></li>
+      <li><a href="/beta-v2-openmw/index.xml">RSS</a></li>
+      <li><a href="/beta-v2-openmw/atom.xml">Atom</a></li>
+    </ul>
+    <div class="credits">
+      <p>Copyright © 2008-2026 OpenMW. Website logo by Necrod.</p>
+      <p>Hosting kindly provided by <a href="https://www.futureweb.be">Futureweb</a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

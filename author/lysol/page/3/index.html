@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Open source Elderscrolls 3: Morrowind engine reimplementation.">
+<meta name="twitter:site" content="@openmw_org">
+<meta name="robots" content="noindex">
+<title>lysol · OpenMW</title>
+<link rel="icon" type="image/png" href="/beta-v2-openmw/favicon.png">
+
+<link rel="stylesheet" href="/beta-v2-openmw/css/main.min.dd57dc4e01d34600100d3c131c85b77ddd312fd0b9532e73284212cc93269a72.css" integrity="sha256-3VfcTgHTRgAQDTwTHIW3fd0xL9C5Uy5zKEISzJMmmnI=">
+
+<link rel="alternate" type="application/rss&#43;xml" href="https://luanafons0.github.io/beta-v2-openmw/author/lysol/index.xml" title="OpenMW">
+</head>
+<body>
+<header class="masthead" id="top">
+  <div class="wrap wrap-flush">
+    <div class="art">
+      <a href="/beta-v2-openmw/"><img class="logo" src="/beta-v2-openmw/images/logo.png" width="588" height="128" alt="OpenMW"></a>
+      <div class="credit">Image © Maxim Nikolaev</div>
+    </div>
+    <nav class="mainnav" aria-label="Main">
+      <ul>
+        <li><a href="/beta-v2-openmw/faq/">FAQ</a></li>
+        <li><a href="/beta-v2-openmw/downloads/">Downloads</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw">Source Code</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw/issues">Issue Tracker</a></li>
+        <li><a href="/beta-v2-openmw/media/">Media</a></li>
+        <li><a href="https://wiki.openmw.org/">Wiki</a></li>
+        <li><a href="https://forum.openmw.org/">Forum</a></li>
+        <li><a href="/beta-v2-openmw/the-team/">The Team</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<nav class="follow-row" aria-label="Follow OpenMW">
+  <ul>
+    <li>
+      <a href="https://gitlab.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"/></svg>
+<span>GitLab</span><span class="n"> 952 stars</span></a>
+    </li>
+    <li>
+      <a href="https://github.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+<span>GitHub</span><span class="n"> 6.7k stars</span></a>
+    </li>
+    <li>
+      <a href="https://discord.gg/YegsVV3aRb"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+<span>Discord</span><span class="n"> 5.2k online</span></a>
+    </li>
+    <li>
+      <a href="https://matrix.to/#/#openmw-space:matrix.org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M.632.55v22.9H2.28V24H0V0h2.28v.55zm7.043 7.26v1.157h.033c.309-.443.683-.784 1.117-1.024.433-.245.936-.365 1.5-.365.54 0 1.033.107 1.481.314.448.208.785.582 1.02 1.108.254-.374.6-.706 1.034-.992.434-.287.95-.43 1.546-.43.453 0 .872.056 1.26.167.388.11.716.286.993.53.276.245.489.559.646.951.152.392.23.863.23 1.417v5.728h-2.349V11.52c0-.286-.01-.559-.032-.812a1.755 1.755 0 0 0-.18-.66 1.106 1.106 0 0 0-.438-.448c-.194-.11-.457-.166-.785-.166-.332 0-.6.064-.803.189a1.38 1.38 0 0 0-.48.499 1.946 1.946 0 0 0-.231.696 5.56 5.56 0 0 0-.06.785v4.768h-2.35v-4.8c0-.254-.004-.503-.018-.752a2.074 2.074 0 0 0-.143-.688 1.052 1.052 0 0 0-.415-.503c-.194-.125-.476-.19-.854-.19-.111 0-.259.024-.439.074-.18.051-.36.143-.53.282-.171.138-.319.337-.439.595-.12.259-.18.6-.18 1.02v4.966H5.46V7.81zm15.693 15.64V.55H21.72V0H24v24h-2.28v-.55z"/></svg>
+<span>Matrix</span><span class="n"> 1197 users</span></a>
+    </li>
+    <li>
+      <a href="https://web.libera.chat/#openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m14.26446 2.76095-1.22973 9.43224-1.6484 1.88226L9.67694 2.7735h-.003a9.86072 9.86072 0 0 0-.19917.04247l-.067.01256a12.0901 12.0901 0 0 0-.13158.0305l-.0646.01555a12.0503 12.0503 0 0 0-1.7393.55086l-.03709.01855 3.39788 11.26306-.1579.18062-1.59816-.70397-.10465.13457L3.4452 6.09902a10.69674 10.69674 0 0 0-.92767 1.0473 12.5862 12.5862 0 0 0-.55146.7596v.00598l6.48115 7.08106-1.02158 1.31285-7.20486-4.1497a11.70731 11.70731 0 0 0-.2207 2.30931l6.85377 2.57547L5.2778 19.0661l-4.31.02034a12.18198 12.18198 0 0 0 1.21297 2.15261h.003l1.69625-.37322h.45038l4.86266-6.22276 1.5832.70098 3.33807-3.81237c1.84965 3.14502 3.84345 6.17068 5.65635 9.33714h.45337l-.0083-.01376 1.61251.36246.01556-.01794a11.03054 11.03054 0 0 0 .77455-1.25604 11.3919 11.3919 0 0 0 .35228-.72551l-3.78784-.064-1.3332-2.19567 6.1468-2.24172v-.0311a6.93926 6.93926 0 0 0 .0036-.20217v-.31223l-.0036-.06398v-.0676l-.003-.06757-.003-.067-.003-.06757-.003-.067-.0059-.0646-.003-.06757-.0066-.067-.003-.06757-.006-.064-.006-.06757-.006-.06758-.0066-.067-.006-.06458a9.69536 9.69536 0 0 0-.11304-.7961v-.01555l-6.50625 3.71908-1.0467-1.72436 5.7365-6.49311a10.80699 10.80699 0 0 0-.8876-1.16997 11.89718 11.89718 0 0 0-.69202-.7285l-4.72569 7.45488-1.37147-2.25848 2.1526-7.75393-.05502-.02093a11.6277 11.6277 0 0 0-2.00607-.59453 12.20035 12.20035 0 0 0-.13158-.0275zm-.1591 9.33116-3.24596 3.72086-1.5832-.65853-4.48346 5.7078h.49584l4.10365-5.25144 1.57423.65195 3.08387-3.53664 4.8507 8.15167.47729-.009zm-.07357 1.30149-2.91221 3.34405-1.60474-.65254-3.74538 4.77413 12.63513.0066z"/></svg>
+<span>IRC on Libera.Chat</span></a>
+    </li>
+    <li>
+      <a href="https://reddit.com/r/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>
+<span>Reddit</span><span class="n"> 20k members</span></a>
+    </li>
+    <li>
+      <a href="https://mastodon.gamedev.place/@openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>
+<span>Mastodon</span><span class="n"> 538 followers</span></a>
+    </li>
+    <li>
+      <a href="https://twitter.com/intent/user?screen_name=Openmw_org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+<span>Twitter</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/index.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>RSS</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/atom.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>Atom</span></a>
+    </li>
+  </ul>
+</nav>
+
+
+<p class="kicker">Author</p>
+<h1 class="page-title">lysol</h1>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2019/through-the-calm-before-the-storm/">Through the calm before the storm…</a></h2>
+  <p class="post-meta">
+  <time datetime="2019-11-02">November 2, 2019</time> · <a href="/beta-v2-openmw/author/lysol/">lysol</a> · <a href="/beta-v2-openmw/category/news/">News</a>
+</p>
+
+  <div class="prose">
+    
+      <p>Hello and welcome back for another look at new and upcoming features in OpenMW! There’s a lot to talk about, so let’s dive in!</p>
+<p>Perry Hugh has continued his work on <a href="https://gitlab.com/OpenMW/openmw/merge_requests/151">better gamepad support</a>. You may have heard about OpenMW’s keyboard navigation feature which makes it possible to navigate (at least parts of) the GUI with the keyboard. This feature is used by gamepads as well. Perry Hugh’s plan is to expand on the keyboard navigation to make it work in all the UI windows it didn’t before. He is also adding in more convenient controller-specific ways to navigate in the character generation window and resting window. Many of those of you who use gamepads may read this and ask: “but gamepad keyboard GUI when”? Well, Perry is considering adding that too and more! Read about it <a href="https://forum.openmw.org/viewtopic.php?f=20&amp;t=6394">here</a>.</p>
+<p>So wish him good luck, or even contribute to his endeavour and our project by testing out his additions!</p>
+<p>unelsson has kept on working on the OpenMW-CS. His latest big thing is the long-awaited <a href="https://github.com/OpenMW/openmw/pull/2520">terrain shape editing</a> feature. With that finally merged into the OpenMW-CS, you’ll be much closer to never even having to touch the old tools intended for a certain game from 2002 to create gorgeous landscapes for your modification or your Starfield killer. See for yourself:</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=hH_xGGXlpYI">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2019/through-the-calm-before-the-storm/youtube-hH_xGGXlpYI_hu_6c7c1cb4e1aad5d3.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW-CS terrain shape editing <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p><img src="/beta-v2-openmw/2019/through-the-calm-before-the-storm/bowleftcrop_hu_d74ded22b1e76ea9.webp" alt="Custom animations enables proper right handed use of bows" width="600" height="600" loading="lazy" decoding="async"></p>
+<p>akortunov has made a huge refactor of the <a href="https://github.com/OpenMW/openmw/pull/2413">weapon types handling</a>. Among otherwise mostly technical improvements, it allows content creators to add unique animations and attachment bones for every weapon type in the game (crossbows, short swords, spears etc.). This means that it will be possible for modders to make previously <a href="https://en.wikipedia.org/wiki/Ambidexterity">ambidextrous</a> characters now purely right-handed like you can see on <a href="https://imgur.com/a/uzndAMN">these</a> images. Once OpenMW reaches 1.0 and the de-hardcoding phase begins, weapon types are planned to get their own records in the updated ESM format, which will make modding the weapon types possible directly through the OpenMW-CS.</p>
+<p>Our favourite hammer-equipped penguin also updated his old <a href="https://github.com/OpenMW/openmw/pull/2047">shield holstering support</a> branch so that it could finally get merged. In other words, that heavy shield you’re constantly carrying? You’ll finally be able to rest it on your back!</p>
+<p>If you read the interview with Capostrophic (you did, right?), you should already know that he has been working on extending the NetImmerse (NIF) file format support to work with the models from other Gamebryo games: games like Oblivion, Fallout 3/New Vegas, Skyrim but also Civilization IV for example. Capostrophic’s work on this is still in very early stages, but a few (mostly under-the-hood) additions have already made it into the master branch. Stay tuned for more really interesting things to come out of this.</p>
+<p>bzzt and AnyOldName3 are both figuring out the last bits and pieces to make shadows more ready for a stable release. This is one of the few things holding 0.46.0 back right now. Yes, you may read this as “0.46.0 is just around the corner”. Stay tuned!</p>
+<p>A lot more activity has been going on since the last update, but you will hear about that, and much more, in the upcoming release post!</p>
+<p>Until then, thanks for reading.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=6501" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2019/interview-with-capostrophic/">Interview with Capostrophic</a></h2>
+  <p class="post-meta">
+  <time datetime="2019-09-26">September 26, 2019</time> · <a href="/beta-v2-openmw/author/lysol/">lysol</a> · <a href="/beta-v2-openmw/category/interview/">Interview</a>
+</p>
+
+  <div class="prose">
+    
+      <p>Hi everyone.</p>
+<p>It is time for another interview. This time, I (again, Lysol) had a chat with Capostrophic, a guy many of you might already know of, him being one of the most active developers we have these days. Let’s get to the interview!</p>
+<p><strong>Who are you?</strong></p>
+<p>I’m Alexei, a high school student from Central Russia, planning to study and work in the software engineering field. I’m best known as “Capo”.</p>
+<p><strong>When and how did you discover the project?</strong></p>
+<p>My chat logs say this happened in mid-2015, shortly after I first had the joy of <em>really</em> discovering The Elder Scrolls series. Discovering OpenMW was a sudden thing, but I quickly became intrigued with it. I never had any contact with Ogre versions until much later and immediately started using 0.37.0 nightly builds. I was rather impressed by OpenMW’s functionality by then – albeit I was disappointed by the lack of the water shader which became a thing again some months later, and it was beautiful. Following GitHub development of OpenMW was a rather enjoyable experience, and although I couldn’t participate in it, I wished I could, to get some coding experience for the future’s sake and to help bring about 1.0.</p>
+<p><strong>Sounds like you’re saying you didn’t really do much coding before OpenMW. How much experience did you have back when you discovered the project?</strong></p>
+<p>In 2015 zero, hello world coding proficiency doesn’t count.</p>
+<p>In 2017-2018, when I attempted to contribute in some way apart from disappointing Atahualpa with intense procrastination regarding Russian translation for release trailers, still zero, but at least I could read C++.</p>
+<p><strong>I must say it is really impressive to go from subtitle translator with zero experience to one of the most active developers we have around. So tell us, what are you working on right now?</strong></p>
+<p>In general I try to do bug fixes and implement minor features in parts of the code base I have a certain knowledge of. You may notice that my changesets are rarely large, but rather short and probably sweet. This may stop being the case in time.</p>
+<p>Right now my long term project is extending the NIF loader to support meshes from later Bethesda games. No, I’m not cc9cii, this is a separate effort, not based on a revision of OpenMW from 2015. It will take a lot of time, but it’s fun.</p>
+<p>No particular short term project apart from trying to get 0.46.0 to release sooner but not be too unfinished.</p>
+<p><strong>Has OpenMW lived up to what you expected when you became involved with the project?</strong></p>
+<p>Yes. Psych. No, or I wouldn’t have tried to contribute.</p>
+<p>I mean, yes, it’s not difficult to tell it has gone long ways to be what it is now (or what it was back then), but it still has long ways to go – or infinite ways, given that it has limitless potential – and you can’t judge something as a complete project if it isn’t finished.</p>
+<p><strong>Indeed. So what kind of cool stuff do you expect OpenMW will give us in the future?</strong></p>
+<p>We’ll finally get a multiplayer implementation for Fallout 76.</p>
+<p>But really, it’s having a cool free as in speech cross platform framework for Bethesda-like sandbox-with-RPG-elements games for which even non-programmers can make their own game without any coding knowledge.<br>
+<del>That somehow allows you to run Skyrim on Raspberry Pi.</del></p>
+<p><strong>Any cool stuff you plan to implement in the future that you haven’t already started working on?</strong></p>
+<p>A game for OpenMW. VulkanSceneGraph port. Extended ESM reader. Not in a particular order and it’s not the matter of coming years.</p>
+<p>More realistically, some NIF features that we’re currently missing.</p>
+<p>Also Morrowind-like bumpmapping, actually, with either MCP and vanilla behavior available. Lots of legacy assets require it even if we have normalmapping, I found it weird that <em>someone</em> would say everyone will just continue to make assets for Morrowind’s <em>[modded fake]</em> bumpmapping and nobody will care about <em>[real native]</em> normalmapping. That’s far-fetched and not true and also it didn’t happen.</p>
+<p>I don’t want to deal with the editor just yet.</p>
+<p>[<strong>Note to readers: That <em>someone</em> being yours truly, Lysol the speculator. I was wrong, I know. With legacy assets, Capo means the old bump mapped texture packs we’ve come to refer to “fake bump maps”, that currently appear shiny in OpenMW. When normal mapping was a new thing for OpenMW, Me and a few others were convinced that if we support the old, bad way of doing it, people will just continue to do bad normal maps and no one will bother to convert old mods to the newer native way of doing it. Capo did not believe this theory. Time eventually proved him right.</strong>]</p>
+<p><strong>Thanks for allowing me to take some of your time!</strong></p>
+<p>So as we stated last time, there has been a lot going on at Git, so we will try to provide you with a news post later. Hopefully sooner than later.</p>
+<p>Take care!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=6381" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2019/interview-with-unelsson/">Interview with unelsson</a></h2>
+  <p class="post-meta">
+  <time datetime="2019-09-05">September 5, 2019</time> · <a href="/beta-v2-openmw/author/lysol/">lysol</a> · <a href="/beta-v2-openmw/category/interview/">Interview</a>
+</p>
+
+  <div class="prose">
+    
+      <p>Hello again!</p>
+<p>Today we have a different kind of a news post for you – namely an interview with one of our developers, unelsson. I, Lysol that is, had a nice short chat with him the other day. He has been working on our content file editor OpenMW-CS, both on features that have been added already and also on more experimental features that are yet to be introduced</p>
+<p><strong>Who are you?</strong></p>
+<p>My name is Uoti Huotari, I’m a circus instructor and performer from Finland, as well as a rpg designer, physical therapist and robotics hobbyist. Oh yeah, I do code stuff to OpenMW-CS too</p>
+<p><strong>Not to get too off-topic, but a circus instructor that is into robotics? This sounds really interesting. Anything to show us?</strong></p>
+<p>Well, I’m really proud of my <em>snapuswipe</em>, posted that at my <a href="https://www.instagram.com/p/BrAnag9HUdS/">Instagram</a>.</p>
+<p><strong>So to move on, when and how did you discover the project?</strong></p>
+<p>I think I saw a release video in Youtube some years ago, and as a fan of Morrowind decided to give OpenMW a try. I got hooked by the stability and performance of the engine, no crashes, and the usability too</p>
+<p><strong>You’ve mostly been working with OpenMW-CS while most developers always found it more interesting to work with the engine instead. Why?</strong></p>
+<p>It doesn’t really matter what I work on, as long as I am doing something interesting and useful. My goals have been not only to develop OpenMW, but also to develop my coding skills, and get some good feedback and guidance from people who know better than me.</p>
+<p>My secret plan always was to fit in by listening to project lead and other developers, and do whatever is required to push the project forwards. By doing that, I hope to gain better feedback, which will in turn help me to gain personal coding skills. It’s also nice to just contribute with something useful, coding is nonetheless a hobby for me, and it’s just inherently rewarding to participate by being useful in the ways I can</p>
+<p><strong>Yes, speaking of developing your coding skills, how much experience did you have when you began coding for the CS then? Do you feel you have evolved as a developer since then?</strong></p>
+<p>My dad taught me to code BASICA when I was five years old, and I coded kazillion small games and personal projects with various languages, like QBASIC, Turbo Pascal and C/C++ until I was a teenager. Later I got interested in robotics, which got me learning some Python, rpg design drew me into writing web apps with Javascript, and html seems to be everywhere.</p>
+<p>OpenMW is written mostly with C++, and frankly, I couldn’t remember how to write a Hello World -program when I started. Participating has developed my understanding of C++ enormously… Just insanely much</p>
+<p><strong>Has OpenMW lived up to what you expected when you became involved with the project?</strong></p>
+<p>It’s always been more than I ever expected, a stable and easy way to play Morrowind on modern Linux computer, not to mention that you can easily use mods, there are shadows (omg!), and me too, with zero coding education, I’ve actually been able to learn and contribute. It’s really more than I could ever ask for.</p>
+<p>But I did expect faster development, especially on the OpenMW-CS side. There have however been some unexpected delays and things in-between that require solving before more features can be added. I don’t feel like OpenMW is failing though, it’s nonetheless a remarkable project, and it kind of keeps going forward even when it seems like nothing is happening</p>
+<p><strong>What kind of cool stuff do you expect (or hope) OpenMW will give us in the future?</strong></p>
+<p>I think the various missing edit modes should be added to OpenMW-CS, but improved versions from vanilla. I hope to contribute so that OpenMW-CS can be better than the vanilla CS. On the engine side, I really hope that some sort of batching is developed, as that will improve performance, and might allow things like procedurally generated grass, but I really have no idea how that can be done, or when it will happen</p>
+<p><strong>Do you plan to do any of the OpenMW-CS things in the near future?</strong></p>
+<p>Uhh.. Yes? No? I really want to complete the rest of the edit modes, but it’s probably not the best idea to rush things. I’m quite busy with other stuff in my life right now, but it’s not like I have no time at all, coding is after all a place to rest in between all the flipping around, hanging from the trapeze and throwing stuff in the air</p>
+<p><strong>Thanks!</strong></p>
+<p>I have also interviewed Capostrophic, and that interview is more or less ready to be published. But we’ll save that for another time. Also, there is a lot going on on GitLab/GitHub right now, so hopefully we can tell you more about that soon. Until then, thank you for reading.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=6340" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2019/long-time-no-see/">Long time no see!</a></h2>
+  <p class="post-meta">
+  <time datetime="2019-06-20">June 20, 2019</time> · <a href="/beta-v2-openmw/author/lysol/">lysol</a> · <a href="/beta-v2-openmw/category/news/">News</a>
+</p>
+
+  <div class="prose">
+    
+      <p>Hello everyone and thanks for stopping by.</p>
+<p>Apologies for the long silence since the last release. That silence does not mean nothing has happened, however – quite the contrary actually! The upcoming OpenMW version 0.46.0 is already a huge release with many major differences compared to the current stable OpenMW release of 0.45.0. This news post is going to briefly sum up everything that has been going on behind the scenes. Quite a challenge when there is so much to talk about!</p>
+<p>First off, akortunov got a really nice feature merged into OpenMW a while ago: native graphic herbalism. He had already finished a first draft of that feature when Stuporstar and Greatness7 started working on their <a href="https://www.nexusmods.com/morrowind/mods/46599">MWSE-Lua mod</a>, and they eventually decided to work together to make sure the meshes would be compatible between Morrowind+MWSE-Lua and OpenMW. When the release of the mod got closer, akortunov focused on finishing the pull request for OpenMW. As a result, players have been enjoying graphic herbalism without any performance penalties for quite a while now. Great work, guys!</p>
+<p>Capostrophic has been working on many things, big and small, but among the more important things is improved compatibility with <a href="https://www.nexusmods.com/morrowind/mods/42347">Sotha Sil Expanded</a>. Of course, more testing is always appreciated to squash the last remaining bugs. Capo has also fixed another mod-related issue in that teleportation caused problems with companion mods, such as <a href="https://bethesda.net/community/topic/48658/julan-ashlander-companion-2-1">Julan</a>. A big thank you to our coding champion!</p>
+<p>Improving gamepad support has always been tricky for a development team consisting of zero gamepad users. But thankfully, Perry Hugh, a new face in our corner of GitLab, came along and added – among other things – several great improvements to the joystick movement. You can now lean back on your sofa and enjoy proper analogue-stick movement in OpenMW.</p>
+<p>Last time, we mentioned that Bzzt had included some cool optimisations in a huge merge request on GitLab. <em>Most</em> of these have now been merged with the help of Capostrophic and akortunov who split the – quite large – merge request into smaller pieces for easier review. This has resulted in improved performance, lower memory usage, and a better visual look of the distant-land feature. This is not the end, however, as Bzzt has some more aces up his sleeve on GitLab. We will see what improvements can be squeezed out of this guy in the future.</p>
+<p>A guy we haven’t talked about before in a news post is Stomy. He came to our forums a while ago, presenting some interesting long-term ideas he wanted to develop for the engine. But while it is way too early to talk about those, he also has some other interesting merge requests in the pipeline. The most important ones are optional head-bobbing and a radial viewing distance, which uses a clipping circle instead of a clipping plane to avoid things popping up when looking around, both of which will add a more modern feeling to the game.</p>
+<p>But what about TES3MP? Well, one interesting thing is that since TES3MP already supports Lua scripting, the user Johnnyhostile (the man behind <a href="https://www.modding-openmw.com">www.modding-openmw.com</a>) was able to start <a href="https://forum.openmw.org/viewtopic.php?f=45&amp;t=6026">porting the mod Natural Character Growth and Decay to Lua</a> in order to make it compatible with TES3MP!</p>
+<p>Let’s leave it at that and talk about other recent and future changes in a later news post. Until next time, and thanks for reading.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=6031" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+
+    
+  </div>
+</article>
+
+<article class="post-item">
+  <h2><a href="/beta-v2-openmw/2019/openmw-0-45-0-released/">OpenMW 0.45.0 Released!</a></h2>
+  <p class="post-meta">
+  <time datetime="2019-03-28">March 28, 2019</time> · <a href="/beta-v2-openmw/author/lysol/">lysol</a> · <a href="/beta-v2-openmw/category/release/">Release</a>
+</p>
+
+  <div class="prose">
+    
+      <p>The OpenMW team is proud to announce the release of version 0.45.0! Grab it from our <a href="/beta-v2-openmw/downloads/">Downloads Page</a> for all operating systems. This release brings yet another horde of bug fixes and several new features, including support for per-group KF animation replacers, 360° screenshots, and the ability to brew a whole stack of a potion at once.</p>
+<p>If you haven’t tried OpenMW out already, now is the big chance! <a href="https://elderscrolls.bethesda.net/en/tes25">Bethesda’s free giveaway of Morrowind</a> got extended, so you are still able to get Morrowind <em>for free</em> until March 31st!</p>
+<p>Check out the <a href="https://www.youtube.com/watch?v=v5vMfYmqOMo">release video</a> and the <a href="https://www.youtube.com/watch?v=WVztdWo-TNQ">OpenMW-CS release video</a> by the illustrious Atahualpa, and see below for the full list of changes.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=v5vMfYmqOMo">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2019/openmw-0-45-0-released/youtube-v5vMfYmqOMo_hu_701c02021dc13051.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.45.0 Release Commentary <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=WVztdWo-TNQ">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2019/openmw-0-45-0-released/youtube-WVztdWo-TNQ_hu_a86e846aa36537.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW-CS 0.45.0 Release Commentary <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p><strong>Known Issues:</strong></p>
+<ul>
+<li>Shadows are not yet re-implemented</li>
+<li>There’s currently no way to redirect the logging output to the command prompt on Windows Release builds — this will be resolved in version 0.46.0</li>
+<li>To use generic Linux binaries, Qt4 and libpng12 must be installed on your system</li>
+<li>On macOS, launching OpenMW from OpenMW-CS requires OpenMW.app and OpenMW-CS.app to be siblings</li>
+</ul>
+<p><strong>New Features:</strong></p>
+<ul>
+<li>Non-actor objects display visual effects during spellcasting (#1645)</li>
+<li>Creatures without any collision box use auto-generated ones (#2787)</li>
+<li>Launcher: File paths of selected content files can be copied via context menu (#2847)</li>
+<li>Actors play casting animations during scripted spellcasting (#3083)</li>
+<li>As an option, barter deals permanently modify merchant disposition (#3103)</li>
+<li>Ranged weapons deal critical hits to unaware opponents (#3703)</li>
+<li>360° screenshots of various kinds can be made (#4222)</li>
+<li>‘ToggleBorders’ debug instruction (“tb”) available in console (#4256)</li>
+<li>Sound generator keys in activator animations are supported (#4285)</li>
+<li>On macOS, function key shortcuts can be used (#4324)</li>
+<li>Some of the debug settings previously available as command line arguments can be set up in the launcher (#4345)</li>
+<li>Support for per-group KF animation replacers has been added (#4444)</li>
+<li>Shader water is rougher during bad weather (#4488)</li>
+<li>The number of enchanted items in a stack is shown in the Spells window (#4509)</li>
+<li>The actual chance of hitting the target is used for AI weapon rating instead of just the skill (#4548)</li>
+<li>The real potential damage of a weapon is used for its rating (#4549, #4697)</li>
+<li>A bonus is applied to the rating of ranged weapons if the attacker is far enough from the target (#4550)</li>
+<li>As an option, the Strength attribute affects Fatigue and Health damage in hand-to-hand combat (#4579)</li>
+<li>The logging system has been heavily reworked (#4581)</li>
+<li>AI no longer uses magic effects that affect hit chance if the enemy has not taken the appropriate stance (#4624)</li>
+<li>AI uses the root mean square of melee-weapon damage for more precise weapon rating (#4625)</li>
+<li>AI accounts for weapon speed when rating a weapon (#4626)</li>
+<li>Various vanilla GMSTs regarding combat action rating are utilised (#4632)</li>
+<li>‘sTo’ GMST (“to”) replaces hyphen in the Spellmaking menu (#4636)</li>
+<li>New count field in the Alchemy window allows you to brew multiple potions at the same time (#4642)</li>
+<li>To improve performance, actors outside of the AI processing range are no longer rendered but faded out (#4647)</li>
+<li>AI processing range can be configured via an in-game slider and a configuration option (#4647)</li>
+<li>If the animated creature model lacks a collision box, the non-animated model’s collision box is used as a fallback (#4682)</li>
+<li>Tooltips of thrown weapons show the actual in-game damage (twice the base-record damage) the projectiles have (#4697)</li>
+</ul>
+<p><strong>New Editor Features:</strong></p>
+<ul>
+<li>All top-bar dropdown menu options and most context menu options have icons (#912, #4506)</li>
+<li>Actors are rendered in Scene view (#1221)</li>
+<li>Verifier functionality covers Enchantment records (#1617)</li>
+<li>Added a check box to execute a case-sensitive global search (#2606)</li>
+<li>Shift + C is default shortcut for viewing cells (#2845)</li>
+<li>Shift + V is default shortcut for previewing records (#2845)</li>
+<li>Global search has a status bar (#3276)</li>
+<li>Frame rate in Preview window can be limited (#3641)</li>
+<li>Log files are created in case of a crash (#4012)</li>
+<li>Previously sorted-by-ID lists, such as magic-effect lists, are now alphabetically sorted (#4404)</li>
+<li>As an option, base records are ignored in verifier runs (#4466)</li>
+<li>Already existing marker models for light sources and creature levelled lists are now used (#4512)</li>
+</ul>
+<p><strong>Bug Fixes:</strong></p>
+<ul>
+<li>All actors (not only those in active cells) restore Health and Magicka during player character rest (#1875)</li>
+<li>Precise times of sunrise and sunset are now recovered from the imported Morrowind INI file (#1990)</li>
+<li>Actors now properly aim during scripted spellcasting (#2131)</li>
+<li>Skills and attributes that affect trading no longer cause low selling prices if they’re too high (#2222)</li>
+<li>Landing sound behaviour for NPCs and the player character has been reworked (#2256)</li>
+<li>Scripted movement of an object now adjusts the position of actors standing on top of that object (#2274)</li>
+<li>The last equipped item of a certain type is automatically re-equipped once a bound-item spell of the same type expires (#2326)</li>
+<li>Restore effects can restore drained stats (#2446)</li>
+<li>Attacks from unarmed, non-bipedal creatures no longer degrade armour (#2455)</li>
+<li>For the time being, actors are no longer allowed to activate teleport doors so that their abrupt cell change doesn’t cause a crash (#2562)</li>
+<li>Using ‘Resurrect’ instruction on a dead player character fully resumes the game (#2626)</li>
+<li>References to non-existent classes or factions no longer crash the game (#2772)</li>
+<li>Weapons are visually unequipped before the start of a spellcasting stance transition (#2835, #4327)</li>
+<li>The player character now gets a bounty when a player follower commits a murder (#2852)</li>
+<li>To prevent issues on macOS, SDL is only initialised for the Graphics tab of the launcher when Qt5 is used (#2862, #3911)</li>
+<li>Explicit reference calls no longer break [Tab] autocompletion in the console (#2872)</li>
+<li>Naked expressions starting with a member operator are no longer allowed outside of the console (#2971)</li>
+<li>The handling of Drain and Fortify effects for health, magicka, and fatigue has been reworked to match vanilla behaviour (#3049, #4231)</li>
+<li>Enemies are no longer immune to ranged attacks at very close range (#3059)</li>
+<li>Adding an item with a self-equipment script to an actor no longer causes a freeze (#3072)</li>
+<li>Actors who are placed above the ground are now snapped down at a significantly larger distance when a cell is loaded, preventing them from falling to their death (#3219)</li>
+<li>TrueType fonts are now properly rescaled (#3288)</li>
+<li>Targets are now much easier to hit with on-touch spells (#3374)</li>
+<li>The handling of scripted and death animations has been reworked to significantly improve mod compatibility (#3486, #4286, #4291, #4307)</li>
+<li>‘GetSpellEffects’ scripting function can now detect zero-duration effects (#3533)</li>
+<li>Enemies are much easier to hit with low-reach weapons, since the intended start position of the attack raycast is now replicated (#3591)</li>
+<li>Scripted sleeping interruptions no longer prevent the spawning of random sleep encounters (#3629)</li>
+<li>Calling ‘AddSoulGem’ and ‘RemoveSpell’ scripting instructions with an extra argument no longer breaks script compilation (#3762)</li>
+<li>‘GetPCInJail’ scripting function has been reworked to more closely match vanilla behaviour (#3788)</li>
+<li>Previous placeholder implementation of ‘GetPCTraveling’ scripting function has been replaced with a proper solution (#3788)</li>
+<li>Message boxes can now have newline characters in the text argument (#3836)</li>
+<li>Alignment of terrain texture painting has been corrected to match the vanilla look (#3876)</li>
+<li>Attenuation of magic light sources is now properly calculated (#3890)</li>
+<li>‘Goodbye’ scripting function in dialogue results now makes any additional choices act like ‘Goodbye’ (#3897)</li>
+<li>‘RemoveSpellEffects’ scripting instruction now also removes permanent effects (#3920)</li>
+<li>Movement prediction for spell aiming now uses the correct GMST to calculate the magic projectile’s speed (#3948)</li>
+<li>Animated collision shapes are no longer erroneously optimised (#3950)</li>
+<li>The terrain texture blending map is now upscaled to more closely match the vanilla look (#3993)</li>
+<li>Issues with actors not returning to their initial position in various situations have been fixed (#3997, #4251, #4393)</li>
+<li>AI packages with a non-unique target no longer choose a random target with the same ID (#4036)</li>
+<li>On macOS, version numbers are now properly displayed in the application properties (#4047)</li>
+<li>Text after the last end-of-line tag is no longer shown in books to match vanilla behaviour (#4215)</li>
+<li>‘FixMe’ script instruction has been reworked to more closely match vanilla behaviour (#4217)</li>
+<li>Jumping on slopes is now less restrictive, preventing the player character from getting stuck in V-shaped terrain (#4221)</li>
+<li>Pathgrid nodes which lie between an actor and that actor’s destination are now ignored (#4230)</li>
+<li>Actors with an AiTravel package now stop near their target position if that position is blocked by another actor (#4230)</li>
+<li>[Activate] key can no longer be held down to spam Persuasion and other kinds of repeatable actions (#4260)</li>
+<li>Turning animations no longer reset idle animations (#4271)</li>
+<li>Death animations from pre-0.43.0 savegames are now forward-compatible (#4274)</li>
+<li>‘CenterOnCell’ script instruction (“coc”) now teleports the player character to the accurate door marker or exterior position for interior and exterior cells respectively (#4292)</li>
+<li>Faction members are now aware of faction ownership during barter (#4293)</li>
+<li>AiWander packages which are placed before an AiFollow package in the AI package list no longer override vital functionality of that AiFollow package (#4304)</li>
+<li>Key focus in containers is now automatically (re)set to the [Close] button to prevent players from accidentally stealing items (#4333)</li>
+<li>Spellcasting stance transitions no longer interrupt movement animations (#4358)</li>
+<li>OK button in the Settings window has key focus by default (#4368)</li>
+<li>It’s no longer possible to cast an Absorb spell on oneself (#4378)</li>
+<li>Non-audio files no longer crash the game when the engine tries to play them (#4416)</li>
+<li>When there is a ‘NiStringExtraData’ node with MRK value in a NIF model node, only ‘NiTriShape’ meshes starting with “Tri EditorMarker” are ignored instead of the whole node (#4419)</li>
+<li>‘RotateWorld’ scripting instruction now rotates objects around the correct axis, while keeping the objects’ initial rotation (#4426)</li>
+<li>Some issues with building OpenMW on Windows and macOS were fixed (#4429, #4613)</li>
+<li>Applying the console command “Lock 0” to a door or a container now creates an unbreakable lock, like in vanilla Morrowind (#4431)</li>
+<li>Actors without any AI packages now properly return to their initial position after combat or pursuit (#4432)</li>
+<li>Guards with AiAlarm = 0 no longer attempt to arrest the player character when they observe a crime but no one reports it (#4433)</li>
+<li>‘Begin’ and ‘End’ script keywords can now be followed by a comma (#4451)</li>
+<li>The default terrain texture no longer shines through terrain texture blending transitions (#4452)</li>
+<li>Broken items are now ignored when trying to equip an item via quick key (#4453)</li>
+<li>Actors now open doors more quickly (#4454)</li>
+<li>Light sources which cannot be carried no longer prevent the AI from auto-equipping shields (#4457)</li>
+<li>The handling of idle chances in AiWander packages has been reworked to more closely match vanilla behaviour (#4458)</li>
+<li>‘NotCell’ dialogue condition now supports partial name matches (#4459)</li>
+<li>Scripted equipment now bypasses most standard equipping restrictions, e.g., those for beast races (#4460)</li>
+<li>When a non-player object casts an Open spell, a player crime event is triggered if the player character is detected to ensure vanilla compatibility (#4461)</li>
+<li>General-number formatting (“%g”) now works like in vanilla Morrowind and properly handles the fractional part (#4463)</li>
+<li>Cancelled AI packages are now removed from the package cache (#4464)</li>
+<li>Non-ASCII strings are now properly handled in the content selector and in the ESM reader (#4467, #4653)</li>
+<li>Silt striders in abot’s “Silt Striders” mod are no longer rotated by 90 degrees (#4469)</li>
+<li>The behaviour of weapon-using non-bipedal creatures has been reworked to make them less helpless in certain situations (#4470)</li>
+<li>Actors who are vampires now display their regular record head when no vampire head is found (#4474)</li>
+<li>Scripted animations no longer move actors away from their initial position (#4475)</li>
+<li>Potential crashes in the quick-keys menu when an item is no longer available in the inventory no longer occur (#4480)</li>
+<li>‘Goodbye’ dialogue scripting instruction now disables hyperlinks in dialogue topics (#4489)</li>
+<li>‘PositionCell’ scripting instruction no longer tries to add local scripts to scripted items in the teleported player character’s inventory twice (#4490)</li>
+<li>Training cap is now limited by the trainer’s modified skill instead of their base skill (#4494)</li>
+<li>Crossbow reloading animations now only apply to the upper body (#4495)</li>
+<li>Crossbows now use animations for one-handed weapons as a fallback (#4495)</li>
+<li>Animations for turning in spellcasting stance are now used (#4496)</li>
+<li>Animated meshes without slashes in their full path are now properly classified as animations (#4497)</li>
+<li>Scripted spellcasting no longer increases the Alteration skill (#4503)</li>
+<li>A potential zero division in the Fatigue calculation has been removed (#4510)</li>
+<li>A knocked-down player character can no longer move or be moved in first-person view (#4519)</li>
+<li>Some issues with sun specularity in the water shader have been fixed (#4527)</li>
+<li>Movement animations without idle-animation fallback no longer trigger idle animations (#4531)</li>
+<li>The game now switches between distorted (underwater) and undistorted sound effects based on the camera position instead of the player character’s head position (#4532)</li>
+<li>The inventory paper doll is now affected by GUI scaling (#4539)</li>
+<li>Items with an ‘OnActivate’ command present in their script (such as “cursed” items) no longer visually disappear when they are picked up in menu mode (#4543)</li>
+<li>Creatures no longer incorrectly flee from werewolves (#4545)</li>
+<li>Minimum and maximum sound ranges with zero value are now separately reset to their default ranges (#4551)</li>
+<li>Non-actor objects can no longer have a dialogue window opened via script (#4553)</li>
+<li>Dialogue topics with reserved names, e.g., “Barter” or “Repair”, now behave the same as in vanilla Morrowind (#4557)</li>
+<li>Optimiser search for reserved node names is now case-insensitive (#4558)</li>
+<li>Pinned windows are now properly updated (#4560)</li>
+<li>Fast-travel logic now always depends on the type of the service NPC’s cell instead of the destination cell type (#4563)</li>
+<li>The underwater viewing distance limit is no longer broken (#4565)</li>
+<li>The player character no longer uses headtracking in first-person view (#4573, temporary workaround for another issue)</li>
+<li>The handling of player character turning animations has been improved (#4574)</li>
+<li>Several weapon animation inconsistencies during movement in first-person view have been fixed (#4575)</li>
+<li>Idle animations are no longer reset in certain situations where they should be continuous (#4576)</li>
+<li>If an innocent actor dies from the continuing effects of a player attack, the murder is now also reported if the player has already paid their fine (#4582)</li>
+<li>Attack strength is now 0 if the player spams the [Attack] button (#4591)</li>
+<li>The incorrect inequality operator “&lt;&gt;” is now interpreted as less-than operator “&lt;” to ensure compatibility with certain mods (#4597)</li>
+<li>Picking a stack of gold up in menu mode now grabs the whole item stack (#4604)</li>
+<li>Scaling for animated collision shapes is no longer erroneously applied twice (#4607)</li>
+<li>Fall damage is no longer erroneously applied twice (#4608)</li>
+<li>The pseudo duration of instant magic effects has been adjusted in the spellmaking menu to match vanilla spell cost calculations (#4611)</li>
+<li>A zero division occurring in ‘NiFlipController’ nodes without textures has been removed (#4614)</li>
+<li>The flickering frequency of light sources and some light-related calculations have been fixed (#4615)</li>
+<li>The sneaking offset in first-person view is now also applied when switching to sneak mode in midair (#4617)</li>
+<li>Sneaking is no longer possible while flying (#4618)</li>
+<li>Recharging enchanted items now always increases the Enchant skill regardless of success or failure, like in vanilla Morrowind (#4622)</li>
+<li>NPC record entries Reputation, Disposition and Faction Rank are now loaded as unsigned variables (#4628)</li>
+<li>Sneaking stance no longer affects speed if the actor is not actually sneaking (#4633)</li>
+<li>‘GetPCJumping’ scripting function has been reworked to match vanilla behaviour (#4641)</li>
+<li>“%Name” string replacer can now be used in creature dialogue (#4644)</li>
+<li>Force-equipping a weapon now resets ongoing attack animations (#4646)</li>
+<li>HUD no longer displays an “item condition” for throwing weapons (#4648)</li>
+<li>Levelling up no longer fully restores health but rather applies the gained health points (#4649)</li>
+<li>Actors no longer fall from cliffs or run into obstacles when backing down from attackers (#4656)</li>
+<li>Enabling collision with ‘ToggleCollision’ scripting instruction (“tcl”) now snaps the player character down to the ground (#4669)</li>
+<li>The number of known ingredient and potion effects is now determined by the modified rather than the base Alchemy skill (#4671)</li>
+<li>Pitch factor handling for crossbow animations has been streamlined to more closely match vanilla behaviour (#4672)</li>
+<li>Journal can no longer be opened while the Settings window is open (#4674)</li>
+<li>NPC fast-travel destination records without any data no longer crash the game upon loading (#4677)</li>
+<li>Declared but empty script variable lists no longer crash the game upon loading (#4678)</li>
+<li>The chance of a successful spell absorption is now multiplicative rather than additive, which is how the magic effect is designed in vanilla Morrowind (#4684)</li>
+<li>Calling ‘Say’ scripting instruction with non-existent sound as argument no longer breaks script compilation (#4685)</li>
+<li>Creatures that lack unique sounds now make use of fallback sound generator records (#4689)</li>
+<li>Loading bars no longer obscure message boxes but are instead moved to the centre of the screen (#4691)</li>
+</ul>
+<p><strong>Editor Bug Fixes:</strong></p>
+<ul>
+<li>‘Revert’ action now properly updates subviews (#3249)</li>
+<li>A native colour picker is now used on all operating systems, fixing major issues on macOS (#3681)</li>
+<li>‘Undo’ and ‘Redo’ actions now keep assigned shortcuts (#4110)</li>
+<li>Lock status of newly opened subviews is now correctly initialised (#4520)</li>
+<li>Instance dragging, which was broken in 0.44.0, has been fixed (#4593)</li>
+<li>Skeletons of animated objects are now properly initialised (#4654)</li>
+<li>The Colour entry in Light Source records is now displayed as a coloured box instead of an integer number (#4668)</li>
+</ul>
+<p><strong>Other:</strong></p>
+<ul>
+<li>Windows builds in ‘Release’ mode no longer automatically open a command prompt window (#2490)</li>
+<li>Race condition in terrain code has been fixed (#4584)</li>
+<li>Skinning and AI optimisations (#4605, #4621)</li>
+<li>Support for Rapture3D OpenAL driver has been added (#4606)</li>
+<li>Record verifying functionality in OpenMW-CS has been revised (#4643)</li>
+</ul>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=5830" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pager" aria-label="Pages">
+  <a class="step" rel="prev" href="/beta-v2-openmw/author/lysol/page/2/">← Newer posts</a>
+  <ol>
+        <li><a href="/beta-v2-openmw/author/lysol/" aria-label="Page 1">1</a></li>
+        <li><a href="/beta-v2-openmw/author/lysol/page/2/" aria-label="Page 2">2</a></li>
+        <li><a href="/beta-v2-openmw/author/lysol/page/3/" aria-current="page" aria-label="Page 3">3</a></li>
+        <li><a href="/beta-v2-openmw/author/lysol/page/4/" aria-label="Page 4">4</a></li>
+        <li><a href="/beta-v2-openmw/author/lysol/page/5/" aria-label="Page 5">5</a></li>
+  </ol>
+  <a class="step" rel="next" href="/beta-v2-openmw/author/lysol/page/4/">Older posts →</a>
+</nav>
+
+<p class="archive-link"><a href="/beta-v2-openmw/archive/">All posts by year</a></p>
+
+
+</main>
+<footer>
+  <div class="wrap">
+    <h2>Follow OpenMW</h2>
+    <ul>
+      <li><a href="https://gitlab.com/OpenMW/openmw">GitLab</a></li>
+      <li><a href="https://github.com/OpenMW/openmw">GitHub</a></li>
+      <li><a href="https://discord.gg/YegsVV3aRb">Discord</a></li>
+      <li><a href="https://matrix.to/#/#openmw-space:matrix.org">Matrix</a></li>
+      <li><a href="https://web.libera.chat/#openmw">IRC on Libera.Chat</a></li>
+      <li><a href="https://reddit.com/r/openmw">Reddit</a></li>
+      <li><a href="https://mastodon.gamedev.place/@openmw">Mastodon</a></li>
+      <li><a href="https://twitter.com/intent/user?screen_name=Openmw_org">Twitter</a></li>
+      <li><a href="/beta-v2-openmw/index.xml">RSS</a></li>
+      <li><a href="/beta-v2-openmw/atom.xml">Atom</a></li>
+    </ul>
+    <div class="credits">
+      <p>Copyright © 2008-2026 OpenMW. Website logo by Necrod.</p>
+      <p>Hosting kindly provided by <a href="https://www.futureweb.be">Futureweb</a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

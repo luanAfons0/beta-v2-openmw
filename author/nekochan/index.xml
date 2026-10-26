@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Nekochan · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/author/nekochan/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/author/nekochan/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Mon, 14 Jul 2014 20:57:46 &#43;0200</lastBuildDate>
+    <item>
+      <title>Family Album</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/family-album/</link>
+      <pubDate>Mon, 14 Jul 2014 20:57:46 &#43;0200</pubDate>
+      <dc:creator>Nekochan</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3739</guid>
+      <description>Well, as someone so eloquently said in the last comment section…
+I guess I should post some screens from the latest version of OpenCS then.
+This is what it looks like when you open the panel for a container. You can see that inside the penal another panel is nested which shows the contents of the …</description>
+      <content:encoded><![CDATA[<p>Well, as someone so eloquently said in the last comment section…</p>
+<p><img src="http://i1.kym-cdn.com/photos/images/original/000/349/104/00d.jpg" alt="Point taken." loading="lazy" decoding="async"></p>
+<p>I guess I should post some screens from the latest version of OpenCS then.</p>
+<p><a href="https://openmw.org/wp-content/uploads/2014/07/nestedtable.png">This</a> is what it looks like when you open the panel for a container. You can see that inside the penal another panel is nested which shows the contents of the container. You can also <a href="https://openmw.org/wp-content/uploads/2014/07/nestedtable2.png">open two container panels</a> side by side. <a href="https://openmw.org/wp-content/uploads/2014/07/nestedtable3.png">Or even three</a>, all in one window.</p>
+<p>And <a href="https://openmw.org/wp-content/uploads/2014/07/rendering1.png">this is rendering in action</a>. Just like the containers, OpenCS is ready to <a href="https://openmw.org/wp-content/uploads/2014/07/rendering2.png" title="renrenderdering">render while you render</a>.</p>
+<p>We’ve been talking to modders and one of the major complaints they have about Morrowind’s Construction Set is that they are limited to only one rendering window. That problem is now solved in OpenCS. In addition to having as many <em>panels</em> open as you want, you can also open as many <em>windows</em> as you want which is a fantastic solution for those us who have multiple monitors. (As you can see by the stone age resolution of those screenshots, they weren’t exactly taken with the latest monitor hooked up and even then the experience isn’t that bad.)</p>
+<p>Hopefully, these shots are enough. If not, don’t worry. You’ll be able to see the real thing for yourself soon enough.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Brace for impact!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/missing-title/</link>
+      <pubDate>Mon, 07 Jul 2014 17:42:33 &#43;0200</pubDate>
+      <dc:creator>Nekochan</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3723</guid>
+      <description>It is done! Ladies and gentlemen:
+OpenCS’s rendering lives!
+To tell you the truth, it’s not totally done yet, but what has been done is significant and pretty exciting. Our editor really starts to feel like a full-featured application now! Well, it isn’t yet, of course, but it feels awesome, thanks …</description>
+      <content:encoded><![CDATA[<p>It is done! Ladies and gentlemen:</p>
+<p><strong>OpenCS’s rendering lives!</strong></p>
+<p>To tell you the truth, it’s not totally done yet, but what has been done is significant and pretty exciting. Our editor really starts to feel like a full-featured application now! Well, it isn’t yet, of course, but it feels awesome, thanks to Zini.</p>
+<p>Sir_herrbatka is still wrestling with some Drag &amp; Drop issues, and he’s working on implementing nested tables. Right now they are only implemented for containers, so you are able to add and remove items. Unfortunately, the bad news is that you won’t see this feature until 0.32.0. But the good news is the reason for that: 0.31.0 is almost upon us!</p>
+<p>That’s right! Tons of bugs have been fixed and we’ve locked the main branch down for 0.31.0. It will be released very shortly, after some last minute bug fixing so please be patient. Soon you’ll have a taste of it. :)</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Breaking news…</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/breaking-news-2/</link>
+      <pubDate>Sun, 29 Jun 2014 14:02:23 &#43;0200</pubDate>
+      <dc:creator>Nekochan</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3708</guid>
+      <description>The usual things going on:
+Mountains of bugs fixed. (Almost three dozen bugs disappeared from the tracker just this week!) Since we’re nearing completion, we’ve taken a good look at how we can optimize OpenMW. As a result, the game runs noticeably smoother now. Pvdk is working on the Morrowind …</description>
+      <content:encoded><![CDATA[<p>The usual things going on:</p>
+<ul>
+<li>Mountains of bugs fixed. (Almost three dozen bugs disappeared from the tracker just this week!)</li>
+<li>Since we’re nearing completion, we’ve taken a good look at how we can optimize OpenMW. As a result, the game runs noticeably smoother now.</li>
+<li>Pvdk is working on the Morrowind installer for those of us who are not on Windows systems. These little side-projects might not have a direct result on the gameplay, but are still part of OpenMW and will need to be in good shape.</li>
+<li>Scrawl discovered a few new absurdities about Morrowind…</li>
+</ul>
+<p>Sorry for the rush. The next news post will be as fat as deep-fried butter. ;)</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Corpus Dei</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/corpus-dei-2/</link>
+      <pubDate>Sun, 22 Jun 2014 09:15:44 &#43;0200</pubDate>
+      <dc:creator>Nekochan</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3699</guid>
+      <description>I’m tempted to say that OpenMW hasn’t changed all that much, but that wouldn’t be true. The changes are huge, but the nature of these changes are the same as those of last week. Let’s just say another mountain of bugs has been fixed.
+It’s worth pointing out that this “mountain” is quite high! We’re …</description>
+      <content:encoded><![CDATA[<p>I’m tempted to say that OpenMW hasn’t changed all that much, but that wouldn’t be true. The changes are huge, but the nature of these changes are the same as those of last week. Let’s just say another mountain of bugs has been fixed.</p>
+<p>It’s worth pointing out that this “mountain” is quite high! We’re not talking Wetterhorn-size – it’s more like K2! But instead of getting caught up in analogies, let’s focus on the facts.</p>
+<p>The amount of fixed bugs are in the triple digits. Seriously, <a href="https://bugs.openmw.org/versions/23">check the bug tracker</a> if you don’t believe me. The <a href="http://www.imgur.com/etvFPrz.png">big bug brawler is Scrawl</a>, but other developers, such as MrCheko, have also put in a lot of effort to reach this new high score.</p>
+<p>So what else? I’m afraid not too much. Work is being done on supporting nested data in OpenCS (eg. a list of what’s in an NPC’s inventory nested inside his/her properties window). It’s quite interesting because it makes finding these lists in OpenCS a lot more intuitive. It’s not finished yet, though.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Junk data…</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/junk-data/</link>
+      <pubDate>Thu, 12 Jun 2014 23:46:19 &#43;0200</pubDate>
+      <dc:creator>Nekochan</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3687</guid>
+      <description>Welcome back.
+The project advances like Armstrong in his best years on doping. What, you think cycling is boring? Yeah, it bores me too, but it does make the analogy pretty applicable.
+You see, at this point development of OpenMW is repetitive, like the seasons in a year, so each week I need to …</description>
+      <content:encoded><![CDATA[<p>Welcome back.</p>
+<p>The project advances like Armstrong in his best years on doping. What, you think cycling is boring? Yeah, it bores me too, but it does make the analogy pretty applicable.</p>
+<p>You see, at this point development of OpenMW is repetitive, like the seasons in a year, so each week I need to write about the same things. Scrawl continues his fight against bugs, Greye refactors AI code, Pvdk works on the launcher (as well as the Morrowind installer), Zini is making changes to OpenCS – and it’s nigh impossible to tell you about the nature of these changes if you don’t already know how these applications are structured.</p>
+<p>But lucky me, I still have some interesting stuff to share.</p>
+<p>First, if you wanted to be the first person to finish Morrowind on our engine… you’re too late! Rebel-rider beat you to it… and found some <a href="https://bugs.openmw.org/issues/1457">really weird bugs</a> along the way.</p>
+<p>Second, Scrawl mentioned that he is struggling with some mods that are not quite well-made. Initially we just nodded our heads as if we understood what he was talking about, but we didn’t expect to see things like <a href="https://openmw.org/wp-content/uploads/2014/06/screenshot_19-00-00.png">this</a>.</p>
+<p>Yes, apparently some mods have “junk data”. Poor Scrawl. :(</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Sir_Herrbatka wants to be the Flower Girl…</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/sir_herrbatka-girl-flower/</link>
+      <pubDate>Tue, 03 Jun 2014 22:42:38 &#43;0200</pubDate>
+      <dc:creator>Nekochan</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3663</guid>
+      <description>If you haven’t noticed yet, we have just released 0.30.0. Great news, right? Everyone who can read English has been lucky enough to be able to enjoy the changelog, but our Polish-only readers aren’t that lucky as Sir_Herrbatka has simply been short on time. So instead of the full changelog in …</description>
+      <content:encoded><![CDATA[<p>If you haven’t noticed yet, we have just released 0.30.0. Great news, right? Everyone who can read English has been lucky enough to be able to enjoy the changelog, but our Polish-only readers aren’t that lucky as Sir_Herrbatka has simply been short on time. So instead of the full changelog in Polish, he did the next best thing and gave his readers a quick overview of <a href="https://forum.openmw.org/viewtopic.php?p=24802#p24802">Zini’s forum post on the progress of the project</a>.</p>
+<blockquote>
+<p>As seen here we are pretty close to becoming feature complete. All is going well and I don’t really have much to say about OpenMW.</p>
+<p>OpenCS is another case. We still lacking manpower. It seems right now sirherrbatka and I are doing the bulk of the work, which is just not enough. I certainly don’t want to distract the OpenMW development by pushing people towards OpenCS. But if there are any inactive or retired OpenMW developers, I would be very happy to see some un-retire themself and help us out a bit (new people are also welcome, of course).</p>
+</blockquote>
+<p>So that’s where stand now. Honestly, I’ve gotten the feeling that our newsposts have gotten a bit stale. Until version 1.0.0 rolls around, I won’t have much to tell you in terms of exciting changes in the project, let alone the nitty-gritty details of their implementation. On the other hand, there <em>is</em> still lots of work to do to bring whole thing to a fully playable state.</p>
+<p>That means that there’s no reason for us to stop working! Scrawl is super(radio)active; like a superhero straight from the silver screen, he is squishing bugs one after another. Didimaster also fixed lots of bugs and Puppykevin is working on adding facial animations. If you have tried our alpha releases, you know exactly what we mean by that.</p>
+<p>Zini implemented a very important function in the editor: OpenCS now supports record references, which is a fundamental and necessary function for the further development of OpenCS.</p>
+<p>The biggest news I want to share with you doesn’t concern OpenMW, but <strong>Lgro</strong>, developer during the day, master of martial arts at night and our reliable admin all the time: He is getting married! So I wish him happiness and prosperity in his new way of life. And just a note to all the female readers who are now undoubtedly wailing loudly and gnashing their teeth after seeing Lgro slip away: I heard Scrawl is still available!</p>
+<p>Anyway, feel free to add your own wishes for Mr. and Mrs. Gromanowski.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Are we there yet?</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/yet/</link>
+      <pubDate>Mon, 26 May 2014 13:52:17 &#43;0200</pubDate>
+      <dc:creator>Nekochan</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3634</guid>
+      <description>Releasing 0.30.0 is taking more time than it should, but I think you should all know what kind of problems we ran into. For one, we needed to add a hotfix for OpenCS, but that’s just a small pixel in the bigger picture – OpenMW 0.30.0 is coming!
+But let’s focus on some of our heroes, such as Scrawl. …</description>
+      <content:encoded><![CDATA[<p>Releasing 0.30.0 is taking more time than it should, but I think you should all know what kind of problems we ran into. For one, we needed to add a hotfix for OpenCS, but that’s just a small pixel in the bigger picture – OpenMW 0.30.0 is coming!</p>
+<p>But let’s focus on some of our heroes, such as Scrawl. His heroic fights with OpenMW bugs is truly worthy of song. There are still so many of them, but Scrawl is fierce and unrelenting and squishes dozens of them, even now.</p>
+<p>Greye also helped out with killing some of those bugs, but he was focusing more on our Windows release. Most of these bugs were related to file path encoding. It seems we just can’t get enough testing on the Windows version done. To tell you the truth, Windows gives us some problems since most of our developers work with Linux, so the code they write might not work as well as it should on other operating systems. Fortunately, this problem with the Windows version was easy to spot, so, as you might expect, another hotfix was soon pushed to solve this issue. In fact, it wasn’t <em>fixing</em> the problem that was the difficult part, as it was finding the person to write the fix in the first place… until a hero came to our rescue. Thank you, Cc9cii.</p>
+<p>Seriously, we need more testers who will reports bugs. If you always wanted to help us, but you didn’t know how – there’s your answer. <a href="http://www.fondsdecranhd.net/thumbs/shrek_3_cat-t1.jpg">So everyone who wants to help, please raise your hands!</a> *raise hands*</p>
+<p>Sorry, I think I missed that! Anyway – she’s back. Our lovely AI. Guards can now fight with mobs, so if you are chased by a cliffracer, you can now find refuge in the city. Come and think of it, it’s kind of funny how guards will come to your rescue against a cliffracer, but aren’t interested in fighting people who break the law in broad daylight, such the assassins of dark brotherhood…</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Almost weekly news</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/weekly-news/</link>
+      <pubDate>Fri, 23 May 2014 17:15:47 &#43;0200</pubDate>
+      <dc:creator>Nekochan</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3628</guid>
+      <description>There are still many outstanding bugs, both big and small. From time to time we are even haunted by HUGE bugs – and there’s just no escaping those! Our friendly developers have added an incredible amount of features and with those come bugs that need to be fixed, so it does make sense that they’re …</description>
+      <content:encoded><![CDATA[<p>There are still many outstanding bugs, both big and small. From time to time we are even haunted by HUGE bugs – and there’s just no escaping those! Our friendly developers have added an incredible amount of features and with those come bugs that need to be fixed, so it does make sense that they’re in there.</p>
+<p>As I keep saying week after week, OpenMW it’s almost ready and we haven’t even seen new bugs pop up when we try to fix one of them. Now that’s pure luck. At this point you can get a good idea of how far along we are by looking at the amount of problems we have solved. So, sure – maybe the news this week is not extremely exciting but we won’t release 1.0.0 if these bugs are in there… nor even just 0.30.0 if you don’t like to look into the not too distant future.</p>
+<p>Speaking of which, 0.30.0 still isn’t ready, but we are very close. K1ll pushed a whole bunch of corrections to his repository that fix some issues with certain Linux installations and Scrawl just smashed all records with the amount of bugfixes he delivered. Other developers have also been working hard, of course. Last week was very active, but other than bug-fixes we don’t really have much to show for it. The only bit other bit of news is that two weeks ago Zini talked about improving support for loading the game files to the editor.</p>
+<p>And that is all for now. Just be patient and wait for release 0.30.0 – we’re so close I can almost taste it!</p>
+<p><img src="https://i.imgur.com/YOmDuDV.jpg" alt="" loading="lazy" decoding="async"></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Where’s the news?!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/news-3/</link>
+      <pubDate>Tue, 13 May 2014 19:33:33 &#43;0200</pubDate>
+      <dc:creator>Nekochan</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3613</guid>
+      <description>As you’ve heard last week, OpenMW won the honour being the Linux Games Award’s Project of the Month. Considering that we got many more votes than the competition, one can safely assume that those other games are not widely known. That is a bit of a pity, because these Awards are an interesting way …</description>
+      <content:encoded><![CDATA[<p>As you’ve heard last week, OpenMW won the honour being the Linux Games Award’s Project of the Month. Considering that we got many more votes than the competition, one can safely assume that those other games are not widely known. That is a bit of a pity, because these Awards are an interesting way to give some games that otherwise don’t get enough promotion their due recognition.</p>
+<p>Browsing through the games, I encountered a game called Tales of Maj’Eyal. It sucks you in like quicksand so that explains the delay. Well, that and the English translator for this newspost taking her sweet time as well. [[I just spent some nice time in Belgium, thank you. – Ed.]]</p>
+<p>But let’s get back to the topic at hand. I was a bit under the weather, but once I got better I’ve started working on OpenCS. Now you can drag game cells onto the rendering widget, including exterior cells. Region records can now also be dragged onto the map to change the cell region.</p>
+<p>Meanwhile, Zini has been working hard on loading documents in OpenCS. We’ll have more details soon.</p>
+<p>Work in OpenMW itself is progressing nicely as well. Scrawl has introduced some important fixes to the game’s AI. For example, otherwise friendly NPCs will now also become aggressive when you attack them and miss. And that’s just one among many fixes.</p>
+<p>We also cleaned our cache of unnecessary links to long-forgotten libraries that we no longer use. (Audiare? I don’t even when we dumped it).</p>
+<p>Crime and punishment in OpenMW is become more and more like Morrowind. Monsters can’t function as witnesses to your crimes anymore, for example. In the future we might introduce flags for some creatures that decide whether or not they can function as witnesses, like the daedra guards in the mage’s mansion.</p>
+<p>And finally, for this week’s dessert, we’re rapidly approaching OpenMW 0.30.0, and it includes a huge number of bug fixes. You’re gonna like it!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>It’s spring and all hearts sing…</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/spring-heart-sing/</link>
+      <pubDate>Fri, 02 May 2014 21:25:14 &#43;0200</pubDate>
+      <dc:creator>Nekochan</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3586</guid>
+      <description>Except for Sir Herrbatka’s, who started off the spring with a flu. We also sympathise with those suffering from allergies, who are now walking around with red eyes and runny noses. But despite that we still love this season, and even with all this ruckus surrounding it, we promise that we’re not …</description>
+      <content:encoded><![CDATA[<p>Except for Sir Herrbatka’s, who started off the spring with a flu. We also sympathise with those suffering from allergies, who are now walking around with red eyes and runny noses. But despite that we still love this season, and even with all this ruckus surrounding it, we promise that we’re not going to stop development. All our top coders are still working for hours on end. We’re a veritable beehive of activity, which shows in the work that has been done.</p>
+<p>Let’s start with bugfixes: there are a lot of them. I would’ve liked to leave it at that, but then you might feel cheated, so I have to mention at least some of our accomplishments:</p>
+<p>– You can now loot corpses without being considered a thief.<br>
+– The time it takes to drown is no longer hardcoded.<br>
+– You can no longer repair items, recharge enchanted items or create potions in the middle of a fight.<br>
+– Any many more fixes…</p>
+<p>This update isn’t very feature rich, but you have probably gotten used to that by now. After all, OpenMW still has a lot of bugs that need to be fixed. But that doesn’t mean it’s completely devoid of features – there’s still some news for you:</p>
+<p>– Depending on how dark it is, NPCs might use torches.<br>
+– When NPCs are done chasing something or someone, they will now return to their default position.<br>
+– NPCs can now fight along the vertical axis, so you can no longer chug a levitation potion and pummel those poor, defenceless NPCs into oblivion.</p>
+<p>Another good news:</p>
+<h2 id="project-of-the-month-may-2014--winner"><a href="http://www.linuxgameawards.org/news/project-of-the-month-may-2014-winner">Project of the Month May 2014 – Winner</a></h2>
+<p><a href="https://openmw.org/wp-content/uploads/2014/05/potm1405-winner-banner-600370x224.jpg"><img src="https://openmw.org/wp-content/uploads/2014/05/potm1405-winner-banner-600370x224-300x112.jpg" alt="potm1405-winner-banner-600[370]x224" loading="lazy" decoding="async"></a></p>
+<p>The third installment of the Project of the Month is over and the game project that could collected the most votes and thus the Project of the Month May 2014 is:</p>
+<h1 id="openmw">OpenMW</h1>
+<p>Get the results from <a href="http://www.linuxgameawards.org">http://www.linuxgameawards.org</a></p>
+<p>The <a href="http://www.linuxgameawards.org/supporters">http://www.linuxgameawards.org/supporters</a>  Linux Game Award supporters will promote OpenMW for one Month starting 1st May.</p>
+<p><a href="https://openmw.org/wp-content/uploads/2014/05/potm1405_banner.jpg"><img src="https://openmw.org/wp-content/uploads/2014/05/potm1405_banner-300x112.jpg" alt="potm1405_banner" loading="lazy" decoding="async"></a></p>
+<p>:)</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

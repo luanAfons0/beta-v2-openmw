@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>1st of April · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/category/1st-of-april/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/category/1st-of-april/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Mon, 01 Apr 2024 10:00:00 &#43;0200</lastBuildDate>
+    <item>
+      <title>A Fresh Frontier for OpenMW: Embracing Unity</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2024/a-fresh-frontier-for-openmw-embracing-unity/</link>
+      <pubDate>Mon, 01 Apr 2024 10:00:00 &#43;0200</pubDate>
+      <dc:creator>jvoisin</dc:creator>
+      <category>1st of April</category>
+      <guid isPermaLink="false">https://openmw.org/?p=6548</guid>
+      <description>To eliminate any potential confusion, this post was originally published on the 1st of April, and Unity is terrible. If you must use an engine other than OpenMW for your next project, why not try an open-source alternative such as Godot?
+Original article below: As technology surges forward, video …</description>
+      <content:encoded><![CDATA[<p>To eliminate any potential confusion, this post was originally published on the 1st of April, and Unity is terrible. If you must use an engine other than OpenMW for your next project, why not try an open-source alternative such as <a href="https://godotengine.org/">Godot</a>?</p>
+<h2 id="original-article-below">Original article below:</h2>
+<p>As technology surges forward, video games are becoming more visually stunning and performant than ever before. To keep pace, OpenMW must evolve. With OpenGL being phased out in favor of Vulkan, GPUs gaining more muscle, and CPUs packing an increasing number of cores, we must either adapt or risk obsolescence.</p>
+<p>This is why we’re making a bold move and switching our main engine once again. In the past, we’ve transitioned from OGRE to OpenSceneGraph. And now, the time has come to embrace the future and choose Unity.</p>
+<h2 id="why-unity">Why Unity?</h2>
+<p>Unity is not just something that will dramatically alter the course of our progress — it is also a platform that aligns more closely with our values. Despite being closed-source, Unity boasts several advantages over our current engine: solid leadership, first-class mobile support, a healthy enterprise culture, generative AI integration, publicly traded status, and a rock-solid reputation in the industry.</p>
+<h2 id="exciting-prospects">Exciting Prospects</h2>
+<p>We’re thrilled about the possibilities that this move opens up for us. For one, it means that we will finally be able to transpose OpenMW from C++ to D♭. Also, while we currently only target the niche operating systems Windows, macOS and GNU/Linux, the switch will let us effortlessly provide OpenMW builds for mainstream platforms such as Google Stadia, modern BlackBerries and Samsung TV. Furthermore, Unity’s advanced high-performance graphical capabilities will open the door to cutting-edge rendering techniques like ray-tracing, ray-coloring, ray-scribbling and ray-watercolor-painting.</p>
+<h2 id="fueling-the-ambitions">Fueling the Ambitions</h2>
+<p>Unfortunately, embracing Unity means we’ll need to gather funds to cover its <a href="https://unity.com/pricing">embracing fees</a>. Since OpenMW as a whole does not accept donations, we’ll fund the project tentatively codenamed “Tribunity” through three primary avenues:</p>
+<ul>
+<li>We’ll create our very own marketplace for downloadable content created by the community. To promote it, we’ll start by publishing a few exclusive creations of our own, such as map marker-based fast travel, an armour pack for pack guars, Centurion Tetrahedrons, and cosmetics like a Dwarven monocle.</li>
+<li>Thanks to the <a href="https://docs.unity.com/ads/en-us/manual/UnityAdsHome">Unity Ads SDK</a>‘s comprehensive monetisation framework, we’re planning on integrating a couple of minimally invasive and tasteful ads into the game via natural surfacing points, like loading screens. Naturally, we’ll have to modify the game slightly to abide by <a href="https://en.wikipedia.org/wiki/Entertainment_Software_Rating_Board">the rules</a> set by ad publishers, but fortunately, the required adjustments will be limited to omitting the usage of and references to alcohol, drugs, slavery, racism, violence, blood, religious blasphemy, crude humor, suggestive themes, partial nudity and Wood Elves.</li>
+<li>For players outside of California and the European Union, we might share some anonymised playthrough and associated data with various partners. We will respect our users’ privacy and will not<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> include references to adult content from their content lists in this information.</li>
+</ul>
+<p>We can’t wait to release Tribunity and for you to enjoy it with us!</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><em>terms and conditions may apply</em>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

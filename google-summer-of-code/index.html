@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Open source Elderscrolls 3: Morrowind engine reimplementation.">
+<meta name="twitter:site" content="@openmw_org">
+<meta name="robots" content="noindex">
+<title>Google Summer of Code · OpenMW</title>
+<link rel="icon" type="image/png" href="/beta-v2-openmw/favicon.png">
+
+<link rel="stylesheet" href="/beta-v2-openmw/css/main.min.dd57dc4e01d34600100d3c131c85b77ddd312fd0b9532e73284212cc93269a72.css" integrity="sha256-3VfcTgHTRgAQDTwTHIW3fd0xL9C5Uy5zKEISzJMmmnI=">
+
+</head>
+<body>
+<header class="masthead" id="top">
+  <div class="wrap wrap-flush">
+    <div class="art">
+      <a href="/beta-v2-openmw/"><img class="logo" src="/beta-v2-openmw/images/logo.png" width="588" height="128" alt="OpenMW"></a>
+      <div class="credit">Image © Maxim Nikolaev</div>
+    </div>
+    <nav class="mainnav" aria-label="Main">
+      <ul>
+        <li><a href="/beta-v2-openmw/faq/">FAQ</a></li>
+        <li><a href="/beta-v2-openmw/downloads/">Downloads</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw">Source Code</a></li>
+        <li><a href="https://gitlab.com/OpenMW/openmw/issues">Issue Tracker</a></li>
+        <li><a href="/beta-v2-openmw/media/">Media</a></li>
+        <li><a href="https://wiki.openmw.org/">Wiki</a></li>
+        <li><a href="https://forum.openmw.org/">Forum</a></li>
+        <li><a href="/beta-v2-openmw/the-team/">The Team</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<nav class="follow-row" aria-label="Follow OpenMW">
+  <ul>
+    <li>
+      <a href="https://gitlab.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"/></svg>
+<span>GitLab</span><span class="n"> 952 stars</span></a>
+    </li>
+    <li>
+      <a href="https://github.com/OpenMW/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+<span>GitHub</span><span class="n"> 6.7k stars</span></a>
+    </li>
+    <li>
+      <a href="https://discord.gg/YegsVV3aRb"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+<span>Discord</span><span class="n"> 5.2k online</span></a>
+    </li>
+    <li>
+      <a href="https://matrix.to/#/#openmw-space:matrix.org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M.632.55v22.9H2.28V24H0V0h2.28v.55zm7.043 7.26v1.157h.033c.309-.443.683-.784 1.117-1.024.433-.245.936-.365 1.5-.365.54 0 1.033.107 1.481.314.448.208.785.582 1.02 1.108.254-.374.6-.706 1.034-.992.434-.287.95-.43 1.546-.43.453 0 .872.056 1.26.167.388.11.716.286.993.53.276.245.489.559.646.951.152.392.23.863.23 1.417v5.728h-2.349V11.52c0-.286-.01-.559-.032-.812a1.755 1.755 0 0 0-.18-.66 1.106 1.106 0 0 0-.438-.448c-.194-.11-.457-.166-.785-.166-.332 0-.6.064-.803.189a1.38 1.38 0 0 0-.48.499 1.946 1.946 0 0 0-.231.696 5.56 5.56 0 0 0-.06.785v4.768h-2.35v-4.8c0-.254-.004-.503-.018-.752a2.074 2.074 0 0 0-.143-.688 1.052 1.052 0 0 0-.415-.503c-.194-.125-.476-.19-.854-.19-.111 0-.259.024-.439.074-.18.051-.36.143-.53.282-.171.138-.319.337-.439.595-.12.259-.18.6-.18 1.02v4.966H5.46V7.81zm15.693 15.64V.55H21.72V0H24v24h-2.28v-.55z"/></svg>
+<span>Matrix</span><span class="n"> 1197 users</span></a>
+    </li>
+    <li>
+      <a href="https://web.libera.chat/#openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="m14.26446 2.76095-1.22973 9.43224-1.6484 1.88226L9.67694 2.7735h-.003a9.86072 9.86072 0 0 0-.19917.04247l-.067.01256a12.0901 12.0901 0 0 0-.13158.0305l-.0646.01555a12.0503 12.0503 0 0 0-1.7393.55086l-.03709.01855 3.39788 11.26306-.1579.18062-1.59816-.70397-.10465.13457L3.4452 6.09902a10.69674 10.69674 0 0 0-.92767 1.0473 12.5862 12.5862 0 0 0-.55146.7596v.00598l6.48115 7.08106-1.02158 1.31285-7.20486-4.1497a11.70731 11.70731 0 0 0-.2207 2.30931l6.85377 2.57547L5.2778 19.0661l-4.31.02034a12.18198 12.18198 0 0 0 1.21297 2.15261h.003l1.69625-.37322h.45038l4.86266-6.22276 1.5832.70098 3.33807-3.81237c1.84965 3.14502 3.84345 6.17068 5.65635 9.33714h.45337l-.0083-.01376 1.61251.36246.01556-.01794a11.03054 11.03054 0 0 0 .77455-1.25604 11.3919 11.3919 0 0 0 .35228-.72551l-3.78784-.064-1.3332-2.19567 6.1468-2.24172v-.0311a6.93926 6.93926 0 0 0 .0036-.20217v-.31223l-.0036-.06398v-.0676l-.003-.06757-.003-.067-.003-.06757-.003-.067-.0059-.0646-.003-.06757-.0066-.067-.003-.06757-.006-.064-.006-.06757-.006-.06758-.0066-.067-.006-.06458a9.69536 9.69536 0 0 0-.11304-.7961v-.01555l-6.50625 3.71908-1.0467-1.72436 5.7365-6.49311a10.80699 10.80699 0 0 0-.8876-1.16997 11.89718 11.89718 0 0 0-.69202-.7285l-4.72569 7.45488-1.37147-2.25848 2.1526-7.75393-.05502-.02093a11.6277 11.6277 0 0 0-2.00607-.59453 12.20035 12.20035 0 0 0-.13158-.0275zm-.1591 9.33116-3.24596 3.72086-1.5832-.65853-4.48346 5.7078h.49584l4.10365-5.25144 1.57423.65195 3.08387-3.53664 4.8507 8.15167.47729-.009zm-.07357 1.30149-2.91221 3.34405-1.60474-.65254-3.74538 4.77413 12.63513.0066z"/></svg>
+<span>IRC on Libera.Chat</span></a>
+    </li>
+    <li>
+      <a href="https://reddit.com/r/openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>
+<span>Reddit</span><span class="n"> 20k members</span></a>
+    </li>
+    <li>
+      <a href="https://mastodon.gamedev.place/@openmw"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545zm-3.748 9.195h-2.561V8.29c0-1.309-.55-1.976-1.67-1.976-1.23 0-1.846.79-1.846 2.35v3.403h-2.546V8.663c0-1.56-.617-2.35-1.848-2.35-1.112 0-1.668.668-1.67 1.977v6.218H4.822V8.102c0-1.31.337-2.35 1.011-3.12.696-.77 1.608-1.164 2.74-1.164 1.311 0 2.302.5 2.962 1.498l.638 1.06.638-1.06c.66-.999 1.65-1.498 2.96-1.498 1.13 0 2.043.395 2.74 1.164.675.77 1.012 1.81 1.012 3.12z"/></svg>
+<span>Mastodon</span><span class="n"> 538 followers</span></a>
+    </li>
+    <li>
+      <a href="https://twitter.com/intent/user?screen_name=Openmw_org"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+<span>Twitter</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/index.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>RSS</span></a>
+    </li>
+    <li>
+      <a href="/beta-v2-openmw/atom.xml"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg>
+<span>Atom</span></a>
+    </li>
+  </ul>
+</nav>
+
+
+<h1 class="page-title">Google Summer of Code</h1>
+
+  
+  
+  
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+  <div class="page-body has-toc">
+    <nav class="toc" aria-label="On this page">
+      <b>On this page</b>
+      <ol>
+        <li><a href="#development-methodology"><span>Development methodology</span></a></li>
+        <li><a href="#programming-languages"><span>Programming languages</span></a></li>
+        <li><a href="#recommended-steps"><span>Recommended steps</span></a></li>
+        <li><a href="#student-proposal-guidelines"><span>Student proposal guidelines</span></a></li>
+        <li><a href="#suggestions-for-topicsprojects"><span>Suggestions for topics/projects</span><span class="count">7</span></a></li>
+        <li><a href="#mentors-7"><span>Mentors</span></a></li>
+        <li><a href="#info-and-links"><span>Info and links</span></a></li>
+      </ol>
+      <a class="toc-top" href="#top">Back to top</a>
+    </nav>
+    <div class="prose">
+      <p>The <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> is basically Google paying students to contribute to open-source projects during their Summer holidays. Many open-source projects have already been a part of that event in the past, incl. <a href="https://play0ad.com/">0 A.D.</a> which is another game engine.</p>
+
+      <section class="toc-section" id="development-methodology">
+        <h2>Development methodology</h2>
+        
+        
+<p>We’re making use of <a href="https://gitlab.com/OpenMW/openmw">Gitlab</a> to host our git repository, track <a href="https://gitlab.com/OpenMW/openmw/-/issues">issues and bugs</a>, and to run the <a href="https://gitlab.com/OpenMW/openmw/-/pipelines">continuous integration</a> on various platforms. For documentation, we’re mainly using <a href="https://wiki.openmw.org">our wiki</a> and <a href="https://openmw.readthedocs.io/en/stable/">readthedocs</a>. For communication, we bridged together <a href="https://discord.gg/YegsVV3aRb">discord</a>, <a href="#ZgotmplZ">IRC</a> and <a href="https://matrix.to/#/%23openmw-space:matrix.org">matrix</a>. We’re also making use of <a href="https://forum.openmw.org/">our forum</a> for conversations that should happen in the open and leave a trace.</p>
+<p>For those who want to get introduced to the OpenMW codebase and practices, we recommend to pick one of the <a href="https://gitlab.com/OpenMW/openmw/-/issues?label_name%5B%5D=Beginner">easy issues</a> to start with.</p>
+
+      </section>
+      <section class="toc-section" id="programming-languages">
+        <h2>Programming languages</h2>
+        
+        
+<p>Most of OpenMW is written in C++ and hence we expect students to be familiar with it. We’re currently in the process of dehardcoding a lot of mechanics into lua, so knowing a bit of it might help for some tasks.</p>
+
+      </section>
+      <section class="toc-section" id="recommended-steps">
+        <h2>Recommended steps</h2>
+        
+        
+<ul>
+<li>Read Google’s instructions for participating</li>
+<li>Grab any of the project from list of ideas that you’re interested in (or propose your own).</li>
+<li>Submit a small merge request for one of the <a href="https://gitlab.com/OpenMW/openmw/-/issues?label_name%5B%5D=Beginner">beginner-friendly issues</a>. You can also choose <a href="https://gitlab.com/OpenMW/openmw/-/issues">any of the issues on Gitlab issues</a> if they are big enough to be a qualification task, and still small enough to be finished no more than in a couple of days/weeks.</li>
+<li>Write a first draft proposal (feel free to use <a href="https://docs.google.com/document/d/1kDPGgr_D5tQuYLQi_gEGlkuQ-DlU8GH5kDBqZbVSC7I/edit">this template</a>) and ask one of the mentors to review it with you.</li>
+<li>Submit it using Google’s web interface.</li>
+</ul>
+
+      </section>
+      <section class="toc-section" id="student-proposal-guidelines">
+        <h2>Student proposal guidelines</h2>
+        
+        
+<ul>
+<li>Keep it simple enough to fit in no more than a couple of pages. Try to be clear and concise in your writing.</li>
+<li>Try to split GSoC period into tasks, and each task into week-fitting subtasks. It helps us to understand how you plan to accomplish your goals, but more importantly, it’ll help you to understand the task deep enough before starting, and prioritize important things to do first.</li>
+<li>Please tell us:
+<ul>
+<li>How much time a day/week you are able to spend on this project.</li>
+<li>As mentors and project coordinators, how can we get the best out of you?</li>
+<li>Is there anything that you’ll be studying or working on whilst working alongside us?</li>
+<li>Are there any techniques and tools which you use to keep yourself organized?</li>
+<li>Your timezone, since so we can assign you a mentor in the same one, to ease communication.</li>
+</ul>
+</li>
+<li>Submit your proposal early, not in the last minute!</li>
+<li>Be sure to choose a “backup” idea (the second task you want to do), so that conflicts (two students for one task) can be resolved.</li>
+</ul>
+
+      </section>
+      <section class="toc-section" id="suggestions-for-topicsprojects">
+        <h2>Suggestions for topics/projects</h2>
+        
+        <ul class="qindex">
+          <li><a href="#inverse-kinematics-5503">Inverse Kinematics #5503</a></li>
+          <li><a href="#shaders-improvements">Shaders improvements</a></li>
+          <li><a href="#soft-shadows-4852">Soft shadows (#4852)</a></li>
+          <li><a href="#configure-lua-scripts-in-openmw-cs-6622">Configure Lua scripts in OpenMW-CS (#6622)</a></li>
+          <li><a href="#oblivionskyrimfallout-asset-support-issues">Oblivion/Skyrim/Fallout asset support (issues)</a></li>
+          <li><a href="#editor-usability-improvements">Editor Usability Improvements</a></li>
+          <li><a href="#lua-dehardcoding">Lua dehardcoding</a></li>
+        </ul>
+        
+        
+<p>The list of suggested tasks can be found <a href="https://gitlab.com/OpenMW/openmw/-/issues?scope=all&amp;state=opened&amp;label_name%5B%5D=GSoC">here</a></p>
+<h3 id="inverse-kinematics-5503">Inverse Kinematics <a href="https://gitlab.com/OpenMW/openmw/-/issues/5503">#5503</a></h3>
+<p>Issue <a href="https://gitlab.com/OpenMW/openmw/-/issues/5409">#5409</a> makes clear that vanilla’s unorthodox actor collision on terrain will not be replicated, so unpleasantly conspicuous floaty actors compared to Morrowind are here to stay. Likewise, a move away from capsules to AABBs as part of <a href="https://gitlab.com/OpenMW/openmw/-/issues/4247">#4247</a> will mean visible “snapping” of actors as they’re stepped up or down, which would be something of a visual regression compared to current behavior. Inverse Kinematics with interpolation would resolve both these issues, to say nothing about being a major enhancement to actor skeletal system in its own right, and a big ticket item to more realistic animation and support for later titles.</p>
+<p>No extra data is needed from actor skeletons; all IK is applied to appropriately named bone chains through the engine itself, as is the norm for games iirc.</p>
+<h4 id="expected-duration">Expected duration</h4>
+<ul>
+<li>350h</li>
+</ul>
+<h4 id="skills">Skills</h4>
+<ul>
+<li>Some C++.</li>
+<li>A bit of physic simulation and animations would help as well.</li>
+</ul>
+<h4 id="difficulty">Difficulty</h4>
+<ul>
+<li>Medium</li>
+</ul>
+<h4 id="benefits-for-the-gsoc-contributor">Benefits for the GSoC contributor</h4>
+<ul>
+<li>Gain a deep understanding of modern physic simulation systems.</li>
+<li>Gain a deep understanding of classic animation systems.</li>
+</ul>
+<h4 id="assess-requirements-for-midtermfinal-evaluation">Assess requirements for midterm/final evaluation</h4>
+<ul>
+<li>1st term: Proof of concept for bipeds</li>
+<li>Final term: Inverse kinematic working for all actors in scope.</li>
+</ul>
+<h4 id="mentors">Mentors</h4>
+<ul>
+<li><a href="https://gitlab.com/AnyOldName3">@AnyOldName3</a></li>
+<li><a href="https://gitlab.com/Capostrophic">@Capostrophic</a></li>
+</ul>
+<h4 id="linksresources">Links/Resources</h4>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Inverse_kinematics">Wikipedia</a></li>
+</ul>
+<h3 id="shaders-improvements">Shaders improvements</h3>
+<p>Albeit OpenMW does have pretty water shaders, some people are missing the vanilla-style ones (<a href="https://gitlab.com/OpenMW/openmw/-/issues/4661">#4661</a>,
+so it would be nice to re-implement them, but since this task shouldn’t last more than a couple of weeks,
+we do have more shaders that we’d like to have implemented/enhanced: fog, godrays, …</p>
+<h4 id="expected-duration-1">Expected duration</h4>
+<ul>
+<li>175h or 350h</li>
+</ul>
+<h4 id="skills-1">Skills</h4>
+<ul>
+<li>The GSoC contributor should be familiar with shaders programming.</li>
+</ul>
+<h4 id="difficulty-1">Difficulty</h4>
+<ul>
+<li>Easy</li>
+</ul>
+<h4 id="benefits-for-the-gsoc-contributor-1">Benefits for the GSoC contributor</h4>
+<ul>
+<li>The GSoC contributor will learn how to write modern shaders, and how to adapt them to work with outdated assets.</li>
+</ul>
+<h4 id="assess-requirements-for-midtermfinal-evaluation-1">Assess requirements for midterm/final evaluation</h4>
+<ul>
+<li>1st term: Vanilla water shaders implemented</li>
+<li>Final term: A couple other shaders, chosen by the contributor, implemented.</li>
+</ul>
+<h4 id="mentors-1">Mentors</h4>
+<ul>
+<li><a href="https://gitlab.com/AnyOldName3">@AnyOldName3</a></li>
+<li><a href="https://gitlab.com/Capostrophic">@Capostrophic</a></li>
+</ul>
+<h4 id="linksresources-1">Links/Resources</h4>
+<ul>
+<li><a href="https://www.nexusmods.com/morrowind/mods/41102/">External implementation of shaders in Morrowind</a>, as well as <a href="https://wiki.nexusmods.com/index.php/MGE_shaders">some related shader samples</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Shader">Wikipedia article</a></li>
+</ul>
+<h3 id="soft-shadows-4852">Soft shadows (<a href="https://gitlab.com/OpenMW/openmw/-/issues/4852">#4852</a>)</h3>
+<p>Right now, shadows just use the 2×2 PCF filter provided by <code>sampler2DShadow</code>, so they’re fairly hard and sometimes pixelated. Shadows aren’t always hard in real life, and are very, very rarely pixelated.</p>
+<p>Possible approaches include:</p>
+<ul>
+<li>Using a bigger PCF (Percentage Closer Filtering) filter. GLSL 1.2 doesn’t offer any especially nice ways of doing this, and using a bigger filter might cause shadow acne issues. This would also soften shadows that would be hard in real life.</li>
+<li>Using a statistical shadow sampling approach, such as Variance Shadow Maps or Exponential Shadow Maps. These allow standard texture filtering techniques to work with shadow maps, so can make shadows soft without as much of a performance hit as PCF, but need tuning to avoid artifacts like light bleed. Also, softening affects everything, not just shadows that need softening.</li>
+<li>Using PCSS (Percentage-Closer Soft Shadows). This allows soft shadows where they’d be soft in real life and hard shadows where they’d be hard. However, it’s likely to be much slower – the implementation suggested in the original paper does 100 shadow map lookups per fragment instead of the four we’re doing now. It’s also likely to need tweaking to still be accurate when combined with LiSPSM, which OpenMW uses.</li>
+<li>Using a hybrid of a statistical approach and PCSS. I’ve seen evidence of it being done, and it’s not as slow as PCSS of the same quality, but looks a lot harder to implement.</li>
+</ul>
+<h4 id="expected-duration-2">Expected duration</h4>
+<ul>
+<li>350h</li>
+</ul>
+<h4 id="skills-2">Skills</h4>
+<ul>
+<li>The GSoC contributor should be fluent in C++, and have at least <em>some</em> knowledge about 3D rendering.</li>
+</ul>
+<h4 id="difficulty-2">Difficulty</h4>
+<ul>
+<li>Hard</li>
+</ul>
+<h4 id="benefits-for-the-gsoc-contributor-2">Benefits for the GSoC contributor</h4>
+<ul>
+<li>The GSoC contributor will learn a lot about shadow rendering and performances optimizations.</li>
+</ul>
+<h4 id="assess-requirements-for-midtermfinal-evaluation-2">Assess requirements for midterm/final evaluation</h4>
+<ul>
+<li>Final term: Soft shadows implemented.</li>
+</ul>
+<h4 id="mentors-2">Mentors</h4>
+<ul>
+<li><a href="https://gitlab.com/AnyOldName3">@AnyOldName3</a></li>
+</ul>
+<h3 id="configure-lua-scripts-in-openmw-cs-6622">Configure Lua scripts in OpenMW-CS (<a href="https://gitlab.com/OpenMW/openmw/-/issues/6622">#6622</a>)</h3>
+<p>At the moment the only way to configure Lua scripts is to use
+<a href="https://openmw.readthedocs.io/en/latest/reference/lua-scripting/overview.html#how-to-run-a-script">omwscripts</a> text file. Omwaddon format already has some initial support of Lua scripts, but OpenMW-CS can not create such omwaddons yet.</p>
+<p>Implementation steps:</p>
+<ol>
+<li>Add to <code>openmw-cs</code> a new view “Mechanics/Lua scripts” that represents <code>ESM::LuaScriptsCfg</code>. The view should allow editing Lua configuration of the current omwaddon and view Lua configuration of its master files. At this point functionality is equivalent to the functionality of <code>.omwscripts</code>.</li>
+<li>Add new view in openmw-cs for editing Lua tables and attaching them as initialization data to Lua scripts. Table can include Lua primitives, vectors, 3d tranforms, colors, and links to objects and records in the current omwaddon or its master files.</li>
+<li>Add ability to attach scripts to specific objects and records (it also requires some changes in omwaddon format).</li>
+</ol>
+<h4 id="expected-duration-3">Expected duration</h4>
+<ul>
+<li>175h or 350h</li>
+</ul>
+<h4 id="skills-3">Skills</h4>
+<ul>
+<li>Required: C++</li>
+<li>Recommended: Qt</li>
+</ul>
+<h4 id="difficulty-3">Difficulty</h4>
+<ul>
+<li>Medium</li>
+</ul>
+<h4 id="assess-requirements-for-midtermfinal-evaluation-3">Assess requirements for midterm/final evaluation</h4>
+<ul>
+<li>Midterm: implement step 1</li>
+<li>Final term: implement steps 2, 3</li>
+</ul>
+<h4 id="mentors-3">Mentors</h4>
+<ul>
+<li><a href="https://gitlab.com/lamoot">@lamoot</a></li>
+<li><a href="https://gitlab.com/ptmikheev">@ptmikheev</a></li>
+</ul>
+<h3 id="oblivionskyrimfallout-asset-support-issues">Oblivion/Skyrim/Fallout asset support (<a href="https://gitlab.com/OpenMW/openmw/-/issues?label_name%5B%5D=Oblivion">issues</a>)</h3>
+<p>There have been a growing interest in supporting assets not only from Morrowind, but also from Oblivion, Skyrim and Fallout. We know it’s possible, thanks to <a href="https://www.youtube.com/watch?v=9FcD7SxNzUg">the work of cc9cii</a>, and some recent progress made on our own.</p>
+<h4 id="expected-duration-4">Expected duration</h4>
+<ul>
+<li>175h or 350h</li>
+</ul>
+<h4 id="skills-4">Skills</h4>
+<ul>
+<li>The GSoC contributor should be fluent in C++, and know a bit about file format reverse-engineering.</li>
+</ul>
+<h4 id="difficulty-4">Difficulty</h4>
+<ul>
+<li>Easy</li>
+</ul>
+<h4 id="benefits-for-the-gsoc-contributor-3">Benefits for the GSoC contributor</h4>
+<ul>
+<li>The GSoC contributor will learn a lot about reverse engineering file format, assets manipulation, and fundamental changes that occurred in this area during the last 10 years.</li>
+</ul>
+<h4 id="assess-requirements-for-midtermfinal-evaluation-4">Assess requirements for midterm/final evaluation</h4>
+<ul>
+<li>First Term: Assets loading</li>
+<li>Final Term: Scripting or Animations support.</li>
+</ul>
+<h4 id="mentors-4">Mentors</h4>
+<ul>
+<li><a href="https://gitlab.com/Capostrophic">@Capostrophic</a></li>
+<li><a href="https://gitlab.com/jvoisin">@jvoisin</a></li>
+<li><a href="https://gitlab.com/psi29a">@psi29a</a></li>
+</ul>
+<h4 id="linksresources-2">Links/Resources</h4>
+<ul>
+<li><a href="https://github.com/cc9cii/openmw">Preliminary implementation</a> by @cc9cii</li>
+</ul>
+<h3 id="editor-usability-improvements">Editor Usability Improvements</h3>
+<p>While it’s possible to author content using OpenMW-CS, the editor’s usability is lacking in terms of polish and supported features. The goal of this project is to improve usability in various parts of the editor when using the 3D view, when managing and filtering records, when accessing tools, and to fix an assortment of bugs that noticeably affect the user’s experience. Hopefully by the end of the project the editor could be considered less of an alpha release and closer to beta.</p>
+<h4 id="expected-duration-5">Expected duration</h4>
+<ul>
+<li>175h or 350h</li>
+</ul>
+<h4 id="skills-5">Skills</h4>
+<ul>
+<li>Fluent in Qt</li>
+<li>Proficient in C++</li>
+</ul>
+<h4 id="difficulty-5">Difficulty</h4>
+<ul>
+<li>Medium</li>
+</ul>
+<h4 id="benefits-for-the-gsoc-contributor-4">Benefits for the GSoC contributor</h4>
+<ul>
+<li>The contributor will learn about UX/UI design of non-trivial workflows</li>
+</ul>
+<h4 id="assess-requirements-for-midtermfinal-evaluation-5">Assess requirements for midterm/final evaluation</h4>
+<ul>
+<li>1st term: Addressing papercuts like harmonizing icons, adding the region map, simplifying search filters, …</li>
+<li>Final term: Improved 3D view</li>
+</ul>
+<h4 id="mentors-5">Mentors</h4>
+<ul>
+<li>@Lamoot</li>
+</ul>
+<h4 id="linksresources-3">Links/Resources</h4>
+<ul>
+<li>For the 3D view: <a href="https://gitlab.com/OpenMW/openmw/-/issues/6615">#6615</a>, <a href="https://gitlab.com/OpenMW/openmw/-/issues/6314">#6314</a>, <a href="https://gitlab.com/OpenMW/openmw/-/issues/5402">#5402</a>, <a href="https://gitlab.com/OpenMW/openmw/-/issues/5402">#5410</a></li>
+<li>For the region map: <a href="https://gitlab.com/OpenMW/openmw/-/issues/5426">#5426</a>.</li>
+<li>For the search filters <a href="https://gitlab.com/OpenMW/openmw/-/issues/6407">#6407</a>.</li>
+</ul>
+<h3 id="lua-dehardcoding">Lua dehardcoding</h3>
+<p>OpenMW is currently undergoing a dehardcoding phase, with most of its behaviour modifiable at runtime via the lua API, granting more freedom than the usual <a href="https://en.uesp.net/wiki/Morrowind_Mod:Scripting_Basics">mwscript</a> to moders. It also reduce the amount of C++ in the engine as a nice side-effect.</p>
+<h4 id="expected-duration-6">Expected duration</h4>
+<ul>
+<li>175h or 350h</li>
+</ul>
+<h4 id="skills-6">Skills</h4>
+<ul>
+<li>Fluent in C++</li>
+<li>Proficient in Lua</li>
+</ul>
+<h4 id="difficulty-6">Difficulty</h4>
+<ul>
+<li>Hard</li>
+</ul>
+<h4 id="benefits-for-the-gsoc-contributor-5">Benefits for the GSoC contributor</h4>
+<ul>
+<li>Gaining deep knowledge of how to tightly integrate a scripting language in a game engine</li>
+</ul>
+<h4 id="mentors-6">Mentors</h4>
+<ul>
+<li><a href="https://gitlab.com/psi29a">@psi29a</a> — <code>psi29a</code> on the chat</li>
+<li><a href="https://gitlab.com/ptmikheev">@ptmikheev</a> — <code>ptmikheev</code> on the chat</li>
+</ul>
+
+      </section>
+      <section class="toc-section" id="mentors-7">
+        <h2>Mentors</h2>
+        
+        
+<p>Members of OpenMW core team have volunteered to guide students for GSoC’25. They’re all veterans of the projects, and pretty friendly. Please feel free to reach out to any of them in case you need any help in selecting a project.</p>
+<ul>
+<li><a href="https://gitlab.com/AnyOldName3">@AnyOldName3</a> — <code>AnyOldName3</code> on the chat</li>
+<li><a href="https://gitlab.com/Capostrophic">@Capostrophic</a> — <code>Capostrophic</code> on the chat</li>
+<li><a href="https://gitlab.com/jvoisin">@jvoisin</a> — <code>jvoisin</code> on the chat</li>
+<li><a href="https://gitlab.com/lamoot">@lamoot</a> — <code>Lamoot</code> on the chat</li>
+<li><a href="https://gitlab.com/psi29a">@psi29a</a> — <code>psi29a</code> on the chat</li>
+<li><a href="https://gitlab.com/ptmikheev">@ptmikheev</a> — <code>ptmikheev</code> on the chat</li>
+</ul>
+
+      </section>
+      <section class="toc-section" id="info-and-links">
+        <h2>Info and links</h2>
+        
+        
+<ul>
+<li><a href="https://openmw.org/google-summer-of-code/">OpenMW page on the GSoC</a></li>
+<li><a href="https://openmw.org/google-summer-of-code/">GSoC page on our issue tracker</a></li>
+<li>The <a href="https://summerofcode.withgoogle.com">official GSoC page</a></li>
+<li>The <a href="https://developers.google.com/open-source/gsoc/timeline">GSoC Timeline</a></li>
+<li><a href="https://forum.openmw.org/viewtopic.php?f=20&amp;t=7550">GSoC page on the forum</a></li>
+</ul>
+
+      </section>
+    </div>
+  </div>
+
+
+</main>
+<footer>
+  <div class="wrap">
+    <h2>Follow OpenMW</h2>
+    <ul>
+      <li><a href="https://gitlab.com/OpenMW/openmw">GitLab</a></li>
+      <li><a href="https://github.com/OpenMW/openmw">GitHub</a></li>
+      <li><a href="https://discord.gg/YegsVV3aRb">Discord</a></li>
+      <li><a href="https://matrix.to/#/#openmw-space:matrix.org">Matrix</a></li>
+      <li><a href="https://web.libera.chat/#openmw">IRC on Libera.Chat</a></li>
+      <li><a href="https://reddit.com/r/openmw">Reddit</a></li>
+      <li><a href="https://mastodon.gamedev.place/@openmw">Mastodon</a></li>
+      <li><a href="https://twitter.com/intent/user?screen_name=Openmw_org">Twitter</a></li>
+      <li><a href="/beta-v2-openmw/index.xml">RSS</a></li>
+      <li><a href="/beta-v2-openmw/atom.xml">Atom</a></li>
+    </ul>
+    <div class="credits">
+      <p>Copyright © 2008-2026 OpenMW. Website logo by Necrod.</p>
+      <p>Hosting kindly provided by <a href="https://www.futureweb.be">Futureweb</a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
