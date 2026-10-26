@@ -1,0 +1,230 @@
+---
+title: "OpenMW 0.37.0 Released!"
+date: 2015-11-30T23:59:04+01:00
+lastmod: 2016-03-05T18:07:21Z
+slug: "openmw-0-37-released"
+categories: ["Release"]
+authors: ["raevol"]
+guid: https://openmw.org/?p=4567
+---
+The OpenMW team is proud to announce the release of version 0.37.0! Grab it from our [Downloads Page](/downloads) for all operating systems. This release brings the long-anticipated implementation of the OpenSceneGraph renderer! More info on this 3d graphics toolkit can be found on the [OSG website](http://www.openscenegraph.org/). Hats off to scrawl for the Herculean amount of effort he put in working on this massive codebase change! The new renderer brings a massive performance speedup, as well as many graphical fixes and improvements.
+
+You may notice that shadows are not re-implemented at this time, as well as distant land and object shaders, but we wanted to get the release out rather than delay any further! These features will be re-added soon! This release brings many other changes and bugfixes, as well as a huge amount of new work done on OpenCS, the editor for OpenMW. Some features are missing from OpenCS as well: only basic camera controls are implemented, pathgrid and cell marker rendering is missing, as well as instance moving. See below for the full changelog.
+
+**Changelog:**
+
+- Rewrote graphics engine using OSG rendering toolkit
+- Implemented profiling overlay (press F3!)
+- Implemented journal and book scaling
+- Implemented NiStencilProperty
+- Implemented Game Time Tracker
+- Implemented comments in openmw.cfg
+- Implemented resource manager optimizations
+- Implemented handling NIF files as proper resources
+- Implemented using skinning data in NIF files as-is
+- Implemented small feature culling
+- Implemented configurable near clip distance
+- Implemented GUI scaling option
+- Implemented support for anonymous textures
+- Implemented loading screen optimizations
+- Implemented character preview optimization
+- Implemented sun glare fader
+- Implemented support for building with Qt5
+- Implemented Bullet shape instancing optimization
+- Implemented FFMPEG 2.9 support
+- Implemented head tracking for creatures
+- Implemented additive moon blending
+- Implemented an error message when S3TC support is missing
+- Fixed short activation distance for light emitting objects
+- Fixed animation not resizing creature’s bounding box
+- Fixed setPos and setScale instructions only modifying the collision model when invoked on Static objects
+- Fixed stars showing on horizon at night when they should be obscured by clouds
+- Fixed errors in moon trajectory
+- Fixed NPCs width not being adjusted by their weight
+- Fixed raycasting for dead actors
+- Fixed several issues with underwater view
+- Fixed Erene Llenim not wandering
+- Fixed cliff racers failing to hit the player (should have left this broken, hm?)
+- Fixed NPCs not being able to hit small creatures
+- Fixed vibrating terrain in cells far from the origin
+- Fixed several issues with first person weapon model rendering
+- Fixed crash when switching from full screen to windowed mode in D3D9
+- Fixed scripts failing to compile if name starts with a digit
+- Fixed Socucius Ergalla having doubled greetings during the tutorial
+- Fixed underwater flora lighting up the entire area
+- Fixed not handling controller extrapolation flags
+- Fixed footstep frequency not updating immediately when speed attribute changes
+- Fixed crash with OpenGL 1.4 drivers
+- Fixed antialiasing not working on Linux
+- Fixed enemies attacking the air when they spot the player
+- Fixed NIF rotation matrices that include scaling not being supported
+- Fixed crank in Old Mournhold: Forgotten Sewer turning about the wrong axis
+- Fixed several particle transparency stacking issues
+- Fixed Trueflame and Hopesfire flame effect rendering
+- Fixed little box rendering beneath verminous fabricants
+- Fixed sparks in Clockwork City not bouncing off the floor
+- Fixed dicer traps in Clockwork City not activating when you’re too close
+- Fixed scrambled pixels on the mini map
+- Fixed NIFs with more than 255 NiBillboardNodes not loading
+- Fixed objects flickering
+- Fixed issue with running out of vram
+- Fixed NPCs dying silently
+- Fixed jumping animation restarting when equipping mid-air
+- Fixed light spell not working in first person view
+- Fixed light spell not being as bright as in Morrowind
+- Fixed transparency sorting to be more accurate, obsoleting transparency-overrides.cfg
+- Fixed player followers reporting crimes
+- Fixed hidden emitter nodes still firing particles
+- Fixed music from title screen continuing after loading a saved game
+- Fixed map not being consistent between saved games
+- Fixed dialog scroll not always starting at the top
+- Fixed Detect Enchantment marks not appearing on top of the player arrow
+- Fixed changing NPC position via console not taking effect until cell is reloaded
+- Fixed mannequins in mods appearing as dead bodies
+- Fixed spurious fifth parameter on Placeatme raising an error
+- Fixed COC command printing multiple times when the GUI is hidden
+- Fixed crash when a creature has no model
+- Fixed character sheet not properly updating when backing out of CharGen
+- Fixed Horkers using land idle animations under water
+- Fixed map notes not showing on cell marker tooltips
+- Fixed alchemy including effects that show twice on the same ingredient
+- Fixed ORI console command
+- Fixed Ashlanders in front of Ghostgate wandering around
+- Fixed ESM writer not handling encoding when saving the TES3 header
+- Fixed NIF node names to be not case-sensitive
+- Fixed fog depth and density not being handled correctly
+- Fixed Combat AI changing target too frequently
+- Fixed not being able to attack during block animations
+- Fixed player not raising arm in third person view for blizzards
+- Fixed current screen resolution not being selected in Options when starting OpenMW
+- Fixed Ordinators thinking beast races can wear their helm
+- Fixed slider bars still moving after clicking to move them and not releasing the mouse button
+- Fixed quirks with sleep interruption
+- Fixed being able to ready weapons and magic while paralyzed
+- Fixed inverted Kwama Queen head
+- Fixed additem and removeitem behavior with gold
+- Fixed –start putting the player inside models
+- Fixed a glitch that allowed infinite free items when bartering
+- Fixed handling of quotes in names of script functions
+- Fixed Open and Lock spell effects persisting when cast on certain statics
+- Fixed being able to lock beds
+- Fixed script compiler not accepting IDs as instruction or function arguments if the ID is also a keyword
+- Fixed cell names not being localized on the world map
+- Fixed swimming player being too low in the water
+- Fixed Save and Load menu localization issues
+- Fixed Disintegrate Weapon applying to lockpicks and probes
+- Fixed mouse wheel in journal not being disabled by Options menu
+- Fixed Heart of Lorkhan not visually responding to attacks
+- Fixed inventory highlighting the wrong category after a load
+- Fixed teleport amulet not being placed in player inventory in Illuminated Order 1.0c
+- Fixed fSleepRandMod not behaving correctly in special cases
+- Fixed hang in non-GOTY version caused by bad SetRot data
+- Fixed NPC confusion over player race
+- Fixed custom races breaking numbering of PcRace
+- Fixed being able to sneak while paralyzed
+- Fixed Chameleon not working for creatures
+- Fixed player power chance to show as 0 when used
+- Fixed error handling for non-existing enchantment references
+- Fixed recursive script execution
+- Fixed infinite recursion when compiling a script with warning mode 2 and enabled error downgrading
+- Fixed potential infinite loop in addToLevCreature script function
+- Fixed PlaceItem returning radians instead of degrees
+- Fixed a crash when entering cell “Tower of Tel Fyr, Hall of Fyr”
+- Fixed a crash on assertion in a rare combat case
+- Fixed an issue with loading a save game with mod LGNPC_PaxRedoran_v1_20
+- Fixed an issue with loading a game when a mod that provided a spell known by the player was removed
+- Fixed an issue with unequipping amulets that had been created with the console
+- Fixed crash when switching from full screen to windowed mode in D3D9 (switched to OpenGL)
+- Fixed no texture issue with DirectX (switched to OpenGL)
+- Renamed ‘grid size’ setting to ‘cell load distance’
+- OpenCS: Implemented Merge tool
+- OpenCS: Implemented copying a record ID to the clipboard
+- OpenCS: Implemented script line number in results search
+- OpenCS: Implemented mouse button bindings in 3D scene
+- OpenCS: Implenented scrolling newly created TopicInfo and JournalInfo records into view
+- OpenCS: Implemented horizontal slider to scroll between opened tables
+- OpenCS: Implemented shortcut for closing focused subview
+- OpenCS: Implemented context menu for dialog subview fields with an item matching “Edit ‘x'” from the table subview context menu
+- OpenCS: Implemented ignoring mouse wheel input for numeric values unless the respective widget has focus
+- OpenCS: Implemented refreshing the verify view
+- OpenCS: Implemented configuration of double click behavior in results table
+- OpenCS: Implemented severity column to report tables
+- OpenCS: Implemented improvements to dialog button bar
+- OpenCS: Implemented mouse picking in worldspace widget
+- OpenCS: Implemented cell border arrows
+- OpenCS: Implemented cloning enhancements
+- OpenCS: Implemented fine grained configuration of extended revert and delete commands
+- OpenCS: Implemented magic effect record verifier
+- OpenCS: Implemented Sound Gen record verifier
+- OpenCS: Implemented Pathgrid record verifier
+- OpenCS: Implemented Script Editor enhancements
+- OpenCS: Implemented color values in tables
+- OpenCS: Implemented ID auto-complete
+- OpenCS: Implemented partial sorting in info tables
+- OpenCS: Implemented dialog for editing and viewing content file meta information
+- OpenCS: Implemented using checkbox instead of combobox for boolean values
+- OpenCS: Implemented dropping IDs into bar at bottom of subview when creating a record
+- OpenCS: Fixed global search not automatically focusing the search input field
+- OpenCS: Fixed opening a chest blurring the character portrait
+- OpenCS: Fixed not being able to edit alchemy ingredient properties
+- OpenCS: Fixed being able to select Attribute and Skill parameters for spells that do not require them
+- OpenCS: Fixed unnamed checkbox showing when right clicking an empty place in the menu bar
+- OpenCS: Fixed freeze when editing filter
+- OpenCS: Fixed verifier not updating local variables when other scripts are modified
+- OpenCS: Fixed AIWander Idle not being settable for a creature
+- OpenCS: Fixed not being able to enter values for rows in Creature Attack
+- OpenCS: Fixed not being able to add a start script
+- OpenCS: Fixed verifier reporting non-positive level for creatures with no level
+- OpenCS: Fixed value of “Buys \*” not saving for a creature
+- OpenCS: Fixed scale value of 0.000 making the game lag
+- OpenCS: Fixed “AI Wander Idle” value not being saved
+- OpenCS: Fixed created creatures always being dead
+- OpenCS: Fixed being unable to make NPC say a specific “Hello” voice dialog
+- OpenCS: Fixed being unable to make a creature use text dialog
+- OpenCS: Fixed not being able to set trade gold for creatures
+- OpenCS: fixed race filter on body parts not displaying correctly
+- OpenCS: Fixed inverted table sorting
+- OpenCS: Fixed Undo and Redo command labels
+- OpenCS: Fixed listed attributes and skill being based on the number of NPC objects
+- OpenCS: Fixed crash when removing the first row of a nested table
+- OpenCS: Fixed incorrect GMSTs for newly created OMWGame files
+- OpenCS: Fixed deleted scripts being editable
+- OpenCS: Fixed line edit in Dialog subview table showing after a single click
+- OpenCS: Fixed incorrect position of an added row in Info tables
+- OpenCS: Fixed deleting a record triggering a Qt warning
+- OpenCS: Fixed metadata table missing the Fixed record type column
+- OpenCS: Fixed not being able to reorder rows with the same topic in different letter case
+- OpenCS: Fixed Sort by Record Rype on the Objects table being incorrect
+- OpenCS: Fixed undo/redo shortcuts not working in script editor
+- OpenCS: Fixed missing TopicInfo “custom” condition section
+- OpenCS: Fixed sorting search and verification result table by clicking on the column names
+- OpenCS: Fixed enchantment effects always switching to water breathing
+- OpenCS: Fixed NPC information failing to save correctly due to mNpdtType value
+- OpenCS: Fixed deleting record in Objects (referencables) table messing up data
+- OpenCS: Fixed some NPC data not being editable
+- OpenCS: Fixed some missing data in cell definition
+- OpenCS: Fixed value filter not working for float values
+- OpenCS: Fixed undo leaving record status as modified
+- OpenCS: Fixed crash from closing subview and opening a new one
+- OpenCS: Fixed default window size being ignored
+- OpenCS: Fixed TopicInfo data loss when saving from ESP to OMWAddon
+- OpenCS: Fixed deleted record remaining in Dialog subview
+- OpenCS: Fixed editor not scrolling to a newly opened subview when Scrollbar Only mode is active
+- OpenCS: Fixed changing Level or Reputation of an NPC crashing the editor
+- OpenCS: Fixed filters not updating when adding or cloning records
+- OpenCS: Fixed issues when referencing a non-existing script
+- OpenCS: Fixed focus problems on edit subviews input fields
+- OpenCS: Fixed crash when applying filter to TopicInfo on mods that have added dialog
+- OpenCS: Fixed some dialog only editable items not refreshing after undo
+- OpenCS: Fixed cancel button exiting the program
+- OpenCS: Fixed mapcolor not changing correctly on the Regions table
+- OpenCS: Fixed crash when trying to use cell render view on OS X
+- OpenCS: Fixed missing columns in tables
+- OpenCS: Fixed a sort problem in the Objects table when nested rows are added
+- OpenCS: Fixed script verifier not catching endif without an if
+- OpenCS: Fixed list of available content files not refreshing in Open dialog
+- OpenCS: Fixed Flies flag having no effect on ghosts
+- OpenCS: Fixed save game failing to load due to script attached to NPC
+- OpenCS: Fixed reputation value not being stored
+
+##### [Want to leave a comment?](https://forum.openmw.org/viewtopic.php?f=38&t=3213 "Want to leave a comment?")

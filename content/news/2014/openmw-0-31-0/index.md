@@ -1,0 +1,188 @@
+---
+title: "OpenMW 0.31.0 Released!"
+date: 2014-07-17T10:11:17+02:00
+lastmod: 2014-07-21T12:02:40Z
+slug: "openmw-0-31-0"
+categories: ["Release"]
+authors: ["raevol"]
+guid: https://openmw.org/?p=3758
+---
+The OpenMW team is proud to announce the release of version 0.31.0! Grab it from our [Downloads Page](/downloads) for all operating systems. This release includes implementation of many smaller features that have been sorely missing, as well fixes for a ridiculous amount of bugs. Many thanks to our developers for their relentless attention to detail. Some optimization has made it into this release, let us know if you see any increased performance.
+
+The venerable WeirdSexy has been swamped lately, and is even more swamped by the behemoth changelog that this release brings. The video for this release has been delayed, but get a drink, kick back, and page through the list of changes below.
+
+**Known Issues:**
+
+- Switching from fullscreen to windowed mode on Windows 7 or 8.1 while using the D3D9 renderer causes a crash
+
+**Changelog:**
+
+- Implemented periodic cleanup/refill
+- Implemented precipitation and weather particles
+- Implemented dialogue merging
+- Implemented saving missing creature state
+- Implemented saving fog of war state
+- Implemented NPCs and creatures fighting each other
+- Implemented murder crime
+- Implemented Sneak skill enhancements
+- Implemented item restock handling
+- Implemented save game levelled creature handling
+- Implemented modFactionReaction script instruction
+- Implemented animated main menu support
+- Implemented saving walk/run toggle state
+- Implemented save game naming changes
+- Implemented a delete button on the load game menu
+- Implemented using journal while in dialog
+- Implemented battle music while in combat
+- Implemented follower fast travel
+- Implemented disposition and distance based aggression
+- Fixed clouds and weather to better match vanilla Morrowind
+- Fixed local map not showing objects that span multiple cells
+- Fixed CenterOnCell behavior to better match vanilla Morrowind
+- Fixed local and world map display issues
+- Fixed water being luminescent at night
+- Fixed launcher not supporting non-latin paths on Windows
+- Fixed background tracks repeating
+- Fixed door animation behavior when leaving a cell
+- Fixed disabled stronghold statics showing on the world map
+- Fixed excessive vram usage after extended play
+- Fixed dead body collision behavior
+- Fixed several character creation issues
+- Fixed various issues with jumping
+- Fixed delay on reflection effects
+- Fixed being able to interact with the world during Wait/Rest dialog
+- Fixed being able to drop items inside walls and ceilings
+- Fixed corpses changing orientation when re-entering a cell
+- Fixed several footstep sound issues
+- Fixed several dialog link issues
+- Fixed broken dialog topics in Russian version
+- Fixed summoned creature duration issue
+- Fixed crimes against hostile NPCs issue
+- Fixed creature run speed formula
+- Fixed weakness to fire not working with fire damage in the same spell
+- Fixed NPCs killing each other while attacking the player
+- Fixed Bittercup script not working on ‘Take’ option
+- Fixed case sensitivity for .bsa files
+- Fixed crash when loading a save after being killed
+- Fixed jumping not being disabled when showing message boxes
+- Fixed binding keys to uncommon characters
+- Fixed container selection changing based on mouse pointer position
+- Fixed a load/save issue with dynamic records
+- Fixed double paste into console
+- Fixed crash with D3D9 shaders
+- Fixed incorrect slope climb allowing the player to skip chargen
+- Fixed slaughterfish detecting player when player is out of the water
+- Fixed error when loading Animated Morrowind
+- Fixed NPC footsteps persisting after killing a moving NPC
+- Fixed previously equipped items not shown as unequipped after attemping to sell them
+- Fixed actors ignoring vertical axis when deciding to attack
+- Fixed blank toggle option for shadows in options menu
+- Fixed Ashlands being visible during new game loading process
+- Fixed guards prompting with punishment options after player resists arrest with another guard
+- Fixed a gate activation in TR
+- Fixed dependent files not getting disabled in launcher when parent is disabled
+- Fixed several code fragments
+- Fixed incorrect voice type playing on sleep interrupt
+- Fixed save games not showing in menu in certain cases
+- Fixed lights without a model not working
+- Fixed Animation Compilation mod not working properly
+- Fixed third party SL_Pick01.nif not working
+- Fixed being unable to exit dialog after stealing in front of Sellus Gravius
+- Fixed installs to /usr/local not working
+- Fixed failure to load save if one of the content files is disabled
+- Fixed crash on loading Siege at Firemoth
+- Fixed Arkngthand door not opening
+- Fixed Segfault when modifying view distance in options
+- Fixed apostrophe and dash characters not displaying in French version
+- Fixed display issue with icon background for magic items
+- Fixed display issue with coin icon on level up dialog
+- Fixed Alt+F4 not working in Windows
+- Fixed changing ring behavior
+- Fixed robes hiding pauldrons
+- Fixed button orientation on some shrine dialogs
+- Fixed items floating in the air when dropped onto corpses
+- Fixed forearms not rendering on Argonian females
+- Fixed alchemy allowing making potions from two of the same item
+- Fixed Max Sale button behavior
+- Fixed rest until healed for characters with stunted magicka
+- Fixed empty travel window displaying during new game sequence
+- Fixed save game permission issue
+- Fixed crash when loading The Underground 2 mod
+- Fixed ignoring additional splash screens
+- Fixed perpetual save load issue
+- Fixed error with Skyrim: Home of the Nords
+- Fixed many script instruction behaviors
+- Fixed read skill books not being saved in save game
+- Fixed unusable items being able to get bound to hotkeys
+- Fixed text variables in journal topic list
+- Fixed repeating swings on friendly NPC counting as additional crimes
+- Fixed lack of punishment for stealing priceless items
+- Fixed door marker at Jobasha’s Rare Books spawning PC in the air
+- Fixed topic selection menu to be wider
+- Fixed items dropped on rug being inaccessible
+- Fixed crime for dropping and taking looted items
+- Fixed location of dropped arrows and bolts
+- Fixed security trainers offering acrobatics instead
+- Fixed punishment dialog displaying instead of load when killed by a guard
+- Fixed script error in SkipTutorial
+- Fixed bad lighting when using morrowind.ini generated by MGE
+- Fixed mobile Heart of Lorkan
+- Fixed keybindings not saving
+- Fixed apathetic Dura Gra-Bol
+- Fixed Morrowind Patch preventing interior cell load
+- Fixed item value on tooltip
+- Fixed death count not storing in savegame
+- Fixed submerged portion of weapon not rendering when partially submerged
+- Fixed enemies attacking while dying
+- Fixed ESM error with INFO
+- Fixed projectiles shot at player ending up in inventory
+- Fixed monsters respawning on top of each other
+- Fixed dialog box opening on follower NPC when NPC is dead or game is paused
+- Fixed floating paralyzed cliffracers
+- Fixed message boxes not clearing when loading a different save game
+- Fixed underwater sound sometimes playing when transitioning from an interior
+- Fixed spell projectiles not colliding with water surface
+- Fixed console error message when information is refused by an NPC
+- Fixed being unable to remove arrow during Bloodmoon: The Ritual of Beasts quest
+- Fixed being unable to talk to Carnius Magius in Bloodmoon
+- Fixed crash when attempting to play a non-music file
+- Fixed world map not being centered on player in certain cases
+- Fixed arrow behavior in wait/rest dialog
+- Fixed kills not filling werewolf hunger
+- Fixed detect life behavior while a werewolf
+- Fixed crash during The Shrine of the Dead mission in Tribunal
+- Fixed selected text background color in the console
+- Fixed handling extra arguments given to script instructions
+- Fixed NPCs taunting after they are dead in An Assassionation Attempt quest
+- Fixed game halt when attacked by Centurion Archers
+- Fixed quest journal when completing The Missing Hand quest
+- Fixed several issues with the Dome of Serlyn
+- Fixed bounty being calculated from actual item value instead of highest value
+- Fixed terrain turning invisible on top of Red Mountain
+- Fixed steam appearance in Cave of the Hidden Music quest
+- Fixed display issues when picking up a stack of items, holding enter, and moving the mouse
+- Fixed Draugr and Riekling attacks
+- Fixed Bonewolf animation
+- Fixed particle effects being paralyzed when the player is paralyzed
+- Fixed Crimson Plague quest not updating when Gedna Relvel is killed
+- Fixed failed save game when saving in Old Mournhold: Forgotten Sewer
+- Fixed segfault when making Drain/Fortify Skill spells
+- Fixed case where game wouldn’t switch to fullscreen
+- Fixed Morrowind Rebirth duplicate objects/vanilla objects not being removed
+- Fixed case where paralysis and switching view modes would prevent death notification
+- Fixed an alt+tab segfault
+- Various code maintenace and cleanup
+- OpenCS: Implemented object rendering in cells
+- OpenCS: Implemented configuration setup
+- OpenCS: Implemented threaded loading
+- OpenCS: Implemented cell record saving
+- OpenCS: Implemented body part table
+- OpenCS: Implemented enchantment effect table
+- OpenCS: Implemented deleting referenceables
+- OpenCS: Fixed Combat/Magic/Stealth values for creatures are not displayed
+- OpenCS: Fixed segfault after ‘new’ or ‘load’
+- OpenCS: Fixed deleting Record Filter line not reseting the filter
+- OpenCS: Fixed crash when drag and dropping text
+- OpenCS: Fixed bogus filter being created when dragging multiple records to the filter bar of a non-applicable table
+
+Feel free to discuss it on [our forums](https://forum.openmw.org/viewtopic.php?f=38&t=2273 "OpenMW 0.31.0 Released! topic").

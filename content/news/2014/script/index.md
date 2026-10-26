@@ -1,0 +1,20 @@
+---
+title: "All according to script"
+date: 2014-08-17T15:48:46+02:00
+lastmod: 2024-01-05T16:50:18Z
+slug: "script"
+categories: ["News"]
+authors: ["Okulo"]
+guid: https://openmw.org/?p=3853
+---
+We’ve reached a new milestone in OpenMW development: We have 100% script functionality! Morrowind is a game that uses scripts for special events to take place. If one of these scripts does not run, these events would not take place and quests might not be finishable or magic effects might not work. Sometimes these scripts cannot be straight-up read by OpenMW, for example because it has these stray arguments that we have talked about a while ago. Fortunately, that is no longer the case. From now on, all 1204(!) scripts in Morrowind can be read and applied. This is a big leap towards feature completeness, so unsurprisingly, [high fives were given all around](https://forum.openmw.org/viewtopic.php?p=26476#p26476).
+
+For a while we have been looking at ways to optimize our codebase. One of the ways to do so is by fixing so-called memory leaks, which means that a program uses some of your computer’s memory, but doesn’t give it back when it’s done. As a result, such programs will usually start taking up more and more memory leading to performance degradation. A while ago Scrawl found one of these leaks in our code base, specifically in the part of our interface. We use MyGUI for our interface because it’s a fantastic piece of software. It speaks volumes about the quality of MyGUI that it has needed so little work on our part considering all the stuff we do with it. But still, this one thing should kinda be fixed.
+
+And this is why open-source projects rock. Scrawl and the main MyGUI guy, Altren, have been talking. Altren has even graced us with his presence. It looks like Scrawl is going to be working a bit closer with MyGUI to improve it in a faster pace than would usually be the case. That should put a stop to any issues that crop up in not just OpenMW, but also other projects that try to do similar things. For this purpose, MyGUI has left SourceForge and [is now on Github](https://github.com/MyGUI/mygui), so if you’re also a developer, and you want to keep an eye on it and possibly contribute, make sure to follow them, too!
+
+Last week we were talking about fonts. Not the most action-packed thing about OpenMW, but it’s important as it’s the main way that you and the game communicate. Markelius has been working on a font called Open Magicka that will look nice and sharp at any size. First every character present in the original *Magic Cards* needs to be redone. The next step is support for international characters such as the Cyrillic alphabet. But Markelius needs some information – specifically which languages Morrowind has been translated to that don’t use the Roman or Cyrillic alphabets. (For example, if there was a Japanese version, OpenMW would need to support that as well and thus the Open Magicka font would need to include those characters.) If you happen to know this, [please post in the relevant thread on the forums](https://forum.openmw.org/viewtopic.php?f=2&t=2292&start=20).
+
+Final bit of news is a project that a fellow OpenMW fan has started. [Deonsion has begun work on an asset replacement project](https://forum.openmw.org/viewtopic.php?t=2318). For now he’s working on 3d models of rocks and trees to start out with, but he also wants to tackle animations once he has learned how to work with the relevant software. We all know that Morrowind’s default animations and graphics are very 2002 and that makes this a majestic undertaking. If there are people who could help Deonsion out making the ultimate graphics pack for OpenMW, do get in touch! Post in the thread linked above and tell us what you can do. Every helping hand is one more. OpenMW is our best bet to play this timeless game with graphics that belong in this decade – and together, we can make that happen!
+
+##### [Want to leave a comment?](https://forum.openmw.org/viewtopic.php?f=38&t=2326)
