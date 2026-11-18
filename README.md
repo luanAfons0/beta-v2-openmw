@@ -31,7 +31,7 @@ Most of these rules come from issue #6076. Every change must follow them.
 | --- | --- | --- |
 | Site generator | [Hugo](https://gohugo.io) | One binary, fast builds, built-in multilingual support. Issue #6076 names it. |
 | Styles | Plain CSS | No build step, so anyone can read and change it. |
-| Hosting | GitLab Pages (planned) | The OpenMW project already lives on GitLab. |
+| Hosting | GitLab Pages, built by GitLab CI | The OpenMW project already lives on GitLab. |
 | Posts | Markdown files, sent as merge requests | The team prefers this to an editor in the browser. |
 | Search | [Pagefind](https://pagefind.app), with DuckDuckGo as fallback | Pagefind searches an index made at build time and shows the results on the site. Without JavaScript, WebAssembly or the index, the search box sends people to DuckDuckGo, limited to openmw.org. |
 
@@ -123,6 +123,19 @@ npx -y pagefind@1.6.0 --site public
 
 `HUGO_PARAMS_NOINDEX=true` asks search engines not to list the preview, so it does not compete with openmw.org.
 
+## Deploy
+
+`.gitlab-ci.yml` has two jobs. Both download Hugo, check its checksum, build the site and make the search index:
+
+- `test` runs on each merge request, so a broken build shows before the merge.
+- `pages` runs on the default branch and publishes `public/` to GitLab Pages.
+
+The Hugo and Pagefind versions are set at the top of the file. Change them there.
+
+The base URL is `https://openmw.org/` in `hugo.toml`. To publish somewhere else, for example before the domain moves, set the CI/CD variable `HUGO_BASEURL` in the GitLab project settings.
+
+The "Follow OpenMW" numbers and The Team page come from other sites at build time. To keep them fresh, add a daily pipeline schedule for the default branch in **Build > Pipeline schedules**.
+
 ## Contributing
 
 - Keep merge requests small: one page or one fix at a time.
@@ -169,7 +182,7 @@ refactor(layout)!: rename the color tokens
 1. Downloads page.
 2. The other fixed pages: FAQ, Media, The Team, Google Summer of Code.
 3. News: move the old posts over and keep their URLs.
-4. The GitLab CI build, and `?p=ID` redirects if the host can read the query string.
+4. `?p=ID` redirects, if Cloudflare stays in front of the site.
 5. Move the repo to the OpenMW GitLab group, if the team wants it.
 
 ## Credits
