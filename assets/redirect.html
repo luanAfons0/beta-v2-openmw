@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+<meta charset="utf-8">
+<title>{{ .to | absURL }}</title>
+<link rel="canonical" href="{{ .to | absURL }}">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={{ .to }}">
+</head>
+<body><a href="{{ .to }}">{{ .to | absURL }}</a></body>
+</html>

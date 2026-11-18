@@ -51,6 +51,28 @@ Old URLs such as `/2024/some-post/` must keep working, so links from the forum a
 
 Each news post keeps its old feed ID in `guid` (for example `https://openmw.org/?p=6979`), so feed readers do not show old posts as new. Two posts have a `url` field, because Hugo removes signs such as ™ from their old slugs.
 
+### Redirects
+
+The build makes a `_redirects` file for the old WordPress URLs. GitLab Pages, Netlify and Cloudflare Pages read this file and send a 301 redirect. For each rule, the build also makes a small HTML page at the old path, so the redirect also works in a browser on hosts that do not read `_redirects`, such as GitHub Pages.
+
+The rules come from `layouts/_partials/redirects.html`:
+
+- `/feed/` and `/feed/atom/` go to the RSS and Atom feeds.
+- `/category/<name>/feed/` and `/author/<name>/feed/` go to the feed of that category or author.
+- `/<year>/` and `/<year>/<month>/` go to that year on the Archive page. Deeper paths, such as `/2015/page/2/`, work only through `_redirects`.
+- The paths in the `aliases` field of a page go to that page.
+
+When a page moves, add its old path to `aliases`. Start each path with `/`:
+
+```yaml
+aliases:
+  - /old-path/
+```
+
+`hugo.toml` sets `disableAliases = true`, because the `_redirects` file and its HTML pages replace the alias pages that Hugo makes.
+
+Old `?p=ID` links cannot be redirected on a static host, because the host ignores everything after `?`. They open the home page. A server rule (nginx, Apache or Cloudflare) can redirect them, with the `guid` of each post as the map.
+
 ## Design rules
 
 | Token | Light | Dark | Use |
@@ -147,7 +169,7 @@ refactor(layout)!: rename the color tokens
 1. Downloads page.
 2. The other fixed pages: FAQ, Media, The Team, Google Summer of Code.
 3. News: move the old posts over and keep their URLs.
-4. Redirects for the old feed and archive URLs, and the GitLab CI build.
+4. The GitLab CI build, and `?p=ID` redirects if the host can read the query string.
 5. Move the repo to the OpenMW GitLab group, if the team wants it.
 
 ## Credits

@@ -3,6 +3,7 @@ title = "OpenMW"
 locale = "en"
 defaultContentLanguage = "en"
 capitalizeListTitles = false
+disableAliases = true
 
 disableKinds = ["taxonomy"]
 
@@ -20,13 +21,20 @@ disableKinds = ["taxonomy"]
   pagerSize = 5
 
 [outputs]
-  home = ["html", "rss", "atom"]
+  home = ["html", "rss", "atom", "redirects"]
 [outputFormats.atom]
   mediaType = "application/atom+xml"
   baseName = "atom"
   rel = "alternate"
 [mediaTypes."application/atom+xml"]
   suffixes = ["xml"]
+[outputFormats.redirects]
+  mediaType = "text/redirects"
+  baseName = "_redirects"
+  isPlainText = true
+  notAlternative = true
+[mediaTypes."text/redirects"]
+  delimiter = ""
 [services.rss]
   limit = 10
 

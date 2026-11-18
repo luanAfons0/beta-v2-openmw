@@ -1,0 +1,44 @@
+{{ $rules := slice }}
+{{ $base := site.Home.RelPermalink }}
+
+{{ range site.Pages }}
+  {{ $to := .RelPermalink }}
+  {{ range .Aliases }}
+    {{ $from := strings.Trim . "/" }}
+    {{ if not (path.Ext $from) }}{{ $from = print $from "/" }}{{ end }}
+    {{ $rules = $rules | append (dict "from" $from "to" $to) }}
+  {{ end }}
+{{ end }}
+
+{{ with site.Home.OutputFormats.Get "rss" }}
+  {{ $rules = $rules | append (dict "from" "feed/" "to" .RelPermalink) }}
+{{ end }}
+{{ with site.Home.OutputFormats.Get "atom" }}
+  {{ $rules = $rules | append (dict "from" "feed/atom/" "to" .RelPermalink) }}
+{{ end }}
+
+{{ range site.Taxonomies }}
+  {{ range . }}
+    {{ with .Page }}
+      {{ $from := strings.TrimPrefix $base .RelPermalink }}
+      {{ with .OutputFormats.Get "rss" }}
+        {{ $rules = $rules | append (dict "from" (print $from "feed/") "to" .RelPermalink) (dict "from" (print $from "feed/atom/") "to" .RelPermalink) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with site.GetPage "/archive" }}
+  {{ $archive := .RelPermalink }}
+  {{ $posts := where site.RegularPages "Section" "news" }}
+  {{ range $posts.GroupByDate "2006" }}
+    {{ $to := printf "%s#y%s" $archive .Key }}
+    {{ $rules = $rules | append (dict "from" (print .Key "/") "to" $to) (dict "from" (print .Key "/page/*") "to" $to) }}
+  {{ end }}
+  {{ range $posts.GroupByDate "2006/01" }}
+    {{ $to := printf "%s#y%s" $archive (index (split .Key "/") 0) }}
+    {{ $rules = $rules | append (dict "from" (print .Key "/*") "to" $to) }}
+  {{ end }}
+{{ end }}
+
+{{ return $rules }}

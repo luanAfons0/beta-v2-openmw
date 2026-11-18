@@ -1,0 +1,8 @@
+{{- $page := resources.Get "redirect.html" -}}
+{{- range partial "redirects.html" . -}}
+  {{- $dir := strings.TrimSuffix "*" .from -}}
+  {{- if strings.HasSuffix $dir "/" -}}
+    {{- $_ := ($page | resources.ExecuteAsTemplate (path.Join $dir "index.html") .).Publish -}}
+  {{- end -}}
+{{ .from | relURL }} {{ .to }} 301
+{{ end -}}
