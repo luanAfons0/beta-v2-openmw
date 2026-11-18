@@ -17,11 +17,11 @@ OpenMW is a free, open-source engine that runs Morrowind. Its website runs on Wo
 
 Most of these rules come from issue #6076. Every change must follow them.
 
-1. **The site works without JavaScript.** Every page, link and menu must work with JavaScript turned off. Use plain links, `<details>` and CSS. Do not use tabs, sliders or menus that need a script.
+1. **The site works without JavaScript.** Every page, link and menu must work with JavaScript turned off. Use plain links, `<details>` and CSS. Do not use tabs, sliders or menus that need a script. The only script is search, and without it the search box sends people to DuckDuckGo.
 2. **No custom fonts.** Use system font stacks only. Do not use web fonts or font CDNs.
 3. **Keep the current logo and header art.** Do not redraw, recolor or crop them in a way that changes them.
 4. **Use the forum color palette.** The colors come from [forum.openmw.org](https://forum.openmw.org) and [r/openmw](https://www.reddit.com/r/openmw/). See [Design rules](#design-rules).
-5. **Plan for more than one language.** Hugo has built-in support for many languages. Do not hard-code English text in templates when it can live in a translation file.
+5. **Keep words out of templates.** The site is in English only, but its text lives in `i18n/en.toml`, not in templates, so a translation stays possible.
 6. **The site is static.** The build makes plain HTML and CSS files, and any web host can serve them as they are. No server, database or API runs in production. `hugo server` is only a local preview tool.
 7. **Keep every existing link.** When a page moves from the old site, every download, package and documentation link moves with it. Regroup links if you want, but do not drop them.
 
@@ -32,7 +32,8 @@ Most of these rules come from issue #6076. Every change must follow them.
 | Site generator | [Hugo](https://gohugo.io) | One binary, fast builds, built-in multilingual support. Issue #6076 names it. |
 | Styles | Plain CSS | No build step, so anyone can read and change it. |
 | Hosting | GitLab Pages (planned) | The OpenMW project already lives on GitLab. |
-| Posts editor | [Sveltia CMS](https://github.com/sveltia/sveltia-cms) (to discuss with the team) | Would let team members write news posts in the browser. Each post would become a merge request. Without it, posts are Markdown files sent as merge requests. |
+| Posts | Markdown files, sent as merge requests | The team prefers this to an editor in the browser. |
+| Search | [Pagefind](https://pagefind.app), with DuckDuckGo as fallback | Pagefind searches an index made at build time and shows the results on the site. Without JavaScript, WebAssembly or the index, the search box sends people to DuckDuckGo, limited to openmw.org. |
 
 The OpenMW team has the final word on the stack.
 
@@ -80,18 +81,22 @@ hugo server
 
 Open http://localhost:1313. Hugo reloads the page when you save a file.
 
-To make the static files:
+To make the static files and the search index:
 
 ```sh
 hugo
+npx -y pagefind@1.6.0 --site public
 ```
 
-The output goes to `public/`.
+The output goes to `public/`. The second command needs [Node.js](https://nodejs.org). Without it the site still works, and search goes to DuckDuckGo.
+
+The build downloads `AUTHORS.md` for The Team page and the numbers in the "Follow OpenMW" row. Without internet, it uses the copy in `assets/AUTHORS.md` and leaves out the numbers.
 
 A preview of this repository is online at https://luanafons0.github.io/beta-v2-openmw/. It is built from `main` and published on the `gh-pages` branch:
 
 ```sh
 HUGO_PARAMS_NOINDEX=true hugo --baseURL https://luanafons0.github.io/beta-v2-openmw/
+npx -y pagefind@1.6.0 --site public
 ```
 
 `HUGO_PARAMS_NOINDEX=true` asks search engines not to list the preview, so it does not compete with openmw.org.
@@ -142,9 +147,8 @@ refactor(layout)!: rename the color tokens
 1. Downloads page.
 2. The other fixed pages: FAQ, Media, The Team, Google Summer of Code.
 3. News: move the old posts over and keep their URLs.
-4. Translations.
-5. Posts editor for the team, if the team wants one.
-6. Move the repo to the OpenMW GitLab group, if the team wants it.
+4. Redirects for the old feed and archive URLs, and the GitLab CI build.
+5. Move the repo to the OpenMW GitLab group, if the team wants it.
 
 ## Credits
 
@@ -155,4 +159,6 @@ refactor(layout)!: rename the color tokens
 
 ## License
 
-To be decided with the OpenMW team.
+This repository is under the [GNU General Public License, version 3](LICENSE), the same license as OpenMW.
+
+Two exceptions: the OpenMW logo and the header image belong to their authors (see [Credits](#credits)), and the imported news posts stay the work of the people who wrote them.
