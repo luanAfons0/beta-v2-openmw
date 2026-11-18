@@ -3,8 +3,10 @@
 {{ $file := "https://gitlab.com/OpenMW/openmw/-/blob/master/AUTHORS.md" }}
 {{ $text := "" }}
 {{ with try (resources.GetRemote $url) }}
-  {{ with .Err }}{{ errorf "Could not get %s: %s" $url . }}{{ end }}
-  {{ with .Value }}{{ $text = .Content }}{{ else }}{{ errorf "Could not get %s" $url }}{{ end }}
+  {{ with .Err }}{{ warnf "Could not get %s, using assets/AUTHORS.md: %s" $url . }}{{ else with .Value }}{{ $text = .Content }}{{ end }}
+{{ end }}
+{{ if not $text }}
+  {{ with resources.Get "AUTHORS.md" }}{{ $text = .Content }}{{ else }}{{ errorf "Could not get %s and assets/AUTHORS.md is missing" $url }}{{ end }}
 {{ end }}
 
 {{ $marker := "@@ROLE@@" }}
