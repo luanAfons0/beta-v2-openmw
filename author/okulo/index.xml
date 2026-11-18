@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Okulo · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/author/okulo/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/author/okulo/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Thu, 31 Mar 2016 14:01:42 &#43;0200</lastBuildDate>
+    <item>
+      <title>The Forgotten Releases: 0.38.0</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2016/forgotten-releases-0-38-0/</link>
+      <pubDate>Thu, 31 Mar 2016 14:01:42 &#43;0200</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>Release</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4648</guid>
+      <description>And here’s the last update we owe you. Below you’ll find two more videos. The first one will handle OpenMW, and the other will spend some time on OpenMW-CS.
+OpenMW 0.38 Commentary or The Forgotten Release Commentaries, Part 3.1 YouTube OpenMW-CS 0.38 Commentary or The Forgotten Release Commentaries, …</description>
+      <content:encoded><![CDATA[<p>And here’s the last update we owe you. Below you’ll find two more videos. The first one will handle OpenMW, and the other will spend some time on OpenMW-CS.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=xNvn8y5D57E">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2016/forgotten-releases-0-38-0/youtube-xNvn8y5D57E_hu_8e16552738f0a4a4.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.38 Commentary or The Forgotten Release Commentaries, Part 3.1 <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=o8pD7pE48wo">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2016/forgotten-releases-0-38-0/youtube-o8pD7pE48wo_hu_d0f9b5df496a4a01.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW-CS 0.38 Commentary or The Forgotten Release Commentaries, Part 3.2 <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>Phew, now that that is out of the way, we can move on to 0.39.0. The next version is still cooking, but if you want to go check it out, you can always try the nightlies for <a href="https://forum.openmw.org/viewtopic.php?f=20&amp;t=1808">Windows</a> and <a href="https://launchpad.net/~openmw/&#43;archive/ubuntu/openmw-daily">Linux</a>. They already include support for those <a href="https://wiki.openmw.org/index.php?title=TextureModding">fancy new shaders</a> too!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=3445" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>The Forgotten Releases: 0.37.0</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2016/forgotten-releases-0-37-0/</link>
+      <pubDate>Sun, 13 Mar 2016 11:17:14 &#43;0100</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>Release</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4640</guid>
+      <description>Welcome back. It seems we still owe you some videos. So let’s get right down to it. First, we have a video that shows off the updates for OpenMW. The second video shows off changes for OpenMW-CS.
+OpenMW 0.37 Commentary or The Forgotten Release Commentaries, Part 2.1 YouTube OpenMW-CS 0.37 Commentary …</description>
+      <content:encoded><![CDATA[<p>Welcome back. It seems we still owe you some videos. So let’s get right down to it. First, we have a video that shows off the updates for OpenMW. The second video shows off changes for OpenMW-CS.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=wf3EDx5XKAI">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2016/forgotten-releases-0-37-0/youtube-wf3EDx5XKAI_hu_7205fefb664fb22d.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.37 Commentary or The Forgotten Release Commentaries, Part 2.1 <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=3VzVzbNWzDY">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2016/forgotten-releases-0-37-0/youtube-3VzVzbNWzDY_hu_8c8b888af51964b4.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW-CS 0.37 Commentary or The Forgotten Release Commentaries, Part 2.2 <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=3445" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Popping in</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2016/popping/</link>
+      <pubDate>Sat, 05 Mar 2016 19:21:10 &#43;0100</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4615</guid>
+      <description>Oh, hey there. How nice of you to pop in. It’s been a while. Sit down, we’ve got something really cool for you. You know how WeirdSexy has been busy and stuff, and our last few releases didn’t have any release videos? Well, we’ve got a surprise for you. No, WeirdSexy isn’t back just yet, but we do …</description>
+      <content:encoded><![CDATA[<p>Oh, hey there. How nice of you to pop in. It’s been a while. Sit down, we’ve got something really cool for you. You know how WeirdSexy has been busy and stuff, and our last few releases didn’t have any release videos? Well, we’ve got a surprise for you. No, WeirdSexy isn’t back just yet, but we do have a video for you. It’s a retrospective of the past few releases. So though WeirdSexy may be missing, sit back and let Atahualpa take you through our past few releases in these Forgotten Release Commentaries.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=PNellqjmsjw">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2016/popping/youtube-PNellqjmsjw_hu_a2b35fb92f247c8d.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.36 Commentary or The Forgotten Release Commentaries, Part 1 <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>Those were some sixteen minutes well spent. Speaking of time well spent, Scrawl has a bit of a surprise for you too. We’ve had this feature back in Ogre3D, and now – after a bit of a hiatus – it’s back: normal maps! Scrawl still had some of PeterBitt’s old normal maps lying around, so he figured he’d try them out and lo and behold:</p>
+<p><a href="http://i.imgur.com/PBMBaSu.jpg"><img src="http://i.imgur.com/PBMBaSu.jpg" alt="" loading="lazy" decoding="async"></a></p>
+<p>Subtle, but gorgeous. As an added bonus, OpenMW can now automatically use normal maps if it answers to the naming scheme. As Scrawl explains it: “This is now implemented. For example, for the color texture foo.dds, the game will automatically use foo_n.dds as a normal map (if it exists). The benefit is that you don’t have to go around modifying (and distributing) all the .nif files / mesh files.”</p>
+<p>But normal maps are not everything. OpenMW now supports specular maps too, and both specular <em>and</em> normal maps can be used with the terrain shader.</p>
+<p>For example, lysol (who has worked in the past on Warcraft III and Rome: Total War re-textures), has put his expertise at work and made some new textures for Vivec with specular and normal mapping, while still trying to stick close to the original:</p>
+<p><a href="http://i.imgur.com/xTyD5oV.jpg"><img src="http://i.imgur.com/xTyD5oV.jpg" alt="" loading="lazy" decoding="async"></a> <a href="http://i.imgur.com/fmdvmQg.jpg"><img src="http://i.imgur.com/fmdvmQg.jpg" alt="" loading="lazy" decoding="async"></a></p>
+<p>For more information on this, check out <a href="https://wiki.openmw.org/index.php?title=TextureModding">the wiki page on texture modding</a>. It has instructions on how to enable mapping right there, and might be a good starting point for anyone thinking of making graphical mods for Morrowind.</p>
+<p>There’s also been some significant progress on the OpenMW-CS side of things. For one, we’ve got the cell markers and cell borders visible now. Also, you can now drag-and-drop stuff from the Objects table into the 3D view of a cell, and it will appear, right there. So if you have made a really cool item, and you want to drop an instance of it somewhere in the world, now you can. Next up: in-scene instance editing. Ooooh. Can’t wait to see what Zini is doing with that.</p>
+<p>Oh yes, speaking of Zini, Morrowind Modding Showcases has done a follow-up interview with him. So bathe with me in his Germanic glory and check out the video!</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=UVFh9l4OFs0">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2016/popping/youtube-UVFh9l4OFs0_hu_5022eb9847a864e7.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>Morrowind Modding Interviews - Zini OpenMW Progress Interview <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>Well, see you next time when we have more cool stuff to show!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=3413" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>First of all…</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2015/all/</link>
+      <pubDate>Fri, 25 Sep 2015 18:03:54 &#43;0200</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4535</guid>
+      <description>Hello again. Small update since it’s been a while since the last one. The move to OSG has called for a lot of work left and right. Most of it is not exciting enough to get into in a newspost (interesting enough if you want to delve deeper into the development of this project, though!), but there are …</description>
+      <content:encoded><![CDATA[<p>Hello again. Small update since it’s been a while since the last one. The move to OSG has called for a lot of work left and right. Most of it is not exciting enough to get into in a newspost (interesting enough if you want to delve deeper into the development of this project, though!), but there are a couple of things worth noting. First is the object selection via the scene view in OpenMW-CS. Scenes may contain a lot of stuff, and finding the exact item you need may be a hassle. Scrawl and Zini have been working on a way to use the scene window to select objects. Next up is selecting terrain and stuff that isn’t rendered in the scene (such as pathgrids and cell markers). You can’t move them around yet, though, that’s all for a different update.</p>
+<p>If you’re not a modder, but only play the game, you will enjoy this second bit of news: Scrawl has restored sun flares! Check out the before and after pics:</p>
+<p><a href="http://i.imgur.com/mVxl6WZ.png"><img src="http://i.imgur.com/mVxl6WZ.png" alt="" loading="lazy" decoding="async"></a> <a href="http://i.imgur.com/oU1zKrY.png"><img src="http://i.imgur.com/oU1zKrY.png" alt="" loading="lazy" decoding="async"></a></p>
+<p>Rather than being a flat disk in the sky, light blooms now. Pretties.</p>
+<p>Every step in the direction of beautifying the game is a good one and the team (especially OSG/shader magician Scrawl) is planning to do much more! There’s the water shaders, and there are object shaders. The latter may be a bit more difficult than just using an already existing implementation, as performance might be negatively impacted too severely to just plop it in and go, so some work on that is required. After the object <em>shaders</em> are done, work on object <em>shadows</em> can start, something that doesn’t seem all that significant, but it’s one of those touches that makes a ton of difference once you see it. Definitely more on that in a later version.</p>
+<p>Disposing of bugs is, of course, also a staple of Morrowind releases. Counting only the bugs on the tracker – so not including all the bugs that have been fixed as soon as they were encountered – 149 bugs have been fixed so far for this release. The other 40 issues on the tracker that have been closed are things such as small optimizations, a scaleable GUI, and several OpenMW-CS features.</p>
+<p>Doing so has left OpenMW with less than 100 issues until 1.0. Of course this amount fluctuates wildly and some issues are relatively small while others are huge. Still, it’s great to see the finish line drawing nearer and nearer.</p>
+<p>I’m not going to lie to you, though: porting is a toughie and OpenMW-CS has come to that point where nearly all basic functionalities are in place. That means that the next version won’t be released next week or even the week after that. But still, the team is working hard: they are committed to pushing out the next release with terrain optimizations and a basic water shader for your enjoyment.</p>
+<p>Troubling as the time since our last release may seem, know that the team is still busy and that the work put in the next version brings one of the most significant changes for players since the implementation of terrain and physics. Thanks for your patience and see you next time.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=3131" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Fundamentals</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2015/fundamentals/</link>
+      <pubDate>Tue, 28 Jul 2015 15:51:38 &#43;0200</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4485</guid>
+      <description>Those who have the ability to build OpenMW from the OpenSceneGraph branch have probably already tried it. The new OpenMW is streamlined, fast and of course, most importantly, very functional. It’s not very pretty yet, though. The Ogre version has a bunch of shaders, including Scrawl’s own gorgeous …</description>
+      <content:encoded><![CDATA[<p>Those who have the ability to build OpenMW from the OpenSceneGraph branch have probably already tried it. The new OpenMW is streamlined, fast and of course, most importantly, very functional. It’s not very pretty yet, though. The Ogre version has a bunch of shaders, including Scrawl’s own gorgeous “Shiny” shader which makes the water look incredibly good, but they couldn’t be easily ported to the OSG version. But that’s just eyecandy, and though that is one step back, it’s only temporary. Add to that the fact that with its huge progress in terms of speed and the many fixes that it brings, the whole OSG port represents three steps forward. In fact, it’s far along enough to be included in the next release. So get ready, 0.37.0 will be the version that brings OpenMW-OSG to the world!</p>
+<p>At the time of writing, 0.37.0 closes a whopping 138 issues on our tracker. As mentioned in the last post by Scrawl, NPCs are finally the right size. <a href="http://bugs.openmw.org/issues/2111">Raindrops won’t make fire see-through anymore</a> and <a href="http://bugs.openmw.org/issues/2140">fire no longer make stuff look black</a>. Your followers also won’t be squealing when you touch something the wrong way, so no more “friends” ratting you out to the popo just because you took something that is technically not entirely yours.</p>
+<p>Newcomer Kunesj has created a fun little extra that has been integrated already: <a href="https://cloud.githubusercontent.com/assets/7138527/8763449/534ecda8-2d9c-11e5-81ab-186d7ac4dc55.png">the crosshair and tooltips can now show if something is owned or not</a>. It doesn’t work as well as it should yet, so for now it requires editing some configuration files to enable and configure this feature, but it’s a good start to something that a lot of players will welcome.</p>
+<p>There’s been some work on OpenMW-CS. NPCs should now have a whole lot more stuff for you to edit, including faction rank, level, skills, and the like. UI nags such as the starting size of the main window and a cancel button closing OpenMW-CS rather than returning to the last screen have been resolved. You can now also sort your search results, which should make the global search function even more useful than before. And, oh, bonus! – we also have <a href="http://bugs.openmw.org/attachments/download/1377/color_picking.png">a pretty colour picker now</a>!</p>
+<p>So as you can see, the team is marching on, but besides the engine and the CS, two other projects have seen the light of day.</p>
+<p>For the first one we should give a shout-out to TravDark, the creator of <a href="http://www.moddb.com/mods/ashes-of-apocalypse">Ashes of the Apocalypse mod</a>, and Envy123, the creator of an unofficial expansion to AoA called <a href="http://www.moddb.com/mods/desert-region-2-the-final-frontier">Desert Region 2</a>. These two creators have generously allowed their work to be expanded and revamped so that they can be run as stand-alone games on the OpenMW engine. To this end, content in these mods needs to be replaced, and <a href="https://forum.openmw.org/viewtopic.php?f=2&amp;t=2990">such an effort has already started</a>. In order to be stand-alone, however, it requires replacement of all assets made by Bethesda and work from other modders. That’s a ton of work and a solution needs to be found.</p>
+<p>Which brings us to the other project: a bare minimum package for game developers. As OpenMW is merely an engine, it doesn’t only run Morrowind. To have a working game on OpenMW, you need some bare minimum files, such as a sky and some animations. Enter the <a href="https://forum.openmw.org/viewtopic.php?f=20&amp;t=3003">OpenMW Game Template project</a>, a project which aims to provide a minimum package to run OpenMW. Aside from being a good foundation for game developers to work off of, it’s also a fantastic test run for OpenMW. When people try to create their own game, they could run into all sorts of issues and with the tight connections the Game Template project has to the development team, these basic issues can be documented and/or resolved before they can get in the way of the developers of full-fledged games.</p>
+<p>So there it is. Two new projects on the side, the CS getting expanded, and OpenMW proper switching to a whole new graphical engine with major fixes and speed as a bonus. Plenty to be excited about, even in this late stage of development!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=3015" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Base-building</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2015/base-building/</link>
+      <pubDate>Fri, 17 Apr 2015 15:07:29 &#43;0200</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4315</guid>
+      <description>As the feature list is getting shorter and shorter, our development team’s attention has been shifting towards issues that are a lot bigger than things like NPCs not doing what they are supposed to do.
+Scrawl, for example, is slaving away at porting the project from Ogre3D to OpenSceneGraph, a …</description>
+      <content:encoded><![CDATA[<p>As the feature list is getting shorter and shorter, our development team’s attention has been shifting towards issues that are a lot bigger than things like NPCs not doing what they are supposed to do.</p>
+<p>Scrawl, for example, is slaving away at porting the project from Ogre3D to OpenSceneGraph, a relatively unknown but immensely flexible and expansive 3d engine which will not only allow OpenMW to run smoother than before, but also allows for better handling of materials and stitching the bodyparts of NPCs together (which is not nearly as gruesome as it sounds). <a href="/beta-v2-openmw/2015/announcing-switch-openscenegraph/">Scrawl himself has told us</a> about the what and why of OSG, and yes, I <em>could</em> tell you all that he is making good progress, but pictures speak louder than words.</p>
+<p><a href="http://scrawl.bplaced.net/temp/screen22-16-24.png"><img src="http://scrawl.bplaced.net/temp/screen22-16-24.png" alt="" loading="lazy" decoding="async"></a><br>
+<a href="http://scrawl.bplaced.net/temp/screen22-07-19.png"><img src="http://scrawl.bplaced.net/temp/screen22-07-19.png" alt="" loading="lazy" decoding="async"></a></p>
+<p>It’s almost a throwback to version 0.13.0, but don’t worry; unlike <a href="https://www.youtube.com/watch?v=9gOqBU2oZnk">the project way back when in 2012</a>, much of the program is already in place right now, so we promise it won’t take three years to catch up. I mean, just between the time that I started writing this update and the time this got posted <a href="http://i.imgur.com/jwhQAdr.png">Scrawl got NPCs to render</a>. Things are progressing <em>fast</em>.</p>
+<p>Meanwhile, OpenMW-CS has been developing nicely as well. Our very own modding suite has gotten two more features that you <em>have</em> to see if you are a modder.</p>
+<p>A plenty large code submission by cc9ii, based on some hard work by sirherrbatka, will give you access to stuff that you didn’t have access to before. Take NPCs, for example. Their settings were previously accessible only through the main table, but there are some things that were not contained therein. Selecting <em>Edit record</em> from the right click menu would bring up some more stuff to change (such as if this NPC would buy certain items), but cc9ii’s contribution expands that even further. By editing the NPC, you can now put stuff in his inventory, check out the paths they take while walking through the world, <a href="https://github.com/OpenMW/openmw/pull/553">and much more</a>.</p>
+<p>Zini has <a href="https://twitter.com/marczinnschlag/status/582217189966610434">announced with the proper fanfare</a> that Global Search is now working. When confronted with a huge list of stuff, trying to find that lovely lime-ware platter from the Census and Excise Office is like searching for a needle in a haystack. Previously, it was possible to filter using a specific syntax, but why make it difficult? With Global Search implemented, you can instantly find that one object with nary a thought. What’s more, this global search function will be extended with a replace function, so you don’t have to edit all those potions one by one.</p>
+<p>Finally, a bit of community stuff as well. Sterling of the Old School RPG YouTube channel has started his Let’s Play of Morrowind through the OpenMW engine. If you want to see how LPs are done or are just curious about how OpenMW runs in practice, go ahead and watch the first video below. Don’t forget to <a href="https://www.youtube.com/channel/UC6cCf0rNe7XK8V1rPcW9Bkw">check out his channel afterwards</a> for more content.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=RjTQlaJe9Z4">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2015/base-building/youtube-RjTQlaJe9Z4_hu_20a0ca801b6cc7ba.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW Morrowind Playthrough Orcish Tenacity Part 1 <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>That it’s for this update. The team is ever active, and we can’t wait to tell you more in our next update. See you next time.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=2859" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Patching up</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2015/4246/</link>
+      <pubDate>Tue, 10 Mar 2015 11:16:29 &#43;0100</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4246</guid>
+      <description>It’s been about a month since the release of 0.35.0 and we’ve gotten some news about crashes here and there. They have been fixed already, but situations like this beg for a patch. So that’s what the team is putting out. 0.35.1 won’t just contain crash fixes, though – we’ve still got a whole bunch …</description>
+      <content:encoded><![CDATA[<p>It’s been about a month since the release of 0.35.0 and we’ve gotten some news about crashes here and there. They have been fixed already, but situations like this beg for a patch. So that’s what the team is putting out. 0.35.1 won’t just contain crash fixes, though – we’ve still got a whole bunch of bugs fixed. Those will be included, of course.</p>
+<p>What will also be included is a single feature: Controllers. Last year there was some work done on joystick support. It worked mostly, but not in a good enough state to warrant including it in OpenMW. Digmaster and scrawl have sufficiently advanced controller support now to make it into the next build. If you have a gamepad, why not give it a try? If your controller doesn’t work properly, the team would like to hear about it.</p>
+<p>After 0.35.1 the team will continue working a per usual on 0.36.0, so stick around.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=2801" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>It’s Ogre</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2015/ogre/</link>
+      <pubDate>Sun, 15 Feb 2015 11:35:25 &#43;0100</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4183</guid>
+      <description>In the past few updates we’ve been anxiously looking forward to Ogre 2.0, a major milestone of the 3d engine that is used in OpenMW. It would give our development team much more opportunities to make OpenMW work better than ever before. It is somewhat done now and ready for public consumption, but …</description>
+      <content:encoded><![CDATA[<p>In the past few updates we’ve been anxiously looking forward to Ogre 2.0, a major milestone of the 3d engine that is used in OpenMW. It would give our development team much more opportunities to make OpenMW work better than ever before. It is somewhat done now and ready for public consumption, but unfortunately moving OpenMW to Ogre 2 isn’t just a matter of adding a few new lines of code to the program. Because Ogre 2 is different from Ogre 1, OpenMW needs to evolve along with it.</p>
+<p>Some of the issues have to do with the way OpenMW “stitches together” the bodyparts of people to make them a working whole. As you might know, people in Morrowind consist of a torso, a head, legs and arms. They also have to be able to hold items, which is another thing to stitch to the model. Since this bit isn’t implemented in Ogre 2 yet, this part will break functionality.</p>
+<p><a href="http://scrawl.bplaced.net/blog/?p=34">Scrawl’s latest post on his website</a> talks more about issues such as these, so if you are technically inclined and want to know more, definitely give it your eyeballs.</p>
+<p>Some more work has been done on OpenMW itself, obviously. Aside from the over 100 bugs fixed on the tracker, some features have been added, such as a fast-forward for NPCs. That is, if you wait a certain amount of hours, NPCs will be at a different spot on the map than before.</p>
+<p>Since we’re approaching the release of 0.35.0 fast, it has already gone in lockdown. New work is going into the version after that. Already included in that is fixing the trajectory of the sun. Turns out that this one bugreporter, Yann GOUY, has been paying attention and has seen that the sun doesn’t rise and set in the right spots. The moons aren’t working as they should be either, but they will have to wait a bit. Magnus is now fixed, however. Another very important issue solved in 0.36.0 is the ability to dress dead bodies. I, too, find dressing dead orcs up in nothing but an exquisite right glove of paramount importance to my immersion.</p>
+<p>A full changelist has already been written for 0.35.0, and the update should drop any day now, so be sure to keep an eye out on the website or let apt/yum/pacman do the work for you.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=2753" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>The Year of OpenMW</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2015/year-openmw/</link>
+      <pubDate>Tue, 06 Jan 2015 20:08:31 &#43;0100</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4152</guid>
+      <description>Happy 2015 everyone! Hopefully you had some great meals during the holidays and partied hard on New Year’s Eve because now that January has rolled around, it’s time for you to hit that treadmill again and work off those extra kilos you gained. Hop to it!
+OpenMW continues to gain ground. In 2014 we …</description>
+      <content:encoded><![CDATA[<p>Happy 2015 everyone! Hopefully you had some great meals during the holidays and partied hard on New Year’s Eve because now that January has rolled around, it’s time for you to hit that treadmill again and work off those extra kilos you gained. Hop to it!</p>
+<p>OpenMW continues to gain ground. In 2014 we have gone from 0.27.0 to 0.34.0. Don’t remember 0.27.0? It was the version where <a href="https://www.youtube.com/watch?v=6ea8NPedKsk">Acrobatics and God Mode were implemented</a>. The Morrowind community has also been noticing OpenMW a bit more. As part of his <em>Morrowind Modding Interviews</em> series, Darkelfguy had an interview with our project leader, Zini. <a href="https://www.youtube.com/watch?v=d8XSeMYgmU4">You should totally check it out.</a> Not only do you get to hear Zini speak perfect Angleutsch, you also get to learn some more about Zini himself, OpenMW and the Morrowind modding community in general.</p>
+<p>Scrawl has been working hard throughout december on OpenMW. This guy has knowhow – and a lot of it. A lot of us fans do not have any background in programming and wouldn’t know a pointer from a variable, so getting into the inner workings of OpenMW is not quite what we do on the frontpage. But it <em>is</em> damn interesting. That’s why Scrawl has a really nice blog in which he talks about what he has been up to. His latest post is about parting OpenMW to Ogre 2.0. <a href="http://scrawl.bplaced.net/blog/">You should definitely check it out if you want to learn more about the nitty gritty details of development and what makes OpenMW tick</a>. I’ll let Scrawl himself talk about what he has been doing throughout December:</p>
+<blockquote>
+<p>The first couple of days were spent catching up with the backlog of easy to fix bugs that had accumulated. Over the course of the two weeks, many more of these were discovered and fixed, some of which can be attributed to Tinker’s efforts regarding a mod testing wiki page. I applaud this idea and must say I am very happy with the amount of polish we are getting these days.</p>
+<p>A few NIF features were added: XYZ rotation keys, used among others by the “Containers Animated” mod are now supported.</p>
+<p>The sound system was updated to account for various range limiting quirks in MW’s sound system. This fixes excessively loud ambient sound volumes that were often noted by testers, and also bug #244 “Clipping/static in relation to the ghostgate sound” which is one of the most long-standing issues we have fixed in recent times.</p>
+<p>The missing hotkeys for cycling the equipped weapon/spell have been implemented. That means all controls from the original game are now added; another category we can strike off the list. Nice! We have the head tracking for NPCs in place now, which means they will turn their head to follow the nearest actor. Hopefully this makes them seem a little less robotic. I might do more tweaking on it later, but I think it looks as good as in the original game already.</p>
+<p>Lastly, a dialogue script testing switch was added. We often get bugs regarding script compilation errors, since OpenMW’s script compiler is more strict than the original game’s. There has been a –script-all switch to compile all scripts in the game and check for errors for a while now, but this didn’t cover dialogue scripts. Now we can test dialogue scripts too, and several bugs were already found as result of this.</p>
+<p>All in all, 0.35 is shaping up to an awesome release already. Not in terms of numbers, but the amount of polish we are getting and also the fixed ambient sound volume issue should be very appreciated by players.</p>
+</blockquote>
+<p>But that’s not all. This was just a selection of what Scrawl has written. Check out the full posts <a href="https://forum.openmw.org/viewtopic.php?p=29582#p29582">here</a> and <a href="https://forum.openmw.org/viewtopic.php?p=30036#p30036">here</a> to see what else Scrawl has done and how you as a player will notice!</p>
+<p>Here’s hoping 2015 will be just as productive as 2014 – for you, me and OpenMW alike. See you all next time.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=2696" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Wikification</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/wikification/</link>
+      <pubDate>Tue, 02 Dec 2014 13:39:23 &#43;0100</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4082</guid>
+      <description>Hey people, hope you enjoyed those (belated) release videos. Without WeirdSexy’s sweet smooth ambrosia voice a release just isn’t the same. As 0.33.0 was gearing up for release, the OpenMW devteam couldn’t just leave well enough alone for a few days and started working on 0.34.0. Oh, those …</description>
+      <content:encoded><![CDATA[<p>Hey people, hope you enjoyed those (belated) release videos. Without WeirdSexy’s sweet smooth ambrosia voice a release just isn’t the same. As 0.33.0 was gearing up for release, the OpenMW devteam couldn’t just leave well enough alone for a few days and started working on 0.34.0. Oh, those workaholics. Not that I’m complaining, mind you. More fixes for us fans. Let’s look at a few of them.</p>
+<p>You’d think that with the life many Argonians have in Vvardenfell they wouldn’t be too unhappy getting rid of their shackles. Apparently they were still quite possessive of them even after you freed them, though. Pick up their bracers from the floor and they’d act all indignant. Not anymore. Starting 0.34.0 they will give you gratitude rather than attitude.</p>
+<p>Some issues have popped up with the Fair Magicka Regen mod. OpenMW successfully reads the script, but the mod contains a bug. <a href="https://bugs.openmw.org/issues/2080">So paging dr. GlassBoy and dr Smoke, there might be an issue with this great thing you guys have got going on</a>. It’d be appreciated if you could update your mod and push it to the Nexus. :)</p>
+<p>Speaking of compatability, my fellow Archonaut Tinker has <a href="https://wiki.openmw.org/index.php?title=Mod_status">added a page to the OpenMW Wiki that is all about which mods work with OpenMW to what extent</a>. Most Morrowind mods <em>should</em> work “out of the box” with OpenMW, but it’d be great to have some confirmation on this in a central spot. So if you can’t program, but are still enthusiastic about helping out, you can join this burgeoning project and help us build a great big repository of knowledge.</p>
+<p>In other news, since our in-house programming machine, Scrawl, needs his daily oil change as well, he has been working on stuff outside of OpenMW. Real life has caught up with him, but if everything checks out, he might well spend a significant amount of time on OpenMW again very soon. That’d be the best. Scrawl has been a recurring character in the development of OpenMW, so you might imagine how much we miss his presence here.</p>
+<p>Another familiar name to our followers (and especially our friends on /r/morrowind – hi guys and gals!) is Raevol, and he has come up with the idea of getting all features out of the way so we can leave the alpha stage behind us and move on to the beta phase. Currently the team is discussing the upsides and downsides of this plan. You’ll might well hear more on this subject soon, so stay tuned!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=2612" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

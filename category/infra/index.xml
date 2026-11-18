@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Infrastructure · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/category/infra/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/category/infra/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Wed, 27 Jun 2018 16:21:20 &#43;0200</lastBuildDate>
+    <item>
+      <title>Help us plan OpenMW’s future</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2018/plan-openmws-future/</link>
+      <pubDate>Wed, 27 Jun 2018 16:21:20 &#43;0200</pubDate>
+      <dc:creator>Thunderforge</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5125</guid>
+      <description>It’s hard to believe that OpenMW 0.1.0 was released just over 10 years ago! What began as a barely functional ESM viewer is now a complete replacement for vanilla Morrowind and a complete engine for creating original games. There are still a few features that need to be polished, like shadows and AI …</description>
+      <content:encoded><![CDATA[<p>It’s hard to believe that OpenMW 0.1.0 was released just over 10 years ago! What began as a barely functional ESM viewer is now a complete replacement for vanilla Morrowind and a complete engine for creating original games. There are still a few features that need to be polished, like <a href="/beta-v2-openmw/2018/openmw-launcher-advanced-settings-menu/">shadows</a> and <a href="/beta-v2-openmw/2018/solution-ai-problems/">AI recastnavigation</a>, but the project is almost ready to become version 1.0, signalling to the world that OpenMW has full parity with the original Morrowind engine.</p>
+<p>But that doesn’t mean that our work is complete. OpenMW’s project leader Zini, with feedback from the project’s most active contributors, has produced the first draft of <a href="https://gitlab.com/OpenMW/openmw/blob/master/docs/openmw-stage1.md">an enormous design document</a> detailing the next steps that they think the project should take. The major focus is on improving modding capabilities (including “newscript” support, most likely Lua) and beginning the process of de-hardcoding game mechanics to allow mods to drastically alter gameplay.</p>
+<p>Now we need your help. We’d like for as many people as possible to review this post-1.0 design document and provide their feedback. Have a change that you’d like to make? Submit either a Merge Request <a href="https://gitlab.com/OpenMW/openmw/blob/master/docs/openmw-stage1.md">on GitLab</a> or a Pull Request <a href="https://github.com/OpenMW/openmw/blob/master/docs/openmw-stage1.md">on GitHub</a>. Want to talk about it with other contributors? Discuss it <a href="https://forum.openmw.org/viewforum.php?f=20">on our forum</a>. This document is far from set in stone and will change as the project evolves.</p>
+<p>Let’s work together to plan how OpenMW will enter into its next ten years!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=5257" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenMW code, bug tracker, and wiki are now on GitLab!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2018/openmw-code-bug-tracker-wiki-gitlab/</link>
+      <pubDate>Tue, 19 Jun 2018 04:04:52 &#43;0200</pubDate>
+      <dc:creator>Thunderforge</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5116</guid>
+      <description>One pain point for OpenMW has been that contributing means signing up for multiple accounts. Notably, our code repository, bug tracker, and wiki are on completely separate servers with separate login processes. Additionally, some developers prefer GitHub due to its popularity and some prefer GitLab …</description>
+      <content:encoded><![CDATA[<p>One pain point for OpenMW has been that contributing means signing up for multiple accounts. Notably, our code repository, bug tracker, and wiki are on completely separate servers with separate login processes. Additionally, some developers prefer GitHub due to its popularity and some prefer GitLab due to it being open source, just like this project. So we’re reorganizing tools to make contributing easier.</p>
+<p>Starting today, OpenMW code will be <a href="https://gitlab.com/OpenMW/openmw/">available on GitLab</a> while being bidirectionally mirrored <a href="https://github.com/OpenMW/openmw">with GitHub</a>. This means that our open source project is now hosted on an open source platform, while still allowing the countless GitHub contributors who have submitted code over the years to continue to do so on that platform if they choose. In addition, our Redmine issue tracker has been retired and all the issues have been <a href="https://gitlab.com/OpenMW/openmw/issues">migrated to GitLab</a>. Our wiki is still in the process of being migrated, but will be <a href="https://gitlab.com/OpenMW/openmw/wikis/home">hosted on GitLab as well</a>. This allows everyone to use a single account for tracking issues, contributing code, and writing wiki documentation.</p>
+<p>We hope that this will make the process of contributing to OpenMW better for everyone, and look forward to all sorts of new contributions!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=5244" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Web server change</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/web-server-change/</link>
+      <pubDate>Sat, 06 Dec 2014 09:47:47 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4130</guid>
+      <description>Hi,
+tomorrow night (7.12.2014) I will be moving website to the new web server (same hosting provider, but different web server), so between 20.00-23.00 CET blog, wiki, bugtracker, and forum will be temporary in read-only mode (or closed if read-only mode won’t be possible).
+Sorry for inconveniences. …</description>
+      <content:encoded><![CDATA[<p>Hi,<br>
+tomorrow night (7.12.2014) I will be moving website to the new web server (same hosting provider, but different web server), so between 20.00-23.00 CET blog, wiki, bugtracker, and forum will be temporary in read-only mode (or closed if read-only mode won’t be possible).</p>
+<p>Sorry for inconveniences.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Wikification</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/wikification/</link>
+      <pubDate>Tue, 02 Dec 2014 13:39:23 &#43;0100</pubDate>
+      <dc:creator>Okulo</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4082</guid>
+      <description>Hey people, hope you enjoyed those (belated) release videos. Without WeirdSexy’s sweet smooth ambrosia voice a release just isn’t the same. As 0.33.0 was gearing up for release, the OpenMW devteam couldn’t just leave well enough alone for a few days and started working on 0.34.0. Oh, those …</description>
+      <content:encoded><![CDATA[<p>Hey people, hope you enjoyed those (belated) release videos. Without WeirdSexy’s sweet smooth ambrosia voice a release just isn’t the same. As 0.33.0 was gearing up for release, the OpenMW devteam couldn’t just leave well enough alone for a few days and started working on 0.34.0. Oh, those workaholics. Not that I’m complaining, mind you. More fixes for us fans. Let’s look at a few of them.</p>
+<p>You’d think that with the life many Argonians have in Vvardenfell they wouldn’t be too unhappy getting rid of their shackles. Apparently they were still quite possessive of them even after you freed them, though. Pick up their bracers from the floor and they’d act all indignant. Not anymore. Starting 0.34.0 they will give you gratitude rather than attitude.</p>
+<p>Some issues have popped up with the Fair Magicka Regen mod. OpenMW successfully reads the script, but the mod contains a bug. <a href="https://bugs.openmw.org/issues/2080">So paging dr. GlassBoy and dr Smoke, there might be an issue with this great thing you guys have got going on</a>. It’d be appreciated if you could update your mod and push it to the Nexus. :)</p>
+<p>Speaking of compatability, my fellow Archonaut Tinker has <a href="https://wiki.openmw.org/index.php?title=Mod_status">added a page to the OpenMW Wiki that is all about which mods work with OpenMW to what extent</a>. Most Morrowind mods <em>should</em> work “out of the box” with OpenMW, but it’d be great to have some confirmation on this in a central spot. So if you can’t program, but are still enthusiastic about helping out, you can join this burgeoning project and help us build a great big repository of knowledge.</p>
+<p>In other news, since our in-house programming machine, Scrawl, needs his daily oil change as well, he has been working on stuff outside of OpenMW. Real life has caught up with him, but if everything checks out, he might well spend a significant amount of time on OpenMW again very soon. That’d be the best. Scrawl has been a recurring character in the development of OpenMW, so you might imagine how much we miss his presence here.</p>
+<p>Another familiar name to our followers (and especially our friends on /r/morrowind – hi guys and gals!) is Raevol, and he has come up with the idea of getting all features out of the way so we can leave the alpha stage behind us and move on to the beta phase. Currently the team is discussing the upsides and downsides of this plan. You’ll might well hear more on this subject soon, so stay tuned!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=2612" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Bug tracker is offline</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2014/bugtracker-offline/</link>
+      <pubDate>Mon, 24 Mar 2014 08:58:38 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=3518</guid>
+      <description>Hi,
+bug tracker is currently not working – I’m working on this issue. Sorry for inconvenience.
+</description>
+      <content:encoded><![CDATA[<p>Hi,<br>
+bug tracker is currently not working – I’m working on this issue. Sorry for inconvenience.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>4h of planned downtime on Saturday (2013.04.27)</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/4h-planned-downtime-saturday-2013-04-27/</link>
+      <pubDate>Fri, 26 Apr 2013 05:27:01 &#43;0200</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=2732</guid>
+      <description>Hello,
+I would like to inform that due to main shell server upgrade in MyDevil.net there will be about 4h downtime on Sunday (2013.04.27) between 00:30 and 04:30 CET. Sorry for inconvenience.
+</description>
+      <content:encoded><![CDATA[<p>Hello,<br>
+I would like to inform that due to main shell server upgrade in MyDevil.net there will be about 4h downtime on Sunday (2013.04.27) between 00:30 and 04:30 CET. Sorry for inconvenience.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Problem with accessing website</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/problem-accessing-website/</link>
+      <pubDate>Thu, 07 Mar 2013 10:33:44 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=2579</guid>
+      <description>Hello,
+today there was a problem with accessing OpenMW website due to some routing problems in MyDevil.net.
+Sorry for inconvenience.
+</description>
+      <content:encoded><![CDATA[<p>Hello,<br>
+today there was a problem with accessing OpenMW website due to some routing problems in MyDevil.net.<br>
+Sorry for inconvenience.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Switch and power supply problems</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/switch-power-supply-problems/</link>
+      <pubDate>Tue, 22 Jan 2013 03:45:01 &#43;0100</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=2408</guid>
+      <description>Hello,
+OpenMW website was off-line for about three and half hour due to switch and rack power supply failure in OVH/MyDevil.net server room. Problem is solved and (I hope) everything is OK now. Sorry for inconvenience.
+</description>
+      <content:encoded><![CDATA[<p>Hello,<br>
+OpenMW website was off-line for about three and half hour due to switch and rack power supply failure in OVH/MyDevil.net server room. Problem is solved and (I hope) everything is OK now. Sorry for inconvenience.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Possible problems with OpenMW forum access.</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2012/problems-openmw-forum-access/</link>
+      <pubDate>Tue, 11 Sep 2012 05:49:19 &#43;0200</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=1813</guid>
+      <description>Hello,
+I’ve just enabled some small server-side anti-spambot script today, so if you encounter any problems with OpenMW forum access (HTTP 403 error), then please let me know (via IRC, GitHub, e-mail). Sorry for inconvenience.
+</description>
+      <content:encoded><![CDATA[<p>Hello,<br>
+I’ve just enabled some small server-side anti-spambot script today, so if you encounter any problems with OpenMW forum access (HTTP 403 error), then please let me know (via IRC, GitHub, e-mail). Sorry for inconvenience.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Bugtracker</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2012/bugtracker/</link>
+      <pubDate>Wed, 18 Jul 2012 13:43:51 &#43;0200</pubDate>
+      <dc:creator>Lukasz Gromanowski</dc:creator>
+      <category>Infrastructure</category>
+      <guid isPermaLink="false">https://openmw.org/?p=1493</guid>
+      <description>Hello,
+Bugtracker has been moved from RootNode to OVH server last night and since then there is only one valid URL: http://bugs.openmw.org. Please don’t use http://bugs.openmw.org:81/ (URL with :81, port number, suffix), it won’t work any more.
+</description>
+      <content:encoded><![CDATA[<p>Hello,<br>
+Bugtracker has been moved from RootNode to OVH server last night and since then there is only one valid URL: <a href="http://bugs.openmw.org" title="http://bugs.openmw.org">http://bugs.openmw.org</a>. Please don’t use <a href="http://bugs.openmw.org" title="http://bugs.openmw.org">http://bugs.openmw.org:81/</a> (URL with :81, port number, suffix), it won’t work any more.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

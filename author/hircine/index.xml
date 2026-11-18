@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>hircine · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/author/hircine/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/author/hircine/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Sat, 06 Aug 2011 13:53:35 &#43;0200</lastBuildDate>
+    <item>
+      <title>Up coming Release of 0.11.0</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2011/up-coming-release-of-0-11-0/</link>
+      <pubDate>Sat, 06 Aug 2011 13:53:35 &#43;0200</pubDate>
+      <dc:creator>hircine</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=16</guid>
+      <description>We have an upcoming release version 0.11.0 (to be released in the next 7-14 days)
+Which fixes several bugs, as well as improving performance. New features include, tab-completion in the console, Message Box GUI and a Launcher.
+This is largely a maintenance release, killing bugs, improving …</description>
+      <content:encoded><![CDATA[<p>We have an upcoming release version <a href="https://github.com/OpenMW/openmw/releases/tag/openmw-0.11.0">0.11.0</a> (to be released in the next 7-14 days)</p>
+<p>Which fixes several bugs, as well as improving performance. New features include, tab-completion in the console, Message Box GUI and a Launcher.</p>
+<p>This is largely a maintenance release, killing bugs, improving performance and adding a few new things.</p>
+<p>0.12.0 should be more feature packed release.</p>
+<p>Although we have had a round at speeding things up there are still a number of things we can do to improve performance for the engine.</p>
+<p>The Launcher although allows selecting multiple esm/esp files, OpenMW currently only supports one esm. Esp file loading is yet to be introduced.</p>
+<p>For The following release(0.12.0); the user interface will receive a lot of attention. Including The NPC Dialogue System.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

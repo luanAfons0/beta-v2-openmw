@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>DestinedToDie · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/author/destinedtodie/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/author/destinedtodie/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Tue, 09 Oct 2018 03:33:53 &#43;0200</lastBuildDate>
+    <item>
+      <title>TES3MP 0.7.0 pre-released</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2018/tes3mp-0-7-0-pre-released/</link>
+      <pubDate>Tue, 09 Oct 2018 03:33:53 &#43;0200</pubDate>
+      <dc:creator>DestinedToDie</dc:creator>
+      <category>Release</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5185</guid>
+      <description>Version 0.7.0 of TES3MP, a fork of OpenMW that provides players with multiplayer experience, has been pre-released! Full details and download here. But in short, what’s so good about this? Well, for starters, here are a few new features to pique your interest:
+– Custom spells, potions and …</description>
+      <content:encoded><![CDATA[<p>Version 0.7.0 of TES3MP, a fork of OpenMW that provides players with multiplayer experience, has been pre-released! <a href="https://steamcommunity.com/groups/mwmulti#announcements/detail/1708445194436273527">Full details and download here.</a> But in short, what’s so good about this? Well, for starters, here are a few new features to pique your interest:</p>
+<p>– Custom spells, potions and enchantments can now be created through regular gameplay, and their details are sent to other players on a need-to-know basis, preventing unnecessary packet spam.<br>
+– Spells cast through items are now synchronized.<br>
+– On strike enchantments are now partially synchronized.<br>
+– Weather is now fully synchronized, with sudden transitions when teleporting to other areas and gradual transitions when walking across regions.</p>
+<p>If you want to experience Morrowind with friends and strangers, come join us!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=5467" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenMW-launcher just got an advanced settings menu</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2018/openmw-launcher-advanced-settings-menu/</link>
+      <pubDate>Wed, 07 Feb 2018 21:03:24 &#43;0100</pubDate>
+      <dc:creator>DestinedToDie</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5069</guid>
+      <description>After the new year, development has been quiet and there hasn’t been much of interest going on in OpenMW… or so I thought until I checked out the latest feature on the bugtracker. We now have a settings menu in our launcher that allows easy access to various optional features that were previously …</description>
+      <content:encoded><![CDATA[<p>After the new year, development has been quiet and there hasn’t been much of interest going on in OpenMW… or so I thought until I checked out the latest feature on the bugtracker. We now have a settings menu in our launcher that allows easy access to various optional features that were previously hidden in some text file that most people didn’t even know existed. Thanks to Thunderforge, enabling these options will soon be a simple matter of checking a box. It’s not quite clear if this feature is to stay in its current form, however, as we may revise it to be part of ingame options after getting OpenMW to its post 1.0 version state.</p>
+<p><a href="https://openmw.org/wp-content/uploads/2018/02/35781519-c3c6c3ae-09b0-11e8-9ece-636d185ebf59.png"><img src="https://openmw.org/wp-content/uploads/2018/02/35781519-c3c6c3ae-09b0-11e8-9ece-636d185ebf59-300x252.png" alt="" loading="lazy" decoding="async"></a></p>
+<p>In other news, AnyOldName3’s work on bringing shadows back to the OpenMW engine is still ongoing and can be followed <a href="https://github.com/OpenMW/openmw/pull/1547">here on github</a>. Those who have the know-how to build OpenMW’s shadow branch have reported that the results are night and day in terms of visual stability compared to earlier iterations.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=_iSCHocusAk">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2018/openmw-launcher-advanced-settings-menu/youtube-_iSCHocusAk_hu_4d11283ef0c028c4.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW shadows WIP test <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=4942" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Ho ho ho!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2017/ho-ho-ho/</link>
+      <pubDate>Wed, 27 Dec 2017 17:58:24 &#43;0100</pubDate>
+      <dc:creator>DestinedToDie</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5053</guid>
+      <description>Christmas is over and Santa has left a little present for everyone.
+On the 25th of December a patch for TES3MP landed, fixing bugs, enhancing server scripting and introducing a new interesting feature. Version 0.6.2 allows players to play NPC sounds and animations on themselves. Essentially, your …</description>
+      <content:encoded><![CDATA[<p>Christmas is over and Santa has left a little present for everyone.</p>
+<p>On the 25th of December a <a href="http://steamcommunity.com/groups/mwmulti#announcements/detail/1600332806171724427">patch for TES3MP</a> landed, fixing bugs, enhancing server scripting and introducing a new interesting feature. Version 0.6.2 allows players to play NPC sounds and animations on themselves. Essentially, your character can now say almost anything that an NPC of your race and gender can say, using the new /speech command, and you can also play any of the NPC idle animations using /anim.</p>
+<p><a href="https://openmw.org/wp-content/uploads/2017/12/New-Bitmap-Image-1.bmp"><img src="https://openmw.org/wp-content/uploads/2017/12/New-Bitmap-Image-1-300x36.jpg" alt="" loading="lazy" decoding="async"></a></p>
+<p>In addition to that, TES3MP has upgraded to the latest version of OpenMW, meaning that new features from OpenMW’s main branch such as Scrawl’s keyboard shortcuts are now included.</p>
+<p>Happy holidays.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=4851" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>News of great things to come</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2017/news-great/</link>
+      <pubDate>Wed, 06 Sep 2017 10:02:24 &#43;0200</pubDate>
+      <dc:creator>DestinedToDie</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5009</guid>
+      <description>It has been slightly over a month since the release of OpenMW 0.42.0. If you look back to when 0.41.0 was released, you’ll see that it took us 8 months to deliver the new version, making it perhaps one of the lengthiest releases in our history, yet in its size it isn’t that different from preceding …</description>
+      <content:encoded><![CDATA[<p>It has been slightly over a month since the release of OpenMW 0.42.0. If you look back to when 0.41.0 was released, you’ll see that it took us 8 months to deliver the new version, making it perhaps one of the lengthiest releases in our history, yet in its size it isn’t that different from preceding versions.</p>
+<p>That is not to say that OpenMW developers have been slacking off, however. Or that during the course of those 8 months we had much less progress. The reason for this delay was that our video editor’s computer broke down at a rather unfortunate and inconvenient time. When discussing whether the release should done without including a video, the decision was made that we would halt the release process until hardware issues were solved. After all, if anyone wants to play the up to date version of OpenMW, they needn’t wait for the release because they can use our nightlies, which we have recently made more visible by including them in the <a href="/beta-v2-openmw/downloads/">downloads page</a>.</p>
+<p>The good news is that while the release process was in limbo, work on the next version had already started and by the end of it had reached a point where we almost had enough to release version 0.43.0 the day after 0.42.0. At the time of this writing, we are sitting at 85 closed issues, making this release already larger than the previous. <a href="https://bugs.openmw.org/versions/52">Check out the bugtracker</a> for more detail.</p>
+<p>A little more than a month ago we also saw the release of TES3MP version 0.6.0 and more recently a <a href="http://steamcommunity.com/groups/mwmulti#announcements/detail/1443822567710521369">stability patch 0.6.1</a>, with the next version possibly landing very soon at mid-September. Since TES3MP is built upon the OpenMW engine, we received part of the media attention and had a burst of new developer applications afterwards.</p>
+<p>With new people on the board, there has been increased increased interest in improving our code documentation. One of our new coders is looking into possibly extending the .OSG animations or making it possible for OpenMW to read more than just Morrowind’s version of .nif files. Scrawl has released his incomplete experiments with shadows and an old member by the name of AnyOldName3 is trying to get them working, though he urges me to include that there’s no guarantee he’ll succeed. In addition, we’ve had the return of Aeslywinn, who in the past did some great work on OpenMW-CS and is back to continue where he left off.</p>
+<p>A new feature of his that’s already been merged with OpenMW gives modders the comfort of being able to reload assets in OpenMW-CS without having to close and re-open the program. His next undertaking seems to be land records, which would be a step towards being able to edit landscape, the main missing feature in OpenMW-CS.</p>
+<p>While we have enough issues closed to produce a rather sizable release, no call for the release process to start has been made yet. After all, we just released 0.42.0 only a brief time ago. It is likely that the upcoming version will be bigger than usual and will arrive in about two months, with the mentioned land records and other features currently being worked on possibly included. Overall, areas that remained stagnant a few months ago are now getting visible development and things are looking good for the OpenMW project.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=4620" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenMW multiplayer is here!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2017/openmw-multiplayer-here/</link>
+      <pubDate>Fri, 28 Jul 2017 23:47:50 &#43;0200</pubDate>
+      <dc:creator>DestinedToDie</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4959</guid>
+      <description>Edit: Note that this is an old post about an older version of TES3MP. You can get a newer one from here.
+TES3MP 0.6.0 Trailer with NPC Sync YouTube multiplayer: “M’Aiq does not know this word. You wish others to help you in your quest? Coward! If you must, search for the Argonian Im-Leet, or perhaps …</description>
+      <content:encoded><![CDATA[<p><strong>Edit:</strong> Note that this is an old post about an older version of TES3MP. You can get a newer one from <a href="https://github.com/TES3MP/openmw-tes3mp/releases">here.</a></p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=vfh-FcxHSHA">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2017/openmw-multiplayer-here/youtube-vfh-FcxHSHA_hu_f7b4a0480a432775.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>TES3MP 0.6.0 Trailer with NPC Sync <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p><strong>multiplayer</strong>: “M’Aiq does not know this word. You wish others to help you in your quest? Coward! If you must, search for the Argonian Im-Leet, or perhaps the big Nord, Rolf the Uber. They will certainly wish to join you.” – M’Aiq the Liar</p>
+<p>M’Aiq may have been teasing us back in 2002, but today you really can meet the Argonian Im-Leet as well as Rolf the Uber. This is all thanks to OpenMW’s sister project TES3MP and its developers <a href="https://www.patreon.com/Koncord">Koncord</a> and <a href="https://www.patreon.com/davidcernat">David Cernat</a>. Previously, tes3mp only had pvp, but a recent patch added NPC synchronization. As if that weren’t enough, they also decided to include sync for player faction, journal, topic, time, and plug-ins… You can pretty much play the whole game now, if you just keep in mind that scripts still work locally (as they do in single-player) and custom items made with alchemy/enchanting/spellmaking do not save on the server. <a href="https://github.com/TES3MP/openmw-tes3mp/releases/download/tes3mp-0.6.0/tes3mp.Win64.release.0.6.0.zip">Download tes3mp version 0.6.0</a> and be sure to read developer announcement <a href="https://steamcommunity.com/groups/mwmulti#announcements/detail/1441567597386587897">here!</a></p>
+<p><a href="/beta-v2-openmw/2017/openmw-multiplayer-here/tes3mp-2017-screenshot-1.png"><img src="/beta-v2-openmw/2017/openmw-multiplayer-here/tes3mp-2017-screenshot-1-1024x576_hu_20206750ce8801b5.webp" srcset="/beta-v2-openmw/2017/openmw-multiplayer-here/tes3mp-2017-screenshot-1-1024x576_hu_ad86ecd1ea227719.webp 700w, /beta-v2-openmw/2017/openmw-multiplayer-here/tes3mp-2017-screenshot-1-1024x576_hu_20206750ce8801b5.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="576" loading="lazy" decoding="async"></a></p>
+<p>Installation is super easy. If you already have OpenMW installed, you need only download tes3mp and unzip the folder to a destination of your choice and you’re ready to go. In case you haven’t got OpenMW previously installed, it’s sufficient to run the launcher wizard and point it at morrowind.esm, it’s that easy. After that’s done, you can start your own server simply by running tes3mp-server.exe. You’ll have to open a port so other players can join or use a networking program like Hamachi. Or if you’re simply looking to join a server, launch tes3mp-browser.exe and pick your server of choice.</p>
+<p><a href="/beta-v2-openmw/2017/openmw-multiplayer-here/tes3mp-2017-screenshot-2.jpg"><img src="/beta-v2-openmw/2017/openmw-multiplayer-here/tes3mp-2017-screenshot-2-300x160_hu_237e7355d976988e.webp" alt="" width="300" height="160" loading="lazy" decoding="async"></a></p>
+<p>As you can see, there are quite a few options available. A server can be private and password-protected or free for anyone to join. It can have a list of plug-ins, in which case I also need to download the specified mods if I wish to join it. The admin can either require that you have .esp files with the exact same hash as the one he is using or allow for any .esp file so long as the name matches. An admin can also enable or disable console for the entire server, or just for a specific player if need be. Additionally, it is up to him to set the difficulty for players joining the server, as well as the starting location via LUA script.</p>
+<p>LUA scripting allows for quite a few interesting tweaks. During the alpha testing phase one of the modders scripted a new game mode – battle royale. It was set up in a way that players would spawn in a waiting cell and when a minimum of 3 players had joined the server, a 60 second count-down would start. Once the numbers ticked down, players were teleported to random cities around Vvardenfel with 25 minutes to arm themselves to the best of their ability before abruptly being teleported into an arena where they’d duke it out. Imagine the possibilities here!</p>
+<p>But let’s pretend that I’m launching the vanilla tes3mp and see what awaits us. The first thing greeting me is the outside of Pelagiad and a box asking for my name and password. After entering them, the info is sent to the server, which creates a .json file where my character is stored. A moment later, I fill in my race, class and birthsign and am teleported to Balmora.</p>
+<p>Now that I’ve properly logged in, I am immediately brought up to date with every faction, faction reputation and quest. If a player has joined thieves guild, then I’ll also be included in thieves guild. If a person is an archmage of the mages guild, then everyone is an archmage. If someone did a quest, I’ll have his journal entries in my book. I open up my journal and see that a player has started the fighters guild rat quest, killed the rats, got the 100 gold reward, but not yet reported to Eydis Fire-Eye.</p>
+<p>I make my way to the fighters guild. As I enter the fighters guild cell, the server sends me info from a cell.json file, which contains all of the changes other players have made to the cell. This might be a dead NPC, a dropped item or a looted item. In my case I find that someone has emptied the fighters guild supply chest. This is multiplayer, after all. I turn in the unfinished rat quest and get an advancement to apprentice.</p>
+<p>I ask for more orders and get the egg poacher quest. It may be a little too much for my freshly made character to handle, so I ask in game chat if anyone wants to accompany me. 2 players join and we go to the eggmine. Player 1 has a ping of 356, player 2 has a ping of 72 and my ping is 201. Because player 2 has the lowest ping of us all, he becomes the authority of the cell. When a kwama forager attacks us, player 2 (authority) sends information about the forager’s movements to the server and the server distributes info back to player 1 and me. This is how the synchronization of NPCs and creatures is handled.</p>
+<p>After fighting a bunch of kwama foragers and bringing the egg poachers to justice, we are all wounded to an extent. Player 1 needs 7 hours to fully heal, player 2 needs only 1 hour and I need 3 hours to be fully rested. So how is that resolved? The server keeps the time and our individual times are always synchronized to that. When I rest for 3 hours, the resting bar will appear and I’ll start healing as my individual time appears to pass, but as soon as the bar is filled, my client re-synchronizes back into server time.</p>
+<p>After we are done, we decide to go back to Balmora. My buddies were smart enough to bring almsivi intervention scrolls, but I didn’t. Instead of running all the way back to Balmora, I decide to kill myself by writing /suicide in chat and triggering a LUA script that ends my life. But don’t worry, I’ll respawn in the nearest temple or imperial shrine, which just so happens to be Balmora temple right now.</p>
+<p>We return to the guild of fighters for our reward. A quest may be completed only once and the reward is only given to one player. We split the gold we got for tracking down the egg poachers. Similarly, an item may only be picked up once. However the server admin may reset cells and quests by deleting cell and world .json files, making it possibly to do quests and obtain items you might have previously missed.</p>
+<p>We start pvp-ing each other. Bad idea, because the citizens of Balmora report our unlawful behavior! A guard runs to me and gives me an ultimatum – either pay gold or go to jail. Since time is never stopped in a multiplayer environment, the other 2 players are free to continue playing while I sort my business out with the guard. He may not know it, but I’m the Nerevarine (or at least one of them) and there’s a price to pay for so rudely interrupting my business.</p>
+<p>I loot the armor off the dead guard and equip it. And then it hits me. I look indistinguishable from a Hlaalu Guard. I turn off my caps lock and start walking around as if I’m wandering in an AI pattern. Nobody will be able to tell the difference – at least not until they get too close and I’ve already drawn my blade. If you ever come to visit Balmora. Remember. I’ll be there. Walking. In an AI pattern. Ready to strike unexpectedly.</p>
+<p>With how far tes3mp has come in such a relatively short time, I dare say that it has shown that implementing multiplayer and other projects as such on OpenMW is the preferable route. People have waited years and years for a fan-made implementation of some form of multiplayer for TES3: Morrowind, Oblivion, Skyrim, Fallout 3, Fallout 3 – New Vegas and tes3mp is the first to deliver not only functional NPC sync, but also a mountain of features no other similar project has been able to deliver yet. It only took 2 developers and an Open Source engine to do what even large teams of professional coders struggle to achieve on a closed source TES engine.</p>
+<p>OpenMW has been building up to something like this as well as other possible projects for a long time, so it’s a great joy to finally see it forked for a successful multiplayer project. The dream of being able to play Morrowind with your friends is now achieved! But don’t expect us to stop yet. The developers of tes3mp will continue improving it even further, OpenMW main fork continues to receive pull requests and we welcome any who would like to contribute to making OpenMW better or want to make their own forked project similar to tes3mp.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=4463" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Distant terrain</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2017/distant-terrain/</link>
+      <pubDate>Wed, 15 Mar 2017 15:19:21 &#43;0100</pubDate>
+      <dc:creator>DestinedToDie</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4921</guid>
+      <description>
+What’s this? I can see the Ghostfence all the way from Ald-Ruhn and my fps is above 10. This is OpenMW and not MGE XE, right?
+This is OpenMW alright and what you’re seeing is made possible by the newest addition from scrawl – distant terrain. This new feature is available in the latest OpenMW …</description>
+      <content:encoded><![CDATA[<p><a href="https://openmw.org/wp-content/uploads/2017/03/budmNsK.jpg"><img src="https://openmw.org/wp-content/uploads/2017/03/budmNsK-300x169.jpg" alt="" loading="lazy" decoding="async"></a></p>
+<p>What’s this? I can see the Ghostfence all the way from Ald-Ruhn and my fps is above 10. This is OpenMW and not MGE XE, right?</p>
+<p>This is OpenMW alright and <a href="http://i.imgur.com/IuRDXv7.jpg">what you’re seeing</a> is made possible by the newest addition from scrawl – distant terrain. This new feature is available in the latest OpenMW commit and if you’re on windows, you can download it from <a href="https://forum.openmw.org/viewtopic.php?f=20&amp;t=1808#p18839">Ace’s nightly builds</a> to try it out yourself.</p>
+<p>So what does it do? In short, it <a href="http://i.imgur.com/YklBk3E.jpg">simplifies the land mesh</a>, nothing else. It doesn’t touch on scripts, NPCs and statics, but having simplified land certainly lightens the workload to a point where we can have some wiggle room with our view distance. Distant statics is another feature that will have to be implemented at a later stage.</p>
+<p>You may have noticed that I’ve taken use of this in some of the screenshots and loaded enough statics to create the illusion that there are objects <a href="http://i.imgur.com/HLZzgDp.jpg">as far as the eye can see</a>. You can only spot <a href="http://i.imgur.com/pAg1oKv.jpg">empty land</a> if I purposefully look at something very distant.</p>
+<p>Finally, here is how you set this up:</p>
+<pre tabindex="0"><code>[Camera]
+# Determines how much land is rendered. Add another 6 or 66 to it.
+viewing distance = 6666.0
+</code></pre><pre tabindex="0"><code>[Terrain]
+# The on-switch to distant terrain. Set this to True.
+distant terrain = True
+</code></pre><h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=4221" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>scrawl is back and more</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2017/scrawl/</link>
+      <pubDate>Thu, 16 Feb 2017 12:43:54 &#43;0100</pubDate>
+      <dc:creator>DestinedToDie</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4881</guid>
+      <description>It looks like the good old times are back, because according to github we have been getting several commits from scrawl every day for the past two weeks or so. Looking at the optimizations he has been making, we can expect a boost in fps in the next version of OpenMW.
+One thing sticks out for me – …</description>
+      <content:encoded><![CDATA[<p>It looks like the good old times are back, because according to <a href="https://github.com/OpenMW/openmw/commits/master">github</a> we have been getting several commits from scrawl every day for the past two weeks or so. Looking at the optimizations he has been making, we can expect a boost in fps in the next version of OpenMW.</p>
+<p>One thing sticks out for me – small object culling is now configurable in settings.cfg. It was initially hardcoded that objects smaller than 2×2 pixels on your screen will be culled, but now you can decide for yourself how many pixels you want to cull in exchange for better fps. If paired with a simplified land mesh, which scrawl was working on before he went on a break, we might just have distant land on the horizon.</p>
+<p>In other news, Allofich has fixed a <a href="https://bugs.openmw.org/issues/2678">bug</a> that had always irked me. If you were to go for a quick swim and ignored the fish, combat music would constantly be playing around that area even when you were on dry land. Now, those of us who can’t be bothered with the small fish can enjoy the main theme of Morrowind again.</p>
+<p>Finally, I chanced upon some really interesting stuff on the <a href="https://www.reddit.com/r/tes3mp/">tes3mp project</a>. What they have essentially done is set up a server that saves the changes that visiting players imprint on the world. Player interactions are not just limited to dropping items, but also adding objects through the console. The tes3mp developers have made some screenshots of the results and I’ll leave the link <a href="https://imgur.com/a/6aTIl">here</a> for you to enjoy.</p>
+<p><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=4134">Want to comment?</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Just a heads-up</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2016/heads-up/</link>
+      <pubDate>Mon, 12 Dec 2016 05:58:28 &#43;0100</pubDate>
+      <dc:creator>DestinedToDie</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4778</guid>
+      <description>OpenMW version 0.41.0 might be coming out in about a week or two.
+To prepare for it, our new release manager raevol is putting together a changelog. Atahualpa is working on the release videos. Meanwhile, our developers have begun work on OpenMW version 0.42.0.
+By the way, you can already do a test …</description>
+      <content:encoded><![CDATA[<p>OpenMW version 0.41.0 might be coming out in about a week or two.</p>
+<p>To prepare for it, our new release manager raevol is putting together a changelog. Atahualpa is working on the release videos. Meanwhile, our developers have begun work on OpenMW version 0.42.0.</p>
+<p>By the way, you can already do a test drive on OpenMW version 0.41.0. Technically it’s not released yet, but during the release process, we try to give our Release Candidate packages some quick testing to see if they work out of the box. They are scattered around the last pages of <a href="https://forum.openmw.org/viewtopic.php?f=20&amp;t=3768">this thread</a>.</p>
+<p>Sometimes our RCs have problems with OpenMW-CS, other times someone forgot to include an important component. If you encounter any problems, please tell us about it in the <a href="https://forum.openmw.org/viewtopic.php?f=20&amp;t=3768">OpenMW 0.41.0 thread</a>. And if everything runs smooth, let us know anyway, so we can be sure that the RCs have been tested.</p>
+<p><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=3989">Want to comment?</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Bump mappers assemble!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2016/bump-mappers-assemble/</link>
+      <pubDate>Tue, 15 Nov 2016 09:02:19 &#43;0100</pubDate>
+      <dc:creator>DestinedToDie</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4756</guid>
+      <description>With the announcement of OpenMW version 0.39 around 5-6 months ago, some users booted their game up to find an unpleasant surprise – shiny rocks. But they were told that this wasn’t a bug at all. Everything was working as intended.
+So what led to this? Morrowind was initially released in 2002, a …</description>
+      <content:encoded><![CDATA[<p>With the announcement of OpenMW version 0.39 around 5-6 months ago, some users booted their game up to find an unpleasant surprise – shiny rocks. But they were told that this wasn’t a bug at all. Everything was working as intended.</p>
+<p><a href="https://openmw.org/wp-content/uploads/2016/11/WAaXCcy.jpg"><img src="https://openmw.org/wp-content/uploads/2016/11/WAaXCcy-300x188.jpg" alt="waaxccy" loading="lazy" decoding="async"></a></p>
+<p>So what led to this? Morrowind was initially released in 2002, a time when texturing techniques were not as advanced, and there were no normal maps. As years went by, the community created more and more complex mods on an engine that was frozen solid to the state that it started with a decade ago. At a certain point, the methods began to exceed engine limitations and newer technologies simply couldn’t be applied anymore.</p>
+<p>Since the Morrowind engine isn’t open source, it’s not like someone could just edit the code and update it to modern standards. But what they could do is essentially “hack” the engine by datamining for information and make code injectors. This spawned the loved MGE XE distant lands, Morrowind Script Extender, and, last but not least, Morrowind Code Patch. While they have served the community well, they’ve also produced some unwanted side effects such as crashes, instability, memory leaks, and strange methods of texturing.</p>
+<p>The latter in particular is caused by Morrowind Code Patch, and is also the reason for our shiny rocks. MCP enables a sort of “fake” bump mapping by using an environmental map to give textures the appearance of being bump-mapped. But no other engine does it this way – and if you were to port a “fake” bump-mapped mesh into Unity engine, Skyrim, or OpenMW, a shiny weird-looking object is what you would get.</p>
+<p>So what do we do with these shiny rocks? Do we throw them out? No! Fortunately, they can be redeemed, and we now have <a href="https://forum.openmw.org/viewtopic.php?f=40&amp;t=3922">Lysol’s detailed and comprehensive guide</a> to lead you through the process. Most bump maps can be fixed with a few easy steps that even the average player with no modding experience can handle.</p>
+<p><a href="https://openmw.org/wp-content/uploads/2016/11/mAjCbzS.jpg"><img src="https://openmw.org/wp-content/uploads/2016/11/mAjCbzS-300x188.jpg" alt="majcbzs" loading="lazy" decoding="async"></a></p>
+<p>But only the author of a mod reserves the right to upload their content, so any user who wanted to play your mod would have to repeat the same process. If you are an author, I encourage you to take a little time to update your mod to OpenMW. Or if you’re short on time, post on our forums and give permission for users to update it and see if someone picks it up. Let’s rid Vvardenfell of those shiny rocks!</p>
+<p><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=3935">Want to leave a comment?</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Heroes of OpenMW</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2016/heroes-openmw/</link>
+      <pubDate>Sat, 29 Oct 2016 11:51:38 &#43;0200</pubDate>
+      <dc:creator>DestinedToDie</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4738</guid>
+      <description>For a long time scrawl has been the main driving force behind OpenMW. So when the news came that he’d be going on a hiatus to improve his health, many of us thought that the progress would halt, and that the next releases of OpenMW would only include bug-fixes, if anything…
+But we were so utterly …</description>
+      <content:encoded><![CDATA[<p>For a long time scrawl has been the main driving force behind OpenMW. So when the news came that he’d be going on a hiatus to improve his health, many of us thought that the progress would halt, and that the next releases of OpenMW would only include bug-fixes, if anything…</p>
+<p>But we were so utterly wrong! Out of the woodworks appeared Allofich and MiroslavR. The duo has not only solved many bugs but also implemented several new features. In addition, scrawl is still active in the community – accepting pull requests, reading the forums and occasionally closing an issue when his health allows it. While the pace is a bit slower now, our project still makes progress, and OpenMW steadily continues its journey towards version 1.0.</p>
+<p><a href="https://openmw.org/wp-content/uploads/2016/10/bugtracker.jpg"><img src="https://openmw.org/wp-content/uploads/2016/10/bugtracker-300x133.jpg" alt="bugtracker" loading="lazy" decoding="async"></a></p>
+<p>On the OpenMW-CS side of things there have also been several improvements. Previously, the scene window was a static view of the world where you couldn’t really do anything besides looking around with the camera. Aeslywinn came in, reworked the camera system, implemented pathgrids, water rendering and object movement, rotation and scaling sub modes. While he has now left the OpenMW project to do other great things, he has also left our editor with the capability to create new worlds.</p>
+<p><a href="https://openmw.org/wp-content/uploads/2016/10/Castle.jpg"><img src="https://openmw.org/wp-content/uploads/2016/10/Castle-300x161.jpg" alt="castle" loading="lazy" decoding="async"></a></p>
+<p>It should be noted that, although what you see in the above screenshot was made using OpenMW-CS, there are still some features that need to implemented for the editor. Remember – If you have skills in C++ or QT and are interested in contributing to the OpenMW project, then you too can be an OpenMW hero.</p>
+<p><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;p=43228#p43228">Want to leave a comment?</a></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

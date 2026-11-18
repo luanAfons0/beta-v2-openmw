@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>greye · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/author/greye/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/author/greye/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Wed, 10 Jul 2013 15:27:39 &#43;0200</lastBuildDate>
+    <item>
+      <title>Week in review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/week-review-59/</link>
+      <pubDate>Wed, 10 Jul 2013 15:27:39 &#43;0200</pubDate>
+      <dc:creator>greye</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=2930</guid>
+      <description>Greetings.
+“So … (almost) everybody on summer vacation already?” Zini asked.
+“Already, hahaha. Its already July.” was the answer.
+As you may know, developers are soooo lazy people and use any opportunity not to work. But few of them still wander here, let’s praise them.
+First, some bug fixes …</description>
+      <content:encoded><![CDATA[<p>Greetings.</p>
+<p>“So … (almost) everybody on summer vacation already?” <strong>Zini</strong> asked.<br>
+“<em>Already</em>, hahaha. Its already July.” was the answer.</p>
+<p>As you may know, developers are soooo lazy people and use any opportunity not to work. But few of them still wander here, let’s praise them.</p>
+<p>First, some bug fixes (surprise!): <strong>swick</strong> improved scrolling in gui, <strong>scrawl</strong> fixed nasty X11-related crash.</p>
+<p>Next, coc (CenterOnCell) command is pretend to be sane now: character appears near doors or on walkable surface. That also means we can start engine with collisions enabled.</p>
+<p><strong>Zini</strong> still working on editor, and added functionality to work with references.</p>
+<p>And the most recent news are <strong>Chris</strong> got first-person animations working! Seems like after that he <a href="http://i.imgur.com/aEToYFq.jpg">decided to hunt a bit</a>. Well, actually we know little about his background…</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Week in review</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2013/week-review-58/</link>
+      <pubDate>Sun, 07 Jul 2013 23:56:10 &#43;0200</pubDate>
+      <dc:creator>greye</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=2916</guid>
+      <description>Greetings.
+First of all, our Master of the Quill, Sir_herrbatka, left… But don’t worry, it’s just for a while! We wish him to get well soon.
+This week was a bug fixing run mostly, thanks to Glorf, swick, Ace and other developers.
+Two new participants introduced themselves: developer Dormo (Vincent …</description>
+      <content:encoded><![CDATA[<p>Greetings.</p>
+<p>First of all, our Master of the Quill, <strong>Sir_herrbatka</strong>, left… But don’t worry, it’s just for a while! We wish him to get well soon.</p>
+<p>This week was a bug fixing run mostly, thanks to <strong>Glorf</strong>, <strong>swick</strong>, <strong>Ace</strong> and other developers.</p>
+<p>Two new participants introduced themselves: developer <strong>Dormo</strong> (Vincent Heuken) solved some issues with collision boxes for dead creatures and new member of research team <strong>Archonoffate</strong> suggested some formulas.</p>
+<p><strong>Zini</strong> and <strong>graffy</strong> are considerably debating about UI theory for editor, but nevertheless work goes on.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

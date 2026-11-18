@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>News · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/category/news/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/category/news/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Thu, 20 Aug 2026 13:42:12 &#43;0200</lastBuildDate>
+    <item>
+      <title>The Light of Magnus: What’s coming in OpenMW 0.52.0</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/</link>
+      <pubDate>Thu, 20 Aug 2026 13:42:12 &#43;0200</pubDate>
+      <dc:creator>capo</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=7026</guid>
+      <description>Well-lit, traveller! This is a rare development blog post sighting. We haven’t had one of those in a while… While version 0.52.0 of our open-source engine is still baking in the oven and will take some time to finish, we’d like to talk about some of the exciting changes coming with it.
+</description>
+      <content:encoded><![CDATA[<p>Well-lit, traveller! This is a rare development blog post sighting. We haven’t had one of those <a href="/beta-v2-openmw/2022/shiny-new-things-are-coming/">in a while</a>… While version 0.52.0 of our open-source engine is still baking in the oven and will take some time to finish, we’d like to talk about some of the exciting changes coming with it.</p>
+<h3 id="lighting">Lighting</h3>
+<p>One of the annoying limitations of Morrowind’s original rendering engine is the light limit: every object can only be lit by up to 8 light sources. What happens if there are more? Any extra lights are simply ignored for that object. This can lead to flickering or harsh lighting seams in particularly well-lit areas. Level designers traditionally had to work around this limit, carefully designing areas so players wouldn’t notice, but even the most meticulous layout can’t account for every scenario in a game as dynamic as Morrowind and its myriad of mods, and for our optimisations, like active grid object paging, merging objects on the fly.</p>
+<p>OpenMW has included a setting to raise the light limit to an arbitrary value for a while now. But there has always been a catch: a performance hit. What if we told you that doesn’t have to be the case?</p>
+<p>The next release introduces an implementation of <a href="https://www.3dgep.com/wp-content/uploads/2017/07/3910539_Jeremiah_van_Oosten_Volume_Tiled_Forward_Shading.pdf">volume-tiled forward shading</a>, nicknamed <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/5212">“Project Magnus”</a> and referred to in-game as <a href="https://www.aortiz.me/2018/12/21/CG.html"><strong>clustered lighting</strong></a>. Supported by any hardware that can run OpenGL 4.3 or higher, it completely removes the per-object light limit by dividing the screen into small tiles and assigning lights to them. The best part is that it has a dramatically lower performance impact than raising the limit to Aetherius. In fact, the performance can in some cases be better than with the regular light limit, like in the below scene.</p>
+<p><a href="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/lighting_before.webp"><img src="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/lighting_before-1024x576_hu_2fef574e56b01cfa.webp" srcset="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/lighting_before-1024x576_hu_9da9cdf393a8596b.webp 700w, /beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/lighting_before-1024x576_hu_2fef574e56b01cfa.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="576" loading="lazy" decoding="async"></a></p>
+<p><em>Light limit: 8</em></p>
+<p><a href="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/lighting_after.webp"><img src="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/lighting_after-1024x576_hu_9d41038b7d93a3a8.webp" srcset="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/lighting_after-1024x576_hu_7671bbb4b55b85f5.webp 700w, /beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/lighting_after-1024x576_hu_9d41038b7d93a3a8.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="576" loading="lazy" decoding="async"></a></p>
+<p><em>Clustered</em></p>
+<p>This lays the groundwork for an eventual implementation of <strong>bindless rendering</strong> (not binding rendering states like materials, textures, and lights to individual objects at all), which will offer major performance gains, even surpassing full <a href="https://en.wikipedia.org/wiki/Texture_atlas">texture atlasing</a>.</p>
+<p>Also, don’t tell anyone, but a secret, rad feature of clustered lighting is that it makes water reflect point lighting!</p>
+<p><a href="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/simple_water.webp"><img src="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/simple_water-1024x576_hu_5fcfb6f86a1b7a05.webp" srcset="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/simple_water-1024x576_hu_f3517eb254cc65a1.webp 700w, /beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/simple_water-1024x576_hu_5fcfb6f86a1b7a05.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="576" loading="lazy" decoding="async"></a></p>
+<p><em>Light limit: 8</em></p>
+<p><a href="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/clustered_on_water.webp"><img src="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/clustered_on_water-1024x576_hu_d640cea49aea7db8.webp" srcset="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/clustered_on_water-1024x576_hu_9a9fddb300dab6f0.webp 700w, /beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/clustered_on_water-1024x576_hu_d640cea49aea7db8.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="576" loading="lazy" decoding="async"></a></p>
+<p><em>Clustered</em></p>
+<p><em>Hardware: Nvidia GeForce GTX 1050 and Intel Pentium G4560</em></p>
+<p><em>Mod:</em> <a href="https://www.nexusmods.com/morrowind/mods/42448"><em>Balmora Underworld</em></a>. <em>Impact on more standard scenes may not necessarily be as dramatic.</em></p>
+<h3 id="billboards">Billboards</h3>
+<p>We have another important graphical update: up until now, our implementation of <a href="https://learn.microsoft.com/en-us/windows/win32/direct3d9/billboarding">billboards</a> (sprite-like geometry) has effectively been a stub, offering only partial functionality compared to the original engine.</p>
+<p>In Morrowind, billboards are used for Reflect and Spell Absorption visual effects, which look noticeably incorrect in OpenMW 0.51.0.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=9x_-JazAIPM">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/youtube-9x_-JazAIPM_hu_ebcbc7da8273dbb1.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW Aug 2026 Blog Post: Broken VFX <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>The upcoming release properly <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/5373">reimplements</a> the three original billboard modes. Two of them allow billboards to rotate fully toward the camera, while the third keeps them aligned with the vertical axis (a mode frequently used in modded assets). What’s significant is that they now support rotations applied by animations, allowing the visual effects to look as designed.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=DH4H1J16MCI">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/youtube-DH4H1J16MCI_hu_6dcada2a4549b4ce.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW Aug 2026 Blog Post: Working VFX <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p>…Well, mostly. Full disclosure: multiple instances of these effects currently overlap. We’ll fix that some day, pinky promise!</p>
+<h3 id="spellcasting">Spellcasting</h3>
+<p><em>“What if I don’t care about billboards? Give me gameplay! Give me Lua!”</em></p>
+<p>While <a href="/beta-v2-openmw/2026/openmw-0-51-0-released/">the previous release</a> gave modders the ability to create custom spell effects, the ongoing effort to <strong>dehardcode spellcasting</strong> will revolutionise magic modding. The goal is to move effect application, projectile movement, and casting-related animations into built-in Lua scripts.</p>
+<p>Once complete, modders will be able to override these mechanics to implement things like swift casting, dual casting, homing projectiles, custom projectile trajectories, and much more.</p>
+<p>So far, most of the temporary magic effect application has been <a href="http://gitlab.com/OpenMW/openmw/-/merge_requests/5361">dehardcoded</a>, and we are currently polishing <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/5483">magic projectile hit application</a> before moving on to the rest of the subsystem. While not every single part might make it into 0.52.0, rest assured that the upcoming release will still be a massive leap forward.</p>
+<h3 id="combat">Combat</h3>
+<p>You might be wondering: <em>“Wait, what about 1.0 and Morrowind parity? Are you working on anything that isn’t billboards (which I still don’t care about)?”</em> Absolutely!</p>
+<p>Spellcasting is often used in combat, and 0.52.0 will contain AI accuracy fixes for melee encounters. NPCs and creatures will feel slightly more responsive: they’ll <a href="http://gitlab.com/OpenMW/openmw/-/merge_requests/5357">follow you closer</a> when you backpedal and <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/5409">face you</a> and <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/5440">attack you</a> quicker.</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=zZ8J5kyvmys">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2026/the-light-of-magnus-whats-coming-in-openmw-0-52-0/youtube-zZ8J5kyvmys_hu_5ab8e1f4d048eff7.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW Aug 2026 Blog Post: Fighting Fargoth <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<h3 id="custom-records">Custom records</h3>
+<p>Back to Lua! The load context system introduced in 0.51.0 is being <a href="https://gitlab.com/OpenMW/openmw/-/work_items/9109">expanded</a> further. In the latest development builds, modders can inject custom classes, factions, levelled lists, lockpicks, races, and repair items as game records directly through Lua, with support for additional object types on the way. Beyond that, work is in progress to allow custom skills and attributes to be injected.</p>
+<p>That wraps it up for now. This is non-exhaustive! You can test these features (and many more) right now in our latest <a href="/beta-v2-openmw/downloads/">development builds</a>. Expect more to read or watch about 0.52.0 as we get closer to its release. Until next time!</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenMW 0.49.0 RC: Bringing you up to speed</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2025/openmw-0-49-0-rc-bringing-you-up-to-speed/</link>
+      <pubDate>Fri, 21 Feb 2025 20:40:05 &#43;0100</pubDate>
+      <dc:creator>capo</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=6718</guid>
+      <description>We’re alive! And we’re continuing the previously announced testing of release candidate (RC) builds for our upcoming 0.49.0 stable release while our video editors are hard at work preparing a recap for the years behind us.
+It’s been a bit, so as of the time of writing this we are up to round 5 of RC …</description>
+      <content:encoded><![CDATA[<p>We’re alive! And we’re continuing the <a href="/beta-v2-openmw/2025/openmw-0-49-0-is-now-in-rc-phase/">previously announced</a> testing of release candidate (RC) builds for our upcoming 0.49.0 stable release while our video editors are hard at work preparing a recap for the years behind us.</p>
+<p>It’s been a bit, so as of the time of writing this we are up to round 5 of RC testing. Like before, <strong>you can grab the most recent RC build of 0.49.0</strong> – or 0.49.0 itself, should you be reading from the future – <strong>from our <a href="https://github.com/OpenMW/openmw/releases/">GitHub releases page</a> for all major platforms</strong>, and like before, we’d love if you tried it out and <strong>reported anything odd/interesting you might find to <a href="https://gitlab.com/groups/OpenMW/-/issues">our issue tracker</a></strong> or <a href="https://forum.openmw.org/viewtopic.php?t=7853">0.49.0 forum discussion</a>. Or, at the very least, if you’re already daily-driving an RC, upgrade it to the latest build available for your platform, so that you can’t run into problems that we’re already fixed.<br>
+For example, Steam Deck players should update from RC builds older than RC3 to fix audio crackling. Newer builds also include various crash fixes and make the experimental precipitation occlusion feature work when sky blending is disabled.</p>
+<p><a href="/beta-v2-openmw/2025/openmw-0-49-0-rc-bringing-you-up-to-speed/rc5blogpost.webp"><img src="/beta-v2-openmw/2025/openmw-0-49-0-rc-bringing-you-up-to-speed/rc5blogpost-1024x576_hu_4354001563cae61c.webp" srcset="/beta-v2-openmw/2025/openmw-0-49-0-rc-bringing-you-up-to-speed/rc5blogpost-1024x576_hu_a3a0f79abd5d63e9.webp 700w, /beta-v2-openmw/2025/openmw-0-49-0-rc-bringing-you-up-to-speed/rc5blogpost-1024x576_hu_4354001563cae61c.webp 1024w" sizes="(min-width: 1040px) 1008px, 100vw" alt="" width="1024" height="576" loading="lazy" decoding="async"></a></p>
+<p><em>OpenMW 0.49.0 running <a href="https://www.nexusmods.com/morrowind/mods/44922/">Project Cyrodiil</a> in a modded Morrowind setup</em></p>
+<p>In this blog post, we would like to address some questions that are frequently asked by our <a href="https://discord.gg/YegsVV3aRb">Discord</a> and <a href="https://www.reddit.com/r/openmw">Reddit</a> communities regarding 0.49.0 and the RC testing process.</p>
+<p><strong>Q:</strong> What’s so great about this 0.49.0, anyway? Is there a changelog?<br>
+<strong>A:</strong> 0.49.0 will be our largest release yet, having been in development since August 2022!<br>
+We are preparing a comprehensive changelog and a release video for the full release announcement.<br>
+Historically, RC builds didn’t get them, as they are subject to change. You can, however, get a decent idea of what 0.49.0 will include by glossing through the CHANGELOG.md file included in some RC packages and <a href="https://gitlab.com/OpenMW/openmw/-/blob/openmw-49/CHANGELOG.md">available</a> on our source code repository. While it’s far from covering <em>everything</em>, it’s plenty – take a look!</p>
+<p><strong>Q:</strong> Is updating an RC build to a newer RC build or 0.49.0 stable release mid-playthrough safe?<br>
+<strong>A:</strong> Yes, it is! You don’t have to restart your run and can keep playing on the same saves.</p>
+<p><strong>Q:</strong> Is updating from 0.48.0 to an RC build or 0.49.0 mid-playthrough safe?<br>
+<strong>A:</strong> Very likely! You can definitely still use your 0.48.0 saves.<br>
+However, some modding areas are sensitive to backward compatibility breaks. More specifically, you need to be careful to update your mods that rely on OpenMW-Lua and any mods that touch our internal assets: MyGUI layout files and so-called core shaders (built-in forward pass shaders), not to be confused with post-processing shaders. Whether updating a mod that affects game content mid-playthrough would be safe depends a lot on the mod.<br>
+Do keep in mind the reverse isn’t true. You won’t be able to load 0.49.0 saves in older releases.</p>
+<p><strong>Q:</strong> Is updating from a release older than 0.48.0 mid-playthrough safe?<br>
+<strong>A:</strong> Probably. 0.49.0 preserves support for saves from all releases since 0.45.0 (March 2019).<br>
+If your old save fails to load or has problems for some incomprehensible reason that isn’t because it was made in a release older than that, you’ll want to tell us. If it’s merely an old save, you should be able to make it compatible by re-saving it in 0.48.0, which should <em>theoretically</em> be compatible with every single stable release OpenMW save ever made.</p>
+<p><strong>Q:</strong> I’m still running Windows 7 (8, 8.1). Would I be able to run OpenMW 0.49.0?<br>
+<strong>A:</strong> We do not provide support for end-of-life operating systems, so unfortunately, we have to encourage you to update to Windows 10, 11, or a modern Linux distribution.<br>
+While OpenMW is a reimplementation of Morrowind’s engine which itself remains compatible with any Windows OS since Windows 2000, OpenMW targets modern hardware and software, and while we understand that Windows 7 in particular was a hugely successful Windows release, it <em>is</em> a Windows from 15 years ago.<br>
+Note this isn’t a new change. Like Microsoft, we dropped Windows 7 support 5 years ago .</p>
+<p><strong>Q:</strong> Why is running OpenMW on a Mac so rough? Is 0.49.0 any better?<br>
+<strong>A:</strong> OpenGL applications like OpenMW are expected to remain in a bad shape on Apple hardware out of the box due to Apple’s deprecation of OpenGL support. Notwithstanding, we’re doing what we can to not make it rougher.</p>
+<p><strong>Q:</strong> 0.49.0 changes the combat and I don’t like it.<br>
+<strong>A:</strong> Well- wait, that’s a statement… Could you rephrase it as a question?</p>
+<p><strong>Q:</strong> What’s with all the talk about hit detection changes?<br>
+<strong>A:</strong> Yeah, that’s better.<br>
+0.49.0 makes some large steps towards making melee combat reimplementation accurate to Morrowind. Importantly, it moves melee target evaluation from the point of impact to the moment of weapon release. This is necessary to ensure the correct audiovisual feedback for missed hits.<br>
+We do not intend to meaningfully overhaul or redesign the classical experience of Morrowind, and we believe it would best be handled by mods from the community. It is currently planned for combat dehardcoding to be a focus in 0.5X releases, which would allow scripts to overhaul it, and for certain combat AI changes to be introduced to further ensure melee combat remains as (not very) challenging as in Morrowind.<br>
+An important detail to note, however: in RC4 and later builds, like in 0.48.0, the target must be within weapon reach upon impact for the hit to be successful. This means that dodging attacks by quickly backing away from the opponent remains possible even if the hit is evaluated as a success upon weapon release. This is consistent with Morrowind.</p>
+<p>Anything else? Hm… No, that’s about it, really. Keep an eye out for newer RC builds! We’ll pop back up when we have more RC or release news to share.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Shiny new things are coming</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2022/shiny-new-things-are-coming/</link>
+      <pubDate>Thu, 26 May 2022 06:39:17 &#43;0200</pubDate>
+      <dc:creator>lysol</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5867</guid>
+      <description>Almost half a year has passed since the last development blog post. But that’s okay, since what OpenMW lacks in public relations, team team makes up for in development — and we have some huge news for you this time. This post will only cover the latest progress by the way: there are a lot of things …</description>
+      <content:encoded><![CDATA[<p>Almost half a year has passed since the last development blog post. But that’s okay, since what OpenMW lacks in public relations, team team makes up for in development — and we have some <strong>huge</strong> news for you this time. This post will only cover the <em>latest</em> progress by the way: there are a lot of things that have happened since last time we had a blog post, but we won’t really be covering those here. You’ll read about these changes in the changelog of the upcoming 0.48.0 release.</p>
+<h3 id="post-processing-is-here">Post-processing is here!</h3>
+<p>When you play modern 3D games and compare them to older ones like Morrowind, you’ll most likely notice a certain &quot;punch&quot; in the look of the game that the older games lack. The lighting effects, the colours and so on. This is often done through post-processing shaders, something <a href="https://www.nexusmods.com/morrowind/mods/41102/">MGE XE</a> (a third-party tool for vanilla Morrowind.exe) users have been enjoying for a long time already. OpenMW users had to pretend that they had nice things like bloom, HDR, ambient occlusion, godrays or motion blur — all while the game in reality looked dull and boring. Until now that is.</p>
+<p>Cody Glassman aka wazabear finally added a <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/1124">post-processing framework</a> to OpenMW. This is probably the biggest graphical enhancement for OpenMW since the implementation of real-time shadows. Modded OpenMW setups will now be able to take a huge step forward in time when it comes to graphic effects.</p>
+<p>OpenMW now provides a new file format called omwfx where the post-processing shaders are stored. This means shader developers have an easy way to create and tweak shaders that end users can easily install and manage for their games. Each shader can be turned on and off in one click and can even be fine-tuned through the super-handy in-game interface. The shaders can also be &quot;hot reloaded&quot;, i.e, you can edit the shaders while the game is running. This is, of course, very useful for developers so that they can see the result of what they just wrote in real time without restarting the game.</p>
+<p>One shader developer, zesterer, has already made <a href="https://github.com/zesterer/openmw-volumetric-clouds">their first contribution</a> to the community. CMAugust took some great screenshots using these shaders. Have a look at the gorgeous shots <a href="https://imgur.com/a/8DRyvi2">here</a>!</p>
+<p>You can read about the various post-processing settings <a href="https://openmw.readthedocs.io/en/latest/reference/modding/settings/postprocessing.html">here</a>. If you want to get an understanding of the new omwfx format, read about it <a href="https://openmw.readthedocs.io/en/latest/reference/postprocessing/index.html">here</a>.</p>
+<h3 id="launcher-improvements">Launcher improvements</h3>
+<p>Speaking of easy ways for end users to install things, our launcher now supports <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/192">adding and removing data directories and BSA files</a> which allows you to manage your mods in the launcher’s GUI instead of editing a text file. A highly requested feature now delivered to you by Frederic Chardon, aka fr3dz10. The old text-based way of doing things still exists, of course.</p>
+<h3 id="but-what-about-lua">But what about Lua?</h3>
+<p>Yes, of course we should talk about Lua. Much has happened since last time we wrote about it, and quite some mods have been released since then. To name a few, our legendary release video narrator Johnnyhostile released his <a href="https://www.nexusmods.com/morrowind/mods/51274">Smart Ammo</a> and <a href="https://www.nexusmods.com/morrowind/mods/51141">Marksman’s Eye</a> mods, our Lua developer uramer released the mod <a href="https://www.nexusmods.com/morrowind/mods/51232">Attend Me</a> and seelof and Greatness7 collaborated to release a mod called <a href="https://www.nexusmods.com/morrowind/mods/51171">Of Eggs and Dwarves</a> — which, by the way, is available for both OpenMW and MWSE-Lua!</p>
+<p>While our scripting system already offers some cool modding capabilities, it has not reached its full potential yet. More of the game logic needs to be de-hardcoded until we get as powerful as the very advanced capabilities granted by MWSE-Lua. We’ll get there step by step, and each one is going to give more power to modders. But know that the road ahead is still quite long before we can even reach some kind of feature parity with MWSE-Lua.</p>
+<p>One of the more recent additions to the Lua system is a <a href="https://gitlab.com/OpenMW/openmw/uploads/ab7b9a7a212d2225697f027fa1945295/image.png">settings menu</a>, so that modders can add options to their mods for end users to customise their gaming experience. This very neat feature was brought to you by uramer.</p>
+<p>If you’d like to have a go at making your own Lua mod, check out at our <a href="https://openmw.readthedocs.io/en/latest/reference/lua-scripting/index.html">documentation</a>!</p>
+<h3 id="more-work-on-vr">More work on VR</h3>
+<p>Mads Buvik Sandvei aka Foal created his VR fork quite some time ago, and many people have been enjoying it. It was, however, something he wrote for fun and the code was not really something that could be merged with our official code. The density of the changes also made it hard for the rest of the team to review.</p>
+<p>This is why Mads started to rewrite his VR feature and split it up into several smaller merge requests. One of the bigger ones, <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/1757">Stereo</a>, was merged recently and as the name suggests, it adds stereoscopic rendering. He even added support for multiview, which basically is a way to render the stereoscopic views in one single pass, making it potentially much faster than the more basic way of rendering the two views with double passes. The only real catch here is that it only works with Nvidia GPUs, at least as of now.</p>
+<p>More updates to OpenMW’s VR support are to be expected in the future.</p>
+<h3 id="wait-did-you-change-the-wiki-again">Wait, did you change the wiki again?</h3>
+<p>After experimenting with GitLab’s wiki, we went back to our <a href="https://wiki.openmw.org">original wiki</a>, where <em>everyone</em> is more than welcome to give us a hand with the content — whether it is about the development environment setup on your favourite Linux distribution or documenting particular game mechanics of Morrowind!</p>
+<p>This wraps up today’s blog post. Hopefully, we’ll be able to update you a bit sooner next time. Until then, take care!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=7767" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenMW Roadmap Update</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2022/openmw-roadmap-update/</link>
+      <pubDate>Fri, 01 Apr 2022 12:06:26 &#43;0200</pubDate>
+      <dc:creator>Atahualpa</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5832</guid>
+      <description>OpenMW has been in development for well over a decade now, and it has become a viable way to play Morrowind on almost every platform imaginable.
+As a consequence, we have discussed possible future main goals for our engine but quickly realised that the current scope greatly limits both the engine’s …</description>
+      <content:encoded><![CDATA[<p>OpenMW has been in development for well over a decade now, and it has become a viable way to play Morrowind on almost every platform imaginable.</p>
+<p>As a consequence, we have discussed possible future main goals for our engine but quickly realised that the current scope greatly limits both the engine’s potential and our developers’ creativity.</p>
+<p>With the first iteration of Lua scripting support merged, we finally had our eureka moment: why not completely shift the focus of development to yet another class of games? This was a month ago, and today we – the former OpenMW team – are proud to announce the rebranding of our project to become a general-purpose engine for isometric RPGs the likes of Baldur’s Gate or Neverwinter Nights. OpenMW is no more, long live OpenNeverMind!</p>
+<p>We have just released version 0.13.37 of our heavily altered engine. Grab it <a href="https://gitlab.com/ptmikheev/openmw/-/jobs/2262874420/artifacts/download">from here</a> – but be aware that this version is still WIP and any savegames made using it won’t be compatible with 0.47.0 (you can, however, use 0.47.0 savegames with this version). For now, the movement controls are as follows:</p>
+<ul>
+<li>[LMB] — move to clicked ground or interact with clicked object</li>
+<li>[MMB] — scroll to change camera zoom</li>
+<li>[W], [S] — control camera pitch</li>
+<li>[A], [D] — control camera yaw</li>
+<li>[TAB] — enable/disable camera collision (key binding is equal to &lt;Toggle POV&gt; in the settings menu)</li>
+</ul>
+<p>Please also note that OpenNeverMind 0.13.37 still has built-in Morrowind support. This will be removed in future stable releases to avoid any copyright issues.</p>
+<p>Check out our <a href="https://www.youtube.com/watch?v=XpH05T7WtfE">official announcement video</a> by the always reliable Atahualpa and the forever faithful Johnnyhostile to see our improved defaults in action.</p>
+<p>Thank you for your support and see you again for the next blog post which is going to detail our short-term and long-term plans for OpenNeverMind!</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=XpH05T7WtfE">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2022/openmw-roadmap-update/youtube-XpH05T7WtfE_hu_a2baadb321b7191a.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW Roadmap Update <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p><a href="https://forum.openmw.org/viewtopic.php?t=7715">Want to leave a comment?</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>News from behind the scene</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2021/news-from-behind-the-scene/</link>
+      <pubDate>Mon, 20 Dec 2021 15:50:57 &#43;0100</pubDate>
+      <dc:creator>jvoisin</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5584</guid>
+      <description>We took some time this year to overhaul, simplify and awesomify our web presence and infrastructure.
+Our blog Ten years using WordPress and still kicking! But it was time to clean up the dust a bit.
+First of all, we removed unnecessary plugins like akismet and its friends to only keep:
+our …</description>
+      <content:encoded><![CDATA[<p>We took some time this year to overhaul, simplify and <em>awesomify</em> our web presence and infrastructure.</p>
+<h2 id="our-blog">Our blog</h2>
+<p>Ten years using WordPress and still kicking! But it was time to clean up the dust a bit.</p>
+<p>First of all, we removed unnecessary plugins like <a href="https://wordpress.org/plugins/akismet">akismet</a> and its friends to only keep:</p>
+<ul>
+<li>our <a href="https://en.wikipedia.org/wiki/Cloudflare">Cloudflare</a> integration, since our server is not super powerful and we’ve been <a href="https://linux.slashdot.org/story/12/07/04/0224210/open-source-morrowind-version-0160-released">slashdot’ed</a> before. So better safe than sorry. Also, no need to fetch your pitchforks if you’re using Tor or a VPN: we configured Cloudflare to not annoy you, so it’s only used as a CDN/cache.</li>
+<li><a href="https://polylang.pro">Polylang</a>, since WordPress doesn’t support internationalization by default and some of our blogposts are translated into a couple of languages.</li>
+<li><a href="https://wordpress.org/plugins/jetpack">Jetpack</a> because our posts are written in Markdown.</li>
+</ul>
+<p>Moreover, since more and more people are browsing the web via their phones, we are more than happy that <a href="https://www.nexusmods.com/morrowind/users/1225558">vtastek</a> took the time to make the blog responsive, so that it looks great on mobile as well!</p>
+<p>If you have a look at the sidebar, you’ll notice a handful of badges: <a href="https://github.com/openmw/openmw">GitHub</a>, <a href="https://gitlab.com/openmw/openmw">GitLab</a>, <a href="https://discord.gg/YegsVV3aRb">Discord</a>, <a href="https://matrix.to/#/%23openmw-space:matrix.org">matrix</a>, <a href="https://twitter.com/openmw_org">Twitter</a>, <a href="https://reddit.com/r/openmw">Reddit</a> – all without a single line of JavaScript, as in, no tracking. Speaking of tracking: we also removed Google Analytics, which we weren’t using anyway.</p>
+<p>On the backend side, we cleaned the database up by removing comments (which had been turned off years ago), post revisions, unnecessary users, and much more, reducing the size of our database by 60%.</p>
+<p>All those small changes lead to a significant improvement of loading times: from around 9 seconds to 1 second!</p>
+<p>Our <a href="https://gitlab.com/OpenMW/openmw/-/issues/6076">plan for the future</a> is to move away from WordPress to take advantage of <a href="https://docs.gitlab.com/ee/user/project/pages">GitLab Pages</a> to run a static website instead. Any help to make this happen is more than welcome!</p>
+<h2 id="forum">Forum</h2>
+<p>We’ve been using <a href="https://www.phpbb.com">phpBB</a> for the forums even before we had our blog, and it’s been working great. So not a lot has changed on this side except that we upgraded it to the latest available major version, granting us a minor performance boost and improved security. We also switched to MySQL for the search engine which reduces the database table and makes the search not only better but also faster. Moreover, we stepped up our anti-spam game: the forum should be kept tidy now with less human intervention necessary, and we’re now reporting spammers to <a href="https://www.stopforumspam.com">Stop Forum Spam</a>.</p>
+<h2 id="wiki">Wiki</h2>
+<p>We’ve long been using <a href="https://www.mediawiki.org">MediaWiki</a> (the same wiki software used by Wikipedia itself!) to document everything, along with a <a href="https://github.com/Digitalroot/MediaWiki_PHPBB_Auth">plugin</a> to bridge accounts between the forum and the wiki. Now that OpenMW is slowly reaching feature parity with Morrowind’s original engine, most of the information on the wiki is no longer being updated. So we made our wiki read-only and available at <a href="https://old-wiki.openmw.org">old-wiki.openmw.org</a> and moved the content to <a href="https://gitlab.com/OpenMW/openmw/-/wikis/home">GitLab’s wiki</a>, reducing the maintenance cost of our MediaWiki. Switching our old wiki to read-only allowed us to disable a ton of features. It also allowed us to make use of aggressive caching which significantly improves its performances and makes it way less taxing resource-wise.</p>
+<h2 id="alerting">Alerting</h2>
+<p>We’ve set up a status page at <a href="https://openmw.org/status">openmw.org/status</a>, thanks to <a href="https://uptimerobot.com">UptimeRobot</a>, to monitor all of our services and to get notified in case one of them goes down. Also, since this information is available to everyone, you can check for yourself if &quot;openmw.org is down for everyone, or is it just me&quot;? This uncovered an issue with our backup system: in the middle of the night (European time) our backups are kicking in, and were doing some heavy compression operations which result in a massive slowdown of the website, generating timeouts. We lowered the process priority of the backups, which fixed the issue and appeased our monitoring.</p>
+<h2 id="backend">Backend</h2>
+<p>Our nginx config was overhauled and factorized to make our services’ configurations more uniform: same <a href="https://www.ssllabs.com/ssltest/analyze.html?d=openmw.org">modern TLS parameters</a>, usage of http2, same Cloudflare configuration, more efficient serving of big files for <a href="https://downloads.openmw.org">downloads.openmw.org</a>, etc.</p>
+<p>Since we’re automatically building OpenMW on every commit using <a href="https://gitlab.com/OpenMW/openmw/-/pipelines">GitLab’s continuous integration</a> to avoid hammering <a href="https://www.nuget.org/">NuGet</a>, <a href="https://chocolatey.org/">Chocolatey</a>, <a href="https://www.debian.org/distrib/packages">Debian</a> and co. too much, we’re using <a href="https://www.sonatype.com/products/repository-oss">Nexus Repository OSS</a> to act as a caching proxy. It has been updated to the latest available version, fixing a lot of <a href="https://help.sonatype.com/repomanager3/release-notes">nasty security issues</a>. We also spent some time improving its loading time.</p>
+<p>We ran <a href="http://optipng.sourceforge.net">OptiPNG</a> and <a href="https://github.com/tjko/jpegoptim">jpegoptim</a> on icons/media to drastically reduce the size of images and, thus, our bandwidth consumption.</p>
+<p>Our database engine, <a href="https://mariadb.org">MariaDB</a>, was tuned for performance as well as cleaned up: we purged old data, and <a href="https://mariadb.com/kb/en/optimize-table/">optimized</a> the rest.</p>
+<p>Since we’re in 2021, all of our domains are now fully accessible <a href="https://ip6.nl/#!openmw.org">over IPv6</a>.</p>
+<p>Automatic updates have been enabled via <a href="https://wiki.debian.org/UnattendedUpgrades">UnattendedUpgrades</a>, so that our beloved sysadmin crew don’t have to waste time on mundane tasks and can sleep better at night knowing that security upgrades are installed as soon as they become available.</p>
+<p>Finally, speaking of the sysadmin crew: we took steps to increase the <a href="https://en.wikipedia.org/wiki/Bus_factor">bus factor</a>, bringing nice side effects like increased motivation (it’s always funnier to do things with friends) and reduced burnout risks.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=7634" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Post-release catchup party!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2021/post-release-catchup-party/</link>
+      <pubDate>Fri, 26 Nov 2021 11:03:29 &#43;0100</pubDate>
+      <dc:creator>lysol</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5696</guid>
+      <description>Hello again!
+While there have been several huge announcements we’ve wanted to share with you lately, we decided to wait with these news until after the release of OpenMW 0.47.0 to avoid stealing too much of the hype. Sorry for that, but we hope you understand. Now, without further ado, let’s dig in! …</description>
+      <content:encoded><![CDATA[<p>Hello again!</p>
+<p>While there have been several huge announcements we’ve wanted to share with you lately, we decided to wait with these news until after the release of OpenMW 0.47.0 to avoid stealing too much of the hype. Sorry for that, but we hope you understand. Now, without further ado, let’s dig in!</p>
+<h2 id="lua-is-merged">Lua is merged</h2>
+<p>Let’s just begin with, arguably, the biggest one. Petr Mikheev worked really hard on this huge contribution, and the extensive code reviews and feedback from the rest of the team were fantastic. The result is that the basic framework for OpenMW’s future scripting language, Lua, was merged into master a few months ago. This in itself doesn’t actually do much for the end user, but modders can already explore its functions. The real power, however, will be unleashed once gameplay mechanics, user interfaces, various graphical features and other exciting things are controllable through Lua scripts, in what we often refer to as the “de-hardcoding” of OpenMW. Some of this is currently being worked on, or even has already been merged, like Urm’s <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/1138">basic framework for a Lua-controlled GUI</a> and Mikheev’s <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/1030">Lua-controlled camera</a> and <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/1175">raycasting</a>.</p>
+<p>One important clarification needs to be made, though: OpenMW-Lua will <em>not</em> be compatible with MWSE-Lua, the 3rd-party scripting extender for Morrowind.exe. We aim to make our scripting engine <em>at least</em> as powerful as MWSE-Lua, but since MWSE-Lua is being developed for a different game engine, mods made for it will unfortunately <strong>not</strong> be compatible with OpenMW. Current MWSE-Lua mods will therefore have to be rewritten, or at least refactored, to be able to function in OpenMW.</p>
+<p>And again, to make it perfectly clear: the implementation of Lua in OpenMW is still in its initial stage and will become more powerful as time goes by.</p>
+<p>We will discuss Lua more in future blog posts.</p>
+<h2 id="soft-particles-and-sky-shaders">Soft particles and sky shaders</h2>
+<p>If you are like most people, you might feel a bit annoyed by the fact that particles from things like fire look so obviously flat when looking at the source of the flame. Cody Glassman fixed this by implementing <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/980">soft particles</a>. There’s a video example in the merge request, and the difference is huge.</p>
+<p>Cody also recently got his <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/1057">sky shader branch</a> merged into OpenMW master. This is a feature that has been requested for quite a while now by people wanting to do great looking shaders for OpenMW. And now that the sky shaders are here, people like vtastek will be able to play around with the look of the sky, for example making the sky blend a lot better with the fog.</p>
+<h2 id="navmesh-disk-cache">Navmesh disk cache</h2>
+<p>One exclusive feature OpenMW has is the automatic and dynamic generation of navigation meshes which greatly enhances the AI’s pathfinding. Basically, OpenMW creates a map of the currently active game world that tells the AI where the terrain is walkable and where it is not, preventing situations where NPCs walk straight into walls or jump down cliffs. The creation of this map is done at runtime in a separate thread, so most modern multi-core computers won’t notice any significant performance loss because of this. For people with weaker computers or mobile devices, however, loading times can be significantly longer. Because of this, elsid is working on a feature that will <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/1058">store the navigation meshes in files</a> once they have been created, making the generation of them only necessary once.</p>
+<h2 id="zoomable-world-map">Zoomable world map</h2>
+<p>Ever wanted to be able to zoom in and out on the world map? See more of the world at the same time? Or less of it, with more detail? Now you can, thanks to Cédric Mocquillon’s new feature that allows for <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/275">different zoom levels</a> of the map, including automatically merged map markers when zooming far out and a smooth transition between local and world map when zooming in. Simple yet so effective and a very nice addition to the engine.</p>
+<h2 id="raindrops-keep-falling-on-my-head">Raindrops keep falling on my head…</h2>
+<p>…and into the water too. Let’s face it, OpenMW’s raindrop ripples look pretty terrible. Or rather, they <em>were</em> looking pretty terrible, since wareya took the matter in his own hands by making an actual good-looking raindrop ripple effect. You can see how they look using a nightly version or visiting the <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/1316">merge request’s GitLab page</a>. Neat, right?</p>
+<h2 id="no-more-adding-mod-directories-in-the-openmwcfg-file">No more adding mod directories in the openmw.cfg file</h2>
+<p>Well, unless you want to of course. Anyway, Frederic Chardon has had <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/192">this merge request</a> up for a very long time, but after a lot of discussion regarding its design, it seems we will finally see it merged soon. This means that you will soon be able to add and remove data directories directly in the OpenMW launcher. Finally!</p>
+<h2 id="magic-effects-are-reworked">Magic effects are reworked</h2>
+<p>Evil Eye has been working relentlessly on OpenMW, and a truckload of MRs merged lately have been his work. One of his bigger projects has been the rework of magic effects. For most people, this probably won’t be very noticeable since there are mostly under-the-hood changes, but quite a few differences to Morrowind’s original engine have been solved thanks to this huge task of his. Check out the merge request <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/1116">here</a>. If you’re a Morrowind purist that has been annoyed with OpenMW handling certain magic effects differently compared to the original, you’ll like this one a lot.</p>
+<p>That’s about it. Or really, it’s far from it, but we’ll have to round off this blog post somewhere. Thank you so much for sticking around with us through all these years. We’ll see you again another time!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=7607" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenMW Spotlight: Lua &amp; Light, the second chapter</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2021/openmw-spotlight-lua-light-the-second-chapter/</link>
+      <pubDate>Wed, 17 Mar 2021 16:25:00 &#43;0100</pubDate>
+      <dc:creator>lysol</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5509</guid>
+      <description>As if the last post wasn’t long enough! We need to share some updates regarding Lua and the upcoming lighting improvements. Welcome!
+Lua Petr Mikheev just reached a major milestone with the upcoming Lua scripting system: The first playable Lua test mod is live! Note the word “test” here of course; …</description>
+      <content:encoded><![CDATA[<p>As if the last post wasn’t long enough! We need to share some updates regarding Lua and the upcoming lighting improvements. Welcome!</p>
+<h2 id="lua">Lua</h2>
+<p>Petr Mikheev just reached a major milestone with the upcoming Lua scripting system: The first playable Lua test mod is <em>live</em>! Note the word “test” here of course; this is nothing of interest for you guys that just want to have fun and play a great RPG from the early 2000s enhanced with cool mods. But while the mod in itself might not be too exciting, it still proves that things are actually moving forward and that we are getting closer and closer to a world where OpenMW has <em>greatly</em> enhanced modding capabilities compared to today. <a href="https://forum.openmw.org/viewtopic.php?f=6&amp;t=7149">Here</a> is the link to the forum topic, and <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/430">here</a> is the one to the merge-request.</p>
+<h2 id="lighting">Lighting</h2>
+<p>In the last post, we talked about how Cody Glassman is working on support for more than 8 lights per object. Well, his merge request has evolved into something even more. As it is right now, the fixed-function math used for Morrowind’s light attenuation, which is faithfully identical in OpenMW, do not actually allow for good attenuation at all. This manifests in light seams, visible popping, and mismatched object lighting, which you may have noticed in previous builds or the original Morrowind engine. With the arrival of Active Grid Object Paging in the upcoming 0.47.0 release, it became clear that a change was needed to squash these issues once and for all. Thanks to under-the-hood changes to lighting and a brand new attenuation formula, all of these problems are cleaned up wonderfully. The lighting should look pretty much the same as you remembered it, but with a level of polish that hasn’t been seen before. As a preview, here are some before and after shots placed side by side for you to compare. We think you’ll agree the OpenMW experience is about to feel even smoother!</p>
+<ul>
+<li>
+<p><a href="https://imgsli.com/NDQyODU">https://imgsli.com/NDQyODU</a></p>
+</li>
+<li>
+<p><a href="https://imgsli.com/NDQyODY">https://imgsli.com/NDQyODY</a></p>
+</li>
+<li>
+<p><a href="https://imgsli.com/NDQyODg">https://imgsli.com/NDQyODg</a></p>
+</li>
+<li>
+<p><a href="https://imgsli.com/NDM5NTg">https://imgsli.com/NDM5NTg</a></p>
+</li>
+<li>
+<p><a href="https://imgsli.com/NDQ0OTA">https://imgsli.com/NDQ0OTA</a></p>
+</li>
+</ul>
+<p>That’s it for today. Stay safe everyone, and stay tuned for the next release!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=7403" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenMW Spotlight: Submit to the three…</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2021/openmw-spotlight-submit-to-the-three/</link>
+      <pubDate>Fri, 05 Mar 2021 10:54:57 &#43;0100</pubDate>
+      <dc:creator>lysol</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5495</guid>
+      <description>Hello everyone and sorry for the lack of updates lately.
+The lack of updates has nothing to do with lack of development. It’s been quite the contrary; a lot has happened since last time. Blame me, Lysol, for the silence.
+While there are a ton of things we could talk about in this post, you’ll have …</description>
+      <content:encoded><![CDATA[<p>Hello everyone and sorry for the lack of updates lately.</p>
+<p>The lack of updates has nothing to do with lack of development. It’s been quite the contrary; a lot has happened since last time. Blame me, Lysol, for the silence.</p>
+<p>While there are a ton of things we <em>could</em> talk about in this post, you’ll have to wait until the upcoming 0.47.0 release and the included change log for most of that. Instead, let us talk about three major features: Lua, groundcover and &quot;The Enlightenment&quot;.</p>
+<h2 id="1-lua-scripting">1. Lua scripting</h2>
+<p>As we’ve discussed already before, the plan is for OpenMW and TES3MP to eventually merge into one project. This means that OpenMW will require a scripting system that is compatible with, and benefits, both projects.</p>
+<p>For quite a while now, TES3MP has been using a server-side scripting system that uses the Lua scripting language. The consensus has for the most part been to continue upon this foundation and implement both a single- and multiplayer friendly Lua-based scripting system for OpenMW. A system that will give massive power to modders making mods for both singleplayer and multiplayer gameplay. Discussions have come and gone regarding the subject, but there was never any real work done.</p>
+<p>Our productive developer Petr Mikheev (ptmikheev) therefore decided to take the matters in his own hands. Petr and David C, the mind behind TES3MP’s scripting system, discussed the matter and have sketched out a <a href="http://forum.openmw.org/viewtopic.php?f=6&amp;t=7149">plan</a> for the ideal scripting system for our needs. It resulted in this <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/430">merge request</a> which is frequently updated by Petr. Although it is still in early stages (i.e. do not expect it for the next release), people can experiment with basic scripts already to see how it works.</p>
+<p>Getting this implemented is crucial for us to be able to get on with the de-hardcoding phase planned once OpenMW 1.0.0 has been released. It is also crucial to be able to make OpenMW the great moddable engine we want it to be. All the impressive mods made for vanilla Morrowind’s MWSE-Lua system gives us a glimpse of what we could see in the future for OpenMW.</p>
+<h2 id="2-groundcover">2. Groundcover</h2>
+<p>Ever since OpenMW implemented object paging, we have been enjoying long viewing distances with distant objects and playable performance. Some have even been able to run grass mods without much issue. With emphasis on the word &quot;some&quot;. Object paging was not implemented with groundcover mods in mind, even though it might provide increased performance for them too.</p>
+<p>Enter instancing. Our veteran Andrei Kortunov (akortunov) has, together with Master of Shadows Chris Djali (AnyOldName3), been working on supporting groundcover through a system much more suitable for it. You see, supporting grass and other groundcover require some special tweaking before you can get acceptable performance with it. Otherwise, each and every piece of grass will have to be sent to the CPU before the GPU can render it, and this takes a very long time. This is called a &quot;draw call&quot;. Draw calls are slow. So slow that you don’t want too many of them in one scene. Reducing draw calls was actually the main reason we implemented Active Grid Object Paging, which merges many smaller objects into fewer larger objects (thus reducing draw calls), not only in the distance, but also in the active cell. Read more about Object Paging and Active Grid Object Paging <a href="/beta-v2-openmw/2020/openmw-spotlight-turning-the-pages/">here</a>.</p>
+<p>So while Object Paging worked out great for buildings and similar, grass can get handled better, especially since you want grass to sway with the wind and to get bent under your feet when you step on it. The new groundcover system enables grass and other groundcover with better performance and with full support for animation and reaction to you stepping on it.</p>
+<p>So far, work has been focused on supporting legacy mods, previously made for MGE XE. This puts some limitations on what can be done. In the future, we plan to implement an even better system to handle groundcover. Such a system will, however, not be compatible with current mods made for MGE XE.</p>
+<p>Try the groundcover system today in an unreleased build of OpenMW, or wait for the next release. You can read on how to enable groundcover mods <a href="https://openmw.readthedocs.io/en/latest/reference/modding/settings/groundcover.html">here</a> and <a href="https://openmw.readthedocs.io/en/latest/reference/modding/extended.html#groundcover-support">here</a>.</p>
+<h2 id="3-the-enlightenment">3. The Enlightenment</h2>
+<p>Did you know that OpenMW only supports up to eight lights for each object? You might have noticed lights turning on and off while walking around in a few specific places in Morrowind. If you use Active Grid Object Paging, you might have noticed this quite a lot.</p>
+<p>The issue lies with our support for old style Fixed Function Pipeline (FFP). Every object in the game can only receive up to eight light sources at the same time. This was actually the case with vanilla Morrowind too, but the game is designed in a way that you almost never see it. To be fair, all Bethesda games until Fallout 4 had very limited maximum lights per object and worked around the issue in the design of the game. However, the way Morrowind is designed, with many small objects everywhere, is also very inefficient since it creates a lot of draw calls. And while draw calls are reduced if we merge many of the smaller objects into fewer larger object with Active Grid Object Paging, we will instead get issues with lights, since the light limit per object will get reached much earlier. There have been attempts at solving this issue previously, but it proved to be quite the tricky task.</p>
+<p>This is where Cody Glassman (wazabear/wazabear_notabear) comes in. You might have come across him earlier from his <a href="https://www.nexusmods.com/morrowind/mods/47806">fork of OpenMW</a> that implements more advanced UI features, which by the way can get re-implemented in a much lighter more mod-like way once Lua is merged. Anyway, Cody decided to have a look at this light limit issue, which resulted in <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/618">this</a> merge request. It is not quite finished yet, but he already gave us a sweet example of it working here:</p>
+<p><a href="https://streamable.com/hofhxc">Watch the video on Streamable</a></p>
+<p>A scene like this would be impossible with the current version of OpenMW. Although getting this crazy with lights is a pretty bad idea in a real-world case, this case at least proves modders will have less issues with lights in the future. End-users will also be able to get the sweet performance increase of Active Grid Object Paging <em>without</em> the annoying light pop-in and pop-out issues.</p>
+<h2 id="the-next-release">The next release</h2>
+<p>Yes, we plan on releasing 0.47.0 in a not too distant future! Stay tuned, we will let you know when it is out.</p>
+<p>Until next time, thanks for reading.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=7385" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>The Autumn in Review: September-October 2020</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2020/the-autumn-in-review-september-october-2020/</link>
+      <pubDate>Mon, 16 Nov 2020 20:55:20 &#43;0100</pubDate>
+      <dc:creator>lysol</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5467</guid>
+      <description>Unless you live close to the equator or are located in the southern hemisphere, you might have had to rake the leaves from your lawn once or twice now. Our developers don’t seem to have lawns however, because they’ve been adding code like they have nothing else to do. Let’s dig into what has …</description>
+      <content:encoded><![CDATA[<p>Unless you live close to the equator or are located in the southern hemisphere, you might have had to rake the leaves from your lawn once or twice now. Our developers don’t seem to have lawns however, because they’ve been adding code like they have nothing else to do. Let’s dig into what has happened in the last two months:</p>
+<ul>
+<li>
+<p>Petr Mikheev, aka ptmikheev, is a fairly new developer in the community. He has made himself very well known, though, with all his hard work. You might remember him being mentioned in the previous post regarding his implementation of a new, more modern 3rd-person camera view. More recently, he has added optional first-person head-bobbing to the game as well as a <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/282">&quot;smooth movement&quot;</a> feature which makes movement animations, well, smoother. But let’s not forget one very important thing: Lua scripting. Petr has been talking with David C, the main developer of tes3mp, about how Lua should be implemented into OpenMW. The resulting ideas were presented in a thread <a href="http://forum.openmw.org/viewtopic.php?f=6&amp;t=7149">here</a>. Check it out if you are interested in these things!</p>
+</li>
+<li>
+<p>Frederic Chardon, aka fr3dz10, is another fairly new developer. Actually, he did submit a few merge requests about a year ago, but now he’s dropped the mic by submitting his <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/248">&quot;Async physics&quot;</a> merge request. Physics and collision detection has been a big performance bottleneck in OpenMW for a long time. While the issue is not completely solved yet, this MR still improves performance by moving the game’s physics from the main thread to one or more other threads, making OpenMW even better at using multiple cores. The setting is optional and you can configure the number of additional threads in the OpenMW launcher. fr3dz10 has worked on several other issues in the last weeks, but this is the most noticeable one for end users.</p>
+</li>
+<li>
+<p>Our hammer-wielding penguin akortunov (Andrei Kortunov) has continued his quest of making OpenMW support groundcover with better performance. The big question is whether groundcover should be supported using <a href="https://github.com/OpenMW/openmw/pull/3010">paging</a> or <a href="https://github.com/OpenMW/openmw/pull/3023">instancing</a>. But what does paging and instancing even mean? Andrei explained it like this:</p>
+<blockquote>
+<p>With paging, you merge different grass instances on the fly to large shapes and cache them. So your CPU needs some time to merge all instances and some additional RAM to store data. With instancing, you tell GPU to render the same mesh in the same place many times, and then move every instance via shader.</p>
+</blockquote>
+<p>We are currently measuring the differences between the two methods. Stay tuned for future updates on this topic.</p>
+</li>
+<li>
+<p>The great Capostrophic (Alexei Dobrohotov), who had been developing in the top gear for quite a while now, switched down to a lower gear for a while due to important matters in real life. He has, however, returned lately with some really cool stuff regarding his work to make OpenMW support assets of later Bethesda games. For example, the compressed archive format Bethesda started using in Skyrim Special Edition (SSE), called LZ4, is now supported in OpenMW. This is not only a prerequisite for running SSE using our engine in the future — the format itself is more modern and decompresses much faster than the older BSA format, which could turn out to be very interesting for Morrowind modders and asset creators in general, too. Capostrophic has recently pushed many more changes to improve OpenMW’s handling of the NIF file format, but these are rather abstract in nature and will be discussed in detail when there are new features available that make use of them.</p>
+</li>
+<li>
+<p>Assumeru or &quot;Evil Eye&quot; has implemented a lot of under-the-hood changes which most of you won’t even notice. However, they are still very important! So what has been done, then? Region sounds now use settings imported from Morrowind.ini to determine the interval at which they need to be played. Levelled items in untouched containers are now randomly generated from their respective lists when the game is loaded, mimicking the original engine. Scripts can now manipulate base records in containers, i.e., it is possible to add and remove items from all untouched containers. To support these changes, scripts can now add levelled item lists to actors and containers. Finally, vanilla-style overstocking has been implemented as well.</p>
+</li>
+<li>
+<p>Thanks to the joint forces consisting of psi29a (Bret Curtis), AnyOldName3 (Chris Djali), and johnnyhostile (Hristos Triantafillou), we now have automatic builds for Windows, Linux, Mac, and even Android on GitLab for every merge request that is opened. This means you can go to <em>any</em> merge request on GitLab and get a fresh build for your OS of choice to test any not-yet-implemented feature you like or hunt down any freshly hatched bug.</p>
+</li>
+<li>
+<p>Unelsson (Uoti Huotari) has been working on the hard task of getting the <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/252">dae/Collada</a> 3D model format to work correctly in OpenSceneGraph, the backbone behind OpenMW’s rendering. Lately, he has been making really good progress, and the basics of animation support are already covered. There is still a lot of work left to be done, but he is slowly getting there!</p>
+</li>
+</ul>
+<p>Okay, this post is getting way longer than planned, so let’s stop it here. There are still plenty of other things we could have talked about since this autumn has been a real blast for OpenMW’s development.</p>
+<p>See you next time and have a great winter (or, again, summer if you are located in the southern hemisphere :)).</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=7207" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>The Summer in Review: June-July-August 2020</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2020/the-summer-in-review-june-july-august-2020/</link>
+      <pubDate>Wed, 26 Aug 2020 14:23:52 &#43;0200</pubDate>
+      <dc:creator>lysol</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=5460</guid>
+      <description>Hello everyone.
+Welcome to a review of the OpenMW developent during the summer of 2020. A very unusual summer period for most of us. Development has been as stable as anytime though, so let’s dig in.
+The big thing for the month of June was the merging of Object Paging, covered in the last “OpenMW …</description>
+      <content:encoded><![CDATA[<p>Hello everyone.</p>
+<p>Welcome to a review of the OpenMW developent during the summer of 2020. A very unusual summer period for most of us. Development has been as stable as anytime though, so let’s dig in.</p>
+<p>The big thing for the month of June was the merging of Object Paging, covered in the last <a href="/beta-v2-openmw/2020/openmw-spotlight-turning-the-pages/">“OpenMW Spotlight”</a> post. We will not cover this feature any more today, since we already made an in-depth post about it. Without further ado, allow us to present the goodies!</p>
+<ul>
+<li>
+<p>3rd person view has seen <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/219">lots of improvements</a> lately, including an “over-the-shoulder”-camera option, thanks to Petr Mikheev. During the last month he has continued to work on this feature, also including a more <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/261">modern vanity camera feature</a> which includes an optional Skyrim-style variant. Have a look <a href="https://forum.openmw.org/viewtopic.php?f=24&amp;t=6955&amp;start=10#p67964">here</a> for some example GIF-files of the 3rd person view improvements!</p>
+<p><img src="https://s7.gifyu.com/images/movement1.gif" alt="" loading="lazy" decoding="async"></p>
+</li>
+<li>
+<p>Capostrophic has been bug fixing as usual. He has also implemented some <a href="https://github.com/OpenMW/openmw/pull/2901">nice shader fixes</a> and some <a href="https://github.com/OpenMW/openmw/pull/2883">nif</a> <a href="https://github.com/OpenMW/openmw/pull/2908">format</a> <a href="https://github.com/OpenMW/openmw/pull/2987">improvements</a>.</p>
+</li>
+<li>
+<p>akortunov has been bugfixing like crazy, especially during the month of June, and refactored quite a few parts of the codebase. Lately, he has been working on making his old <a href="https://github.com/OpenMW/openmw/pull/2665">grass handling</a> more relevant by making it support animated grass. Hopefully, it can be made to play well with our new active grid paging feature too.</p>
+</li>
+<li>
+<p>elsid has, other than maintaining the AI navigation feature of the engine, been fixing various sound issues. He also has an open pull request which is supposed to make the engine load <a href="https://github.com/OpenMW/openmw/pull/2928">sound files in a separate thread</a> to improve performance.</p>
+</li>
+<li>
+<p>unelsson and psi29a have been working together on making OpenMW support <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/252">animations when using the Dae/Collada 3d model format</a>. This is a very important task to be done if this engine is ever going to become the FLOSS RPG game engine it strives to be. Psi29a started doing the research on how the feature should be implemented, and nelsson continued his work. Moreover, we should mention that nelsson sent a few pull requests directly to OpenSceneGraph (our dependency used for rendering), to improve Dae/Collada support even more.</p>
+</li>
+<li>
+<p>fr3dz10’s old <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/126">merge request</a> for color changes in keywords in dialogue window was merged in June. He has also been <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/248">experimenting with the physics engine</a>, trying to make the physics run in a separate thread instead of the main thread. Really interesting!</p>
+</li>
+<li>
+<p>wareya has been working on the movement solver for quite some time, trying to emulate the movement from vanilla Morrowind as much as possible. During the past months, he started doing a <a href="https://github.com/OpenMW/openmw/pull/2937">rewrite</a> of his older pull request.</p>
+</li>
+<li>
+<p>Mads Buvik Sandvei, aka Foal, is working on a <em>very</em> interesting feature, namely support for VR. He has shown great progress already. You can follow his progress on his merge request <a href="https://gitlab.com/OpenMW/openmw/-/merge_requests/251">here</a>.</p>
+</li>
+<li>
+<p>Assumeru, aka Evil Eye, has been doing some under-the-hood changes to how scripting affects records in saves. This solved <a href="https://gitlab.com/OpenMW/openmw/-/issues/2798">two</a> <a href="https://gitlab.com/OpenMW/openmw/-/issues/4055">issues</a> we’ve had for a long time. No longer will you be able to wear Ordinator armor without concequence!</p>
+</li>
+</ul>
+<p>This is just a short review of what has been going on during the summer. There has been a lot more going on of course, but we tried to sum up the more interesting changes.</p>
+<p>Thank you for reading, and see you next time!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=7086" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

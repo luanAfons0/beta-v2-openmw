@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>scrawl · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/author/scrawl/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/author/scrawl/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Sun, 07 Jun 2015 19:22:25 &#43;0200</lastBuildDate>
+    <item>
+      <title>OpenSceneGraph port now playable</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2015/openscenegraph-port-playable/</link>
+      <pubDate>Sun, 07 Jun 2015 19:22:25 &#43;0200</pubDate>
+      <dc:creator>scrawl</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4362</guid>
+      <description>During the past three months, the OpenMW team has been hard at work porting their codebase away from the Ogre3D engine and towards the OpenSceneGraph rendering toolkit. The previous post talks about our motivations.
+We are pleased to announce the porting efforts are finally bearing fruit – as in, …</description>
+      <content:encoded><![CDATA[<p>During the past three months, the OpenMW team has been hard at work porting their codebase away from the Ogre3D engine and towards the OpenSceneGraph rendering toolkit. The <a href="/beta-v2-openmw/2015/announcing-switch-openscenegraph/">previous post</a> talks about our motivations.</p>
+<p>We are pleased to announce the porting efforts are finally bearing fruit – as in, all gameplay-essential features have been ported across, so users can enjoy a legitimate game of Morrowind in the <a href="https://github.com/scrawl/openmw/tree/osg">OpenMW-osg</a> development branch.</p>
+<p>Some advanced features – shaders, distant terrain, shadows, and water reflections – have not been ported yet. However, even this early, it is safe to say the transition has been a massive success, in more ways than we initially imagined. Players will find the new OpenMW loads faster, improves framerate, looks more like the original game, and fixes a host of long-standing bugs that proved difficult to address within our old framework.</p>
+<p>Hold on… <em>improved framerate</em>? Let’s put that to the test…</p>
+<h2 id="the-first-benchmark">The first benchmark</h2>
+<p>Our test environment shall be:<br>
+GeForce GTX 560 Ti/PCIe/SSE2, AMD Phenom(tm) II X4 955 Processor × 4, Linux 3.13.0-24-generic x86_64<br>
+1680×1050, full screen, no AA, 16x AF, no water reflections, no shadows, no shaders<br>
+Maximum view distance as per the in-game slider</p>
+<p><a href="https://openmw.org/wp-content/uploads/2015/06/osg_bench.png"><img src="https://openmw.org/wp-content/uploads/2015/06/osg_bench-300x188.png" alt="osg_bench" loading="lazy" decoding="async"></a><br>
+<em>The testing scene: good old (laggy) Balmora</em></p>
+<table>
+	<thead>
+			<tr>
+					<th></th>
+					<th>OpenMW</th>
+					<th>OpenMW-osg</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Framerate avg.</td>
+					<td>49</td>
+					<td><strong>75</strong></td>
+			</tr>
+			<tr>
+					<td>Loading time avg.</td>
+					<td>7s</td>
+					<td><strong>3.4s</strong></td>
+			</tr>
+			<tr>
+					<td>System memory avg.</td>
+					<td>344.6mb</td>
+					<td><strong>277.1mb</strong></td>
+			</tr>
+	</tbody>
+</table>
+<p>Unsurprisingly, the OSG port wins on all three counts. The framerate improvement is decent, though still far short of the 3-4x improvement we saw in <a href="https://forum.openmw.org/viewtopic.php?f=2&amp;t=2760&amp;start=20">earlier tests</a> with a single model. There is no reason to be concerned, however – you should take these numbers with a grain of salt:</p>
+<ol>
+<li><strong>The comparison is unfair</strong>. New rendering features are included in the OSG branch, that bring us closer to vanilla Morrowind compatibility, but affect performance as well. For example, we now dynamically expand bounding boxes based on running animations, which fixes the infamous bug of cliff racers disappearing under certain angles (Bug 455), but is taxing on frame rate as well. Likewise, we have ditched <em>static geometry batching</em>, a performance optimization that was causing a multitude of issues, mainly <a href="https://bugs.openmw.org/issues/385">incorrect lighting</a> and <a href="https://bugs.openmw.org/issues/602">scripted movement of objects not working</a>. Even under all this new workload, the OSG port is <em>still</em> faster!</li>
+<li><strong>Expect higher performance gains for advanced graphical features</strong>. The comparison was made with the minimum graphics settings, for the simple reason that the advanced settings (shadows, reflections, etc.) do not exist in the OSG branch yet. We expect that once those advanced features are ported, their impact on framerate will be much lower than before, simply due to the new renderer scaling a lot better with regards to GPU workload. Draw submissions are now offloaded to a worker thread, so the graphical complexity of the scene does not block the main thread from performing work in the meantime such as culling, physics, scripting, and animation.</li>
+<li><strong>The <em>real</em> optimization phase hasn’t even begun yet</strong>. The main focus for now has been to get the game back to a playable state, and that only happened a few days ago. Now, there are plenty of optimization opportunities on the horizon. Our new rendering framework gives us more control over how the scene graph is structured, and how updates are dispatched, something we are only just starting to take advantage of. Planned optimizations in the near future include:
+<ul>
+<li>Move skinning updates to a worker thread.</li>
+<li>Move particle updates to a worker thread.</li>
+<li>Share state across different NIF files.</li>
+<li>Enable culling for particle emitters/programs.</li>
+<li>Integrate a model optimizer. Morrowind’s models unfortunately contain plenty of redundant nodes, redundant transforms, and redundant state, which impacts rendering performance. The original engine runs an “optimizer” pass over the models upon loading them into the engine. We should implement a similar optimizer pass. OpenSceneGraph provides the osgUtil::Optimizer that might prove useful for this very purpose.</li>
+<li>Create a more balanced scene graph, e.g. a quad tree, to reduce the performance impact of culling and scene queries.</li>
+</ul>
+</li>
+<li><strong>Rendering is not the only bottleneck</strong>. Assuming an N times faster renderer would lead to an N times faster OpenMW is wrong. We have other systems contending for frame time, and now that our renderer is faster, these other bottlenecks are becoming ever more apparent. In particular, the physics and animation systems are currently the worst two offenders. Some preliminary optimizations for these systems have made it into the OSG port, but we have no doubts there is more room for improvement.</li>
+</ol>
+<p>With that said, better performance is certainly not the only change users can look forward to:</p>
+<h2 id="preliminary-changelog">Preliminary changelog</h2>
+<p><strong>Rendering improvements</strong></p>
+<ul>
+<li>Non-uniform NPC scaling (Bug 814):<br>
+Certain NPCs are now scaled along their X and Y axes, giving them a more bulky appearance, just like in vanilla Morrowind. Previous versions of OpenMW were unable to support this kind of scaling, due to an Ogre3D limitation.</li>
+<li>Improved rendering precision: solves large coordinate precision issues, exhibited by flickering/shaking when the player travels too far from the world origin. <a href="https://www.youtube.com/watch?v=wybVYwQPVmY">Video comparison</a></li>
+<li>Removed static geometry batching: fixes incorrect lighting (Bug 385), fixes scripted movement of objects (Bug 602), and improves cell loading time.</li>
+<li>Vanilla-accurate transparency settings: Previous versions of OpenMW were using transparency settings not quite accurate to vanilla Morrowind, in an effort to facilitate static geometry batching. That has been fixed – users will notice that foliage and other transparent objects now have softer edges.</li>
+<li>Added <em>small feature culling</em> option: In addition to culling off-screen objects, we can now also cull objects that would be smaller than a single pixel when rendered. The visual change is virtually unnoticeable, so we have enabled the option by default.</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th><a href="https://openmw.org/wp-content/uploads/2015/06/osg_scaling.png"><img src="https://openmw.org/wp-content/uploads/2015/06/osg_scaling-300x156.png" alt="osg_scaling" loading="lazy" decoding="async"></a></th>
+					<th><a href="https://openmw.org/wp-content/uploads/2015/06/osg_transparency.png"><img src="https://openmw.org/wp-content/uploads/2015/06/osg_transparency-300x156.png" alt="osg_transparency" loading="lazy" decoding="async"></a></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><em>NPC scaling comparison</em></td>
+					<td><em>Transparency comparison</em></td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>Re-designed NIF loader</strong></p>
+<ul>
+<li>Support for non-uniform scaling in NIF files (Bug 2052)</li>
+<li>Fixed limitation on the number of nodes in NIF files (Bug 2187)</li>
+<li>Fixed animations “freezing” when the object is culled (Bug 2151)</li>
+<li>Redesigned skinning algorithm to allow for a more efficient scene graph</li>
+<li>Dynamically expand bounding boxes based on skeletal animation; fixes certain creatures disappearing under certain view angles (Bug 455)</li>
+<li>NIF scene graphs are now a shared resource; drastically improves loading time.</li>
+<li>Animation text keys are now a shared resource</li>
+</ul>
+<p><strong>Physics rewrite</strong></p>
+<ul>
+<li>When compiled with Bullet 2.83 or later, take advantage of btScaledBvhTriangleMeshShape for efficient shape instancing</li>
+<li>Remove the “detailed” Bullet raycasting shapes, replaced by direct raycasting on the scene graph (see “New raycasting” section), vastly reducing memory usage</li>
+<li>Use a btCollisionWorld in place of a btDynamicsWorld, to avoid unnecessary updates for functionality that we are not using</li>
+<li>Map collision objects by pointer instead of by name</li>
+</ul>
+<p><strong>New raycasting</strong></p>
+<ul>
+<li>Use the osgUtil::IntersectionVisitor for direct raycasting on the scene graph</li>
+<li>Support for raycasting against animated meshes, fixing inaccurate cursor selection for actors (Bug 827)</li>
+<li>Rewrote item selection logic for the inventory preview doll to use raycasting instead of a selection buffer, improving response time</li>
+</ul>
+<p><strong>Improved loading screen</strong></p>
+<ul>
+<li>Loading screen now renders in the draw thread, thus no longer blocks the loading procedure</li>
+<li>Increased loading screen FPS so the loading bar moves more smoothly</li>
+<li>Upload OpenGL objects in a background thread while the area loads, using osgUtil::IncrementalCompileOperation</li>
+</ul>
+<p><strong>Improved SDL2 support</strong></p>
+<p>SDL2, the library we are using for cross-platform input and window creation, has been more closely integrated with the rendering system. Practical benefits for the user include:</p>
+<ul>
+<li>The antialiasing option finally works on Linux systems (Bug 2014)</li>
+<li>SDL2 is now responsible for creating the graphics context, meaning new display APIs, such as Wayland and Mir on Linux, are automatically supported with no extra maintenance overhead for the OpenMW team.</li>
+</ul>
+<p><a href="https://openmw.org/wp-content/uploads/2015/06/osg_antialiasing.png"><img src="https://openmw.org/wp-content/uploads/2015/06/osg_antialiasing-300x188.png" alt="osg_antialiasing" loading="lazy" decoding="async"></a><br>
+<em>8x antialiasing in action</em></p>
+<p><strong>Profiling overlay</strong></p>
+<p>A nice side effect of using OpenSceneGraph is access to their top-notch profiling tools. With the ‘F3’ key, an on-screen overlay appears that shows more information with every key press.</p>
+<p><a href="https://openmw.org/wp-content/uploads/2015/06/osg_profiling.png"><img src="https://openmw.org/wp-content/uploads/2015/06/osg_profiling-300x130.png" alt="osg_profiling" loading="lazy" decoding="async"></a><br>
+<em>Profiling overlay – the colored bars represent OpenSceneGraph’s internal threads, the white bars OpenMW logic</em></p>
+<p><strong>Passive fixes</strong></p>
+<p>The new OpenMW sports a unified OpenGL renderer on all our platforms. Rendering via Direct3D is no longer supported, easing the maintenance and support overhead for the OpenMW team.</p>
+<p>Practically speaking, we have thus “fixed” Bug 2186 (garbage pixels on the minimap on Windows) and Bug 1647 (crash when switching to windowed mode on Windows).</p>
+<p><strong>Miscellaneous changes</strong></p>
+<p>Finally, we do have some bonus changes that are not strictly related to the OpenSceneGraph transition, but were committed to the OSG branch anyway in an effort to reduce merge conflicts:</p>
+<ul>
+<li>Tweaked the activation range for lights (Bug 1813)</li>
+<li>Fixed NiGravity strength (Bug 2147)</li>
+<li>Implemented controller extrapolation modes (Bug 1871)</li>
+<li>Implemented the NiPlanarCollider particle processor (Bug 2149)</li>
+<li>Added UI scaling option:</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th><a href="https://openmw.org/wp-content/uploads/2015/06/osg_ui_scale_1.png"><img src="https://openmw.org/wp-content/uploads/2015/06/osg_ui_scale_1-300x188.png" alt="osg_ui_scale_1" loading="lazy" decoding="async"></a></th>
+					<th><a href="https://openmw.org/wp-content/uploads/2015/06/osg_ui_scale_2.png"><img src="https://openmw.org/wp-content/uploads/2015/06/osg_ui_scale_2-300x188.png" alt="osg_ui_scale_2" loading="lazy" decoding="async"></a></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><em>Normal UI scale</em></td>
+					<td><em>2x UI scale, same resolution</em></td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>Code maintenance / restructuring / cleanup</strong></p>
+<p>The codebase has considerably lost weight, which is likely interesting to developers, though not so interesting to end-users.</p>
+<ul>
+<li>Physics code moved to a new “mwphysics” subsystem</li>
+<li>Removed scene node names, i.e. the RefData::getHandle identifier</li>
+<li>Removed OpenEngine</li>
+<li>Removed platform wrapper</li>
+<li>Removed shiny</li>
+</ul>
+<p>In total, ~23.000 lines of code were removed:<br>
+<code>git diff upstream/master --shortstat   689 files changed, 24051 insertions(+), 47695 deletions(-)</code></p>
+<h2 id="whats-next">What’s next?</h2>
+<p>Phew, that was a lot to take in – even at this stage, the list of improvements is massive, so our first priority should be to merge the port into the main branch, get our various nightly builds up and running again, then get a new release out.</p>
+<p>Speaking for the longer term, we are not even close to unleashing the full potential of our new rendering engine. The next steps would be to further improve performance, then work on restoring shaders, distant terrain, water reflections and shadows. Our new NIF loader facilitates the implementation of background cell loading, which was originally planned as a post-1.0 improvement – now, it would be trivial to do, so we might see this feature pre-1.0 after all.</p>
+<p>In the meantime though, on the graphics front, there is now nothing stopping us from releasing the long awaited OpenMW 1.0, so perhaps efforts should be diverted to fix the remaining <a href="https://bugs.openmw.org/projects/openmw/roadmap#openmw-1.0">OpenMW 1.0 blockers</a> first, get version 1.0 out the door, then port the advanced graphical features for version 1.1. We might decide this on a case-by-case basis. In particular, the water reflections should be a lot easier to port than shadows, which weren’t working particularly well in the Ogre branch anyway.</p>
+<p>If you have an opinion on the matter, feel free to comment. Though regardless of the priorities we decide on, these are certainly exciting times ahead!</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=2931" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Announcing switch to OpenSceneGraph</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2015/announcing-switch-openscenegraph/</link>
+      <pubDate>Sun, 15 Feb 2015 19:16:41 &#43;0100</pubDate>
+      <dc:creator>scrawl</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4193</guid>
+      <description>Ogre3D is the rendering engine used by OpenMW since our very first release. Now, the OpenMW team is announcing the move away from this engine.
+Over the course of our alpha versions, Ogre3D has proven extremely useful, enabling rapid development. Thanks to Ogre3D, you can already play a more or less …</description>
+      <content:encoded><![CDATA[<p>Ogre3D is the rendering engine used by OpenMW since our very first release. Now, the OpenMW team is announcing the move away from this engine.</p>
+<p>Over the course of our alpha versions, Ogre3D has proven extremely useful, enabling rapid development. Thanks to Ogre3D, you can already play a more or less complete game of Morrowind in OpenMW, <em>today</em>, and that is an incredible feat in and of itself.</p>
+<p>However, to get OpenMW into a polished state and to add the last few missing features, we have difficult tasks ahead of us that would either require creating a fork of Ogre3D that behaves the way we need it to, or switch to a more suitable engine. After much discussion, we have settled on the second option.</p>
+<h3 id="why-switch">Why switch?</h3>
+<p>There isn’t one particular show-stopper, but rather the culmination of many different issues.</p>
+<p>One blocker for our 1.0 release is the poor framerate compared to vanilla Morrowind. This comes down to scene management and render API bottlenecks in the Ogre3D 1.x series, which are well understood by the Ogre3D team and have since been addressed in the 2.x series. The original plan was to port OpenMW to use Ogre3D 2.x, which is a big undertaking since the programming interface changes are significant. However, we have some fundamental concerns about this port:</p>
+<ul>
+<li><strong>Tag points:</strong> We are using an Ogre3D feature called “Tag Points” to stitch together the various parts of Morrowind’s segmented bodies. This feature is no longer supported in the 2.x series, so we would have to implement complicated workarounds.</li>
+<li><strong>OpenGL3 requirement:</strong> The Ogre3D 2.1 branch has dropped support for OpenGL2 hardware. Even though OpenMW was never meant to run on hardware that originally ran Morrowind, we concluded that it is still too early to drop OpenGL2 support, as it would affect a significant portion of our users.</li>
+<li><strong>Material system:</strong> Ogre 2.1 features a redesigned material system written with AZDO (Approaching Zero Driver Overhead) optimizations in mind, but at the cost of making custom materials difficult to write. We will be doing that extensively in OpenMW, especially considering user-authored modifications, so we would rather have a more flexible and easier to use material system.</li>
+</ul>
+<p>On top of these concerns with the latest Ogre3D versions, we’ve also had some longstanding issues:</p>
+<ul>
+<li><strong>Resource system:</strong> Ogre3D forces the use of a global resource manager, but we need one resource manager per document in OpenCS. Another problem is that all resources are expected to have a unique name, which leads to some unnecessary work on our side, and could rarely cause user-defined resources to conflict with internal resources. This is also an issue well understood by the Ogre3D team, and a “Resource System Redesign” project addressing these points has been started in 2013, but is unfortunately not completed yet.</li>
+<li><strong>Material stencil support:</strong> The NIF format used by Morrowind can specify “stencil settings”, but the Ogre3D material backend does not support these settings.</li>
+<li><strong>NPC width scaling:</strong> NPCs in Morrowind have a “weight” property, which should be scaling the NPC on its local X-axis. OpenMW currently ignores this property, because the Ogre3D 1.x skeleton system does not support non-uniform scaling.</li>
+</ul>
+<h3 id="a-new-engine">A new engine</h3>
+<p>In light of these issues, we’ve looked around for alternatives and found the <a href="http://www.openscenegraph.org/">OpenSceneGraph</a>, which appears a perfect fit for the features required by Morrowind and OpenMW, while also delivering high performance. We’ve carefully evaluated all needed features and verified that they can be found in the OSG source code, or can be easily added by a plugin. A detailed roadmap for the port will be posted in the near future, and updated regularly so you can follow along the progress.</p>
+<p>One notable difference is OpenSceneGraph supporting OpenGL only. Ogre3D having inbuilt support for OpenGL and DirectX may be considered one of its strong points. In an ideal world this would result in greater choice for the user while requiring no extra effort from the OpenMW team. Unfortunately this is not quite true; writing shaders does not work in a render system agnostic way. In addition to that, we have found some OpenMW bugs only manifesting themselves when the Direct3D backend is used. So we are in fact happy about this change, as we do not have the manpower to maintain support for two different rendering systems, and most of our developers are working on Linux and thus unable to test the Direct3D renderer anyway.</p>
+<h2 id="pre-emptive-faq">Pre-emptive FAQ</h2>
+<h3 id="q-how-long-will-the-switch-take">Q: How long will the switch take?</h3>
+<p>The good news is that Ogre3D is a rendering engine and we’re only using it as such. The OpenMW code is structured using different subsystems, and this change will, for the most part, affect only the “mwrender” subsystem. Rendering code makes up roughly 8% of our codebase.</p>
+<h3 id="q-what-will-happen-with-openmw-using-ogre-in-the-meantime-further-development-new-features-maintenancefixes-only-complete-obsoletion">Q: What will happen with OpenMW using OGRE in the meantime? Further development (new features), maintenance/fixes only, complete obsoletion?</h3>
+<p>We will continue developing the OGRE branch as usual, with new features and bugfixes, so long as the OSG port is still in development. We know that OpenMW already has lots of players despite its alpha state, so this is very important for us.</p>
+<h3 id="q-what-about-the-different-openmw-platforms-linux-windows-mac-os-x-android">Q: What about the different OpenMW platforms (Linux, Windows, Mac OS X, Android)?</h3>
+<p>We will continue to support all these platforms.</p>
+<h3 id="q-the-gallery-on-the-openscenegraph-website-looks-really-basic-if-this-engine-is-so-great-why-are-there-no-fancy-games-made-with-it">Q: The gallery on the OpenSceneGraph website looks really basic. If this engine is so great, why are there no fancy games made with it?</h3>
+<p>In terms of features, OpenSceneGraph is every bit as powerful (or even more powerful in some aspects) as Ogre3D, so it surprised us to see there are not many games made with it. OSG founder Robert Osfield has his own theory on why this may be the case:</p>
+<blockquote>
+<p>As a general note about Games and OSG vs Ogre, I suspect it’s partly<br>
+down the roots of each project and the culture that grew up around it.<br>
+OSG grew from the vis-sim world and over the years grew into a<br>
+general purpose and highly portable scene graph library, with it’s<br>
+community coming form the professional simulator, large scale<br>
+visualization, VR and scientific markets. Whereas Ogre from the start<br>
+was graphics API for Games, it too though can be used for more things<br>
+than games but and culturally games looks to have remained it’s<br>
+heartland.</p>
+</blockquote>
+<h3 id="q-i-am-worried-about-direct3d-support-being-dropped-because-i-get-much-higher-framerates-with-the-direct3d-renderer-in-openmw-compared-to-the-opengl-renderer">Q: I am worried about Direct3D support being dropped, because I get much higher framerates with the Direct3D renderer in OpenMW compared to the OpenGL renderer.</h3>
+<p>We are aware of this performance difference and know that it can be attributed to the poorly implemented OpenGL renderer in Ogre3D 1.x. Valve has <a href="http://blogs.valvesoftware.com/linux/faster-zombies/">shown</a> that a proper OpenGL renderer can be every bit as fast as Direct3D, or even faster.</p>
+<h3 id="final-thank-you-note">Final thank you note</h3>
+<p>We owe a great deal to Ogre3D and hope to have made up for it with the numerous patches we’ve contributed.</p>
+<p>We want to thank all Ogre3D contributors for their great work, everyone on the Ogre3D forums for all the support and encouragement we’ve gotten from there, and a special thanks to Kojack for helping us debug a DDS texture issue.</p>
+<h5 id="want-to-leave-a-comment"><a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=2754" title="Want to leave a comment?">Want to leave a comment?</a></h5>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

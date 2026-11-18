@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Vedyimyn · OpenMW</title>
+    <link>https://luanafons0.github.io/beta-v2-openmw/author/vedyimyn/</link>
+    <description>Open source Elderscrolls 3: Morrowind engine reimplementation.</description>
+    <language>en</language>
+    <atom:link href="https://luanafons0.github.io/beta-v2-openmw/author/vedyimyn/index.xml" rel="self" type="application/rss&#43;xml"/>
+    <lastBuildDate>Wed, 02 Aug 2017 20:53:56 &#43;0200</lastBuildDate>
+    <item>
+      <title>OpenMW 0.42.0</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2017/openmw-0-42-0-2/</link>
+      <pubDate>Wed, 02 Aug 2017 20:53:56 &#43;0200</pubDate>
+      <dc:creator>Vedyimyn</dc:creator>
+      <category>Release</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4990</guid>
+      <description>Zespół OpenMW ma zaszczyt ogłosić wydanie wersji 0.42.0! Do pobrania, jak zwykle, na zakładce Do ściągnięcia, dla wszystkich systemów operacyjnych. Przepraszamy za opóźnione wydanie, ale chcieliśmy, by wszystko było możliwie najlepiej uporządkowane. W tej wersji do OpenMW powraca funkcja odległego …</description>
+      <content:encoded><![CDATA[<p>Zespół OpenMW ma zaszczyt ogłosić wydanie wersji 0.42.0! Do pobrania, jak zwykle, na zakładce <a href="/beta-v2-openmw/downloads/">Do ściągnięcia</a>, dla wszystkich systemów operacyjnych. Przepraszamy za opóźnione wydanie, ale chcieliśmy, by wszystko było możliwie najlepiej uporządkowane. W tej wersji do OpenMW powraca funkcja odległego lądu! DestinedToDie napisał <a href="https://openmw.org/2017/odlegly-lad/">instrukcję</a> jej uruchamiania w jednym z poprzednich wpisów. Poniżej znajduje się w minimalnym stopniu przetłumaczona lista nowości i poprawek.</p>
+<p>Zobacz także filmiki dokumentujące nowe wydania OpenMW i OpenMW-CS, autorstwa czcigodnego Atahualpy</p>
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=YKhfdOxkafo">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2017/openmw-0-42-0-2/youtube-YKhfdOxkafo_hu_dbe51af263b2117a.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW 0.42 Release Commentary <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+
+
+<a class="video-link" href="https://www.youtube.com/watch?v=exWbXBAJYtY">
+  <figure>
+    
+    
+    <img src="/beta-v2-openmw/2017/openmw-0-42-0-2/youtube-exWbXBAJYtY_hu_4d392b75f3dac692.webp" width="640" height="360" alt="" loading="lazy" decoding="async">
+    
+    <figcaption>OpenMW-CS 0.42 Release Commentary <span class="tag">YouTube</span></figcaption>
+  </figure>
+</a>
+
+
+<p><strong>Znane problemy:</strong></p>
+<ul>
+<li>cienie nie zostały ponownie zaimplementowane,.</li>
+<li>by móc używać Linuksowych binarek z targz, należy mieć zainstalowane Qt4 i libpng12,.</li>
+<li>na macOS, OpenMW-CS może uruchomić OpenMW tylko, jeśli OpenMW.app i OpenMW-CS.app są w jednym folderze..</li>
+</ul>
+<p><strong>Nowe funkcje:</strong></p>
+<ul>
+<li>Implemented water sound effects.</li>
+<li>Implemented light particles showing in inventory character preview.</li>
+<li>Implemented magic projectiles emitting light.</li>
+<li>Implemented NiSphericalCollider.</li>
+<li>OpenMW-CS: Implemented “Book Type” combo box replacing “Scroll” check box in Book records.</li>
+<li>OpenMW-CS: Implemented “Blood Type” combo box replacing blood check boxes in NPC and Creature records.</li>
+<li>OpenMW-CS: Implemented “Emitter Type” combo box replacing emitter check boxes in Light records.</li>
+<li>OpenMW-CS: Implemented “Gender” combo box replacing “Female” check box in NPC and Body Part records.</li>
+<li>ess-Importer: Implemented converting mark location.</li>
+<li>ess-Importer: Implemented converting last known exterior cell.</li>
+</ul>
+<p><strong>Poprawki błędów:</strong></p>
+<ul>
+<li>Falling leaves in Vurt’s tree mods now render correctly.</li>
+<li>Actors now use capsular collision shapes (solves issues with characters getting stuck or floating above the ground).</li>
+<li>Collision handling has been improved (better performance and overall behaviour).</li>
+<li>Collision is now not disabled for actors until their death animation has finished playing.</li>
+<li>Players can no longer climb sheer terrain by jumping and then moving forwards in the air.</li>
+<li>Doors no longer stutter when colliding with the player.</li>
+<li>Dialog boxes now appear in the center of the screen after the window is resized.</li>
+<li>Weapon and spell cycling is now disabled while in GUI mode.</li>
+<li>Weapon and spell cycling can now be bound to a gamepad.</li>
+<li>Gamepad and mouse/keyboard may now be used at the same time.</li>
+<li>Inventory window titles are now centered vertically.</li>
+<li>Changed name tooltips’ behavior on enemies to match vanilla behavior.</li>
+<li>The maximum width of a tooltip is no longer set to a fixed value.</li>
+<li>The drowning widget now more accurately matches the vanilla one.</li>
+<li>Fall height is now reset when the player teleports.</li>
+<li>Changed Slowfall spell effect to better match vanilla behavior while jumping.</li>
+<li>Combat with water creatures now ends when leaving the water.</li>
+<li>AI actors no longer hit unintended targets.</li>
+<li>Changed NPC wander and idle behavior to better match vanilla.</li>
+<li>Fixed some summoned creatures not engaging underwater creatures in combat.</li>
+<li>Enemies now initiate combat with player followers on sight.</li>
+<li>Creatures now auto-equip their shields on creation.</li>
+<li>Changed combat engagement logic to better match vanilla behavior.</li>
+<li>The Command spell effect now brings enemies out of combat.</li>
+<li>Followers now continue to follow after resting and saving and reloading the game.</li>
+<li>Light prioritization on objects now takes the light sources’ intensity into account (fixes issues with light sources popping up).</li>
+<li>Icon shadows no longer persist in GUI windows.</li>
+<li>Disintegrate Armor/Weapon spell effects are no longer bound to the framerate.</li>
+<li>Enchanted arrows now explode when they hit the ground or a static object.</li>
+<li>Fixed a crash that occurred while using a container and the console at the same time.</li>
+<li>Fixed the beginning of NPC speech being cut off on macOS.</li>
+<li>Nodes named “bounding box” are now ignored by the nifloader making corresponding meshes render correctly.</li>
+<li>The correct swish sound is now played for NPC weapon attacks.</li>
+<li>The player now has to pay for their followers when using fast travel.</li>
+<li>Fixed a regression with Dispel; it now is an instant spell effect again.</li>
+<li>Corrected greetings in Antares’ Big Mod.</li>
+<li>The ProjectileManager no longer crashes when a sound ID fails to play or is not found.</li>
+<li>Fixed behavior of Activate and OnActivate commands (fixes freeze when opening “Hammers” container in Aanumuran Reclaimed mod).</li>
+<li>Fixed possible game-breaking exception caused by trying to access NPC stats on a creature.</li>
+<li>Identification papers can now be picked back up after they are dropped.</li>
+<li>Fixed the interpreter to properly handle a reference change caused by an Activate command.</li>
+<li>Changed behavior of stat script commands to better handle stats above 100.</li>
+<li>Fixed gun sounds in Clean Hunter Rifles mod.</li>
+<li>Fixed selling success chance when bartering.</li>
+<li>Fixed objects doubling when loading a save game after editing the used game files.</li>
+<li>Silenced SDL events of types 0x302 and 0x304.</li>
+<li>Fixed a rare crash that occurred on cell loading.</li>
+<li>Activation flags are now reset when an object is copied.</li>
+<li>Removed the possibility to implicitly call GetJournalIndex by simply stating a script ID (solves issues with objects using the same ID as a script in Emma’s Lokken mod).</li>
+<li>Blacklisted some unused scripts from the Bloodmoon expansion pack which relied upon the abovementioned implicit function call.</li>
+<li>Fixed the ResourceHelpers to allow the simultaneous use of forward and backward slashes in a model path.</li>
+<li>Fixed handling of enchantments’ spell effects to correctly display these effects in the GUI.</li>
+<li>OpenMW-CS: New or cloned Body Part records may now use the “.1st” suffix.</li>
+<li>OpenMW-CS: Fixed sorting verification results by Record Type.</li>
+<li>OpenMW-CS: Cloned and added pathgrids are no longer lost after reopening an omwgame file.</li>
+<li>OpenMW-CS: Camera position is now re-centered when changing interior cells via drag &amp; drop.</li>
+<li>OpenMW-CS: Added missing Text field to allow editing a book’s actual text.</li>
+<li>OpenMW-CS: Skill books now show associated skill IDs instead of attribute IDs.</li>
+</ul>
+<h5 id="zapraszamy-do-komentowania-tutaj">Zapraszamy do komentowania <a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=4489">tutaj</a>.</h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenMW Example Suite</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2017/openmw-suite/</link>
+      <pubDate>Sat, 04 Mar 2017 19:47:13 &#43;0100</pubDate>
+      <dc:creator>Vedyimyn</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4910</guid>
+      <description>OpenMW jest znany jako darmowa, otwarta reimplementacja silnika gry TESIII: Morrowind. Oprócz stworzenia silnika umożliwiającego grę w Morrowinda, celem projektu jest utworzenie naszej własnej, usprawnionej implementacji construction seta, nazwanego OpenMW-CS, a także uczynienie z OpenMW bazy, na …</description>
+      <content:encoded><![CDATA[<p>OpenMW jest znany jako darmowa, otwarta reimplementacja silnika gry <em>TESIII: Morrowind</em>. Oprócz stworzenia silnika umożliwiającego grę w Morrowinda, celem projektu jest utworzenie naszej własnej, usprawnionej implementacji construction seta, nazwanego OpenMW-CS, a także uczynienie z OpenMW bazy, na podstawie której będzie można tworzyć nowe gry.</p>
+<p>Zestaw przykładowy (<em>The Example Suite</em>) to gra zupełnie niezależna od plików Morrowinda, umożliwiająca demonstrację możliwości silnika OpenMW. Gra ta będzie dostępna za darmo, a gracze będą ją mogli łatwo uruchomić z silnikiem OpenMW.</p>
+<p>Ostatnio jeden z członków zespołu, o pseudonimie DestinedToDie, zgłosił się na lidera modelowania 3d dla tego projektu. Poskładał wstępny plan pierwszego obszaru, na razie z zastosowaniem placeholderów.</p>
+<p><a href="https://imgur.com/Blynpmv">View post on imgur.com</a></p>
+<p>DestinedToDie opisał swoją wizję <em>The Example Suite</em> <a href="http://forum.openmw.org/viewtopic.php?f=28&amp;p=46098#p46098">tutaj</a>.</p>
+<p>W celu zrealizowania projektu, założył on <a href="https://www.patreon.com/destinedtodie">stronę</a> w serwisie Patreon. Wsparcie za pomocą tej strony (lub poprzez <a href="http://www.paypal.me/DestinedToDie">PayPal</a>) umożliwi mu poświęcenie czasu na ten projekt i doprowadzenie go do postaci grywalnej.</p>
+<p>Projekt jest dostępny dla wszystkich na licencji CC-BY-3.0, co oznacza, że każdy może przyczynić się do niego lub utworzyć na jego bazie własną grę, nawet komercyjną.</p>
+<p>Podsumowując, można się spodziewać OpenMW grywalnego „prosto z pudełka”, z dostępnym za darmo zestawem testowym.</p>
+<h5 id="zapraszamy-do-komentowania-tutaj">Zapraszamy do komentowania <a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=4181">tutaj</a>.</h5>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>To Ogr(e)!</title>
+      <link>https://luanafons0.github.io/beta-v2-openmw/2015/ogre-2/</link>
+      <pubDate>Sun, 15 Feb 2015 19:43:19 &#43;0100</pubDate>
+      <dc:creator>Vedyimyn</dc:creator>
+      <category>News</category>
+      <guid isPermaLink="false">https://openmw.org/?p=4198</guid>
+      <description>Ostatnio niecierpliwie wyczekiwaliśmy Ogre 2.0, silnika używanego w OpenMW. Druga wersja jest kamieniem milowym w jego rozwoju. Pozwoli nam to uczynić OpenMW jeszcze lepszym niż przedtem. Niestety dostosowanie OpenMW do nowej wersji silnika nie jest kwestią poprawki paru linijek kodu. Ogre 2 różni …</description>
+      <content:encoded><![CDATA[<p>Ostatnio niecierpliwie wyczekiwaliśmy Ogre 2.0, silnika używanego w OpenMW. Druga wersja jest kamieniem milowym w jego rozwoju. Pozwoli nam to uczynić OpenMW jeszcze lepszym niż przedtem. Niestety dostosowanie OpenMW do nowej wersji silnika nie jest kwestią poprawki paru linijek kodu. Ogre 2 różni się znacznie od Ogre 1, a OpenMW musi razem z nim ewoluować.</p>
+<p>Część problemów dotyczy „sklejania” części ciała tak, żeby stanowiły całość. Jak wiadomo, postaci w Morrowindzie składają się z torsu, głowy, rąk i nóg. Muszą także być w stanie trzymać przedmioty, co także oznacza „sklejanie”. Jako że takiej możliwości jeszcze nie ma w Ogre 2, implementacja tego silnika pozbawiła grę istotnej funkcjonalności.</p>
+<p>Ostatni post Scrawla na jego stronie dotyczy problemów takich jak ten powyżej, więc jeśli interesujesz się takimi technikaliami, koniecznie zajrzyj <a href="http://scrawl.bplaced.net/blog/?p=34">tutaj</a>.</p>
+<p>Oczywiście poza pracą nad silnikiem, pracowano też nad samym OpenMW. Naprawiono ponad 100 bugów z trackera oraz dodano parę funkcji. Teraz, jeśli „przewiniesz czas” czekając lub śpiąc, NPC będą w innych miejscach niż byli przedtem (w końcu chodzili w międzyczasie, czyż nie?).</p>
+<p>Zbliżamy się do wydania 0.35.0 dość szybko, więc założono już blokadę kodu. Obecna praca skupia się na wydaniu następnym, w którym już poprawiono tor ruchu słońca. Ktoś zauważył, mianowicie Yann GOUY, że słońce nie wschodzi i nie zachodzi we właściwych miejscach. Księżyce, co prawda, też mają tę przypadłość, ale muszą trochę poczekać na naprawę. W wersji 0.36.0 dodano też możliwość ubierania zwłok.</p>
+<p>Pełna lista zmian dla 0.35.0 jest już napisana. Jest to kwestia paru dni, zanim się pojawi, więc miejcie oko na naszą stronę internetową. Albo zlećcie to aptowi/yumowi/pacmanowi…</p>
+<p>Zapraszamy do komentowania <a href="https://forum.openmw.org/viewtopic.php?f=38&amp;t=2753">tutaj</a>.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
