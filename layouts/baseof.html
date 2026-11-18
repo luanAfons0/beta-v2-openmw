@@ -12,13 +12,16 @@
 {{ with resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
 {{ end }}
+{{ with resources.Get "js/search.js" | minify | fingerprint }}
+<script type="module" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+{{ end }}
 {{- range .AlternativeOutputFormats }}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
 {{- end }}
 </head>
 <body>
 {{ partial "header.html" . }}
-<main class="wrap">
+<main class="wrap"{{ if and .IsPage (ne .Params.searchIndex false) }} data-pagefind-body{{ end }}>
 {{ partialCached "follow-row.html" . }}
 {{ block "main" . }}{{ end }}
 </main>

@@ -32,7 +32,7 @@
   {{ $img := resources.Get (printf "media/screenshots/%s" .file) }}
   {{ $big := $img }}
   {{ if or (gt $img.Width 1920) (gt $img.Height 1080) }}{{ $big = $img.Fit "1920x1080 webp q82" }}{{ end }}
-  <div class="lightbox" id="shot-{{ $n }}" role="group" aria-label="{{ T "screenshotOf" (dict "N" $n "Total" $total) }}">
+  <div class="lightbox" data-pagefind-ignore id="shot-{{ $n }}" role="group" aria-label="{{ T "screenshotOf" (dict "N" $n "Total" $total) }}">
     <a class="lb-backdrop" href="#thumb-{{ $n }}" tabindex="-1" aria-hidden="true"></a>
     <figure>
       <img src="{{ $big.RelPermalink }}" width="{{ $big.Width }}" height="{{ $big.Height }}" alt="{{ or .alt .caption }}" loading="lazy" decoding="async">

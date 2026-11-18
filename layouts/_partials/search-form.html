@@ -1,0 +1,6 @@
+<form class="search{{ with .class }} {{ . }}{{ end }}" role="search" action="https://duckduckgo.com/" method="get" data-search="{{ "search/" | relURL }}" data-pagefind="{{ "pagefind/" | relURL }}" data-base="{{ site.Home.RelPermalink }}" data-sites="{{ site.Params.searchSite }}">
+  <input type="hidden" name="sites" value="{{ site.Params.searchSite }}">
+  <label class="visually-hidden" for="{{ .id }}">{{ T "search" }}</label>
+  <input type="search" id="{{ .id }}" name="q" placeholder="{{ T "searchPlaceholder" }}" required>
+  <button type="submit">{{ T "search" }}</button>
+</form>

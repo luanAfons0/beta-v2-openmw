@@ -6,7 +6,7 @@
     {{ .Content }}
   </div>
 </article>
-<nav class="pager" aria-label="{{ T "morePosts" }}">
+<nav class="pager" data-pagefind-ignore aria-label="{{ T "morePosts" }}">
   {{ with .NextInSection }}<a rel="prev" href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
   {{ with .PrevInSection }}<a rel="next" href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}
 </nav>

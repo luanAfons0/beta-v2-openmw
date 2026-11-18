@@ -1,0 +1,6 @@
+{{ define "main" }}
+<h1 class="page-title">{{ .Title }}</h1>
+{{ partial "search-form.html" (dict "id" "search-page" "class" "search-page") }}
+<p class="search-status" aria-live="polite" data-search-status data-searching="{{ T "searching" }}" data-found="{{ T "searchFound" }}" data-none="{{ T "searchNone" }}"></p>
+<ol class="search-results" data-search-results></ol>
+{{ end }}

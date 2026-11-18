@@ -42,6 +42,7 @@ disableKinds = ["taxonomy"]
   maxAge = 0
 
 [params]
+  searchSite = "openmw.org"
   description = "Open source Elderscrolls 3: Morrowind engine reimplementation."
   twitter = "@openmw_org"
   startYear = 2008

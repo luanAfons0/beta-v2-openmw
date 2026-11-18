@@ -10,6 +10,7 @@
         <li><a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
         {{- end }}
       </ul>
+      {{ partial "search-form.html" (dict "id" "search-top") }}
     </nav>
   </div>
 </header>
